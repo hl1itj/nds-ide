@@ -1,6 +1,6 @@
 <?
 setcookie("counter",$HTTP_COOKIE_VARS["counter"] + 1,
-           30*24*60*60+time(),"./");
+           30*24*60*60+time(),"/");
 $result = $HTTP_COOKIE_VARS["counter"];
 $result++;
 ?>
@@ -14,12 +14,12 @@ $result++;
 		Embeded SoftWare Education Environment with Nintendo
 	</P>
 	 </FONT>
-	<P ALIGN = "RIGHT"> 
+	
 	    TOTAL visitor  
 	    <FONT color = red>
 	    <? echo $result ?>
 	    </FONT>
 	    
-	</P>
+	
 </body>
 </html>
