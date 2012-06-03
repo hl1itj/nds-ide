@@ -1,10 +1,25 @@
+<?
+setcookie("counter",$HTTP_COOKIE_VARS["counter"] + 1,
+           30*24*60*60+time(),"/");
+$result = $HTTP_COOKIE_VARS["counter"];
+$result++;
+?>
+
 <html>
 <head>
-<title>Embeded SoftWare Education with Nintendo</title>
+<title>Embeded SoftWare Education Environment with Nintendo</title>
 </head>
-<body>
+<body BGCOLOR = "BLACK" TEXT = "WHITE">
 	<P ALIGN="CENTER"><FONT SIZE="5">
-		Embeded Software Education with Nintendo
+		Embeded SoftWare Education Environment with Nintendo
+	</P>
+	 </FONT>
+	<P ALIGN = "RIGHT"> 
+	    TOTAL visitor  
+	    <FONT color = green>
+	    <? echo $result ?>
+	    </FONT>
+	    
 	</P>
 </body>
 </html>
