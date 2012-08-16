@@ -1,11 +1,143 @@
-<HTML>
-<HEAD>
-<TITLE>Embeded SoftWare Education Environment with Nintendo</TITLE>
-</HEAD>
-<FRAMESET ROWS="20%,*" FRAMEBORDER="0">
-	<FRAME SRC="Title.html" NAME="Title">
-	<FRAMESET COLS = "20%,*">
-	<FRAME SRC="Menu.html" NAME="Menu">
-	<FRAME SRC="Context.html" NAME="Context">
-</FRAMESET>
-</HTML>
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{ background-color: black; overflow:hidden; }
+#title{
+    background-image:url(images/background-Top.png);
+    background-repeat:no-repeat;
+	position:absolute;
+	width:1060px;
+	height:134px;
+	top:0px;
+	left:0px;
+	color:white;
+	font-weight: bold;
+	padding-top: 65px;
+	padding-left: 10px;
+	
+}
+#counter{
+    background-color:transparent;
+}
+#nav{
+    background-image:url(images/background-Left.png);
+    background-repeat:no-repeat;
+	position:absolute;
+	width: 223px;
+	height: 100%;
+	top : 133px;
+	left : 0px;
+	padding-top: 87px;
+	padding-left: 45px;
+}
+#bottom{
+    background-image:url(images/background-Bottom.png);
+    background-repeat:no-repeat;
+	position:absolute;
+	width: 1060px;
+	height: 89px;
+	top : 640px;
+	left : 0px;
+}
+#iframeOutArea{
+
+    background-repeat:no-repeat;
+	left:223px;
+	width: 837px;
+	height: 507px;
+	top:133px;
+	position:absolute;
+}
+
+#iframeOutArea.Home{
+	background-image:url(images/background-Home.png);
+}
+#iframeOutArea.Source{
+	background-image:url(images/background-Source.png);
+}
+#iframeOutArea.Game{
+	background-image:url(images/background-Game.png);
+}
+#iframeOutArea.Document{
+	background-image:url(images/background-Document.png);
+}
+#iframeOutArea.QA{
+	background-image:url(images/background-QA.png);
+}
+
+#iframeInArea{
+
+	width: 730px;
+	height: 478px;
+	top:32px;
+	position:absolute;
+}
+
+iframe{
+	width: 730px;
+	height: 478px;
+	border: 0px;
+}
+
+#wrapper
+{
+background-position:fixed;
+position: absolute;
+width: 1060px;
+height: 729px;
+left: 50%;
+top: 50%;
+margin-left: -525px;
+margin-top: -395px;
+border: 2px solid white;
+}
+</style>
+<script type="text/javascript">
+function changeContent(menu){
+	var iframe = document.getElementById("iframe");
+	var iframeArea = document.getElementById("iframeOutArea");
+	
+	if(menu == "QA"){
+		iframe.src = "http://board.nboard.net/list.php?db=thesell_1";
+	}else {
+		iframe.src = menu + ".html";
+	}
+	
+	iframeArea.setAttribute('class',menu);
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="title">
+<div id="counter">
+<iframe src="http://zerocounter.com/c.php?t=TVRNME5URXdPVEUxTkE9PQ==" style="position:relative; left:-10px; width:530px; height:300px;" frameborder="0" scrolling="no" align="center"></iframe>
+</div>
+</div>
+<div id="nav">
+<input type="image" style="top:10px; left:10px" src="images/button-Home.png"onclick="changeContent('Home');"><br/>
+<br>
+<input type="image" src="images/button-Source.png" onclick="changeContent('Source');"><br/>
+<br>
+<input type="image" src="images/button-Game.png" onclick="changeContent('Game');"><br/>
+<br>
+<input type="image" src="images/button-Document.png" onclick="changeContent('Document');"><br/>
+<br>
+<input type="image" src="images/button-QA.png" onclick="changeContent('QA');"><br/>
+<br>
+</div>
+
+<div id="iframeOutArea" class="Home">
+    <div id="iframeInArea">
+    <iframe id="iframe" src="Home.html">
+		
+	</iframe>
+	</div>
+</div>
+<div id="bottom">
+</div>
+</div>
+</body>
+
+</html>
