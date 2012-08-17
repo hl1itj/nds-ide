@@ -1,0 +1,43 @@
+PAGfx Converter v0.10 -- by Mollusk -- resurrected by fincs -- forum.palib.info
+If you have suggestions, problems or anything please come to the PAlib forums
+
+Converting PAGfx.ini
+Transparent Color: Magenta
+
+5 sprites:
+  hpminus: 256colors, 16x16, Pal: hpminus_Pal, -> hpminus_Sprite
+  monster: 256colors, 32x32, Pal: monster_Pal, -> monster_Sprite
+  princess: 256colors, 16x32, Pal: princess_Pal, -> princess_Sprite
+  som: 256colors, 16x384, Pal: som_Pal, -> som_Sprite
+  water: 256colors, 16x16, Pal: water_Pal, -> water_Sprite
+
+9 backgrounds:
+  stage2 : UnlimitedBg, 256x400, Pal: stage2_Pal, 1564 tiles -> stage2_Tiles and stage2_Map
+  bg_main_down : EasyBg, 256x192, Pal: bg_main_down_Pal, 150 tiles -> bg_main_down_Tiles and bg_main_down_Map
+  bg_main_up : EasyBg, 256x192, Pal: bg_main_up_Pal, 219 tiles -> bg_main_up_Tiles and bg_main_up_Map
+  bg_menu : EasyBg, 256x192, Pal: bg_menu_Pal, 196 tiles -> bg_menu_Tiles and bg_menu_Map
+  bg_stage1_init : EasyBg, 256x192, Pal: bg_stage1_init_Pal, 103 tiles -> bg_stage1_init_Tiles and bg_stage1_init_Map
+  bg_stage2_init : EasyBg, 256x192, Pal: bg_stage2_init_Pal, 96 tiles -> bg_stage2_init_Tiles and bg_stage2_init_Map
+  bg_stage3_init : EasyBg, 256x192, Pal: bg_stage3_init_Pal, 93 tiles -> bg_stage3_init_Tiles and bg_stage3_init_Map
+  gameover : EasyBg, 256x192, Pal: gameover_Pal, 744 tiles -> gameover_Tiles and gameover_Map
+  stage1 : UnlimitedBg, 256x400, Pal: stage1_Pal, 1600 tiles -> stage1_Tiles and stage1_Map
+
+14 palettes:
+  hpminus_Pal, 82 colors
+  monster_Pal, 224 colors
+  princess_Pal, 122 colors
+  som_Pal, 17 colors
+  water_Pal, 109 colors
+  stage2_Pal, 202 colors
+  bg_main_down_Pal, 239 colors
+  bg_main_up_Pal, 189 colors
+  bg_menu_Pal, 78 colors
+  bg_stage1_init_Pal, 79 colors
+  bg_stage2_init_Pal, 77 colors
+  bg_stage3_init_Pal, 76 colors
+  gameover_Pal, 76 colors
+  stage1_Pal, 191 colors
+
+Converted in 0 minutes and 0 seconds
+
+Finished!

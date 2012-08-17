@@ -1,0 +1,234 @@
+/************************************************************************
+ *
+ *                    Dall Shell for Nintendo DS
+ *                   -----------------------------
+ *           (C) Copyright 2009 by Minsuk Lee, Seoul, Korea
+ *                      All Rights Reserved.
+ *
+ ************************************************************************/
+
+/* FILE        : main.c
+ *
+ * Description : Dallshell main routine
+ *
+ * Created - 2009-12-27 by Minsuk Lee
+ * Revised - 2009-XX-XX 
+ *         - 2009-XX-XX
+ * Read    - 2009-01-21
+ */
+
+#include "dallshell.h"
+#include "download.h"
+
+struct links CHANNELS[MAX_CHANNEL];
+
+// DallShell Default Configuration
+// user can change it, and saved in sav file
+struct dallshell_conf Config = {
+        STARTUP_MENU,       // Invoke Menu, when starrtup
+        "autoexec.arm9",    // default Autoexec binary
+
+        CHANNEL_SERIAL,     // Console
+//        CHANNEL_WIFI,       // Download
+        CHANNEL_USB,       // Download
+        CHANNEL_USB,        // Debug
+
+        1,                  // if 1, ignore dallshell config
+        1,                  // if 1, write into file after download
+        0,                  // if 1, run after download
+        0,                  // if 1, run with debug mode
+
+        0,                  // if 1, accept connection from next host only
+        { 0, },             // IP Address of Designated Host
+        DOWNLOAD_PORT,      // Port Number (default: DOWNLOAD_PORT)
+
+        "SSID",             // Default SSID
+        1,                  // DHCP Enable
+        0, 0, 0, 0          // IP, Subnet-Mask, GW, DNS
+};
+
+int wifi_init(void);
+int usb_init(void);
+int serial_init(void);
+
+#define FIRST_JUMP_SIZE 1024
+unsigned char BIN_BUF[MAX_BINARY_SIZE];
+int BinarySize;
+void copy_and_jump(void);
+void copy_and_jump_end(void);
+
+struct CIRCULAR_QUEUE spi_buffer;
+
+int g_cnt = 0;
+
+int
+main(void)
+{
+    int ret;
+    int run, debug;
+
+#ifndef _WIN32
+	consoleDemoInit();
+	fatInitDefault();
+#endif
+
+	iprintf("DallShell, %s %s\n", __DATE__, __TIME__);
+	iprintf("nds.sevencore.co.kr\n");
+
+	switch (Config.download_channel) {
+        case CHANNEL_WIFI   :
+            if (wifi_init()) {
+                iprintf("WIFI Initialize Error\n");
+                return -1;
+            }
+            break;
+        case CHANNEL_USB    :
+            if (usb_init()) {
+                iprintf("USB Initialize Error\n");
+                return -1;
+            }
+            break;
+        case CHANNEL_SERIAL :
+            if (serial_init()) {
+                iprintf("Serial Initialize Error\n");
+                return -1;
+            }
+            break;
+        default :
+            iprintf("Configuration Error\n");
+            break;
+	}
+
+loop:
+	if ((ret = download(CHANNELS + Config.download_channel, &run, &debug)) == 0) {
+	    iprintf("Download Succefully Done\n");
+	} else {
+        iprintf("Download Stoped by Error %d\n", ret);
+        goto loop;
+	}
+	if (run) {
+	    unsigned char *JUMP_BUF;
+	    void (*firstjump)(void);
+	    int copy_and_jump_size = (int)copy_and_jump_end - (int)copy_and_jump;
+
+	    iprintf("Prepare to Run:%d bytes\n", BinarySize);
+	    if (debug) {
+	        // Prepare for Debugging
+	    }
+        JUMP_BUF = (unsigned char *)malloc(copy_and_jump_size + 32);
+        if (JUMP_BUF != NULL) {
+            unsigned char *mp;
+            if (JUMP_BUF < BIN_BUF) {
+                iprintf("Failed to run binary: firstjump()\n");
+                goto loop;
+            }
+            mp = (unsigned char *)copy_and_jump;
+            printf("copy_and_jump:%p\n", mp);
+            iprintf("%02x %02x %02x\n", *(mp-1), *mp, *(mp+1));
+            if (*mp == 0xB5)
+                mp = (unsigned char *)((int)(mp) - 1);
+           printf("BIN:%p, JUMP:%p\n", BIN_BUF, JUMP_BUF);
+           printf("copy_and_jump:%p\n", (char *)copy_and_jump);
+           printf("mp:%p\n", mp);
+           printf("copy_and_jump_end:%p\n", (char *)copy_and_jump_end);
+           printf("copy_and_jump_size:%d\n", copy_and_jump_size);
+           { unsigned char *p = mp;
+              int i;
+              for (i = 0; i < copy_and_jump_size; i++)
+                  printf("%02X ", *p++);
+              iprintf("\n----\n");
+           }
+           firstjump = (void(*)(void))(JUMP_BUF + 1);
+           memcpy(JUMP_BUF, mp, copy_and_jump_size + 8);
+            { unsigned char *p = JUMP_BUF;
+              int i;
+              for (i = 0; i < copy_and_jump_size; i++)
+                  printf("%02X ", *p++);
+              iprintf("\n----\n");
+            }
+           printf("copied and first_jump()\n");
+           firstjump();
+           // will never return here !! RIP
+        }
+        iprintf("failed to run binary: malloc()\n");
+	}
+	iprintf("Now What to do ? - LOOP !\n");
+	goto loop;
+    return 0;
+}
+
+void
+copy_and_jump(void)
+{
+    void (*jumpTarget)(void) = (void(*)(void))TARGET_BIN_ADDR;
+    unsigned char *dest = (unsigned char *)TARGET_BIN_ADDR;
+    unsigned char *src = BIN_BUF;
+    int i;
+    for (i = 0; i < BinarySize; i++)
+        *dest++ = *src++;
+    jumpTarget();
+}
+// Do not delete next line
+void copy_and_jump_end(void) { }
+
+int
+check_abort(void)
+{
+    // Check Abort Switch
+    return 0;
+}
+
+void
+confirm_error(char *error_string, int yes_no)
+{
+    iprintf("%s\n", error_string);
+    // Confirming
+}
+
+char *
+channel_name(int channel)
+{
+    switch (channel) {
+        case CHANNEL_WIFI   : return "Wireless-LAN";
+        case CHANNEL_USB    : return "USB";
+        case CHANNEL_SERIAL : return "Serial";
+        default             : return "UNKNOWN-CHANNEL";
+    }
+}
+
+void waitInput()
+{
+	uint32 pressed;
+
+	iprintf("Wait until A Key Pressed\n");
+
+	while(1)
+	{
+		scanKeys();
+		pressed = keysDown();
+
+		if(pressed & KEY_A)
+		{
+			break;
+		}
+	}
+}
+
+void add_buffer(unsigned char c){
+	spi_buffer.buffer[spi_buffer.rear] = c;
+	spi_buffer.rear = (spi_buffer.rear + 1) % MAX_BUFFER_SIZE;
+}
+
+unsigned char delete_buffer(){
+	unsigned char c;
+	c = spi_buffer.buffer[spi_buffer.front];
+	spi_buffer.front = (spi_buffer.front + 1) % MAX_BUFFER_SIZE;
+}
+
+bool is_empty_buffer(){
+	spi_buffer.front == spi_buffer.rear ? true : false;
+}
+
+bool is_full_buffer(){
+	spi_buffer.rear + 1 % MAX_BUFFER_SIZE == spi_buffer.front ? true : false;
+}
