@@ -4,3 +4,4 @@
 
 export DEVKITPRO=$PWD/devkitARM
 export DEVKITARM=$DEVKITPRO
+export PATH=$DEVKITPRO/bin:$PATH
