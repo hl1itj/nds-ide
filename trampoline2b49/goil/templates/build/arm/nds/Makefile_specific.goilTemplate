@@ -1,20 +1,25 @@
-#add the 'hex' rule for avr
-hex: $(EXEC)
-	@arm-elf-objcopy -O binary $(EXEC)  $(EXEC).rxe
+# Added nds rule
+$(EXEC).nds: $(EXEC)
+	     ndstool -c $@ -9 $<
 
-EXTRA_FILES_CLEAN += $(EXEC).rxe
+EXTRA_FILES_CLEAN += $(EXEC).nds
+
+LIBS := -lnds9
+LIBNDS := $(DEVKITPRO)/libnds
+LIBDIRS	:= $(LIBNDS)
+
+export LIBNDS_INCLUDE := $(foreach dir,$(LIBDIRS),-I$(dir)/include)
+export LIBNDS_LIBPATHS := $(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 
 # choose the right instruction set
 ARM9_ARCH := -mthumb -mthumb-interwork
-
-ASFLAGS += -g $(ARM9_ARCH)
-
+ASFLAGS += -g $(ARM9_ARCH) 
 CFLAGS += -g -Wall -O2 \
-       -march=armv5te -mtune=arm946e-s \
-       -fomit-frame-pointer -ffast-math $(ARM9_ARCH) \
-       -std=c99
+       -march=armv5te -mtune=arm946e-s -fomit-frame-pointer -ffast-math $(ARM9_ARCH) \
+       -std=c99 -DARM9
 
-LDFLAGS += -specs=ds_arm9.specs -g $(ARM9_ARCH) -Wl,-Map,$(notdir $*.map)
+LDFLAGS += -specs=ds_arm9.specs -g $(ARM9_ARCH) $(LIBS) \
+	$(LIBNDS_INCLUDE) $(LIBNDS_LIBPATHS) -Wl,-Map,$(notdir $*.map)
 
 %
 if COMPILEREXE == "gcc" then
@@ -25,7 +30,7 @@ end if
 
 if LINKEREXE == "gcc" then
 %# changes default linker
-LD = arm-none-eabi-ld
+LD = arm-none-eabi-gcc
 %
 end if
 

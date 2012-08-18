@@ -28,6 +28,8 @@
 #define OS_START_SEC_CODE
 #include "tpl_as_memmap.h"
 
+.arm
+
 /* Main system call handler
  *
  * We take care to not alter callee saved registers

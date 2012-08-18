@@ -29,6 +29,7 @@
 #define OS_START_SEC_CODE
 #include "tpl_as_memmap.h"
 
+.arm
 /*
  * First stage category 2 interrupt handler (which means only IRQ on
  * this architecture, FIQ are category 1 interrupts)

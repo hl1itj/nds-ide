@@ -1,5 +1,5 @@
 /**
- * @file nxt_tpl_sleep.S
+ * @file nds_tpl_sleep.S
  *
  * @section descr File description
  *

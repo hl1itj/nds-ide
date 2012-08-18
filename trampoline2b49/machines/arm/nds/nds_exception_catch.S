@@ -30,33 +30,14 @@
 .set undefined_instruction, 3
 .set unused, 4
 
+.arm
+
 #define OS_START_SEC_CODE
 #include "tpl_as_memmap.h"
 
 /* this macro locks interrupts before hanging down in a loop */
 .macro lock_interrupts_and_display_info exception_type
-    stmfd sp!, {r0}
-    mrs r0, cpsr
-    orr r0,r0, #(CPSR_FIQ_LOCKED | CPSR_IRQ_LOCKED)
-    msr cpsr_c, r0
-    ldmfd sp!, {r0}
-    
-    /* get the faulty CPSR */
-    mrs r0, spsr
-    ldr r1, =saved_psr
-    str r0, [r1]
-    
-    /* get the faulty pc */
-    ldr r0,=exception_catch_pc
-    str lr,[r0]
-    
-    /* saved the exception catch id */
-    ldr r0,=exception_catch_id
-    mov r1, #\exception_type
-    str r1,[r0]    
-
-    /* display pc and msr on th display */
-    bl exception_catch_display
+	b .
 .endm
 
 /* TODO : dislpay exception (not just pc) : undef, prefetch abort, data abort, unused*/

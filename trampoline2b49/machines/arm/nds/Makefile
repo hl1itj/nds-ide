@@ -30,5 +30,7 @@
 
 SOURCES += nds_tpl_stubs.c \
 	nds_exception_catch.S \
-	nds_arm9_bootstrap_stage1.S
+	nds_arm9_bootstrap_stage1.S \
+	nds_irq.c \
+	nds_tpl_sleep.S
 

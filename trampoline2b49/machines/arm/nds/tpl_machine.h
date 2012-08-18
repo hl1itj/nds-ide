@@ -25,9 +25,7 @@
 #ifndef TPL_MACHINE_H
 #define TPL_MACHINE_H
 
-#pragma arm
 #include "../tpl_machine_arm_generic.h"
-#pragma thumb
 
 /**
  * Gives the ARM processor mode the normal user tasks
