@@ -1,0 +1,94 @@
+/**
+ * @file nxt_simple.oil
+ *
+ * @section desc File description
+ *
+ * @section copyright Copyright
+ *
+ * Trampoline is copyright (c) IRCCyN 2005-2007
+ * Trampoline is protected by the French intellectual property law.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; version 2
+ * of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ * @section infos File informations
+ *
+ * $Date$
+ * $Rev$
+ * $Author$
+ * $URL$
+ */
+OIL_VERSION = "2.5" : "test" ;
+
+IMPLEMENTATION trampoline {
+    TASK {
+        UINT32 STACKSIZE = 500 ;
+        UINT32 PRIORITY = 1 ;
+    } ;
+    ISR {
+        UINT32 STACKSIZE = 500 ;
+    } ;
+};
+
+CPU test {
+
+    OS config {
+        STATUS = EXTENDED;
+        ERRORHOOK = FALSE;
+        PRETASKHOOK = FALSE;
+        APP_SRC = "nds_simple.c"; 
+        APP_NAME = "nds_simple_exe";
+        TRAMPOLINE_BASE_PATH = "../../../..";
+        SYSTEM_CALL = TRUE;
+    } ;
+
+    APPMODE std {
+    };
+
+    TASK task1 {
+        PRIORITY = 1;
+        AUTOSTART = TRUE { APPMODE = std; };
+        ACTIVATION = 1;
+        SCHEDULE = FULL;
+    };   
+    
+    TASK task5 {
+        PRIORITY = 2;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        SCHEDULE = FULL;
+    };
+    
+    COUNTER SystemCounter {
+      SOURCE = it_timer1;
+      MAXALLOWEDVALUE = 2000;
+      TICKSPERBASE = 1;
+      MINCYCLE = 1; 
+    };
+
+    ALARM Alarm1{
+      COUNTER = SystemCounter;
+      ACTION = ACTIVATETASK {
+         TASK = task5;
+      };
+      AUTOSTART = TRUE {
+            ALARMTIME = 2000;
+            CYCLETIME = 1000; //each 1000 ms.
+            APPMODE = std;
+	     };
+      };
+};
+
+/* End of file nxt_simple.oil */
+

@@ -1,0 +1,36 @@
+#add the 'hex' rule for avr
+hex: $(EXEC)
+	@arm-elf-objcopy -O binary $(EXEC)  $(EXEC).rxe
+
+EXTRA_FILES_CLEAN += $(EXEC).rxe
+
+# choose the right instruction set
+ARM9_ARCH := -mthumb -mthumb-interwork
+
+ASFLAGS += -g $(ARM9_ARCH)
+
+CFLAGS += -g -Wall -O2 \
+       -march=armv5te -mtune=arm946e-s \
+       -fomit-frame-pointer -ffast-math $(ARM9_ARCH) \
+       -std=c99
+
+LDFLAGS += -specs=ds_arm9.specs -g $(ARM9_ARCH) -Wl,-Map,$(notdir $*.map)
+
+%
+if COMPILEREXE == "gcc" then
+%# changes default compiler
+CC = arm-none-eabi-gcc
+%
+end if
+
+if LINKEREXE == "gcc" then
+%# changes default linker
+LD = arm-none-eabi-ld
+%
+end if
+
+if ASSEMBLEREXE == "as" then
+%# changes default assembler
+AS = arm-none-eabi-as
+%
+end if
