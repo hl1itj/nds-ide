@@ -1,4 +1,7 @@
 #!/bin/sh
+
+source make_env.sh
+
 CUR_DIR = $PWD
 
 cd $DEVKITARM
