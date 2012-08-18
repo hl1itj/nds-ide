@@ -19,6 +19,6 @@ make install-nds
 cd ..
 # default_arm7
 cd default_arm7
-make
+make install
 cd $CUR_DIR
 
