@@ -1,8 +1,11 @@
 # Added nds rule
-$(EXEC).nds: $(EXEC)
+$(EXEC).nds: $(EXEC).arm9
 	     ndstool -c $@ -9 $<
 
-EXTRA_FILES_CLEAN += $(EXEC).nds
+$(EXEC).arm9: $(EXEC)
+	      arm-none-eabi-objcopy -O binary $< $@
+
+EXTRA_FILES_CLEAN += $(EXEC).nds $(EXEC).arm9
 
 LIBS := -lnds9
 LIBNDS := $(DEVKITPRO)/libnds
