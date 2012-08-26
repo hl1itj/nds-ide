@@ -49,8 +49,8 @@ CPU test {
         PRETASKHOOK = FALSE;
         APP_SRC = "nds_simple.c"; 
         APP_NAME = "nds_simple_exe";
-        TRAMPOLINE_BASE_PATH = "../../../..";
-        SYSTEM_CALL = TRUE;
+        TRAMPOLINE_BASE_PATH = "../../..";
+        SYSTEM_CALL = FALSE;
     } ;
 
     APPMODE std {
@@ -69,7 +69,7 @@ CPU test {
         ACTIVATION = 1;
         SCHEDULE = FULL;
     };
-    
+/*    
     COUNTER SystemCounter {
       SOURCE = it_timer1;
       MAXALLOWEDVALUE = 2000;
@@ -88,6 +88,7 @@ CPU test {
             APPMODE = std;
 	     };
       };
+*/
 };
 
 /* End of file nxt_simple.oil */

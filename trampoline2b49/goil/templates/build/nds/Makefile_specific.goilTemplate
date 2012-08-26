@@ -19,10 +19,12 @@ ARM9_ARCH := -mthumb -mthumb-interwork
 ASFLAGS += -g $(ARM9_ARCH) 
 CFLAGS += -g -Wall -O2 \
        -march=armv5te -mtune=arm946e-s -fomit-frame-pointer -ffast-math $(ARM9_ARCH) \
-       -std=c99 -DARM9
+       -std=c99 -DARM9 -DTHUMB_INTERWORK $(LIBNDS_INCLUDE)
 
-LDFLAGS += -specs=ds_arm9.specs -g $(ARM9_ARCH) $(LIBS) \
-	$(LIBNDS_INCLUDE) $(LIBNDS_LIBPATHS) -Wl,-Map,$(notdir $*.map)
+LDFLAGS += -g $(LIBS) \
+	$(LIBNDS_LIBPATHS) -Wl,-Map,$(notdir $*.map) -specs=ds_arm9.specs
+
+CPPFLAGS += $(CFLAGS)
 
 %
 if COMPILEREXE == "gcc" then
