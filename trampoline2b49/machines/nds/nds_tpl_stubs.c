@@ -106,15 +106,6 @@ FUNC(void, OS_CODE) tpl_init_context(
   core_context = the_proc->context;
 
   /* setup entry point */
-  core_context->r[0] = 0;
-  core_context->r[1] = 1;
-  core_context->r[2] = 2;
-  core_context->r[3] = 3;
-  core_context->r[4] = 4;
-  core_context->r[5] = 5;
-  core_context->r[6] = 6;
-  core_context->r[7] = 7;
-  core_context->r[8] = 8;
   /* added 4 to entry due to sub 4 on swich_context */
   core_context->r[armreg_pc] = (u32)(the_proc->entry) + 4;
   /* setup initial stack pointer */
