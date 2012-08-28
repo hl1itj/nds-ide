@@ -42,6 +42,8 @@ tpl_switch_context:
 	beq _restore_switch_context
 	
 	/* start saving */
+	/* r0 = old_context->context */
+	ldr r0, [r0]
 	/* save registers into old context's stack */
 	stmdb sp!, {r2}
 	/* r2 = old_context->r3 addr */
@@ -63,30 +65,27 @@ tpl_switch_context:
 
 _restore_switch_context:	
 	/* start restoring */
+	/* r1 = running_context->context */
+	ldr r1, [r1]
+	/* r0 = running_context->r4 addr */
 	add r0, r1, #(4 * 4)
-	/* r0 = new_context->r4 addr */
 	ldmia r0!, {r4-r12, sp, lr}
-	/* save registers to protect the values *
-	 * .--------. <- sp                     *
-	 * |   r4   |                           *
-	 * +--------+                           *
-	 * |   r5   |                           *
-	 * +--------+                           *
-	 * |  ....  |                           *
-	 * +--------+	                        */
-	stmdb sp!, {r4-r5}
-	/* lr = new_context's pc      *
-	 * r4 = new_context->psr addr */
-	ldmia r4!, {r0}
-	sub lr, r4, #4
-	/* r5 = new_context->psr */
-	ldr r5, [r4]
+	/* lr = running_context's pc      *
+	 * r4 = running_context->psr addr */
+	ldmia r0!, {r3}
+	sub r3, r3, #4
+	/* push pc value into stack */
+	stmdb sp!, {r3}
+	/* save registers to protect the values */
+	stmdb sp!, {r4}
+	/* r5 = running_context->psr */
+	ldr r4, [r0]
 	/* recovered cpsr */
-	msr cpsr, r5
-	/* recover new_context's r0-r3 */
+	msr cpsr, r4
+	/* recover running_context's r0-r3 */
 	ldmia r1, {r0-r3}
-	/* recover saved new_context's r4-r5 from sp */
-	ldmia sp!, {r4-r5}
+	/* recover saved running_context's r4-r5 from sp */
+	ldmia sp!, {r4, pc}
 	
 _exit_switch_context:
 	bx lr

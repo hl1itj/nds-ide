@@ -163,7 +163,7 @@ extern VAR(tpl_stack_word, OS_VAR) idle_stack[SIZE_OF_IDLE_STACK/sizeof(tpl_stac
  * - 0x10 : unprivileged
  * - 0x1F : privileged
  */
-#define USER_TASKS_ARM_MODE 0x3F
+#define USER_TASKS_ARM_MODE 0x1F
 
 typedef struct ARM_CONTEXT *tpl_context;
 
