@@ -30,10 +30,17 @@
 
 	.text
 	.arm
+	.align 4
 	.global tpl_switch_context
 	.global tpl_switch_context_from_it
+	.type tpl_switch_context STT_FUNC
+	.type tpl_switch_context_from_it STT_FUNC
 	
 tpl_switch_context:
+	/* if old_context is null, skip a save sequence */
+	cmp r0, #0
+	beq _restore_switch_context
+	
 	/* start saving */
 	/* save registers into old context's stack */
 	stmdb sp!, {r2}
@@ -49,13 +56,14 @@ tpl_switch_context:
 	add r2, r0, #(4 * 13)
 	stmia r2!, {sp, lr}
 	/* r3 = set old context's pc for exit this function */
-	adr r3, exit_switch_context + 4
+	adr r3, _exit_switch_context + 4
 	mrs r4, cpsr
 	/* save old contect's pc & cpsr */
 	stmia r2!, {r3, r4}
 
+_restore_switch_context:	
 	/* start restoring */
-	add r0, r1, #(4 * 3)
+	add r0, r1, #(4 * 4)
 	/* r0 = new_context->r4 addr */
 	ldmia r0!, {r4-r12, sp, lr}
 	/* save registers to protect the values *
@@ -80,7 +88,7 @@ tpl_switch_context:
 	/* recover saved new_context's r4-r5 from sp */
 	ldmia sp!, {r4-r5}
 	
-exit_switch_context:
+_exit_switch_context:
 	bx lr
 
 tpl_switch_context_from_it:
