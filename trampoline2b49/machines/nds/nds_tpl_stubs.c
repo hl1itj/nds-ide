@@ -57,9 +57,21 @@ volatile VAR (u32, OS_VAR) nested_kernel_entrance_counter;
 
 #include <nds.h>
 
+extern FUNC(void, OS_CODE) tpl_tick_timer0_overflow();
+
+static void setupTimer0(void)
+{
+	tpl_disable_interrupts();
+	TIMER0_DATA = TIMER_FREQ_256(1000); /* 1ms */
+	TIMER0_CR = TIMER_ENABLE | TIMER_IRQ_REQ | TIMER_DIV_256;
+	irqSet(IRQ_TIMER0, tpl_tick_timer0_overflow);
+	irqEnable(IRQ_TIMER0);
+}
+
 void tpl_init_machine(void)
 {
 	nested_kernel_entrance_counter = 0;
+	setupTimer0();
 }
 
 void tpl_shutdown(void)

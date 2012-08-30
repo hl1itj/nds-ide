@@ -31,15 +31,6 @@ FUNC(void, OS_CODE) tpl_tick_% ! interrupt_NAME %()
       %  need_rescheduling |= tpl_counter_tick(&% !NAME %_counter_desc);
 %
     after %
-  
-  check_buttons_period++;
-  if (check_buttons_period == 10)
-  {
-    /* Call check_buttons_status() (via interrupts)
-     * which will check if buttons are pressed or not.
-     */
-     check_buttons_period = 0;
-  }
 
   if (need_rescheduling == NEED_RESCHEDULING)
   {

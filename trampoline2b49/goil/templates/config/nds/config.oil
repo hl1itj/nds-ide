@@ -34,7 +34,13 @@
  */
 
 CPU config {
-/*   
+
+    ISR timer0_overflow_C {
+        CATEGORY = 1;
+	PRIORITY = 1;
+	SOURCE = timer0_overflow_C;
+    };
+/*
    ISR systick_isr_C {
        CATEGORY = 1;
   PRIORITY = 1;
