@@ -191,7 +191,7 @@ download(struct links *channel, int *run, int *debug)
         goto leave;
     }
 
-    iprintf("Port : %d\n",atoi(BUF));
+    iprintf("Port : %d\n",atoi(BUF)+1);
     Port_number = atoi(BUF);
     disp_progress(DOWNLOAD_NUMBER, (int)channel);
 
