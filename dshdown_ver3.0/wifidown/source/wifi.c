@@ -18,6 +18,7 @@
  */
 
 #include "dallshell.h"
+#include "download.h"
 
 #ifdef _WIN32
 #define ioctl       ioctlsocket
@@ -27,15 +28,15 @@
 #endif
 
 static struct in_addr MyIP, gateway, mask, dns1, dns2;
-static int data_socket = -1;
+static int listen_socket;
 
 static
 int
-wifi_connect(void)
+number_connect(void)
 {
-    int listen_socket;
+   // int listen_socket;
     struct sockaddr_in sock_addr;
-    int addr_len = sizeof (struct sockaddr_in);
+    int addr_len = sizeof (sock_addr);
     int ret;
     int one = 1;
 
@@ -43,71 +44,45 @@ wifi_connect(void)
         confirm_error("wifi: Listen Socket Open", 0);
         return DSH_CONNECTION_FAILED;
     }
-    //iprintf("Socket Open\n");
 
-    // Set Nonblocking Mode
-    if ((ret = ioctl(listen_socket, FIONBIO, &one)) < 0) {
-        confirm_error("wifi: Listen_Socket Non-blocking Mode Failed", 0);
-        ret = DSH_CONNECTION_FAILED;
-        goto leave;
-    }
-/*
     sock_addr.sin_family = AF_INET;
-    if (Config.single_host)
-        sock_addr = Config.client;
-    else
-        sock_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    sock_addr.sin_port = htons(Config.port);
+    sock_addr.sin_addr.s_addr = inet_addr("113.198.84.69");// server addr ip input!
+    sock_addr.sin_port = htons(7000);                   // server port input! 
 
-    if ((ret = bind(listen_socket, (struct sockaddr *)&sock_addr, addr_len)) < 0) {
-        confirm_error("bind Error", 0);
-        ret = DSH_CONNECTION_FAILED;
-        goto leave;
-    }
-    if ((ret = listen(listen_socket, 1)) < 0) {
-        confirm_error("listen Error", 0);
-        ret = DSH_CONNECTION_FAILED;
-        goto leave;
-    }
-
-    // minsuk: need to source code refactoring after multithreading is available
-    while (1) {
-        // We don't use timer, User can abort the connection anytime
-        if (check_abort()) {
-            confirm_error("User Abort", 0);
-            ret = DSH_USER_ABORT;
-            goto leave;
-        }
-        if ((data_socket = accept(listen_socket, (struct sockaddr *)&sock_addr, &addr_len)) >= 0)
-            break;  // Connected !
-        if (errno != EWOULDBLOCK) {
-            iprintf("wifi: accept error code:%d\n", data_socket);
-            confirm_error("Connection Failed", 0);
-            ret = DSH_CONNECTION_FAILED;
-            goto leave;
-        }
-    }
-*/
-    sock_addr.sin_family = AF_INET;
-    sock_addr.sin_addr.s_addr = inet_addr("113.198.84.68");
-//sock_addr = Config.client;    
-sock_addr.sin_port = htons(19999);
-
-    if(connect(listen_socket,(struct sockaddr*)&sock_addr,addr_len) == -1){
+    if((ret = connect(listen_socket,(struct sockaddr*)&sock_addr,addr_len)) == -1){
 	iprintf("wifi: Connect error code:%d\n", listen_socket);
             confirm_error("Connection Failed", 0);
             ret = DSH_CONNECTION_FAILED;	
-	goto leave;
+	 closesocket(listen_socket);
     }
-    // Set data_socket, Non-blocking mode
-    if ((ret = ioctl(data_socket, FIONBIO, &one)) < 0) {
-        confirm_error("Data Socket: Non-blocking mode Failed", 0);
-        ret = DSH_CONNECTION_FAILED;
-        closesocket(data_socket);
+    return ret;
+}
+
+static
+int
+wifi_connect(int Port_number)
+{
+   // int listen_socket;
+    struct sockaddr_in sock_addr;
+    int addr_len = sizeof (sock_addr);
+    int ret;
+    int one = 1;
+
+    if ((listen_socket = socket(PF_INET, SOCK_STREAM, 0)) == -1) {
+        confirm_error("wifi: Listen Socket Open", 0);
+        return DSH_CONNECTION_FAILED;
     }
-leave:
-    closesocket(listen_socket);
-    listen_socket = -1;
+
+    sock_addr.sin_family = AF_INET;
+    sock_addr.sin_addr.s_addr = inet_addr("113.198.84.69");// server addr ip input!
+    sock_addr.sin_port = htons(Port_number);                   // server port input! 
+
+    if((ret = connect(listen_socket,(struct sockaddr*)&sock_addr,addr_len)) == -1){
+	iprintf("wifi: Connect error code:%d\n", listen_socket);
+            confirm_error("Connection Failed", 0);
+            ret = DSH_CONNECTION_FAILED;	
+	 closesocket(listen_socket);
+    }
     return ret;
 }
 
@@ -118,13 +93,14 @@ wifi_read(void *buf, int count)
     int rcount;
     if (count == 0)
         return count;
-    rcount = recv(data_socket, buf, count, 0);
+    rcount = recv(listen_socket, buf, count, 0);
     if (rcount < 0) {
         if (errno == EWOULDBLOCK)
             return DSH_WOULD_BLOCK;
         else
             return DSH_RX_ERROR;
     }
+   
     return rcount;  // return 0 if connection closed
 }
 
@@ -135,7 +111,7 @@ wifi_write(void *buf, int count)
     int wcount;
     if (count == 0)
         return count;
-    wcount = send(data_socket, buf, count, 0);
+    wcount = send(listen_socket, buf, count, 0);
     if (wcount < 0) {
         if (errno == EWOULDBLOCK)
             return DSH_WOULD_BLOCK;
@@ -149,16 +125,16 @@ static
 void
 wifi_disconnect(void)
 {
-    closesocket(data_socket);
-    data_socket = -1;
+    closesocket(listen_socket);
+    //data_socket = -1;
 }
 
 static
 void
 wifi_cleanup(void)
 {
-    if (data_socket >= 0)
-        closesocket(data_socket);
+    if (listen_socket >= 0)
+        closesocket(listen_socket);
 #ifdef _WIN32
     // if any, do something after close socket
     // WSA Cleanup
@@ -276,6 +252,7 @@ wifi_init(void)
 #endif
 
     channel->name = channel_name(CHANNEL_WIFI);
+    channel->number =number_connect; // number connect
     channel->connect = wifi_connect;
     channel->read = wifi_read;
     channel->write = wifi_write;
