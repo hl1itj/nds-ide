@@ -230,7 +230,7 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "listen() error!\n");
 		return 1;
 	}
-	Port = 8002;
+	Port = 7000;
 
 	while (1) {
 		size = sizeof(nds_cos);

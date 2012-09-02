@@ -28,6 +28,10 @@
 #include <sys/socket.h>
 #include <sys/stat.h>
 
+#include <pthread.h>
+#include <time.h>
+#include <signal.h>
+
 #include "download.h"
 
 static int data_socket;
@@ -48,12 +52,19 @@ int filesend();
 
 #define  MAX_SIZE 2048
 
-int connect_nds_a() {
+void disconnect_nds() {
+	close(data_socket);
+	close(clnt_socket);
+}
+
+int connect_pc() {
 
 	struct sockaddr_in nds_sin;
 	struct sockaddr_in nds_cos;
 	int size;
 
+	disconnect_nds();
+	
 	if ((data_socket = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
 		fprintf(stderr, "Error at socket(): %d\n", data_socket);
 		return -1;
@@ -62,10 +73,10 @@ int connect_nds_a() {
 	memset(&nds_sin, 0, sizeof(nds_sin));
 	nds_sin.sin_family = AF_INET;
 	nds_sin.sin_addr.s_addr = htonl(INADDR_ANY);
-	nds_sin.sin_port = htons(Port);
+	nds_sin.sin_port = htons(Port+1);
 
 	if (bind(data_socket, (struct sockaddr*) &nds_sin, sizeof(nds_sin)) == -1) {
-		fprintf(stderr, "bind() error!\n");
+		fprintf(stderr, "bind() PC error! - port %d\n", Port);
 		return 1;
 	}
 
@@ -79,7 +90,7 @@ int connect_nds_a() {
 	clnt_socket = accept(data_socket, (struct sockaddr *) &nds_cos, &size);
 
 	if (clnt_socket == -1) {
-		fprintf(stderr, "accept() error!\n");
+		fprintf(stderr, "accept() to PC error!\n");
 		close(data_socket);
 		close(clnt_socket);
 		exit(1);
@@ -88,23 +99,26 @@ int connect_nds_a() {
 	return 0;
 }
 
-int connect_nds_b() {
+int connect_nds() {
 
 	struct sockaddr_in nds_sin;
 	struct sockaddr_in nds_cos;
 	int size;
 
+	disconnect_nds();
+	
 	if ((clnt_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1) {
 		fprintf(stderr, "Error at socket(): %d\n", data_socket);
 		return -1;
 	}
 
+	memset(&nds_sin, 0, sizeof(nds_sin));
 	nds_sin.sin_family = AF_INET;
 	nds_sin.sin_addr.s_addr = htonl(INADDR_ANY);
 	nds_sin.sin_port = htons(Port);
 
 	if (bind(clnt_socket, (struct sockaddr*) &nds_sin, sizeof(nds_sin)) == -1) {
-		fprintf(stderr, "bind() error!\n");
+		fprintf(stderr, "bind() DS error! - port %d\n", Port);
 		return 1;
 	}
 
@@ -115,19 +129,14 @@ int connect_nds_b() {
 		return 1;
 	}
 	//	printf("listen succes\n");
+	size = sizeof(nds_cos);
 	data_socket = accept(clnt_socket, (struct sockaddr *) &nds_cos, &size);
 
 	if (data_socket == -1) {
-		//		printf("accept fail\n");
-		close(data_socket);
-		close(clnt_socket);
+		fprintf(stderr, "accept() to DS 2nd fail\n");
+		disconnect_nds();
 	}
 	return 0;
-}
-
-void disconnect_nds() {
-	close(data_socket);
-	close(clnt_socket);
 }
 
 int send_data(unsigned char *buf, int len) {
@@ -187,13 +196,36 @@ int recv_data_byte(unsigned char *buf, int count) {
 	return tread;
 }
 
+void *t_function() {
+	
+	pid_t mypid;
+	mypid = getpid();
+	sleep(300);
+	
+	
+	disconnect_nds();	
+	fprintf(stderr, "\nProcess kill : Time Over\n");
+	kill(mypid, SIGKILL);
+	
+	pthread_exit(0);
+}
+
+
+
 int main(int argc, char* argv[]) {
 	
 	char *fname;
 	char buf[2048];
 
 	pid_t pid;
-
+	pid_t pid_child;
+	int status;
+	
+	pthread_t p_thread;
+	int thr_id = 1;
+	int tmp;
+	
+	
 	unsigned char *BUF;
 	int BUF_SIZE;
 	int filedes;
@@ -206,10 +238,7 @@ int main(int argc, char* argv[]) {
 
 	struct sockaddr_in nds_sin;
 	struct sockaddr_in nds_cos;
-
 	
-	//int size;
-
 
 	if ((ret = (clnt_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP))) == -1) {
 		fprintf(stderr, "Error at socket(): %d\n", data_socket);
@@ -217,20 +246,19 @@ int main(int argc, char* argv[]) {
 	}
 
 	nds_sin.sin_family = AF_INET;
-	nds_sin.sin_addr.s_addr = inet_addr("192.168.0.2");
+	nds_sin.sin_addr.s_addr = htonl(INADDR_ANY);
 	//nds_sin.sin_addr.s_addr = htonl(INADDR_ANY);
 	nds_sin.sin_port = htons(Port);
 
 	if (bind(clnt_socket, (struct sockaddr*) &nds_sin, sizeof(nds_sin)) == -1) {
-		fprintf(stderr, "bind() error!\n");
+		fprintf(stderr, "bind() error! - port %d\n", Port);
 		return 1;
 	}
 
 	if (listen(clnt_socket, 1) == -1) {
 		fprintf(stderr, "listen() error!\n");
 		return 1;
-	}
-	Port = 8002;
+	}	
 
 	while (1) {
 		size = sizeof(nds_cos);
@@ -238,30 +266,36 @@ int main(int argc, char* argv[]) {
 		if (data_socket == -1) {
 			//		printf("accept fail\n");
 			disconnect_nds();
-			fprintf(stderr, "accept() Failed\n");
+			fprintf(stderr, "accept() to DS Failed\n");
 			exit(0);
 		}
 		
-		Port++;
+		if(Port > 9990)
+			Port = 8002;
+		Port = Port + 2;
+		
 
 		pid = fork();
 		if (pid < 0) {
 			fprintf(stderr, "fork() Error!\n");
 			disconnect_nds();
 			exit(1);
-		} else if (pid > 0) {
+		} else if (pid > 0) {	//Parent Process		
+			pid_child = waitpid(pid, &status, WNOHANG);
+			if(pid_child)
+				printf("Removed proc ID : %d\n", pid);
+			pid_child = 0;
 			close(data_socket);
 			continue;
 		} else if (pid == 0) {
 			//	printf("listen succes\n");			
-			
-			sprintf(tmp_port, "%d", Port);
+			thr_id = pthread_create(&p_thread, NULL, t_function, (void*) tmp);
+			sprintf(tmp_port, "%d", Port);			
 			send_data(tmp_port, MAX_SIZE);
-
-			close(data_socket);
 			//port_num sent end
+
 			//File Receive Sequence
-			if (connect_nds_a() < 0) {
+			if (connect_pc() < 0) {
 				goto leave0;
 			}
 
@@ -275,18 +309,7 @@ int main(int argc, char* argv[]) {
 					!= sizeof(FHeader)) {
 				printf("Failed to send File Header\n");
 				goto leave1;
-			}
-				/*
-			strcpy(fname, "./");
-			strcat(fname, tmp_port);
-			strcat(fname, "/");
-			strcat(fname, FHeader.filename);
-			*/
-			//strcpy(fname, FHeader.filename);
-			//sprintf(fname, "./%s/%s", tmp_port, FHeader.filename);
-			
-			//printf("File to Receive - %s\n", fname);
-			//mkdir(tmp_port, 0755);
+			}			
 			
 			filedes = open(tmp_port, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 
@@ -299,29 +322,27 @@ int main(int argc, char* argv[]) {
 			memset(&buf, 0, sizeof(buf));
 			fflush( stdout);
 			while ((filelen = read(clnt_socket, buf, sizeof(buf))) > 0) {
-
 				write(filedes, buf, filelen);
 				total -= filelen;
 				if (total <= 0)
 					break;
 				memset(&buf, 0, sizeof(buf));
-
 			}
 			printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, atoi(
 					FHeader.filelength));
+			
+			pthread_cancel(p_thread);
 			leave1: 
-			free(BUF);
-			disconnect_nds();
-			leave0: 
-			close(filedes);
-			filesend();
-			{
-				remove(tmp_port);				
-				
-			}
-		}
-
-	}
+				free(BUF);
+				//disconnect_nds();
+			leave0:
+				close(filedes);
+				filesend();
+				remove(tmp_port);
+			goto end;
+		}//if(pid) end
+	}//while() end
+end:
 
 	return ret;
 
@@ -350,7 +371,7 @@ int filesend() {
 
 	BUF = (unsigned char*) malloc(sizeof(char) * BUF_SIZE + 1);
 
-	if (connect_nds_b() < 0) {
+	if (connect_nds() < 0) {
 		goto leave0;
 	}
 
