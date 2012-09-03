@@ -61,7 +61,7 @@ extern FUNC(void, OS_CODE) tpl_tick_timer0_overflow();
 
 static void setupTimer0(void)
 {
-	tpl_disable_interrupts();
+//	tpl_disable_interrupts();
 	TIMER0_DATA = TIMER_FREQ_256(1000); /* 1ms */
 	TIMER0_CR = TIMER_ENABLE | TIMER_IRQ_REQ | TIMER_DIV_256;
 	irqSet(IRQ_TIMER0, tpl_tick_timer0_overflow);
