@@ -62,6 +62,13 @@ CPU test {
         ACTIVATION = 1;
         SCHEDULE = FULL;
     };   
+
+    TASK task2 {
+        PRIORITY = 1;
+        AUTOSTART = TRUE { APPMODE = std; };
+        ACTIVATION = 1;
+        SCHEDULE = FULL;
+    };
     
     TASK task5 {
         PRIORITY = 2;

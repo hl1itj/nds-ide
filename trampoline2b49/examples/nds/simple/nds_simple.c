@@ -86,26 +86,26 @@ DeclareTask(task5);
 #define APP_Task_task1_START_SEC_CODE
 #include "tpl_memmap.h"
 
+static int b = 0;
+
 TASK(task1)
 {
 	touchPosition touchXY;
-	irqSet(IRQ_VBLANK, vblank);
+	int a = 0;
+	/* irqSet(IRQ_VBLANK, vblank); */
 	consoleDemoInit();
 	iprintf("      Hello DS dev'rs\n");
 	iprintf("     \x1b[32mwww.devkitpro.org\n");
 	iprintf("   \x1b[32;1mwww.drunkencoders.com\x1b[39m");
-	while(1) {
-		swiWaitForVBlank();
-		touchRead(&touchXY);
-		iprintf("\x1b[10;0HFrame = %d",frame);
-		iprintf("\x1b[16;0HTouch x = %04X, %04X\n", touchXY.rawx, touchXY.px);
-		iprintf("Touch y = %04X, %04X\n", touchXY.rawy, touchXY.py); 
+	while (1) {
+		iprintf("\x1b[10;0HFrame = %d, %d",a++, b);
 	}
+	ChainTask(task1);
+}
 
-    while(1){
-    };
-    
-    ChainTask(task1);
+TASK(task2)
+{
+	while (1);
 }
 
 #define APP_Task_task1_STOP_SEC_CODE
@@ -117,6 +117,7 @@ TASK(task1)
 
 TASK(task5)
 {   
+    b++;
     TerminateTask();
 }
 
