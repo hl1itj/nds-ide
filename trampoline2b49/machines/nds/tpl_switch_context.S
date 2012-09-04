@@ -119,19 +119,22 @@ tpl_tick_timer0_overflow:
 	 * | pc_sys | |        |
          * +--------+ +--------+
 	 */
-	/* save sequence */
-	stmdb sp!, {lr}
-	bl tpl_tick_timer0_overflow_check_reschedule
-	ldmia sp!, {lr}
-	cmp r0, #NEED_RESCHEDULING
-	bxne lr
-
+	/* reset need switch var */
 	ldr r0, =tpl_kern
-	ldrb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
-	cmp r2, #NO_NEED_SWITCH
-	bxeq lr
+	mov r1, #NO_NEED_SWITCH
+	strb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
+	
+	/* save sequence */
+	stmdb sp!, {r0, lr}
+	bl tpl_tick_timer0_overflow_check_reschedule
+	bl tpl_schedule_from_running
+	ldmia sp!, {r0, lr}
 
-	// roll back to when int occured
+	ldrb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
+	cmp r1, #NO_NEED_SWITCH
+	bxeq lr
+	
+	/* roll back to when int occured */
 	pop {r2, lr}
 	msr cpsr, r2
 
@@ -139,7 +142,13 @@ tpl_tick_timer0_overflow:
 	ldr r1, [r0, #TPL_KERN_OFFSET_S_OLD]
 	ldr r3, [r1]
 
+	/* if context == NULL, skip saving */
 	cmp r3, #0
+	beq _restore_switch_context_from_it
+
+	/* need saving?? */
+	ldrb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
+	tst r1, #NEED_SAVE
 	beq _restore_switch_context_from_it
 	
 	/* r1 = context->r[4] */
@@ -154,16 +163,20 @@ tpl_tick_timer0_overflow:
 	ldmia sp!, {r4-r7}
 
 	/* save psr register 
-	 * to be saved registers : r0-r3, r12, pc */
-	str r4, [r1, #8]
+	 * to be saved registers : r0-r3, r12, pc
+	 * r1 = r13
+	 */
+	str r4, [r1, #(4 * 3)]
 	
 	/* pop r0-r3, r12, lr(pc_sys) */
 	ldmia sp!, {r4-r7, r12, lr}
 	/* save r0-r3 register 
 	 * to be saved registers : r12, pc */
 	stmia r3!, {r4-r7}
-	/* r1 = context->r[12] */
-	add r1, r3, #(4 * 12)
+	/* r3 = context->r[4]
+	 * r1 = context->r[12]
+	 */
+	add r1, r3, #(4 * 8)
 	/* save r12 register 
 	 * to be saved registers : pc */
 	stmia r1, {r12}
@@ -181,6 +194,9 @@ _restore_switch_context_from_it:
 
 	/* load psr */
 	ldr r3, [r0, #(4 * 16)]
+	/* if pc reg value indicates in thumbmode, set thumb mode to psr */
+	tst lr, #1
+	orrne r3, r3, #0x20
 	msr spsr, r3
 
 	/* disable processor interrupt */
