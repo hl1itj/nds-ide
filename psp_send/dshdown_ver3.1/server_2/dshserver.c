@@ -196,6 +196,10 @@ int recv_data_byte(unsigned char *buf, int count) {
 	return tread;
 }
 
+/* Something wrong in this function,
+  this function just kills himself after sleep(). not the problematic child process.
+  this function should be threaded by parent with the child pid */
+  
 void *t_function() {
 	
 	pid_t mypid;
