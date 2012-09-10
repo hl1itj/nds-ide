@@ -95,12 +95,17 @@ FUNC(void, OS_CODE) tpl_enable_interrupts(void)
  */
 FUNC(void, OS_CODE) tpl_get_task_lock (void)
 {
+	nested_kernel_entrance_counter++;
+	if (nested_kernel_entrance_counter >= 2) {
+		while (1);
+	}
 	tpl_disable_interrupts();
 }
 
 FUNC(void, OS_CODE) tpl_release_task_lock (void)
 {
 	tpl_enable_interrupts();
+	nested_kernel_entrance_counter--;
 }
 
 /*
@@ -119,7 +124,7 @@ FUNC(void, OS_CODE) tpl_init_context(
 
   /* setup entry point */
   /* added 4 to entry due to sub 4 on swich_context */
-  core_context->r[armreg_pc] = (u32)(the_proc->entry) + 4;
+  core_context->r[armreg_pc] = (u32)((the_proc->entry) + 4) | 1;
   /* setup initial stack pointer */
   core_context->r[armreg_sp] = ((u32)the_proc->stack.stack_zone)
       + the_proc->stack.stack_size;

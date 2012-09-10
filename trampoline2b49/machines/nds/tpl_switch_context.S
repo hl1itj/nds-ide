@@ -38,7 +38,9 @@ tpl_switch_context:
 	cmp r0, #0
 	beq _restore_switch_context
 	
-	/* start saving */
+	/* start saving
+	 * Free to use r0 register
+	 */
 	/* r0 = old_context->context */
 	ldr r0, [r0]
 	/* save registers into old context's stack */
@@ -46,22 +48,31 @@ tpl_switch_context:
 	/* r2 = old_context->r3 addr */
 	add r2, r0, #(4 * 3)
 	/* save old context's r3-r12 registers */
-	stmia r2!, {r3-r12}
+	stmia r2, {r3-r12}
 	/* load saved r2 registers */
 	ldmia sp!, {r2}
-	/* save old context's r0-r2 registers */
-	stmia r0, {r0-r2}
-	/* r0 = old_context->sp addr */	
+	/* save old context's r2 registers */
+	str r2, [r0, #(2 * 4)]
+	/* r2 = old_context->r13 */
 	add r2, r0, #(4 * 13)
-	stmia r2!, {sp, lr}
 	/* r3 = set old context's pc for exit this function */
 	adr r3, _exit_switch_context + 4
 	mrs r4, cpsr
-	/* save old contect's pc & cpsr */
-	stmia r2!, {r3, r4}
+	/* save old contect's sp, lr, pc & cpsr */
+	stmia r2!, {sp, lr}
+	stmia r2!, {r3-r4}
 
-_restore_switch_context:	
-	/* start restoring */
+_restore_switch_context:
+	ldr r0, =tpl_kern
+	/* change mode to irq */
+	mrseq r4, cpsr
+	bic r4, r4, #0xdf
+	orr r4, r4, #0x92
+	msr cpsr, r4
+
+	b _restore_switch_context_from_it
+
+#if 0
 	/* r1 = running_context->context */
 	ldr r1, [r1]
 	/* r0 = running_context->r4 addr */
@@ -76,6 +87,9 @@ _restore_switch_context:
 	/* save registers to protect the values */
 	stmdb sp!, {r4}
 	/* r5 = running_context->psr */
+	/* if pc reg value indicates in thumbmode, set thumb mode to psr */
+	tst r3, #1
+	orrne r4, r4, #0x20
 	ldr r4, [r0]
 	/* recovered cpsr */
 	msr cpsr, r4
@@ -88,6 +102,7 @@ _restore_switch_context:
 	
 	/* recover saved running_context's r4-r5 from sp */
 	ldmia sp!, {r4, pc}
+#endif
 	
 _exit_switch_context:	
 	bx lr
@@ -116,7 +131,7 @@ tpl_tick_timer0_overflow:
          * +--------+ +--------+
 	 * |  r12   | |        |
          * +--------+ +--------+
-	 * | pc_sys | |        |
+	 * |pc_sys+4| |        |
          * +--------+ +--------+
 	 */
 	/* reset need switch var */
@@ -144,11 +159,13 @@ tpl_tick_timer0_overflow:
 
 	/* if context == NULL, skip saving */
 	cmp r3, #0
+	subeq sp, sp, #(4 * 10)
 	beq _restore_switch_context_from_it
 
 	/* need saving?? */
 	ldrb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
 	tst r1, #NEED_SAVE
+	subeq sp, sp, #(4 * 10)
 	beq _restore_switch_context_from_it
 	
 	/* r1 = context->r[4] */
