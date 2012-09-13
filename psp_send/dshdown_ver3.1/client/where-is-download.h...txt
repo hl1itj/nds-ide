@@ -1,1 +1,0 @@
-download.h  file is the part of DallShell (usbdown or wifidown)
