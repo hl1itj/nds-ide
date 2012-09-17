@@ -43,16 +43,21 @@ tpl_switch_context:
 	 */
 	/* r0 = old_context->context */
 	ldr r0, [r0]
+	/* pass storing if old_context->context is null */
+	cmp r0, #0
+	beq _restore_switch_context
+	
 	/* save registers into old context's stack */
-	stmdb sp!, {r2}
+	push {r2}
 	/* r2 = old_context->r3 addr */
 	add r2, r0, #(4 * 3)
 	/* save old context's r3-r12 registers */
+
 	stmia r2, {r3-r12}
 	/* load saved r2 registers */
-	ldmia sp!, {r2}
+	pop {r2}
 	/* save old context's r2 registers */
-	str r2, [r0, #(2 * 4)]
+	str r2, [r0, #(4 * 2)]
 	/* r2 = old_context->r13 */
 	add r2, r0, #(4 * 13)
 	/* r3 = set old context's pc for exit this function */
@@ -71,38 +76,6 @@ _restore_switch_context:
 	msr cpsr, r4
 
 	b _restore_switch_context_from_it
-
-#if 0
-	/* r1 = running_context->context */
-	ldr r1, [r1]
-	/* r0 = running_context->r4 addr */
-	add r0, r1, #(4 * 4)
-	ldmia r0!, {r4-r12, sp, lr}
-	/* lr = running_context's pc      *
-	 * r4 = running_context->psr addr */
-	ldmia r0!, {r3}
-	sub r3, r3, #4
-	/* push pc value into stack */
-	stmdb sp!, {r3}
-	/* save registers to protect the values */
-	stmdb sp!, {r4}
-	/* r5 = running_context->psr */
-	/* if pc reg value indicates in thumbmode, set thumb mode to psr */
-	tst r3, #1
-	orrne r4, r4, #0x20
-	ldr r4, [r0]
-	/* recovered cpsr */
-	msr cpsr, r4
-	/* recover running_context's r0-r3 */
-	ldmia r1, {r0-r3}
-
-	/* enable interrupt */
-	mov r4, #0x4000001
-	str r4, [r4, #0x207]
-	
-	/* recover saved running_context's r4-r5 from sp */
-	ldmia sp!, {r4, pc}
-#endif
 	
 _exit_switch_context:	
 	bx lr
@@ -140,32 +113,32 @@ tpl_tick_timer0_overflow:
 	strb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
 	
 	/* save sequence */
-	stmdb sp!, {r0, lr}
+	push {r0, lr}
 	bl tpl_tick_timer0_overflow_check_reschedule
 	bl tpl_schedule_from_running
-	ldmia sp!, {r0, lr}
+	pop {r0, lr}
 
 	ldrb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
 	cmp r1, #NO_NEED_SWITCH
 	bxeq lr
 	
-	/* roll back to when int occured */
+	/* roll back to when int occurs */
 	pop {r2, lr}
 	msr cpsr, r2
 
-	/* irq mode - arm */
+	/* irq mode start */
 	ldr r1, [r0, #TPL_KERN_OFFSET_S_OLD]
 	ldr r3, [r1]
 
 	/* if context == NULL, skip saving */
 	cmp r3, #0
-	subeq sp, sp, #(4 * 10)
+	addeq sp, sp, #(4 * 10)
 	beq _restore_switch_context_from_it
 
 	/* need saving?? */
 	ldrb r1, [r0, #TPL_KERN_OFFSET_NEED_SWITCH]
 	tst r1, #NEED_SAVE
-	subeq sp, sp, #(4 * 10)
+	addeq sp, sp, #(4 * 10)
 	beq _restore_switch_context_from_it
 	
 	/* r1 = context->r[4] */
@@ -177,7 +150,7 @@ tpl_tick_timer0_overflow:
 	stmia r1, {sp, lr}^
 	
 	/* load spsr, ime, reg_base, lr_irq */
-	ldmia sp!, {r4-r7}
+	pop {r4-r7}
 
 	/* save psr register 
 	 * to be saved registers : r0-r3, r12, pc
@@ -186,7 +159,7 @@ tpl_tick_timer0_overflow:
 	str r4, [r1, #(4 * 3)]
 	
 	/* pop r0-r3, r12, lr(pc_sys) */
-	ldmia sp!, {r4-r7, r12, lr}
+	pop {r4-r7, r12, lr}
 	/* save r0-r3 register 
 	 * to be saved registers : r12, pc */
 	stmia r3!, {r4-r7}

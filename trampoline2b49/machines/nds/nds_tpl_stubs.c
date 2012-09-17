@@ -95,17 +95,17 @@ FUNC(void, OS_CODE) tpl_enable_interrupts(void)
  */
 FUNC(void, OS_CODE) tpl_get_task_lock (void)
 {
-	nested_kernel_entrance_counter++;
-	if (nested_kernel_entrance_counter >= 2) {
-		while (1);
-	}
+	/* nested_kernel_entrance_counter++; */
+	/* if (nested_kernel_entrance_counter >= 2) { */
+	/* 	while (1); */
+	/* } */
 	tpl_disable_interrupts();
 }
 
 FUNC(void, OS_CODE) tpl_release_task_lock (void)
 {
 	tpl_enable_interrupts();
-	nested_kernel_entrance_counter--;
+	/* nested_kernel_entrance_counter--; */
 }
 
 /*
@@ -121,6 +121,20 @@ FUNC(void, OS_CODE) tpl_init_context(
   /* initialize shortcuts */
   the_proc = tpl_stat_proc_table[proc_id];
   core_context = the_proc->context;
+
+  core_context->r[0] = 0;
+  core_context->r[1] = 0x1;
+  core_context->r[2] = 0x2;
+  core_context->r[3] = 0x3;
+  core_context->r[4] = 0x4;
+  core_context->r[5] = 0x5;
+  core_context->r[6] = 0x6;
+  core_context->r[7] = 0x7;
+  core_context->r[8] = 0x8;
+  core_context->r[9] = 0x9;
+  core_context->r[10] = 0x10;
+  core_context->r[11] = 0x11;
+  core_context->r[12] = 0x12;
 
   /* setup entry point */
   /* added 4 to entry due to sub 4 on swich_context */
