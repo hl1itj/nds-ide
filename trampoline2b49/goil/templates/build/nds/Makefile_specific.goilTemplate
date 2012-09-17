@@ -1,6 +1,6 @@
 # Added nds rule
 $(EXEC).nds: $(EXEC).arm9
-	     ndstool -c $@ -9 $<
+	     ndstool -c $@ -9 $< -7 $(DEVKITPRO)/libnds/default.elf
 
 $(EXEC).arm9: $(EXEC)
 	      arm-none-eabi-objcopy -O binary $< $@
