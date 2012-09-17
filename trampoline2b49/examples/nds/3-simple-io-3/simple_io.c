@@ -1,7 +1,9 @@
 /**
- * @file nxt_simple.oil
+ * @file nxt_simple.c
  *
  * @section desc File description
+ *
+ * simple application on the Lego Mindstorm NXT2.0
  *
  * @section copyright Copyright
  *
@@ -29,47 +31,54 @@
  * $Author$
  * $URL$
  */
-OIL_VERSION = "2.5" : "test" ;
 
-IMPLEMENTATION trampoline {
-    TASK {
-        UINT32 STACKSIZE = 2048 ;
-        UINT32 PRIORITY = 1 ;
-    } ;
-    ISR {
-        UINT32 STACKSIZE = 2048 ;
-    } ;
-};
+#include "tpl_os.h"
 
-CPU test {
+#define APP_Task_task1_START_SEC_CODE
+#include "tpl_memmap.h"
 
-    OS config {
-        STATUS = EXTENDED;
-        ERRORHOOK = FALSE;
-        PRETASKHOOK = FALSE;
-        APP_SRC = "nds_simple.c"; 
-        APP_NAME = "nds_simple_exe";
-        TRAMPOLINE_BASE_PATH = "../../..";
-        SYSTEM_CALL = FALSE;
-    } ;
+#include <nds.h>
+#include <sevencore_io.h>
 
-    APPMODE std {
-    };
+FUNC(int, OS_APPL_CODE) main(void)
+{   
+    init_virtual_io(ENABLE_LED);	// Enable Virtual LED's on Top Screen
+    init_printf();					// Initialize Bottom Screen for printf()
 
-    TASK task1 {
-        PRIORITY = 1;
-        AUTOSTART = TRUE { APPMODE = std; };
-        ACTIVATION = 1;
-        SCHEDULE = FULL;
-    };   
+    StartOS(OSDEFAULTAPPMODE);
+    return 0;
+}
 
-    COUNTER SystemCounter {
-      SOURCE = timer0_overflow;
-      MAXALLOWEDVALUE = 2000;
-      TICKSPERBASE = 1;
-      MINCYCLE = 1; 
-    };
-};
+#define APP_Task_task1_STOP_SEC_CODE
+#include "tpl_memmap.h"
 
-/* End of file nxt_simple.oil */
+DeclareTask(task1);
+DeclareTask(task5);
 
+#define APP_Task_task1_START_SEC_CODE
+#include "tpl_memmap.h"
+
+static int b = 0, c = 0;
+
+TASK(task1)
+{
+	while (1);
+}
+
+#define APP_Task_task1_STOP_SEC_CODE
+#include "tpl_memmap.h"
+
+
+#define APP_Task_task5_START_SEC_CODE
+#include "tpl_memmap.h"
+
+TASK(task5)
+{   
+    b++;
+    TerminateTask();
+}
+
+#define APP_Task_task5_STOP_SEC_CODE
+#include "tpl_memmap.h"
+
+/* End of file nxt_simple.c */

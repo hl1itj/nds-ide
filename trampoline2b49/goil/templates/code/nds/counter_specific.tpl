@@ -5,11 +5,14 @@
 #define OS_START_SEC_CODE
 #include "tpl_memmap.h"
 
-FUNC(void, OS_CODE) $TICK_FUNC$$IT_SOURCE$()
+FUNC(tpl_status, OS_CODE) $TICK_FUNC$$IT_SOURCE$_check_reschedule()
 {
   tpl_status  need_rescheduling = NO_SPECIAL_CODE;
 $COUNTER_LIST$
 
+  return need_rescheduling;
+
+/*
   if (need_rescheduling == NEED_RESCHEDULING)
   {
     tpl_schedule_from_running();
@@ -22,6 +25,7 @@ $COUNTER_LIST$
     }
 #endif
   }
+*/
 }
 
 #define OS_STOP_SEC_CODE

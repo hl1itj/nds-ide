@@ -47,8 +47,8 @@ CPU test {
         STATUS = EXTENDED;
         ERRORHOOK = FALSE;
         PRETASKHOOK = FALSE;
-        APP_SRC = "nds_simple.c"; 
-        APP_NAME = "nds_simple_exe";
+        APP_SRC = "simple_io.c"; 
+        APP_NAME = "simple_io_exe";
         TRAMPOLINE_BASE_PATH = "../../..";
         SYSTEM_CALL = FALSE;
     } ;
@@ -63,12 +63,31 @@ CPU test {
         SCHEDULE = FULL;
     };   
 
+    TASK task5 {
+        PRIORITY = 2;
+        AUTOSTART = FALSE;
+        ACTIVATION = 1;
+        SCHEDULE = FULL;
+    };
+    
     COUNTER SystemCounter {
       SOURCE = timer0_overflow;
       MAXALLOWEDVALUE = 2000;
       TICKSPERBASE = 1;
       MINCYCLE = 1; 
     };
+
+    ALARM Alarm1{
+      COUNTER = SystemCounter;
+      ACTION = ACTIVATETASK {
+         TASK = task5;
+      };
+      AUTOSTART = TRUE {
+            ALARMTIME = 200;
+            CYCLETIME = 100; //each 1000 ms.
+            APPMODE = std;
+	     };
+      };
 };
 
 /* End of file nxt_simple.oil */

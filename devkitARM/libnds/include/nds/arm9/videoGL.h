@@ -721,7 +721,7 @@ GL_STATIC_INL
 \brief Waits for a Vblank and swaps the buffers(like swiWaitForVBlank), but lets you specify some 3D options<BR>
 <A HREF="http://nocash.emubase.de/gbatek.htm#ds3ddisplaycontrol">GBATEK http://nocash.emubase.de/gbatek.htm#ds3ddisplaycontrol</A>
 \param mode flags from GLFLUSH_ENUM for enabling Y-sorting of translucent polygons and W-Buffering of all vertices*/
-void glFlush(u32 mode) { asm volatile("" ::: "memory"); GFX_FLUSH = mode; }
+void glFlush(u32 mode) { __asm__ volatile("" ::: "memory"); GFX_FLUSH = mode; }
 
 GL_STATIC_INL
 /*! \fn  void glMaterialShinyness(void)

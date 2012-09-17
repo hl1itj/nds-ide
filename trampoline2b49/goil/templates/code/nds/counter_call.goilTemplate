@@ -22,7 +22,7 @@ foreach INTERRUPTSOURCES prefixedby interrupt_ do
   foreach counterFct
     before
 %
-FUNC(void, OS_CODE) tpl_tick_% ! interrupt_NAME %()
+FUNC(tpl_status, OS_CODE) tpl_tick_% ! interrupt_NAME %_check_reschedule()
 {
   tpl_status  need_rescheduling = NO_SPECIAL_CODE;
 
@@ -32,6 +32,8 @@ FUNC(void, OS_CODE) tpl_tick_% ! interrupt_NAME %()
 %
     after %
 
+  return need_rescheduling;
+/*
   if (need_rescheduling == NEED_RESCHEDULING)
   {
     tpl_schedule_from_running();
@@ -44,6 +46,7 @@ FUNC(void, OS_CODE) tpl_tick_% ! interrupt_NAME %()
     }
 #endif
   }
+*/
 }
 %
   end foreach
