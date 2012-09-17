@@ -41,7 +41,7 @@
 
 volatile int frame = 0;
 
-void vblank()
+void Vblank()
 {
 	frame++;
 }
@@ -55,73 +55,39 @@ FUNC(int, OS_APPL_CODE) main(void)
 #define APP_Task_task1_STOP_SEC_CODE
 #include "tpl_memmap.h"
 
-#define OS_START_SEC_VAR_32BIT
-#include "tpl_memmap.h"
-VAR(int, OS_VAR) switch_count = 0;
-VAR(TaskType, OS_VAR) new_task;
-#define OS_STOP_SEC_VAR_32BIT
-#include "tpl_memmap.h"
-
-#define APP_Task_task1_START_SEC_CONST_32BIT
-#include "tpl_memmap.h"
-CONST(int, AUTOMATIC) toto = 0;
-#define APP_Task_task1_STOP_SEC_CONST_32BIT
-#include "tpl_memmap.h"
-
-#define APP_Task_task1_START_SEC_VAR_32BIT
-#include "tpl_memmap.h"
-VAR(int, AUTOMATIC) titi = 0;
-#define APP_Task_task1_STOP_SEC_VAR_32BIT
-#include "tpl_memmap.h"
-
-#define APP_Task_task1_START_SEC_VAR_32BIT
-#include "tpl_memmap.h"
-VAR(u32, AUTOMATIC) motor2speed = 0;
-#define APP_Task_task1_STOP_SEC_VAR_32BIT
-#include "tpl_memmap.h"
-
 DeclareTask(task1);
-DeclareTask(task5);
 
 #define APP_Task_task1_START_SEC_CODE
 #include "tpl_memmap.h"
 
-static int b = 0;
-
 TASK(task1)
 {
 	touchPosition touchXY;
-	int a = 0;
-	/* irqSet(IRQ_VBLANK, vblank); */
+
+	irqSet(IRQ_VBLANK, Vblank);
+
 	consoleDemoInit();
+
 	iprintf("      Hello DS dev'rs\n");
 	iprintf("     \x1b[32mwww.devkitpro.org\n");
 	iprintf("   \x1b[32;1mwww.drunkencoders.com\x1b[39m");
-	while (1) {
-		iprintf("\x1b[10;0HFrame = %d, %d",a++, b);
-	}
-	ChainTask(task1);
-}
+ 
+	while(1) {
+	
+		swiWaitForVBlank();
+		touchRead(&touchXY);
 
-TASK(task2)
-{
-	while (1);
+		// print at using ansi escape sequence \x1b[line;columnH 
+		iprintf("\x1b[10;0HFrame = %d",frame);
+		iprintf("\x1b[16;0HTouch x = %04X, %04X\n", touchXY.rawx, touchXY.px);
+		iprintf("Touch y = %04X, %04X\n", touchXY.rawy, touchXY.py);		
+	
+	}
+
+	TerminateTask();
 }
 
 #define APP_Task_task1_STOP_SEC_CODE
-#include "tpl_memmap.h"
-
-
-#define APP_Task_task5_START_SEC_CODE
-#include "tpl_memmap.h"
-
-TASK(task5)
-{   
-    b++;
-    TerminateTask();
-}
-
-#define APP_Task_task5_STOP_SEC_CODE
 #include "tpl_memmap.h"
 
 /* End of file nxt_simple.c */

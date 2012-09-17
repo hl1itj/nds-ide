@@ -33,11 +33,11 @@ OIL_VERSION = "2.5" : "test" ;
 
 IMPLEMENTATION trampoline {
     TASK {
-        UINT32 STACKSIZE = 500 ;
+        UINT32 STACKSIZE = 2048 ;
         UINT32 PRIORITY = 1 ;
     } ;
     ISR {
-        UINT32 STACKSIZE = 500 ;
+        UINT32 STACKSIZE = 2048 ;
     } ;
 };
 
@@ -63,38 +63,12 @@ CPU test {
         SCHEDULE = FULL;
     };   
 
-    TASK task2 {
-        PRIORITY = 1;
-        AUTOSTART = TRUE { APPMODE = std; };
-        ACTIVATION = 1;
-        SCHEDULE = FULL;
-    };
-    
-    TASK task5 {
-        PRIORITY = 2;
-        AUTOSTART = FALSE;
-        ACTIVATION = 1;
-        SCHEDULE = FULL;
-    };
-    
     COUNTER SystemCounter {
       SOURCE = timer0_overflow;
       MAXALLOWEDVALUE = 2000;
       TICKSPERBASE = 1;
       MINCYCLE = 1; 
     };
-
-    ALARM Alarm1{
-      COUNTER = SystemCounter;
-      ACTION = ACTIVATETASK {
-         TASK = task5;
-      };
-      AUTOSTART = TRUE {
-            ALARMTIME = 2000;
-            CYCLETIME = 1000; //each 1000 ms.
-            APPMODE = std;
-	     };
-      };
 };
 
 /* End of file nxt_simple.oil */
