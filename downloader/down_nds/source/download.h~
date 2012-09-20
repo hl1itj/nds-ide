@@ -20,7 +20,7 @@
 // Download Port Number for WIFI connection
 
 #define DOWNLOAD_PORT   7000   // Just it, No special meaning.
-#define DOWNLOAD_IP   "113.198.84.69"
+#define DOWNLOAD_IP   "113.198.74.220"
 
 // File Transfer protocol ---------------------------------------------
 
