@@ -21,11 +21,12 @@
 void Exp_1_Homework_A(void) {
 	u16 sw;
 	u16 led_state = 0x01;
+
 	u8 R_key_pressed = FALSE;
 	u8 L_key_pressed = FALSE;
 
 	writeb_virtual_io(BARLED1, led_state);
-	// writeb_virtual_io(BARLED2, 0);
+	writeb_virtual_io(BARLED2, 0x00);
 	while (1) {
 		sw = NDS_SWITCH();
 
@@ -63,6 +64,7 @@ void Exp_1_Homework_B(void) {
 	u8 state = FALSE; // TRUE 오른쪽 FALSE 왼쪽
 
 	writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(BARLED2, 0x00);
 	while (1) {
 		sw = NDS_SWITCH();
 
