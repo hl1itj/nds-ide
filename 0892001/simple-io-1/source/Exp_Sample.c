@@ -27,6 +27,7 @@ Exp_1_Sample_A(void)
 		writeb_virtual_io(BARLED1, sw >> 8);
 		writeb_virtual_io(BARLED2, sw & 0xFF);
 
+
 		if (NDS_SWITCH() & KEY_START)
 			break;
 		vTaskDelay(50);

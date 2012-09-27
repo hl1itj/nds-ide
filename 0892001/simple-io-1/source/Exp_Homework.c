@@ -21,8 +21,27 @@
 void
 Exp_1_Homework_A(void)
 {
+	u16 sw;
+	u8  led_state = 0x08;
+	writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(BARLED2, 0);
 
-}
+	while (1) {
+		writeb_virtual_io(BARLED1, led_state);
+		sw = NDS_SWITCH();
+		if (NDS_SWITCH() & KEY_LEFT && led_state<=0x40)
+			led_state  *=2;
+
+		if (NDS_SWITCH() & KEY_RIGHT && led_state>=0x02)
+			led_state  /=2;
+
+		if (NDS_SWITCH() & KEY_START)
+			break;
+		vTaskDelay(50);
+	}
+	while (NDS_SWITCH() & KEY_START)
+		vTaskDelay(10);
+}// Wait while START KEY is being pressed
 
 // LED Bar Left-and-Right & Round (BARLED 1 and BARLED 2)
 // L key - going left, R key - going right
