@@ -34,9 +34,9 @@ main(void)
 
 	xTaskCreate(Exp_1_Task,
 			(const signed char * const)"Exp_1_Task",
-			2048,
+			2048, //스텍 (워드단위)
 			(void *)NULL,
-			tskIDLE_PRIORITY + 1,
+			tskIDLE_PRIORITY + 1,   //우선순위
 			NULL);
 
 	vTaskStartScheduler();		// Never returns
