@@ -23,8 +23,9 @@ Exp_1_Homework_A(void)
 {
 	u16 sw;
 	u16 button;
-	button = 1;
-	u8  key_pressed = TRUE;
+	button = 0x0001;
+	u8  led_state = FALSE;
+	u8  key_pressed = FALSE;
 
 	int count = 0;
 	int num = 1;
@@ -34,19 +35,24 @@ Exp_1_Homework_A(void)
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED1, button);
 		writeb_virtual_io(BARLED2, 0);
-		key_pressed = !key_pressed;
 
 		if ((key_pressed == FALSE) && (sw & KEY_LEFT)) {
-			if(button < 128){
-				key_pressed = !key_pressed;
+			if(button & 0x0001){
+				continue;
+			}else{
+				key_pressed = TRUE;
 				button = button * 2;
 				writeb_virtual_io(BARLED1, button);
+				key_pressed = FALSE;
 			}
 		}else if ((key_pressed == FALSE) && (sw & KEY_RIGHT)) {
-			if(button > 1){
-				key_pressed = !key_pressed;
+			if(button & 0x0001){
+				continue;
+			}else{
+				key_pressed = TRUE;
 				button = button / 2;
 				writeb_virtual_io(BARLED1, button);
+				key_pressed = FALSE;
 			}
 			writeb_virtual_io(BARLED1, button);
 		}

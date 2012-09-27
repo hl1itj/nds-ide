@@ -34,7 +34,6 @@ Exp_1_Homework_A(void)
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED1, button);
 		writeb_virtual_io(BARLED2, 0);
-		key_pressed = !key_pressed;
 
 		if ((key_pressed == FALSE) && (sw & KEY_LEFT)) {
 			if(button < 128){
