@@ -1,0 +1,60 @@
+15:07:03 **** Build of configuration Default for project helloworld ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d -v -g -Wall -O2 -march=armv5te -mtune=arm946e-s -fomit-frame-pointer -ffast-math -mthumb -mthumb-interwork -I/home/hansung/ndsdev/nds-ide/0892043/helloworld/include -I/home/hansung/ndsdev/nds-ide/0892043/helloworld/build -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/helloworld/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/helloworld/source/main.c -o main.o 
+Using built-in specs.
+COLLECT_GCC=arm-none-eabi-gcc
+Target: arm-none-eabi
+Configured with: ../../gcc-4.7.1/configure --enable-languages=c,c++,objc,obj-c++ --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv4t --enable-poison-system-directories --enable-interwork --enable-multilib --disable-dependency-tracking --disable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --target=arm-none-eabi --with-newlib --with-headers=../../newlib-1.20.0/newlib/libc/include --prefix=/opt/devkitpro/devkitARM --enable-lto --with-bugurl=http://wiki.devkitpro.org/index.php/Bug_Reports --with-pkgversion='devkitARM release 41'
+linking helloworld.elf
+Thread model: single
+gcc version 4.7.1 (devkitARM release 41) 
+COLLECT_GCC_OPTIONS='-MMD' '-MP' '-MF' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d' '-v' '-g' '-Wall' '-O2' '-march=armv5te' '-mtune=arm946e-s' '-fomit-frame-pointer' '-ffast-math' '-mthumb' '-mthumb-interwork' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-I' '/home/hansung/ndsdev/devkitPro/libnds/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-D' 'ARM9' '-c' '-o' 'main.o'
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... helloworld.nds
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/cc1 -quiet -v -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -I /home/hansung/ndsdev/devkitPro/libnds/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -imultilib thumb -iprefix /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/ -MMD main.d -MF /home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d -MP -MQ main.o -D__USES_INITFINI__ -D ARM9 /home/hansung/ndsdev/nds-ide/0892043/helloworld/source/main.c -quiet -dumpbase main.c -march=armv5te -mtune=arm946e-s -mthumb -mthumb-interwork -auxbase-strip main.o -g -O2 -Wall -version -fomit-frame-pointer -ffast-math -o /tmp/ccmRlbFC.s
+GNU C (devkitARM release 41) version 4.7.1 (arm-none-eabi)
+	compiled by GNU C version 4.4.5, GMP version 5.0.4, MPFR version 3.1.0, MPC version 0.9
+GGC heuristics: --param ggc-min-expand=98 --param ggc-min-heapsize=128160
+ignoring nonexistent directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/include"
+ignoring duplicate directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/include-fixed"
+ignoring nonexistent directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/include"
+ignoring nonexistent directory "/home/hansung/ndsdev/nds-ide/0892043/helloworld/include"
+ignoring duplicate directory "/home/hansung/ndsdev/nds-ide/0892043/helloworld/build"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/hansung/ndsdev/nds-ide/0892043/helloworld/build
+ /home/hansung/ndsdev/devkitPro/libnds/include
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/include
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/include-fixed
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/include
+End of search list.
+GNU C (devkitARM release 41) version 4.7.1 (arm-none-eabi)
+	compiled by GNU C version 4.4.5, GMP version 5.0.4, MPFR version 3.1.0, MPC version 0.9
+GGC heuristics: --param ggc-min-expand=98 --param ggc-min-heapsize=128160
+Compiler executable checksum: bcc81854a1be8ef51cf39a5ff1975437
+COLLECT_GCC_OPTIONS='-MMD' '-MP' '-MF' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d' '-v' '-g' '-Wall' '-O2' '-march=armv5te' '-mtune=arm946e-s' '-fomit-frame-pointer' '-ffast-math' '-mthumb' '-mthumb-interwork' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-I' '/home/hansung/ndsdev/devkitPro/libnds/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-D' 'ARM9' '-c' '-o' 'main.o'
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/bin/as -v -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -I /home/hansung/ndsdev/devkitPro/libnds/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -march=armv5te -mthumb-interwork -meabi=5 -o main.o /tmp/ccmRlbFC.s
+GNU assembler version 2.22 (arm-none-eabi) using BFD version (GNU Binutils) 2.22
+COMPILER_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-MMD' '-MP' '-MF' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d' '-v' '-g' '-Wall' '-O2' '-march=armv5te' '-mtune=arm946e-s' '-fomit-frame-pointer' '-ffast-math' '-mthumb' '-mthumb-interwork' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-I' '/home/hansung/ndsdev/devkitPro/libnds/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-D' 'ARM9' '-c' '-o' 'main.o'
+Using built-in specs.
+Reading specs from /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/ds_arm9.specs
+rename spec link to old_link
+COLLECT_GCC=arm-none-eabi-gcc
+COLLECT_LTO_WRAPPER=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/lto-wrapper
+Target: arm-none-eabi
+Configured with: ../../gcc-4.7.1/configure --enable-languages=c,c++,objc,obj-c++ --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv4t --enable-poison-system-directories --enable-interwork --enable-multilib --disable-dependency-tracking --disable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --target=arm-none-eabi --with-newlib --with-headers=../../newlib-1.20.0/newlib/libc/include --prefix=/opt/devkitpro/devkitARM --enable-lto --with-bugurl=http://wiki.devkitpro.org/index.php/Bug_Reports --with-pkgversion='devkitARM release 41'
+Thread model: single
+gcc version 4.7.1 (devkitARM release 41) 
+COMPILER_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-v' '-g' '-mthumb' '-mthumb-interwork' '-L/home/hansung/ndsdev/devkitPro/libnds/lib' '-o' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/helloworld.elf'
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/collect2 -X -T /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/ds_arm9.mem -T /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/ds_arm9.ld -o /home/hansung/ndsdev/nds-ide/0892043/helloworld/helloworld.elf /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o -L/home/hansung/ndsdev/devkitPro/libnds/lib -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1 -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib -Map helloworld.map main.o -lnds9 -lfat -ldswifi9 --start-group -lgcc -lg -lc -lsysbase --end-group /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
+
+15:07:10 Build Finished (took 6s.806ms)
+

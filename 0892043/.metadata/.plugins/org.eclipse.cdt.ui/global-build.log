@@ -1,0 +1,169 @@
+15:07:03 **** Build of configuration Default for project helloworld ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d -v -g -Wall -O2 -march=armv5te -mtune=arm946e-s -fomit-frame-pointer -ffast-math -mthumb -mthumb-interwork -I/home/hansung/ndsdev/nds-ide/0892043/helloworld/include -I/home/hansung/ndsdev/nds-ide/0892043/helloworld/build -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/helloworld/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/helloworld/source/main.c -o main.o 
+Using built-in specs.
+COLLECT_GCC=arm-none-eabi-gcc
+Target: arm-none-eabi
+Configured with: ../../gcc-4.7.1/configure --enable-languages=c,c++,objc,obj-c++ --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv4t --enable-poison-system-directories --enable-interwork --enable-multilib --disable-dependency-tracking --disable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --target=arm-none-eabi --with-newlib --with-headers=../../newlib-1.20.0/newlib/libc/include --prefix=/opt/devkitpro/devkitARM --enable-lto --with-bugurl=http://wiki.devkitpro.org/index.php/Bug_Reports --with-pkgversion='devkitARM release 41'
+linking helloworld.elf
+Thread model: single
+gcc version 4.7.1 (devkitARM release 41) 
+COLLECT_GCC_OPTIONS='-MMD' '-MP' '-MF' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d' '-v' '-g' '-Wall' '-O2' '-march=armv5te' '-mtune=arm946e-s' '-fomit-frame-pointer' '-ffast-math' '-mthumb' '-mthumb-interwork' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-I' '/home/hansung/ndsdev/devkitPro/libnds/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-D' 'ARM9' '-c' '-o' 'main.o'
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... helloworld.nds
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/cc1 -quiet -v -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -I /home/hansung/ndsdev/devkitPro/libnds/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -imultilib thumb -iprefix /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/ -MMD main.d -MF /home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d -MP -MQ main.o -D__USES_INITFINI__ -D ARM9 /home/hansung/ndsdev/nds-ide/0892043/helloworld/source/main.c -quiet -dumpbase main.c -march=armv5te -mtune=arm946e-s -mthumb -mthumb-interwork -auxbase-strip main.o -g -O2 -Wall -version -fomit-frame-pointer -ffast-math -o /tmp/ccmRlbFC.s
+GNU C (devkitARM release 41) version 4.7.1 (arm-none-eabi)
+	compiled by GNU C version 4.4.5, GMP version 5.0.4, MPFR version 3.1.0, MPC version 0.9
+GGC heuristics: --param ggc-min-expand=98 --param ggc-min-heapsize=128160
+ignoring nonexistent directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/include"
+ignoring duplicate directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/include-fixed"
+ignoring nonexistent directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/sys-include"
+ignoring duplicate directory "/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/include"
+ignoring nonexistent directory "/home/hansung/ndsdev/nds-ide/0892043/helloworld/include"
+ignoring duplicate directory "/home/hansung/ndsdev/nds-ide/0892043/helloworld/build"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/hansung/ndsdev/nds-ide/0892043/helloworld/build
+ /home/hansung/ndsdev/devkitPro/libnds/include
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/include
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/include-fixed
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/include
+End of search list.
+GNU C (devkitARM release 41) version 4.7.1 (arm-none-eabi)
+	compiled by GNU C version 4.4.5, GMP version 5.0.4, MPFR version 3.1.0, MPC version 0.9
+GGC heuristics: --param ggc-min-expand=98 --param ggc-min-heapsize=128160
+Compiler executable checksum: bcc81854a1be8ef51cf39a5ff1975437
+COLLECT_GCC_OPTIONS='-MMD' '-MP' '-MF' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d' '-v' '-g' '-Wall' '-O2' '-march=armv5te' '-mtune=arm946e-s' '-fomit-frame-pointer' '-ffast-math' '-mthumb' '-mthumb-interwork' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-I' '/home/hansung/ndsdev/devkitPro/libnds/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-D' 'ARM9' '-c' '-o' 'main.o'
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/bin/as -v -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -I /home/hansung/ndsdev/devkitPro/libnds/include -I /home/hansung/ndsdev/nds-ide/0892043/helloworld/build -march=armv5te -mthumb-interwork -meabi=5 -o main.o /tmp/ccmRlbFC.s
+GNU assembler version 2.22 (arm-none-eabi) using BFD version (GNU Binutils) 2.22
+COMPILER_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-MMD' '-MP' '-MF' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build/main.d' '-v' '-g' '-Wall' '-O2' '-march=armv5te' '-mtune=arm946e-s' '-fomit-frame-pointer' '-ffast-math' '-mthumb' '-mthumb-interwork' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-I' '/home/hansung/ndsdev/devkitPro/libnds/include' '-I' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/build' '-D' 'ARM9' '-c' '-o' 'main.o'
+Using built-in specs.
+Reading specs from /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/ds_arm9.specs
+rename spec link to old_link
+COLLECT_GCC=arm-none-eabi-gcc
+COLLECT_LTO_WRAPPER=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/lto-wrapper
+Target: arm-none-eabi
+Configured with: ../../gcc-4.7.1/configure --enable-languages=c,c++,objc,obj-c++ --with-gnu-as --with-gnu-ld --with-gcc --with-march=armv4t --enable-poison-system-directories --enable-interwork --enable-multilib --disable-dependency-tracking --disable-threads --disable-win32-registry --disable-nls --disable-debug --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --target=arm-none-eabi --with-newlib --with-headers=../../newlib-1.20.0/newlib/libc/include --prefix=/opt/devkitpro/devkitARM --enable-lto --with-bugurl=http://wiki.devkitpro.org/index.php/Bug_Reports --with-pkgversion='devkitARM release 41'
+Thread model: single
+gcc version 4.7.1 (devkitARM release 41) 
+COMPILER_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/bin/
+LIBRARY_PATH=/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/:/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/
+COLLECT_GCC_OPTIONS='-v' '-g' '-mthumb' '-mthumb-interwork' '-L/home/hansung/ndsdev/devkitPro/libnds/lib' '-o' '/home/hansung/ndsdev/nds-ide/0892043/helloworld/helloworld.elf'
+ /home/hansung/ndsdev/devkitPro/devkitARM/bin/../libexec/gcc/arm-none-eabi/4.7.1/collect2 -X -T /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/ds_arm9.mem -T /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/ds_arm9.ld -o /home/hansung/ndsdev/nds-ide/0892043/helloworld/helloworld.elf /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o -L/home/hansung/ndsdev/devkitPro/libnds/lib -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1 -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc -L/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib -Map helloworld.map main.o -lnds9 -lfat -ldswifi9 --start-group -lgcc -lg -lc -lsysbase --end-group /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
+13:22:27 **** Build of configuration Default for project FreeRTOS-exp2 ****
+make 
+grit /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/image/down.png -fts -odown
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/image/down.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'down'.
+STATUS: Started run at: 2012-09-27, 13:22:27
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: down into down.s .
+STATUS: Run completed :).
+STATUS: Done!
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+grit /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/image/up.png -fts -oup
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/image/up.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'up'.
+STATUS: Started run at: 2012-09-27, 13:22:28
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: up into up.s .
+STATUS: Run completed :).
+STATUS: Done!
+up.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
+croutine.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/croutine.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/croutine.c -o croutine.o 
+list.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/list.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/list.c -o list.o 
+queue.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/queue.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/queue.c -o queue.o 
+tasks.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/tasks.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/tasks.c -o tasks.o 
+card_spi.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/card_spi.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/card_spi.c -o card_spi.o 
+gdbStub.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/gdbStub.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.c -o gdbStub.o 
+heap_3.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/heap_3.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/heap_3.c -o heap_3.o 
+port.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/port.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/port.c -o port.o 
+portISR.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/portISR.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/portISR.c -o portISR.o 
+sevencore_io.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/source/Exp_Homework.c -o Exp_Homework.o 
+Exp_Sample.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/Exp_Sample.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/source/Exp_Sample.c -o Exp_Sample.o 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/source/main.c:21:0:
+gdbStubAsm.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/gdbStubAsm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStubAsm.s -o gdbStubAsm.o 
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+port_asm.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/build/port_asm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/port_asm.s -o port_asm.o 
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+linking FreeRTOS-exp2.elf
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+built ... FreeRTOS-exp2.nds
+rm down.s up.s
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]

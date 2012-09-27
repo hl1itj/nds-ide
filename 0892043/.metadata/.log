@@ -1,0 +1,22 @@
+!SESSION 2012-09-20 15:00:03.459 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -data /home/hansung/ndsdev/nds-ide/0892043 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.ui 4 4 2012-09-20 15:00:11.084
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.manageConfigsAction2
+
+!ENTRY org.eclipse.ui 4 4 2012-09-20 15:00:11.087
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.buildConfigMenuAction
+
+!ENTRY org.eclipse.ui 4 4 2012-09-20 15:00:11.088
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.wsselection
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-09-20 15:01:41.203
+!MESSAGE Indexed 'helloworld' (1 sources, 33 headers) in 3.25 sec: 1,586 declarations; 1,683 references; 5 unresolved inclusions; 2 syntax errors; 37 unresolved names (1.12%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-09-27 13:21:10.608
+!MESSAGE Indexed 'FreeRTOS-exp2' (68 sources, 21 headers) in 1.32 sec: 2,929 declarations; 11,406 references; 259 unresolved inclusions; 0 syntax errors; 4,394 unresolved names (23.46%)
