@@ -34,7 +34,7 @@ main(void)
 
 	xTaskCreate(Exp_1_Task,
 			(const signed char * const)"Exp_1_Task",
-			2048,
+			2048, // 2048 WORD
 			(void *)NULL,
 			tskIDLE_PRIORITY + 1,
 			NULL);
