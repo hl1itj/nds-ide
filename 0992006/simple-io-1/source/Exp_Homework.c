@@ -84,8 +84,8 @@ Exp_1_Homework_B(void)
 	u16 sw;
 	u8 led_state = 0x01;
 	u8  key_pressed = FALSE;
-	writeb_virtual_io(BARLED2, led_state);
 	writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(BARLED2, 0);
 
 	while(1){
 		sw = NDS_SWITCH();
@@ -93,6 +93,16 @@ Exp_1_Homework_B(void)
 		// left section
 		if (((key_pressed == FALSE) && (sw & KEY_L))) {
 			key_pressed = TRUE;
+
+			if((led_state = (0x01 << 7))){
+				led_state = 0x01;
+				if(barled1에 있다면){
+					writeb_virtual_io(BARLED2, led_state);
+				}
+				if(barled2에 있다면){
+					writeb_virtual_io(BARLED2, led_state);
+				}
+			}
 
 			led_state = led_state << 1;
 			writeb_virtual_io(BARLED1, led_state);
@@ -105,8 +115,17 @@ Exp_1_Homework_B(void)
 		//right section
 		if (((key_pressed == FALSE) && (sw & KEY_R))) {
 			key_pressed = TRUE;
-			if((led_state == (0x01))){
-				led_state = 0x01;}
+
+			if((led_state = (0x01))){
+				led_state = 0x01 << 7;
+
+				if(barled1에 있다면){
+					writeb_virtual_io(BARLED2, led_state);
+				}
+				if(barled2에 있다면){
+					writeb_virtual_io(BARLED2, led_state);
+				}
+			}
 			else{
 				led_state = led_state >> 1;
 			}
