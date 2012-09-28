@@ -99,15 +99,11 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 			} else if ((R_key_pressed == TRUE) && (!(sw & KEY_R))){
 				R_key_pressed = FALSE;
 			}
-			if (NDS_SWITCH() & KEY_START)
-				break;
-			vTaskDelay(50);
+
+			vTaskDelay(MSEC2TICK(50));
 		}
 
-		while (NDS_SWITCH() & KEY_START)
-			vTaskDelay(10);
 
-		vTaskDelay(MSEC2TICK(500));
 }
 
 static
