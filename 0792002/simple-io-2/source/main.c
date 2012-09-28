@@ -97,7 +97,7 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 static
 portTASK_FUNCTION(Homework_2, pvParameters)
 {
-	u16 num=0x01;
+	u16 num=0x80;
 	u8 state = TRUE;
 	portTickType xLastWakeTime=xTaskGetTickCount();
 
