@@ -88,22 +88,27 @@ void Exp_1_Homework_B(void) {
 		if (keypressed && (!(sw & KEY_L) && !(sw & KEY_R)))
 			keypressed = FALSE;
 
-		if ((sw & KEY_L) && preposition == BARLED1 && num > 0x80) {
-			writeb_virtual_io(preposition, 0);
-			preposition = BARLED2;
-			num = 0x01;
-		} else if ((sw & KEY_R) && preposition == BARLED2 && num < 0x01) {
-			writeb_virtual_io(preposition, 0);
-			preposition = BARLED1;
-			num = 0x80;
-		} else if ((sw & KEY_R) && preposition == BARLED1 && num < 0x01) {
-			writeb_virtual_io(preposition, 0);
-			preposition = BARLED2;
-			num = 0x80;
-		} else if ((sw & KEY_L) && preposition == BARLED2 && num > 0x80) {
-			writeb_virtual_io(preposition, 0);
-			preposition = BARLED1;
-			num = 0x01;
+		if (preposition == BARLED1) {
+			if ((sw & KEY_L) && num > 0x80) {
+				num = 0x01;
+				writeb_virtual_io(preposition, 0);
+				preposition = BARLED2;
+			} else if ((sw & KEY_R) && num < 0x01) {
+				num = 0x80;
+				writeb_virtual_io(preposition, 0);
+				preposition = BARLED2;
+			}
+
+		} else if (preposition == BARLED2) {
+			if ((sw & KEY_R) && num < 0x01) {
+				num = 0x80;
+				writeb_virtual_io(preposition, 0);
+				preposition = BARLED1;
+			} else if ((sw & KEY_L) && num > 0x80) {
+				num = 0x01;
+				writeb_virtual_io(preposition, 0);
+				preposition = BARLED1;
+			}
 		}
 
 		writeb_virtual_io(preposition, num);
