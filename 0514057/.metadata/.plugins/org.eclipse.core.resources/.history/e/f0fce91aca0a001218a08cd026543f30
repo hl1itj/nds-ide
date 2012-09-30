@@ -55,15 +55,9 @@ Exp_1_Homework_B(void)
 			sw = NDS_SWITCH();
 
 			if(LR==1)
-			{
-				writeb_virtual_io(BARLED2,0);
 				writeb_virtual_io(BARLED1,led);
-			}
 			else
-			{
-				writeb_virtual_io(BARLED1,0);
-				writeb_virtual_io(BARLED2,led);
-			}
+				writeb_virtual_io(BARLED2,led );
 
 
 			if(sw!=bsw){

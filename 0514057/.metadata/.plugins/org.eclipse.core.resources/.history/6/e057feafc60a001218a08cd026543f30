@@ -50,37 +50,28 @@ Exp_1_Homework_B(void)
 {
 
 		u16 sw,bsw=KEY_UP;
-		int led=8,LR=1;
+		int led=8,LR=0;
 		while (1) {
 			sw = NDS_SWITCH();
 
-			if(LR==1)
-			{
-				writeb_virtual_io(BARLED2,0);
+			switch (LR){
+			case 0:
 				writeb_virtual_io(BARLED1,led);
+				break;
+			case 1:
+				writeb_virtual_io(BARLED2,led );
+				break;
 			}
-			else
-			{
-				writeb_virtual_io(BARLED1,0);
-				writeb_virtual_io(BARLED2,led);
-			}
-
 
 			if(sw!=bsw){
-				if (sw & KEY_R)
-				{
-					if(led!=1)
-						led=led/2;
-					else
-						led=128, LR=~LR;
-				}
-				if (sw & KEY_L)
-				{
-					if(led!=128)
-						led=led*2;
-					else
-						led=1, LR=~LR;
-				}
+				if (sw & KEY_R && led!=1)
+					led=led/2;
+				else
+					led=128, LR=1;
+				if (sw & KEY_L && led!=128)
+					led=led*2;
+				else
+					led=1, LR=0;
 			}
 
 			bsw=sw;

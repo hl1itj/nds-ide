@@ -61,7 +61,7 @@ Exp_1_Homework_B(void)
 			}
 			else
 			{
-				writeb_virtual_io(BARLED1,0);
+				writeb_virtual_io(BARLED1,0)
 				writeb_virtual_io(BARLED2,led);
 			}
 
