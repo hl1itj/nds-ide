@@ -70,11 +70,19 @@ void Exp_1_Homework_B(void) {
 		sw = NDS_SWITCH();
 
 		if (!keypressed && (sw & KEY_L)) {
+			if (keypressed && (sw & KEY_L))
+				continue;
 			num = num << 1;
 			keypressed = TRUE;
+//			if (num >= 0x80)
+//				num = 0x80;
 		} else if (!keypressed && (sw & KEY_R)) {
+			if (keypressed && (sw & KEY_R))
+				continue;
 			num = num >> 1;
 			keypressed = TRUE;
+//			if (num <= 0x01)
+//				num = 0x01;
 		}
 
 		if (keypressed && (!(sw & KEY_L) && !(sw & KEY_R)))
