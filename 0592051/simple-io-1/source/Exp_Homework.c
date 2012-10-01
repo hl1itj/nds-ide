@@ -21,26 +21,40 @@
 void
 Exp_1_Homework_A(void)
 {
+
 	u16 sw;
 	u16 led = 0x01;
+	u8 L_key_pressed = FALSE;
+	u8 R_key_pressed = FALSE;
 
 	writeb_virtual_io(BARLED1, led);
 	writeb_virtual_io(BARLED2, 0);
+
 	while (1) {
 		sw = NDS_SWITCH();
 
 		if(sw & KEY_L){
-			if(led < 0x80){
-				led*=2;
-				writeb_virtual_io(BARLED1, led);
-			}
+			L_key_pressed = TRUE;
+			writeb_virtual_io(BARLED1, led);
+		}
+		if((L_key_pressed == TRUE) && (sw == 0)){
+				if(led < 0x80){
+					led*=2;
+					writeb_virtual_io(BARLED1, led);
+				}
+				L_key_pressed = FALSE;
 		}
 
 		if(sw & KEY_R){
-			if(led > 0x01){
-				led/=2;
-				writeb_virtual_io(BARLED1, led);
-			}
+			R_key_pressed = TRUE;
+			writeb_virtual_io(BARLED1, led);
+		}
+		if((R_key_pressed == TRUE) && (sw == 0)){
+				if(led > 0x01){
+					led/=2;
+					writeb_virtual_io(BARLED1, led);
+				}
+				R_key_pressed = FALSE;
 		}
 
 		if(NDS_SWITCH() & KEY_START)
@@ -50,6 +64,7 @@ Exp_1_Homework_A(void)
 
 	while(NDS_SWITCH() & KEY_START)
 		vTaskDelay(10);
+
 }
 
 // LED Bar Left-and-Right & Round (BARLED 1 and BARLED 2)
@@ -59,55 +74,82 @@ Exp_1_Homework_B(void)
 {
 		u16 sw;
 		u16 led1 = 0x01;
-		u16 led2 = 0x80;
+		u16 led2 = 0x01;
+		u8 L_key_pressed = FALSE;
+		u8 R_key_pressed = FALSE;
+		u8 Led_ch = FALSE;
 
 		writeb_virtual_io(BARLED1, led1);
 		writeb_virtual_io(BARLED2, 0);
+
+
 		while (1) {
 			sw = NDS_SWITCH();
 
-			if(sw & KEY_L){
-				if(led1 < 0x100){
+			if(Led_ch == FALSE){
+				writeb_virtual_io(BARLED1, led1);
+				writeb_virtual_io(BARLED2, 0);
+			}else{
+				writeb_virtual_io(BARLED2, led2);
+				writeb_virtual_io(BARLED1, 0);
+			}
 
-					writeb_virtual_io(BARLED1, led1);
-					writeb_virtual_io(BARLED2, 0);
-					led1*=2;
-					led2=0x01;
+			if(sw & KEY_L){
+				L_key_pressed = TRUE;
+			}
+
+			if((L_key_pressed == TRUE) && (sw == 0)){
+
+				if(Led_ch == FALSE){
+					if(led1 < 0x80){
+						led1*=2;
+					}else{
+						led2 = 0x01;
+						Led_ch = TRUE;
+					}
 				}else{
-					writeb_virtual_io(BARLED1, 0);
-					if(led2 < 0x100){
-						writeb_virtual_io(BARLED2, led2);
+					if(led2 < 0x80){
 						led2*=2;
 					}else{
 						led1 = 0x01;
+						Led_ch = FALSE;
 					}
 				}
+				L_key_pressed = FALSE;
 			}
 
 			if(sw & KEY_R){
-				if(led1 > 0x01){
-					led1/=2;
-					writeb_virtual_io(BARLED1, led1);
-					writeb_virtual_io(BARLED2, 0);
-					led2=0x80;
+				R_key_pressed = TRUE;
+			}
+
+			if((R_key_pressed == TRUE) && (sw == 0)){
+
+				if(Led_ch == FALSE){
+					if(led1 > 0x01){
+						led1/=2;
+					}else{
+						led2 = 0x80;
+						Led_ch = TRUE;
+					}
 				}else{
-					writeb_virtual_io(BARLED1, 0);
-					if(led2 > 0X00){
-						writeb_virtual_io(BARLED2, led2);
-						if(led2 != 0x00)
+					if(led2 > 0x01){
 						led2/=2;
 					}else{
 						led1 = 0x80;
+						Led_ch = FALSE;
 					}
 				}
+				R_key_pressed = FALSE;
 			}
 
 			if(NDS_SWITCH() & KEY_START)
 				break;
 			vTaskDelay(50);
-		}
+			}
 
 		while(NDS_SWITCH() & KEY_START)
 			vTaskDelay(10);
-
 }
+
+
+
