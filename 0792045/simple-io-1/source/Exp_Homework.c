@@ -68,13 +68,17 @@ void Exp_1_Homework_B(void) {
 	while (1) {
 		sw = NDS_SWITCH();
 
-		if ((R_key_pressed == FALSE) && (sw & KEY_R) && !((led_state == 0x01)
-				&& (state == TRUE))) {
+		if ((R_key_pressed == FALSE) && (sw & KEY_R)) {
 			if ((led_state == 0x01) && (state != TRUE)) { //왼쪽에서 오른쪽으로 넘어감
 				led_state = 0x80;
 				state = TRUE;
 				writeb_virtual_io(BARLED1, 0x00);
-			} else
+			} else if ((led_state == 0x01) && (state != FALSE)){//오른쪽에서 왼쪽으로 넘어감
+				led_state = 0x80;
+				state = FALSE;
+				writeb_virtual_io(BARLED2, 0x00);
+			}
+			else
 				led_state = led_state >> 1;
 
 			if (state == TRUE)
@@ -86,12 +90,15 @@ void Exp_1_Homework_B(void) {
 			R_key_pressed = FALSE;
 
 
-		if ((L_key_pressed == FALSE) && (sw & KEY_L) && !((led_state == 0x80)
-				&& (state == FALSE))) {
+		if ((L_key_pressed == FALSE) && (sw & KEY_L)) {
 			if ((led_state == 0x80) && (state != FALSE)) { //오른쪽에서 왼쪽으로 넘어감
 				led_state = 0x01;
 				state = FALSE;
 				writeb_virtual_io(BARLED2, 0x00);
+			}else if ((led_state == 0x80) && (state != TRUE)) { //왼쪽에서 오른감쪽으로 넘어
+				led_state = 0x01;
+				state = TRUE;
+				writeb_virtual_io(BARLED1, 0x00);
 			} else
 				led_state = led_state << 1;
 
