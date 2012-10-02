@@ -1,0 +1,6 @@
+11:39:31 **** Build of configuration Default for project simple-io-1 ****
+make all 
+make: *** 타겟 `all'를 만들 규칙이 없음.  멈춤.
+
+11:39:31 Build Finished (took 260ms)
+

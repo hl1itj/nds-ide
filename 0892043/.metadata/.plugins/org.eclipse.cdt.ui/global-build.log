@@ -167,3 +167,6 @@ rm down.s up.s
 /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/FreeRTOS-exp2/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+11:39:31 **** Build of configuration Default for project simple-io-1 ****
+make all 
+make: *** 타겟 `all'를 만들 규칙이 없음.  멈춤.
