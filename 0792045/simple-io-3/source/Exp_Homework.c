@@ -105,7 +105,7 @@ void Exp_3_Homework(void) {
 			goto do_action;
 			// Input happens
 		}
-		if(((xTaskGetTickCount() - short_timer) >= MSEC2TICK(150)) &&
+		if(((xTaskGetTickCount() - short_timer) >= MSEC2TICK(200)) &&
 				(d_check == TRUE)) {
 			input = NO_DOUBLE;
 			d_check = FALSE;
