@@ -65,10 +65,10 @@ static
 portTASK_FUNCTION(Exp_1_Task, pvParameters )
 {
 	while (1) {
-		//Exp_1_Sample_A();
-		//Exp_1_Sample_B();
+		Exp_1_Sample_A();
+		Exp_1_Sample_B();
 
-		//Exp_1_Homework_A();
+		Exp_1_Homework_A();
 		Exp_1_Homework_B();
 	}
 }
