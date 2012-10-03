@@ -15,31 +15,44 @@
 #include <nds.h>			// NDS / Sevencore Board Headers
 #include <sevencore_io.h>
 #include "realio.h"
-#define BARLED1_MAX 128
-#define BARLED1_MIN 1
+
 #define OFFSET_MOVEMENT 2
+#define LED_OFF 0x00
+#define LED_1ST 0x01
+#define LED_8TH 0x80
 // LED Bar Left-and-Right (BARLED 1)
 // LEFT key - going left, RIGHT key - going right
 void
 Exp_1_Homework_A(void)
 {
 	u16 sw;
-	u16 offset = 0x01;
-	writeb_virtual_io(BARLED1, 1);
-	writeb_virtual_io(BARLED2, 0);
+	u16 offset = LED_1ST;
+	u8 L_key_pressed = FALSE;
+	u8 R_key_pressed = FALSE;
+
+	writeb_virtual_io(BARLED1, LED_1ST);
+	writeb_virtual_io(BARLED2, LED_OFF);
 		while (1) {
 			sw = NDS_SWITCH();
 
-			if(sw & KEY_L){
-				if(offset < BARLED1_MAX){
+			if (((L_key_pressed == FALSE) && (sw & KEY_L))){
+				L_key_pressed = TRUE;
+				if(offset < LED_8TH){
 					offset = offset * OFFSET_MOVEMENT;
 					writeb_virtual_io(BARLED1, offset);
 				}
-			} else if (sw & KEY_R){
-				if(offset > BARLED1_MIN){
+			} else if (((R_key_pressed == FALSE) && (sw & KEY_R))){
+				R_key_pressed = TRUE;
+				if(offset > LED_1ST){
 					offset = offset / OFFSET_MOVEMENT;
 					writeb_virtual_io(BARLED1, offset);
 				}
+			}
+
+			if ((L_key_pressed == TRUE) && (!(sw & KEY_L))){
+				L_key_pressed = FALSE;
+			} else if ((R_key_pressed == TRUE) && (!(sw & KEY_R))){
+				R_key_pressed = FALSE;
 			}
 
 			if (NDS_SWITCH() & KEY_START)
@@ -57,49 +70,74 @@ Exp_1_Homework_B(void)
 {
 
 	u16 sw;
-	u16 offset = 0x100;
-	writeb_virtual_io(BARLED1, 1);
-	writeb_virtual_io(BARLED2, 0);
+	u16 LED1_offset = LED_1ST;
+	u16 LED2_offset = LED_OFF;
+	u8 L_key_pressed = FALSE;
+	u8 R_key_pressed = FALSE;
+
+	writeb_virtual_io(BARLED1, LED_1ST);
+	writeb_virtual_io(BARLED2, LED_OFF);
 		while (1) {
 			sw = NDS_SWITCH();
-			/*
-			if(sw & KEY_L){
 
-			} else if (sw & KEY_R){
+			if (((L_key_pressed == FALSE) && (sw & KEY_L))){
+				L_key_pressed = TRUE;
+				if(LED2_offset == LED_OFF) { // Located BARLED1
+					if(LED1_offset < LED_8TH){ // normal moving
+						LED1_offset = LED1_offset * OFFSET_MOVEMENT;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					} else { // jumping BARLED2 1st block
+						LED1_offset = LED_OFF;
+						LED2_offset = LED_1ST;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					}
+				} else { // Located BARLED2
+					if(LED2_offset < LED_8TH){ // normal moving
+						LED2_offset = LED2_offset * OFFSET_MOVEMENT;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					} else { // jumping BARLED1 1st block
+						LED1_offset = LED_1ST;
+						LED2_offset = LED_OFF;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					}
+				}
+			} else if (((R_key_pressed == FALSE) && (sw & KEY_R))){
+				R_key_pressed = TRUE;
+				if(LED1_offset == LED_OFF){ // Located BARLED2
+					if(LED2_offset > LED_1ST){ // normal moving
+						LED2_offset = LED2_offset / OFFSET_MOVEMENT;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					} else { // jumping BARLED1 8th block
+						LED1_offset = LED_8TH;
+						LED2_offset = LED_OFF;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					}
+				} else { //Located BARLED1
+					if (LED1_offset > LED_1ST) { // normal moving
+						LED1_offset = LED1_offset / OFFSET_MOVEMENT;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+					} else { // jumping BARLED2 8th block
+						LED1_offset = LED_OFF;
+						LED2_offset = LED_8TH;
+						writeb_virtual_io(BARLED1, LED1_offset);
+						writeb_virtual_io(BARLED2, LED2_offset);
+
+					}
+				}
 
 			}
 
-*/
-			if(sw & KEY_L){
-				if ( (offset/256) > 0 ) { //BARLED1 LED ON
-					offset = offset * 2;
-					writeb_virtual_io(BARLED1, offset/256);
-					writeb_virtual_io(BARLED2, 0);
-					if( offset == 32768 ){
-						offset = 0x01;
-						writeb_virtual_io(BARLED1, 0);
-						writeb_virtual_io(BARLED2, 1);
-					}
-				} else if (( offset/256 ) == 0){ //BARLED2 LED ON
-					offset = offset * 2;
-					writeb_virtual_io(BARLED1, 0);
-					writeb_virtual_io(BARLED2, offset);
-				}
-			} else if (sw & KEY_R){
-				if ( (offset/256) > 0 ) { //BARLED1 LED ON
-					offset = offset / 2;
-					writeb_virtual_io(BARLED1, offset/256);
-					writeb_virtual_io(BARLED2, 0);
-				} else if ( (offset/256 == 0) ) { //BARLED2 LED ON
-					offset = offset / 2;
-					writeb_virtual_io(BARLED1, 0);
-					writeb_virtual_io(BARLED2, offset);
-					if( offset == 1 ){
-						offset = 32768;
-						writeb_virtual_io(BARLED1, offset/256);
-						writeb_virtual_io(BARLED2, 0);
-					}
-				}
+			if ((L_key_pressed == TRUE) && (!(sw & KEY_L))){
+				L_key_pressed = FALSE;
+			} else if ((R_key_pressed == TRUE) && (!(sw & KEY_R))){
+				R_key_pressed = FALSE;
 			}
 
 			if (NDS_SWITCH() & KEY_START)
