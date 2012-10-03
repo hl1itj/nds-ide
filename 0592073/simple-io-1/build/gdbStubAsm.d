@@ -1,2 +1,2 @@
 gdbStubAsm.o: \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/gdbStubAsm.s
+ /home/hansung/ndsdev/workspace/FreeRTOS-exp2/FreeRTOS/NDS/gdbStubAsm.s

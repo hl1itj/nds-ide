@@ -1,0 +1,6 @@
+17:51:12 **** Incremental Build of configuration Default for project helloworld ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/example/helloworld/helloworld.nds'는 이미 갱신되었습니다.
+
+17:51:12 Build Finished (took 326ms)
+
