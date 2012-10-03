@@ -22,33 +22,33 @@ void
 Exp_1_Homework_A(void)
 {
 	u16 sw;
-	u16 button;
-	button = 1;
-	u8  key_pressed = TRUE;
 
-	int count = 0;
-	int num = 1;
-	int i;
+	u8 button;
+	button = 0x01;
+	u8  key_pressed = FALSE;
 
 	while (1) {
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED1, button);
-		writeb_virtual_io(BARLED2, 0);
-		key_pressed = !key_pressed;
+		writeb_virtual_io(BARLED2, 0x00);
 
 		if ((key_pressed == FALSE) && (sw & KEY_LEFT)) {
-			if(button < 128){
-				key_pressed = !key_pressed;
-				button = button * 2;
-				writeb_virtual_io(BARLED1, button);
-			}
-		}else if ((key_pressed == FALSE) && (sw & KEY_RIGHT)) {
-			if(button > 1){
-				key_pressed = !key_pressed;
-				button = button / 2;
-				writeb_virtual_io(BARLED1, button);
+			if(button < 0x80){
+				button = button << 1;
+				key_pressed = TRUE;
 			}
 			writeb_virtual_io(BARLED1, button);
+		}else if ((key_pressed == FALSE) && (sw & KEY_RIGHT)) {
+			if(button > 0x01){
+				button = button >> 1;
+				key_pressed = TRUE;
+			}
+			writeb_virtual_io(BARLED1, button);
+		}
+
+		if(key_pressed == TRUE){
+			if(!(sw & KEY_LEFT) && !(sw & KEY_RIGHT))
+				key_pressed = FALSE;
 		}
 
 		if (NDS_SWITCH() & KEY_START)
