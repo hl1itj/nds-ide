@@ -40,9 +40,7 @@ Exp_1_Homework_A(void)
 			writeb_virtual_io(BARLED1, led_state);
 		}
 
-		if ((key_pressed == TRUE) && (!(sw & KEY_LEFT)))
-			key_pressed = FALSE;
-		if ((key_pressed == TRUE) && (!(sw & KEY_RIGHT)))
+		if ((key_pressed == TRUE) && (!(sw & KEY_LEFT)) && (!(sw & KEY_RIGHT)))
 			key_pressed = FALSE;
 
 
@@ -70,39 +68,38 @@ Exp_1_Homework_B(void)
 		sw = NDS_SWITCH();
 
 		if ((key_pressed == FALSE) && (sw == KEY_R) && (led_state != 0x01)){
-			key_pressed == TRUE;
+			key_pressed = TRUE;
 			led_state = led_state >>1;
 			if (a_b){
 				writeb_virtual_io(BARLED1, led_state);
 				writeb_virtual_io(BARLED2, 0);
 			}
 			else{
-				writeb_virtual_io(BARLED2, led_state);
 				writeb_virtual_io(BARLED1, 0);
+				writeb_virtual_io(BARLED2, led_state);
 			}
 
 		}
 		else if ((key_pressed == FALSE) && (sw == KEY_R) && (led_state == 0x01)) {
 
-			key_pressed == TRUE;
+			key_pressed = TRUE;
 			led_state = 0x80;
 			if (a_b){
 				a_b = FALSE;
-				writeb_virtual_io(BARLED1, led_state);
-				writeb_virtual_io(BARLED2, 0);
-
-			}
-			else{
-				a_b = TRUE;
 				writeb_virtual_io(BARLED1, 0);
 				writeb_virtual_io(BARLED2, led_state);
 
 			}
+			else{
+				a_b = TRUE;
+				writeb_virtual_io(BARLED1, led_state);
+				writeb_virtual_io(BARLED2, 0);
 
+			}
 		}
 
 		if ((key_pressed == FALSE) && (sw == KEY_L) && (led_state != 0x80)){
-			key_pressed == TRUE;
+			key_pressed = TRUE;
 			led_state = led_state <<1;
 			if (a_b){
 				writeb_virtual_io(BARLED1, led_state);
@@ -112,28 +109,27 @@ Exp_1_Homework_B(void)
 				writeb_virtual_io(BARLED1, 0);
 				writeb_virtual_io(BARLED2, led_state);
 			}
-			key_pressed == TRUE;
 		}
+
 		else if ((key_pressed == FALSE) && (sw == KEY_L) && (led_state == 0x80)) {
 
-			key_pressed == TRUE;
+			key_pressed = TRUE;
 			led_state = 0x01;
 			if (a_b){
 				a_b = FALSE;
-				writeb_virtual_io(BARLED1, led_state);
-				writeb_virtual_io(BARLED2, 0);
-
-			}
-			else{
-				a_b = TRUE;
 				writeb_virtual_io(BARLED1, 0);
 				writeb_virtual_io(BARLED2, led_state);
 
 			}
+			else{
+				a_b = TRUE;
+				writeb_virtual_io(BARLED1, led_state);
+				writeb_virtual_io(BARLED2, 0);
 
+			}
 		}
 
-		if ((key_pressed == TRUE) && (sw == KEY_R) || (sw == KEY_L) )
+		if ((key_pressed == TRUE) && (!(sw & KEY_R)) && (!(sw & KEY_L)))
 			key_pressed = FALSE;
 
 		if (NDS_SWITCH() & KEY_START)
