@@ -67,7 +67,7 @@ Exp_1_Homework_B(void)
 		writeb_virtual_io(BARLED2, led_state2);
 
 		sw = NDS_SWITCH();
-		if ((key_pressed==0) && (sw & KEY_LEFT)){
+		if ((key_pressed==0) && (sw & KEY_L)){
 			key_pressed=1;
 			if(led_state1==0x80){
 				led_state1=0x00;
@@ -83,7 +83,7 @@ Exp_1_Homework_B(void)
 			}
 		}
 
-		if ((key_pressed==0) && (sw & KEY_RIGHT)){
+		if ((key_pressed==0) && (sw & KEY_R)){
 			key_pressed=1;
 			if(led_state1==0x01){
 				led_state1=0x00;
@@ -99,7 +99,7 @@ Exp_1_Homework_B(void)
 			}
 		}
 
-		if((key_pressed==1) && (!(sw & KEY_LEFT)) && (!(sw & KEY_RIGHT)))
+		if((key_pressed==1) && (!(sw & KEY_L)) && (!(sw & KEY_R)))
 			key_pressed=0;
 		if (sw & KEY_START)
 			break;

@@ -25,22 +25,16 @@ static portTASK_FUNCTION(Exp_1_Task, pvParameters);
 
 void InitDebug(void);
 
-int
-main(void)
-{
+int main(void) {
 	InitDebug();
 	init_virtual_io(ENABLE_LED);	// Enable Virtual IO Devices
 	init_printf();					// Initialize Bottom Screen for printf()
 
-	xTaskCreate(Exp_1_Task,
-			(const signed char * const)"Exp_1_Task",
-			2048,
-			(void *)NULL,
-			tskIDLE_PRIORITY + 1,
-			NULL);
+	xTaskCreate(Exp_1_Task, (const signed char * const)"Exp_1_Task", 2048,
+			(void *)NULL, tskIDLE_PRIORITY + 1, NULL);
 
 	vTaskStartScheduler();		// Never returns
-	while(1)
+	while (1)
 		;
 	return 0;
 }
@@ -50,9 +44,7 @@ void Exp_1_Sample_B(void);
 void Exp_1_Homework_A(void);
 void Exp_1_Homework_B(void);
 
-void
-InitDebug(void)
-{
+void InitDebug(void) {
 #ifdef DEBUG
 	irqInit();
 	initSpi();
@@ -62,8 +54,7 @@ InitDebug(void)
 }
 
 static
-portTASK_FUNCTION(Exp_1_Task, pvParameters )
-{
+portTASK_FUNCTION(Exp_1_Task, pvParameters ) {
 	while (1) {
 		Exp_1_Sample_A();
 		Exp_1_Sample_B();
@@ -72,5 +63,4 @@ portTASK_FUNCTION(Exp_1_Task, pvParameters )
 		Exp_1_Homework_B();
 	}
 }
-
 

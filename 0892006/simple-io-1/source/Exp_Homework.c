@@ -73,12 +73,11 @@ void Exp_1_Homework_B(void) {
 	while (1) {
 		sw = NDS_SWITCH();
 		//연속적인 키 입력을 체크
-		if (key_pressed == TRUE && (!(sw & KEY_RIGHT)) && (!(sw & KEY_LEFT))
-				&& (!(sw & KEY_R)) && (!(sw & KEY_L))) {
+		if (key_pressed == TRUE && (!(sw & KEY_R)) && (!(sw & KEY_L))) {
 			key_pressed = FALSE;
 		}
 		//오른쪽 방향키 입력을 체크
-		if (NDS_SWITCH() & KEY_RIGHT && key_pressed == FALSE
+		if (NDS_SWITCH() & KEY_R && key_pressed == FALSE
 				&& led_state >= 0x02) {
 			led_state = led_state >> 1;
 			if (onoff == TRUE) {
@@ -92,7 +91,7 @@ void Exp_1_Homework_B(void) {
 
 		}
 		//왼쪽 방향키 입력을 체크
-		if (NDS_SWITCH() & KEY_LEFT && key_pressed == FALSE
+		if (NDS_SWITCH() & KEY_L && key_pressed == FALSE
 				&& led_state <= 0x40) {
 			led_state = led_state << 1;
 			if (onoff == TRUE) {
