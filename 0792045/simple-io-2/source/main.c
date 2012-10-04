@@ -87,20 +87,15 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 static
 portTASK_FUNCTION(HomeWork_2, pvParameters) {
 	u8 barled = 0x01;
-	u8 state = TRUE; //TRUE 일 경우 왼쪽으로 이동 FALSE 일 경우 오른쪽으로 이동
-
+	u8 state = TRUE;
 	portTickType xLastWakeTime = xTaskGetTickCount();
 	while (1) {
-		if(state == TRUE)
-			barled = barled<<1;
-		else
-			barled = 0x01;
-
-		if(barled == 0x80)
-			state = FALSE;
-		else if(barled == 0x01)
-			state = TRUE;
 		writeb_virtual_io(BARLED2, barled);
+		if(barled == 0x80)
+			barled = 0x01;
+		else
+			barled = barled<<1;
+
 		printf(".");
 		vTaskDelayUntil(&xLastWakeTime,MSEC2TICK(500));
 	}
