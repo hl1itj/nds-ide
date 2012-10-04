@@ -66,6 +66,7 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 			led_state = led_state >> 1;
 			R_key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led_state);
+			printf("R");
 		} else if ((R_key_pressed == TRUE) && !(sw & KEY_R))
 			R_key_pressed = FALSE;
 
@@ -73,6 +74,7 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 			led_state = led_state << 1;
 			L_key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led_state);
+			printf("L");
 		} else if ((L_key_pressed == TRUE) && !(sw & KEY_L))
 			L_key_pressed = FALSE;
 
@@ -85,20 +87,15 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 static
 portTASK_FUNCTION(HomeWork_2, pvParameters) {
 	u8 barled = 0x01;
-	u8 state = TRUE; //TRUE 일 경우 왼쪽으로 이동 FALSE 일 경우 오른쪽으로 이동
-
+	u8 state = TRUE;
 	portTickType xLastWakeTime = xTaskGetTickCount();
 	while (1) {
-		if(state == TRUE)
-			barled = barled<<1;
-		else
-			barled = barled>>1;
-
-		if(barled == 0x80)
-			state = FALSE;
-		else if(barled == 0x01)
-			state = TRUE;
 		writeb_virtual_io(BARLED2, barled);
+		if(barled == 0x80)
+			barled = 0x01;
+		else
+			barled = barled<<1;
+
 		printf(".");
 		vTaskDelayUntil(&xLastWakeTime,MSEC2TICK(500));
 	}
