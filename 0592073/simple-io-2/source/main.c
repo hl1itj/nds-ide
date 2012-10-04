@@ -100,9 +100,10 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 				R_key_pressed = FALSE;
 			}
 
+			vTaskDelay(MSEC2TICK(50));
 		}
 
-		vTaskDelay(MSEC2TICK(500));
+
 }
 
 static
