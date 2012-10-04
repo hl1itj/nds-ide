@@ -64,7 +64,7 @@ int connect_pc() {
 	int size;
 
 	disconnect_nds();
-	
+
 	if ((data_socket = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
 		fprintf(stderr, "Error at socket(): %d\n", data_socket);
 		return -1;
@@ -73,7 +73,7 @@ int connect_pc() {
 	memset(&nds_sin, 0, sizeof(nds_sin));
 	nds_sin.sin_family = AF_INET;
 	nds_sin.sin_addr.s_addr = htonl(INADDR_ANY);
-	nds_sin.sin_port = htons(Port+1);
+	nds_sin.sin_port = htons(Port + 1);
 
 	if (bind(data_socket, (struct sockaddr*) &nds_sin, sizeof(nds_sin)) == -1) {
 		fprintf(stderr, "bind() PC error! - port %d\n", Port);
@@ -106,7 +106,7 @@ int connect_nds() {
 	int size;
 
 	disconnect_nds();
-	
+
 	if ((clnt_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1) {
 		fprintf(stderr, "Error at socket(): %d\n", data_socket);
 		return -1;
@@ -197,39 +197,35 @@ int recv_data_byte(unsigned char *buf, int count) {
 }
 
 /* Something wrong in this function,
-  this function just kills himself after sleep(). not the problematic child process.
-  this function should be threaded by parent with the child pid */
-  
+ this function just kills himself after sleep(). not the problematic child process.
+ this function should be threaded by parent with the child pid */
+
 void *t_function() {
-	
+
 	pid_t mypid;
 	mypid = getpid();
 	sleep(300);
-	
-	
-	disconnect_nds();	
+
+	disconnect_nds();
 	fprintf(stderr, "\nProcess kill : Time Over\n");
 	kill(mypid, SIGKILL);
-	
+
 	pthread_exit(0);
 }
 
-
-
 int main(int argc, char* argv[]) {
-	
+
 	char *fname;
 	char buf[2048];
 
 	pid_t pid;
 	pid_t pid_child;
-	int status;
-	
+	//int status;
+
 	pthread_t p_thread;
 	int thr_id = 1;
 	int tmp;
-	
-	
+
 	unsigned char *BUF;
 	int BUF_SIZE;
 	int filedes;
@@ -242,9 +238,9 @@ int main(int argc, char* argv[]) {
 
 	struct sockaddr_in nds_sin;
 	struct sockaddr_in nds_cos;
-	
 
-	if ((ret = (clnt_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP))) == -1) {
+	if ((ret = (clnt_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)))
+			== -1) {
 		fprintf(stderr, "Error at socket(): %d\n", data_socket);
 		return -1;
 	}
@@ -262,7 +258,7 @@ int main(int argc, char* argv[]) {
 	if (listen(clnt_socket, 1) == -1) {
 		fprintf(stderr, "listen() error!\n");
 		return 1;
-	}	
+	}
 
 	while (1) {
 
@@ -274,85 +270,96 @@ int main(int argc, char* argv[]) {
 			fprintf(stderr, "accept() to DS Failed\n");
 			exit(0);
 		}
-		
-		if(Port > (DOWNLOAD_PORT+995))
-			Port = (DOWNLOAD_PORT+1);
-		Port = Port + 2;
-		
 
+		if (Port > (DOWNLOAD_PORT + 995))
+			Port = (DOWNLOAD_PORT + 1);
+		Port = Port + 2;
 		pid = fork();
-		if (pid < 0) {
+		if (pid > 0) {
+			pid_child = 0;
+			while (pid_child == 0) {
+				pid_child = waitpid(pid, NULL, 0);
+			}
+		} else if (pid < 0) {
 			fprintf(stderr, "fork() Error!\n");
 			disconnect_nds();
 			exit(1);
-		} else if (pid > 0) {	//Parent Process		
-			pid_child = waitpid(pid, &status, WNOHANG);
-			if(pid_child)
-				printf("Removed proc ID : %d\n", pid);
-			
-			close(data_socket);
-						
-		} else if (pid == 0) {
-			//	printf("listen succes\n");			
-			thr_id = pthread_create(&p_thread, NULL, t_function, (void*) tmp);
-			sprintf(tmp_port, "%d", Port);			
-			send_data(tmp_port, MAX_SIZE);
-			//port_num sent end
+		} else {
+			pid_child = fork();
+			if (pid_child < 0) {
+				fprintf(stderr, "fork() Error!\n");
+				disconnect_nds();
+				exit(1);
+			} else if (pid_child > 0) {	//Parent Process		
+				//pid_child = waitpid(pid, &status, 0);
+				pid_child = waitpid(pid, NULL, 0);
+				if (pid_child)
+					printf("Removed proc ID : %d\n", pid);
 
-			//File Receive Sequence
-			if (connect_pc() < 0) {
-				goto leave0;
-			}
+				close(data_socket);
+				
+				return ret;
 
-			printf("connect success\n");
-			BUF = (unsigned char*) malloc(sizeof(char) * BUF_SIZE + 1);
+			} else if (pid_child == 0) {
+				//	printf("listen succes\n");			
+				thr_id = pthread_create(&p_thread, NULL, t_function,
+						(void*) tmp);
+				sprintf(tmp_port, "%d", Port);
+				send_data(tmp_port, MAX_SIZE);
+				//port_num sent end
 
-			printf("Magic Download Code Sent\n");
+				//File Receive Sequence
+				if (connect_pc() < 0) {
+					goto leave0;
+				}
 
-			memset(&FHeader, 0, sizeof(FHeader));
-			if (read(clnt_socket, (struct header *) &FHeader, sizeof(FHeader))
-					!= sizeof(FHeader)) {
-				printf("Failed to send File Header\n");
-				goto leave1;
-			}			
-			
-			filedes = open(tmp_port, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+				printf("connect success\n");
+				BUF = (unsigned char*) malloc(sizeof(char) * BUF_SIZE + 1);
 
-			printf("Header receive\n");
+				printf("Magic Download Code Sent\n");
 
-			printf("Start Receiv Data\n");
+				memset(&FHeader, 0, sizeof(FHeader));
+				if (read(clnt_socket, (struct header *) &FHeader,
+						sizeof(FHeader)) != sizeof(FHeader)) {
+					printf("Failed to send File Header\n");
+					goto leave1;
+				}
 
-			total = atoi(FHeader.filelength);
+				filedes = open(tmp_port, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 
-			memset(&buf, 0, sizeof(buf));
-			fflush( stdout);
-			while ((filelen = read(clnt_socket, buf, sizeof(buf))) > 0) {
-				write(filedes, buf, filelen);
-				total -= filelen;
-				if (total <= 0)
-					break;
+				printf("Header receive\n");
+
+				printf("Start Receiv Data\n");
+
+				total = atoi(FHeader.filelength);
+
 				memset(&buf, 0, sizeof(buf));
-			}
-			printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, atoi(
-					FHeader.filelength));
-			
-			pthread_cancel(p_thread);
-			leave1: 
-				free(BUF);
+				fflush (stdout);
+				while ((filelen = read(clnt_socket, buf, sizeof(buf))) > 0) {
+					write(filedes, buf, filelen);
+					total -= filelen;
+					if (total <= 0)
+						break;
+					memset(&buf, 0, sizeof(buf));
+				}
+				printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename,
+						atoi(FHeader.filelength));
+
+				pthread_cancel(p_thread);
+				leave1: free(BUF);
 				//disconnect_nds();
-			leave0:
-				close(filedes);
+				leave0: close(filedes);
 				filesend();
 				remove(tmp_port);
-			goto end;
-		}//if(pid) end
-	}//while() end
-end:
+				goto end;
+			}	//if(pid) end
+		}
+	}	//while() end
+	end:
 
 	return ret;
 
 }
-
 
 int filesend() {
 	FILE *f2send;
@@ -360,7 +367,7 @@ int filesend() {
 	unsigned char *BUF;
 	int BUF_SIZE = 2048;
 
-	int total_sent, size, ret, i, checksum;	
+	int total_sent, size, ret, i, checksum;
 
 	if ((f2send = fopen(tmp_port, "r+b")) == NULL) {
 
@@ -457,16 +464,14 @@ int filesend() {
 
 	printf("Magic Cleanup Code Sent\n");
 
-	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, atoi(
-			FHeader.filelength));
-	
+	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename,
+			atoi(FHeader.filelength));
+
 	ret = 0;
 
-leave1: 
-	free(BUF);
+	leave1: free(BUF);
 	close(data_socket);
 	close(clnt_socket);
-leave0: 
-	fclose(f2send);
+	leave0: fclose(f2send);
 	return ret;
 }
