@@ -109,8 +109,8 @@ void Exp_1_Homework_B(void) {
 		}
 
 		// 손이 버튼에서 떼졌는지 확인
-		if ((key_pressed == TRUE) && (!(NDS_SWITCH() & KEY_L))
-		&& (!(NDS_SWITCH() & KEY_R))) {
+		if ((key_pressed == TRUE) && (!(NDS_SWITCH() & KEY_LEFT))
+		&& (!(NDS_SWITCH() & KEY_RIGHT))) {
 			key_pressed = FALSE;
 		}
 

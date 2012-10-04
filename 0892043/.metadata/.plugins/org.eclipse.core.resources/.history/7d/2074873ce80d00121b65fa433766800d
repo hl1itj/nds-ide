@@ -81,7 +81,7 @@ void Exp_1_Homework_B(void) {
 		sw = NDS_SWITCH();
 
 		// 손이 버튼에서 떼진 상태이고 왼쪽 방향키를 눌렀을 경우
-		if ((key_pressed == FALSE) && (NDS_SWITCH() & KEY_L)) {
+		else if ((key_pressed == FALSE) && (NDS_SWITCH() & KEY_L)) {
 			key_pressed = TRUE;
 
 			if (i == 0x8000) // BARLED1에서 제일 왼쪽 LED가 켜진 상태인 경우
@@ -109,8 +109,8 @@ void Exp_1_Homework_B(void) {
 		}
 
 		// 손이 버튼에서 떼졌는지 확인
-		if ((key_pressed == TRUE) && (!(NDS_SWITCH() & KEY_L))
-		&& (!(NDS_SWITCH() & KEY_R))) {
+		if ((key_pressed == TRUE) && (!(NDS_SWITCH() & KEY_LEFT))
+		&& (!(NDS_SWITCH() & KEY_RIGHT))) {
 			key_pressed = FALSE;
 		}
 
