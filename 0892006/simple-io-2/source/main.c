@@ -58,7 +58,6 @@ portTASK_FUNCTION(Homework_1, pvParameters) {
 	u8 key_pressed = FALSE;
 
 	writeb_virtual_io(BARLED1, led_state);
-	writeb_virtual_io(BARLED2, 0);
 
 	while (1) {
 		sw = NDS_SWITCH();
