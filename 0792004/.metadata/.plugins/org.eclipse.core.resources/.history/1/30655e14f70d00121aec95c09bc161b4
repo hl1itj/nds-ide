@@ -26,6 +26,9 @@
 #define LED1(x) writeb_virtual_io(BARLED1, x)
 #define LED2(x) writeb_virtual_io(BARLED2, x)
 
+static portTASK_FUNCTION(Sample_Task_1, pvParameters);
+static portTASK_FUNCTION(Sample_Task_2, pvParameters);
+
 static portTASK_FUNCTION(Homework_1, pvParameters);
 static portTASK_FUNCTION(Homework_2, pvParameters);
 
@@ -43,12 +46,14 @@ main(void)
 					     2048,
 					     (void *)NULL,
 					     tskIDLE_PRIORITY + 2,
+					     tskIDLE_PRIORITY + 1,
 					     NULL);
 	xTaskCreate(Homework_2,
 					     (const signed char * const)"Homework_2",
 					     2048,
 					     (void *)NULL,
-					     tskIDLE_PRIORITY + 1,
+					     tskIDLE_PRIORITY + 1
+					     tskIDLE_PRIORITY + 2,
 					     NULL);
 	vTaskStartScheduler();		// Never returns
 	while(1)
@@ -72,12 +77,15 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 {
 	u16 sw;
 	u8 led = MIN_LED;
+	u8 keyR_pressed = FALSE;
+	u8 keyL_pressed = FALSE;
+
+	LED1(MIN_LED);
 	u8 keyRight_pressed = FALSE;
 	u8 keyLeft_pressed = FALSE;
 
 	LED1(MIN_LED);
 	LED2(0);
-
 	while (1) {
 		sw = NDS_SWITCH();
 
@@ -94,24 +102,24 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 			printf("L");
 		}
 
-		if((keyRight_pressed == TRUE) && !(sw & KEY_R))
-			keyRight_pressed = FALSE;
+		if((keyR_pressed == TRUE) && !(sw & KEY_R))
+			keyR_pressed = FALSE;
 
-		if((keyLeft_pressed == TRUE) && !(sw & KEY_L))
-			keyLeft_pressed = FALSE;
+		if((keyL_pressed == TRUE) && !(sw & KEY_L))
+			keyL_pressed = FALSE;
 	}
 }
 
 static
 portTASK_FUNCTION(Homework_2, pvParameters)
 {
-	u8 barled = MIN_LED;
 	portTickType xLastWakeTime = xTaskGetTickCount();
+	u8 led = MIN_LED;
 
 	while (1) {
-		LED2(barled);
+		LED2(led);
 		printf(".");
 		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500));
-		barled = (barled < MAX_LED) ? barled*2 : MIN_LED;
+		led = led < MAX_LED ? led*2 : MIN_LED;
 	}
 }
