@@ -494,3 +494,6 @@ Binding(CTRL+SHIFT+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-03 16:13:19.916
+!MESSAGE Indexed 'simple-io-2' (70 sources, 40 headers) in 1.70 sec: 3,521 declarations; 14,562 references; 258 unresolved inclusions; 0 syntax errors; 4,451 unresolved names (19.75%)
