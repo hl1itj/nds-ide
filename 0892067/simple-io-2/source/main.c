@@ -21,39 +21,27 @@
 #include "gdbStub.h"
 #include "gdbStubAsm.h"
 
-static portTASK_FUNCTION(Sample_Task_1, pvParameters);
-static portTASK_FUNCTION(Sample_Task_2, pvParameters);
+static portTASK_FUNCTION(Homework_Task_1, pvParameters);
+static portTASK_FUNCTION(Homework_Task_2, pvParameters);
 
 void InitDebug(void);
 
-int
-main(void)
-{
+int main(void) {
 	InitDebug();
 	init_virtual_io(ENABLE_LED);	// Enable Virtual IO Devices
 	init_printf();					// Initialize Bottom Screen for printf()
 
-	xTaskCreate(Sample_Task_1,
-					     (const signed char * const)"Sample_Task_1",
-					     2048,
-					     (void *)NULL,
-					     tskIDLE_PRIORITY + 1,
-					     NULL);
-	xTaskCreate(Sample_Task_2,
-					     (const signed char * const)"Sample_Task_2",
-					     2048,
-					     (void *)NULL,
-					     tskIDLE_PRIORITY + 2,
-					     NULL);
+	xTaskCreate(Homework_Task_1, (const signed char * const)"Sample_Task_1",
+			2048, (void *)NULL, tskIDLE_PRIORITY + 1, NULL);
+	xTaskCreate(Homework_Task_2, (const signed char * const)"Sample_Task_2",
+			2048, (void *)NULL, tskIDLE_PRIORITY + 2, NULL);
 	vTaskStartScheduler();		// Never returns
-	while(1)
+	while (1)
 		;
 	return 0;
 }
 
-void
-InitDebug(void)
-{
+void InitDebug(void) {
 #ifdef DEBUG
 	irqInit();
 	initSpi();
@@ -63,38 +51,58 @@ InitDebug(void)
 }
 
 static
-portTASK_FUNCTION(Sample_Task_1, pvParameters)
-{
-	u8 barled = 0;
-	int i;
+portTASK_FUNCTION(Homework_Task_1, pvParameters) {
+	u16 sw;
+	u8 key_pressed = FALSE;
+	short int led_state = 0x0001;
+	u16 cur_borled = BARLED1;
+
+	//writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(cur_borled, led_state);
 
 	while (1) {
-		printf("1");
-		barled = ~barled;
-		writeb_virtual_io(BARLED1, barled);
+		sw = NDS_SWITCH();
+		printf(".");
 
-		for (i = 0; i < 100000; i++)
-			barled = ~barled;
+		if (((key_pressed == FALSE) && ((sw & KEY_L) || (sw & KEY_R)))) {
+			key_pressed = TRUE;
 
-		vTaskDelay(MSEC2TICK(500));
+			if ((led_state != 0x0080) && (sw & KEY_L)){ //max left
+				led_state = led_state * 2;
+				printf("L");
+			}
+
+			else if ((led_state != 0x0001) && (sw & KEY_R)){ //max right
+				led_state = led_state / 2;
+				printf("R");
+			}
+
+			writeb_virtual_io(cur_borled, led_state);
+		}
+
+		if ((key_pressed == TRUE) && (sw == 0))
+			key_pressed = FALSE;
+
+		vTaskDelay(50);
 	}
+
 }
 
 static
-portTASK_FUNCTION(Sample_Task_2, pvParameters)
-{
+portTASK_FUNCTION(Homework_Task_2, pvParameters) {
 	u8 barled = 0;
 	portTickType xLastWakeTime = xTaskGetTickCount();
 	int i;
+	short int led_state = 0x0001;
 
 	while (1) {
-		printf("2");
-		barled = ~barled;
-		writeb_virtual_io(BARLED2, barled);
+		writeb_virtual_io(BARLED2, led_state);
 
-		for (i = 0; i < 100000; i++)
-			barled = ~barled;
+		if(led_state == 0x0080)
+			led_state = 0x0001;
+		else
+			led_state = led_state*2;
 
-		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500));
+		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
 	}
 }
