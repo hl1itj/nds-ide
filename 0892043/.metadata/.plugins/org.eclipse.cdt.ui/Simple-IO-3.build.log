@@ -1,0 +1,59 @@
+13:52:47 **** Incremental Build of configuration Default for project Simple-IO-3 ****
+make 
+grit /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/image/down.png -fts -odown
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/image/down.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'down'.
+STATUS: Started run at: 2012-10-04, 13:52:47
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: down into down.s .
+STATUS: Run completed :).
+STATUS: Done!
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+grit /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/image/up.png -fts -oup
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/image/up.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'up'.
+STATUS: Started run at: 2012-10-04, 13:52:47
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: up into up.s .
+STATUS: Run completed :).
+STATUS: Done!
+up.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
+sevencore_io.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/include -I/home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/build -I/home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/Simple-IO-3/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
+linking Simple-IO-3.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... Simple-IO-3.nds
+
+13:52:49 Build Finished (took 2s.193ms)
+

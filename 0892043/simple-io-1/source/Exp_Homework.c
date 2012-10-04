@@ -80,12 +80,32 @@ void Exp_1_Homework_B(void) {
 	while (1) {
 		sw = NDS_SWITCH();
 
+		if ((key_pressed == FALSE) && (NDS_SWITCH() & KEY_L)) {
+			key_pressed = TRUE;
+
+			if (i == 0x8000)
+				i = 0x0001;
+			else if (i == 0x0080)
+				i = 0x0100;
+		}
+		else if ((key_pressed == FALSE) && (NDS_SWITCH() & KEY_R)) {
+			key_pressed = TRUE;
+
+			if (i == 0x0001)
+				i = 0x8000;
+			else if (i == 0x0100)
+				i = 0x0080;
+		}
+
 		// 손이 버튼에서 떼진 상태이고 왼쪽 방향키를 눌렀을 경우
-		if ((key_pressed == FALSE) && (NDS_SWITCH() & KEY_LEFT)) {
+		else if ((key_pressed == FALSE) && (NDS_SWITCH() & KEY_LEFT)) {
 			key_pressed = TRUE;
 
 			if (i == 0x8000) // BARLED1에서 제일 왼쪽 LED가 켜진 상태인 경우
-				i = 0x0001; // BARLED2의 제일 오른쪽 LED로 이동
+				i = 0x8000; // BARLED2의 제일 오른쪽 LED로 이동
+
+			else if (i == 0x0080)
+				i = 0x0080;
 
 			else
 				i = i << 1; // 왼쪽으로 LED 하나 이동
@@ -96,7 +116,10 @@ void Exp_1_Homework_B(void) {
 			key_pressed = TRUE;
 
 			if (i == 0x0001) // BARLED2에서 제일 오른쪽 LED가 켜진 상태인 경우
-				i = 0x8000; // BARLED1의 제일 왼쪽 LED로 이동
+				i = 0x0001; // BARLED1의 제일 왼쪽 LED로 이동
+
+			else if (i == 0x0100)
+				i = 0x0100;
 
 			else
 				i = i >> 1; // 오른쪽으로 LED 하나 이동
