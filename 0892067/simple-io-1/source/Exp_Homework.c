@@ -30,23 +30,20 @@ void Exp_1_Homework_A(void) {
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED2, 0);
 
-		if (((key_pressed == FALSE) && (sw & KEY_LEFT))) {
+		if (key_pressed == FALSE){
 			key_pressed = TRUE;
-			if (!(led_state & 0x0080))
-				led_state = led_state * 2;
-			writeb_virtual_io(BARLED1, led_state);
 
+			if ((led_state != 0x0080) && (sw & KEY_LEFT)) // max left
+				led_state = led_state * 2;
+
+			else if ((led_state != 0x0001) && (sw & KEY_RIGHT))  //max right
+				led_state = led_state / 2;
+
+			writeb_virtual_io(BARLED1, led_state);
 		}
 
 		if ((key_pressed == TRUE) && (sw == 0))
 			key_pressed = FALSE;
-
-		if (((key_pressed == FALSE) && (sw & KEY_RIGHT))) {
-			key_pressed = TRUE;
-			if (led_state != 0x0001) //max right
-				led_state = led_state / 2;
-			writeb_virtual_io(BARLED1, led_state);
-		}
 
 		if (NDS_SWITCH() & KEY_START)
 			break;
@@ -79,40 +76,31 @@ void Exp_1_Homework_B(void) {
 					led_state = led_state * 2;
 
 				else {
-					if ((led_state == 0x0080) && (cur_barled == BARLED1)) { //If it is max left and state of LED is pressed 'KEY_L'
-						writeb_virtual_io(cur_barled, 0);
-						led_state = 0x0001;
+					writeb_virtual_io(cur_barled, 0);
+					led_state = 0x0001;
+					if (cur_barled == BARLED1) //If it is max left on BARLED1
 						cur_barled = BARLED2;
-					}
 
-					if ((led_state == 0x0080) && (cur_barled == BARLED2)) { //If it is max right and state of LED is pressed 'KEY_R'
-						writeb_virtual_io(cur_barled, 0);
-						led_state = 0x0001;
+					else if (cur_barled == BARLED2) //If it is max left on BARLED2
 						cur_barled = BARLED1;
-					}
 				}
-			}
-			if (sw & KEY_R) {
+
+			} else if (sw & KEY_R) {
 
 				if (!(led_state == 0x0001))
 					led_state = led_state / 2;
 
 				else {
-					if ((led_state == 0x0001) && (cur_barled == BARLED2)) { //If it is max right and state of LED is pressed 'KEY_R'
-						writeb_virtual_io(cur_barled, 0);
-						led_state = 0x0080;
-						cur_barled = BARLED1;
-					}
+					writeb_virtual_io(cur_barled, 0);
+					led_state = 0x0080;
 
-					if ((led_state == 0x0001) && (cur_barled == BARLED1)) { //If it is max left and state of LED is pressed 'KEY_L'
-						writeb_virtual_io(cur_barled, 0);
-						led_state = 0x0080;
+					if (cur_barled == BARLED1) //If it is max right on BARLED1
 						cur_barled = BARLED2;
-					}
+
+					else if (cur_barled == BARLED2) //If it is max right on BARLED2
+						cur_barled = BARLED1;
 				}
-
 			}
-
 			writeb_virtual_io(cur_barled, led_state);
 		}
 
