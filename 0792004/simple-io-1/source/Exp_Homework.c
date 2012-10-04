@@ -23,10 +23,11 @@
 
 // LED Bar Left-and-Right (BARLED 1)
 // LEFT key - going left, RIGHT key - going right
-void Exp_1_Homework_A(void)
+void
+Exp_1_Homework_A(void)
 {
 	u16 sw;
-	u16 led = MIN_LED;
+	u8 led = MIN_LED;
 	u8 keyRight_pressed = FALSE;
 	u8 keyLeft_pressed = FALSE;
 
@@ -63,10 +64,11 @@ void Exp_1_Homework_A(void)
 
 // LED Bar Left-and-Right & Round (BARLED 1 and BARLED 2)
 // L key - going left, R key - going right
-void Exp_1_Homework_B(void)
+void
+Exp_1_Homework_B(void)
 {
 	u16 sw;
-	u16 led = MIN_LED;
+	u8 led = MIN_LED;
 	u8 bar_sw = FALSE;	// TRUE = LED1 : FALSE = LED2
 	u8 keyR_pressed = FALSE;
 	u8 keyL_pressed = FALSE;

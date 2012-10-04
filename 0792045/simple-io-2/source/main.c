@@ -66,6 +66,7 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 			led_state = led_state >> 1;
 			R_key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led_state);
+			printf("R");
 		} else if ((R_key_pressed == TRUE) && !(sw & KEY_R))
 			R_key_pressed = FALSE;
 
@@ -73,6 +74,7 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 			led_state = led_state << 1;
 			L_key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led_state);
+			printf("L");
 		} else if ((L_key_pressed == TRUE) && !(sw & KEY_L))
 			L_key_pressed = FALSE;
 
@@ -92,7 +94,7 @@ portTASK_FUNCTION(HomeWork_2, pvParameters) {
 		if(state == TRUE)
 			barled = barled<<1;
 		else
-			barled = barled>>1;
+			barled = 0x01;
 
 		if(barled == 0x80)
 			state = FALSE;
