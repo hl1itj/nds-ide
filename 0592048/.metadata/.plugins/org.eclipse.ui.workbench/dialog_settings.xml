@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
+<<<<<<< HEAD
 		<item value="680" key="dialogWidth"/>
 		<item value="475" key="dialogHeight"/>
+=======
+		<item value="815" key="dialogWidth"/>
+		<item value="440" key="dialogHeight"/>
+>>>>>>> 6a4d6c0f1089a112a9207475bac5a69dd0a6a7e2
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
@@ -12,10 +17,13 @@
 		<list key="textEntries">
 		</list>
 	</section>
+<<<<<<< HEAD
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
+=======
+>>>>>>> 6a4d6c0f1089a112a9207475bac5a69dd0a6a7e2
 </section>

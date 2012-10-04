@@ -17,7 +17,11 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY org.eclipse.cdt.core 1 0 2012-09-27 15:14:54.310
 !MESSAGE Indexed 'simple-io-1' (68 sources, 21 headers) in 2.18 sec: 2,929 declarations; 11,406 references; 259 unresolved inclusions; 0 syntax errors; 4,394 unresolved names (23.46%)
+<<<<<<< HEAD
 !SESSION 2012-10-04 13:19:56.306 -----------------------------------------------
+=======
+!SESSION 2012-10-03 16:24:20.867 -----------------------------------------------
+>>>>>>> 6a4d6c0f1089a112a9207475bac5a69dd0a6a7e2
 eclipse.buildId=I20120608-1400
 java.version=1.7.0_07
 java.vendor=Oracle Corporation
@@ -25,6 +29,7 @@ BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.cpp.product
 Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2012-10-04 13:20:05.440
 !MESSAGE Unable to load resource file:/home/hansung/ndsdev/nds-ide/0592048/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 !STACK 0
@@ -888,3 +893,16 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY org.eclipse.cdt.core 1 0 2012-10-04 14:32:54.198
 !MESSAGE Indexed 'simple-io-2' (66 sources, 20 headers) in 2.45 sec: 2,918 declarations; 11,403 references; 251 unresolved inclusions; 0 syntax errors; 4,390 unresolved names (23.46%)
+=======
+!ENTRY org.eclipse.core.resources 2 10035 2012-10-03 16:24:49.363
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2012-10-03 16:25:09.148
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.manageConfigsAction2
+
+!ENTRY org.eclipse.ui 4 4 2012-10-03 16:25:09.157
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.buildConfigMenuAction
+
+!ENTRY org.eclipse.ui 4 4 2012-10-03 16:25:09.158
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.wsselection
+>>>>>>> 6a4d6c0f1089a112a9207475bac5a69dd0a6a7e2

@@ -36,18 +36,30 @@ Exp_1_Homework_A(void)
 			if(button < 0x80){
 				button = button << 1;
 				key_pressed = TRUE;
+<<<<<<< HEAD
 				writeb_virtual_io(BARLED1, button);
+=======
+>>>>>>> 6a4d6c0f1089a112a9207475bac5a69dd0a6a7e2
 			}
+			writeb_virtual_io(BARLED1, button);
 		}else if ((key_pressed == FALSE) && (sw & KEY_RIGHT)) {
 			if(button > 0x01){
 				button = button >> 1;
 				key_pressed = TRUE;
+<<<<<<< HEAD
 				writeb_virtual_io(BARLED1, button);
+=======
+>>>>>>> 6a4d6c0f1089a112a9207475bac5a69dd0a6a7e2
 			}
 		}
 
 		if (key_pressed == TRUE){
 			if(!(sw & KEY_RIGHT) && !(sw & KEY_LEFT))
+				key_pressed = FALSE;
+		}
+
+		if(key_pressed == TRUE){
+			if(!(sw & KEY_LEFT) && !(sw & KEY_RIGHT))
 				key_pressed = FALSE;
 		}
 
