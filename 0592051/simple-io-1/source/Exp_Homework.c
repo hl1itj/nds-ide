@@ -33,7 +33,7 @@ Exp_1_Homework_A(void)
 	while (1) {
 		sw = NDS_SWITCH();
 
-		if(sw & KEY_L){
+		if(sw & KEY_LEFT){
 			L_key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led);
 		}
@@ -45,7 +45,7 @@ Exp_1_Homework_A(void)
 				L_key_pressed = FALSE;
 		}
 
-		if(sw & KEY_R){
+		if(sw & KEY_RIGHT){
 			R_key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led);
 		}
