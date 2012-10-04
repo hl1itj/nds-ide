@@ -1,0 +1,115 @@
+23:10:10 **** Build of configuration Default for project FreeRTOS-exp2 ****
+make 
+grit /home/hansung/ndsdev/nds-ide/lab/simple-io-1/image/down.png -fts -odown
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/lab/simple-io-1/image/down.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'down'.
+STATUS: Started run at: 2012-10-03, 23:10:10
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: down into down.s .
+STATUS: Run completed :).
+STATUS: Done!
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/lab/simple-io-1/image/up.png
+grit /home/hansung/ndsdev/nds-ide/lab/simple-io-1/image/up.png -fts -oup
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'up'.
+STATUS: Started run at: 2012-10-03, 23:10:10
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: up into up.s .
+up.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
+STATUS: Run completed :).
+STATUS: Done!
+croutine.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/croutine.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/croutine.c -o croutine.o 
+list.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/list.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/list.c -o list.o 
+queue.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/queue.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/queue.c -o queue.o 
+tasks.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/tasks.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/tasks.c -o tasks.o 
+card_spi.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/card_spi.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/card_spi.c -o card_spi.o 
+gdbStub.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/gdbStub.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.c -o gdbStub.o 
+In file included from /home/hansung/ndsdev/nds-ide/lab/simple-io-1/source/main.c:21:0:
+heap_3.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/heap_3.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/heap_3.c -o heap_3.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+port.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/port.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/port.c -o port.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+portISR.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/portISR.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/portISR.c -o portISR.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+sevencore_io.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+Exp_Sample.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/Exp_Sample.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/source/Exp_Sample.c -o Exp_Sample.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/lab/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+gdbStubAsm.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/gdbStubAsm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStubAsm.s -o gdbStubAsm.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+port_asm.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/lab/simple-io-1/build/port_asm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/port_asm.s -o port_asm.o 
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+linking simple-io-1.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... simple-io-1.nds
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+rm down.s up.s
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/lab/simple-io-1/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+
+23:10:23 Build Finished (took 13s.486ms)
+

@@ -1,0 +1,6 @@
+15:10:09 **** Clean-only build of configuration Default for project simple-io-1 ****
+make clean 
+clean ...
+
+15:10:10 Build Finished (took 908ms)
+

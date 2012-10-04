@@ -35,13 +35,13 @@ Exp_1_Homework_A(void)
 		while (1) {
 			sw = NDS_SWITCH();
 
-			if (((L_key_pressed == FALSE) && (sw & KEY_L))){
+			if (((L_key_pressed == FALSE) && (sw & KEY_LEFT))){
 				L_key_pressed = TRUE;
 				if(offset < LED_8TH){
 					offset = offset * OFFSET_MOVEMENT;
 					writeb_virtual_io(BARLED1, offset);
 				}
-			} else if (((R_key_pressed == FALSE) && (sw & KEY_R))){
+			} else if (((R_key_pressed == FALSE) && (sw & KEY_RIGHT))){
 				R_key_pressed = TRUE;
 				if(offset > LED_1ST){
 					offset = offset / OFFSET_MOVEMENT;
@@ -49,9 +49,9 @@ Exp_1_Homework_A(void)
 				}
 			}
 
-			if ((L_key_pressed == TRUE) && (!(sw & KEY_L))){
+			if ((L_key_pressed == TRUE) && (!(sw & KEY_LEFT))){
 				L_key_pressed = FALSE;
-			} else if ((R_key_pressed == TRUE) && (!(sw & KEY_R))){
+			} else if ((R_key_pressed == TRUE) && (!(sw & KEY_RIGHT))){
 				R_key_pressed = FALSE;
 			}
 
