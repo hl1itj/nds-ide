@@ -1,0 +1,4 @@
+00:41:37 **** Incremental Build of configuration Default for project simple-io-1 ****
+make 
+make[1]: *** `croutine.o'에서 필요로 하는  타겟 `/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/croutine.c'를 만들 규칙이 없습니다.  멈춤.
+make: *** [build] 오류 2
