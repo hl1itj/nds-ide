@@ -87,7 +87,6 @@ portTASK_FUNCTION(HomeWork_1, pvParameters) {
 static
 portTASK_FUNCTION(HomeWork_2, pvParameters) {
 	u8 barled = 0x01;
-	u8 state = TRUE;
 	portTickType xLastWakeTime = xTaskGetTickCount();
 	while (1) {
 		writeb_virtual_io(BARLED2, barled);
