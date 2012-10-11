@@ -17,9 +17,7 @@
 #include "realio.h"
 
 // As is
-void
-Exp_1_Sample_A(void)
-{
+void Exp_1_Sample_A(void) {
 	u16 sw;
 
 	while (1) {
@@ -36,12 +34,10 @@ Exp_1_Sample_A(void)
 }
 
 // Toggle
-void
-Exp_1_Sample_B(void)
-{
+void Exp_1_Sample_B(void) {
 	u16 sw;
-	u8  led_state = FALSE;
-	u8  key_pressed = FALSE;
+	u8 led_state = FALSE;
+	u8 key_pressed = FALSE;
 
 	writeb_virtual_io(BARLED1, 0);
 	writeb_virtual_io(BARLED2, 0);

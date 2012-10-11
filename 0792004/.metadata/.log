@@ -494,6 +494,11 @@ Binding(CTRL+SHIFT+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+<<<<<<< HEAD
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-03 16:13:19.916
+!MESSAGE Indexed 'simple-io-2' (70 sources, 40 headers) in 1.70 sec: 3,521 declarations; 14,562 references; 258 unresolved inclusions; 0 syntax errors; 4,451 unresolved names (19.75%)
+=======
 !SESSION 2012-10-04 13:12:19.761 -----------------------------------------------
 eclipse.buildId=I20120608-1400
 java.version=1.7.0_07
@@ -787,6 +792,7 @@ Binding(ALT+ARROW_RIGHT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+<<<<<<< HEAD
 !SESSION 2012-10-11 13:05:00.675 -----------------------------------------------
 eclipse.buildId=I20120608-1400
 java.version=1.7.0_07
@@ -1026,3 +1032,6 @@ Binding(CTRL+SHIFT+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+=======
+>>>>>>> a9e1eb13e766ec4b7389d6b84c11c3fcbd1e0ac2
+>>>>>>> 28973d698367d473792c2fff7941049b7bd95454

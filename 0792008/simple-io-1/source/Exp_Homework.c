@@ -16,10 +16,10 @@
 #include <sevencore_io.h>
 #include "realio.h"
 
-#define LED_MIN 0x01
-#define LED_MAX 0x80
-#define LED1 FALSE
-#define LED2 TRUE
+#define LED_MIN 0x01 // led min value
+#define LED_MAX 0x80 // led max value
+#define LED1 FALSE // led1 value
+#define LED2 TRUE // led2 value
 
 // LED Bar Left-and-Right (BARLED 1)
 // LEFT key - going left, RIGHT key - going right

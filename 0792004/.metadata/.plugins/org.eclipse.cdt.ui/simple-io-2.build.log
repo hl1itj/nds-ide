@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 14:53:42 **** Incremental Build of configuration Default for project simple-io-2 ****
 make 
 main.c
@@ -35,4 +36,18 @@ built ... simple-io-2.nds
 /home/hansung/ndsdev/nds-ide/0792004/simple-io-2/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
 
 14:53:46 Build Finished (took 4s.441ms)
+=======
+16:45:20 **** Incremental Build of configuration Default for project simple-io-2 ****
+make 
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/simple-io-2/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+down.s: Assembler messages:
+down.s:11: Error: junk at end of line, first unrecognized character is `<'
+down.s:13: Error: junk at end of line, first unrecognized character is `='
+down.s:15: Error: junk at end of line, first unrecognized character is `>'
+make[1]: *** [down.o] 오류 1
+make: *** [build] 오류 2
+
+16:45:20 Build Finished (took 291ms)
+>>>>>>> 28973d698367d473792c2fff7941049b7bd95454
 

@@ -21,6 +21,9 @@
 #include "gdbStub.h"
 #include "gdbStubAsm.h"
 
+#define END 1
+#define NOTEND 0
+
 static portTASK_FUNCTION(Homework_1, pvParameters);
 static portTASK_FUNCTION(Homework_2, pvParameters);
 
@@ -32,7 +35,7 @@ int main(void) {
 	init_printf();					// Initialize Bottom Screen for printf()
 
 	xTaskCreate(Homework_1, (const signed char * const)"Homework_1", 2048,
-			(void *)NULL, tskIDLE_PRIORITY + 1, NULL);
+			(void *)NULL, tskIDLE_PRIORITY + 5, NULL);
 	xTaskCreate(Homework_2, (const signed char * const)"Homework_2", 2048,
 			(void *)NULL, tskIDLE_PRIORITY + 2, NULL);
 	vTaskStartScheduler();		// Never returns
@@ -66,11 +69,13 @@ portTASK_FUNCTION(Homework_1, pvParameters) {
 			if (barnum == 0x80)
 				continue;
 			barnum = barnum << 1;
+			printf("L");
 			keypressed = TRUE;
 		} else if (!keypressed && (sw & KEY_R)) {
 			if (barnum == 0x01)
 				continue;
 			barnum = barnum >> 1;
+			printf("R");
 			keypressed = TRUE;
 		}
 
@@ -79,29 +84,32 @@ portTASK_FUNCTION(Homework_1, pvParameters) {
 		if (keypressed && (!(sw & KEY_L) && !(sw & KEY_R)))
 			keypressed = FALSE;
 
-		if (NDS_SWITCH() & KEY_START)
-			break;
 		vTaskDelay(50);
 	}
-
-	while (NDS_SWITCH() & KEY_START)
-		vTaskDelay(10);
 }
 
 static
 portTASK_FUNCTION(Homework_2, pvParameters) {
-	u8 barled = 0;
+	u16 barled = 0x01;
+	u8 barledState = NOTEND;
 	portTickType xLastWakeTime = xTaskGetTickCount();
-	int i;
 
 	while (1) {
-		printf("2");
-		barled = ~barled;
 		writeb_virtual_io(BARLED2, barled);
 
-		for (i = 0; i < 100000; i++)
-			barled = ~barled;
+		if (barledState == NOTEND) {
+			if (barled <= 0x80)
+				barled = barled << 1;
+			if (barled == 0x80) {
+				barledState = END;
+			}
+		} else if (barledState == END) {
+			barled = 0x01;
+			barledState = NOTEND;
+		}
+		printf(".");
 
 		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
 	}
 }
+

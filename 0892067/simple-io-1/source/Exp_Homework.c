@@ -17,40 +17,32 @@
 #include "realio.h"
 
 // LED Bar Left-and-Right (BARLED 1)
-// LEFT key - going left, RIGHT key - going right
-void
-Exp_1_Homework_A(void)
-{
-	u16 sw;
-	u8  key_pressed = FALSE;
-   short int led_state = 0x0001;
 
-    //writeb_virtual_io(BARLED1, led_state);
-    writeb_virtual_io(BARLED1, led_state);
+void Exp_1_Homework_A(void) {
+	u16 sw;
+	u8 key_pressed = FALSE;
+	short int led_state = 0x0001;
+
+	//writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(BARLED1, led_state);
 
 	while (1) {
 		sw = NDS_SWITCH();
-		writeb_virtual_io(BARLED2,0);
+		writeb_virtual_io(BARLED2, 0);
 
-		if (((key_pressed == FALSE) && (sw & KEY_LEFT))) {
+		if ((key_pressed == FALSE) && ((sw & KEY_LEFT) ||(sw & KEY_RIGHT) )){
 			key_pressed = TRUE;
-			if(!(led_state & 0x0080))
-				led_state = led_state*2;
-			writeb_virtual_io(BARLED1, led_state);
 
-		}
+			if ((led_state != 0x0080) && (sw & KEY_LEFT)) // max left
+				led_state = led_state * 2;
 
-		if ((key_pressed == TRUE) && (!(sw & KEY_LEFT)) && (!(sw & KEY_RIGHT)) )
-			key_pressed = FALSE;
+			else if ((led_state != 0x0001) && (sw & KEY_RIGHT))  //max right
+				led_state = led_state / 2;
 
-		if (((key_pressed == FALSE) && (sw & KEY_RIGHT))) {
-			key_pressed = TRUE;
-			if(led_state != 0x0001) //max right
-				led_state = led_state/2;
 			writeb_virtual_io(BARLED1, led_state);
 		}
 
-		if ((key_pressed == TRUE) && (!(sw & KEY_RIGHT)) && (!(sw & KEY_LEFT)))
+		if ((key_pressed == TRUE) && (sw == 0))
 			key_pressed = FALSE;
 
 		if (NDS_SWITCH() & KEY_START)
@@ -63,8 +55,62 @@ Exp_1_Homework_A(void)
 
 // LED Bar Left-and-Right & Round (BARLED 1 and BARLED 2)
 // L key - going left, R key - going right
-void
-Exp_1_Homework_B(void)
-{
+void Exp_1_Homework_B(void) {
+	u16 sw;
+	u8 key_pressed = FALSE;
+	u16 cur_barled = BARLED1;
+	short int led_state = 0x0001;
 
+	//writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(cur_barled, led_state);
+
+	while (1) {
+		sw = NDS_SWITCH();
+
+		if ((key_pressed == FALSE) && ((sw & KEY_L) || (sw & KEY_R))) {
+			key_pressed = TRUE;
+
+			if (sw & KEY_L) {
+
+				if (!(led_state == 0x0080))
+					led_state = led_state * 2;
+
+				else {
+					writeb_virtual_io(cur_barled, 0);
+					led_state = 0x0001;
+					if (cur_barled == BARLED1) //If it is max left on BARLED1
+						cur_barled = BARLED2;
+
+					else if (cur_barled == BARLED2) //If it is max left on BARLED2
+						cur_barled = BARLED1;
+				}
+
+			} else if (sw & KEY_R) {
+
+				if (!(led_state == 0x0001))
+					led_state = led_state / 2;
+
+				else {
+					writeb_virtual_io(cur_barled, 0);
+					led_state = 0x0080;
+
+					if (cur_barled == BARLED1) //If it is max right on BARLED1
+						cur_barled = BARLED2;
+
+					else if (cur_barled == BARLED2) //If it is max right on BARLED2
+						cur_barled = BARLED1;
+				}
+			}
+			writeb_virtual_io(cur_barled, led_state);
+		}
+
+		if ((key_pressed == TRUE) && (sw == 0))
+			key_pressed = FALSE;
+
+		if (NDS_SWITCH() & KEY_START)
+			break;
+		vTaskDelay(50);
+	}
+	while (NDS_SWITCH() & KEY_START)
+		vTaskDelay(10);         // Wait while START KEY is being pressed
 }
