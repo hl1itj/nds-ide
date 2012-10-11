@@ -42,13 +42,13 @@ main(void)
 					     (const signed char * const)"Homework_1",
 					     2048,
 					     (void *)NULL,
-					     tskIDLE_PRIORITY + 1,
+					     tskIDLE_PRIORITY + 2,
 					     NULL);
 	xTaskCreate(Homework_2,
 					     (const signed char * const)"Homework_2",
 					     2048,
 					     (void *)NULL,
-					     tskIDLE_PRIORITY + 2,
+					     tskIDLE_PRIORITY + 1,
 					     NULL);
 	vTaskStartScheduler();		// Never returns
 	while(1)
@@ -99,10 +99,6 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 
 		if((keyLeft_pressed == TRUE) && !(sw & KEY_L))
 			keyLeft_pressed = FALSE;
-
-		if (NDS_SWITCH() & KEY_START)
-			break;
-		vTaskDelay(50);
 	}
 }
 
