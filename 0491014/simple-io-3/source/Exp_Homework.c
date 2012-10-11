@@ -17,8 +17,8 @@ portTickType start_time_x = 0;
 portTickType wait_time_x = 0;
 u16 barled;
 
-#define NUM_STATE	1
-#define NUM_INPUT	1
+#define NUM_STATE	8
+#define NUM_INPUT	3
 
 // Actions
 
@@ -34,6 +34,7 @@ x_led1(void *p)
 		barled2_ct++;
 	}
 	writeb_virtual_io(BARLED2, barled2_st);
+	printf("s.");
 }
 
 static
@@ -45,6 +46,7 @@ x_led2(void *p)
 		barled2_ct--;
 	}
 	writeb_virtual_io(BARLED2, barled2_st);
+	printf("ss.");
 }
 
 static
@@ -52,6 +54,7 @@ void
 x_led3(void *p)
 {
 	writeb_virtual_io(BARLED1, 0xFC);
+	printf("sl.");
 }
 
 static
@@ -59,6 +62,7 @@ void
 x_led4(void *p)
 {
 	writeb_virtual_io(BARLED1, 0xFF);
+	printf("l.");
 }
 
 static
@@ -69,6 +73,7 @@ x_led5(void *p)
 	writeb_virtual_io(BARLED2, 0xFF);
 	barled2_st = 0xFF;
 	barled2_ct = 8;
+	printf("ls.");
 }
 
 static
@@ -79,6 +84,7 @@ x_led6(void *p)
 	writeb_virtual_io(BARLED2, 0x00);
 	barled2_st = 0x00;
 	barled2_ct = 0;
+	printf("ll.");
 }
 
 static
@@ -114,7 +120,7 @@ struct state_machine_x SM[NUM_STATE] = {
 	    { {0,0}, { 5, 6, 5 }, { NULL, x_tw, NULL } },    /* State 5 */
 	    { {0,1}, { 7, 0, 6 }, { x_ts, x_led4, NULL } },     /* State 6 */
 	    { {1,0}, { 7, 0, 8 }, { NULL, x_led5, NULL } },    /* State 7 */
-	    { {0,1}, { 8, 0, 8 }, { NULL, x_led6, NULL } },     /* State 8 */
+	    { {0,0}, { 8, 0, 8 }, { NULL, x_led6, NULL } },     /* State 8 */
 	// Fill here
 };
 
@@ -140,12 +146,15 @@ Exp_3_Homework(void)
 			}
 		}
 		if (SM[state].check_timer[SW_WT]) {
-			if ((xTaskGetTickCount() - wait_time_x) >= MSEC2TICK(200)){
-				input = SW_OFF;
+			if ((xTaskGetTickCount() - wait_time_x) <= MSEC2TICK(200) && (NDS_SWITCH() & KEY_A)){
+				input = SW_ON;
 				goto do_action;
 			}
+			else if((xTaskGetTickCount() - wait_time_x) >= MSEC2TICK(200)){
+				input = SW_OFF;
+			}
 		}
-		if (NDS_SWITCH() & KEY_A)
+		else if (NDS_SWITCH() & KEY_A)
 			input = SW_ON;
 		else
 			input = SW_OFF;
