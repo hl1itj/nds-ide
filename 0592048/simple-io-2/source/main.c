@@ -22,7 +22,7 @@
 #include "gdbStubAsm.h"
 
 static portTASK_FUNCTION(Homework_1, pvParameters);
-static portTASK_FUNCTION(Sample_Task_2, pvParameters);
+static portTASK_FUNCTION(Homework_2, pvParameters);
 
 void InitDebug(void);
 
@@ -39,14 +39,14 @@ main(void)
 					     (void *)NULL,
 					     tskIDLE_PRIORITY + 2,
 					     NULL);
-	/*
-	xTaskCreate(Sample_Task_2,
-					     (const signed char * const)"Sample_Task_2",
+
+	xTaskCreate(Homework_2,
+					     (const signed char * const)"Homework_2",
 					     2048,
 					     (void *)NULL,
 					     tskIDLE_PRIORITY + 1,
 					     NULL);
-					     */
+
 	vTaskStartScheduler();		// Never returns
 	while(1)
 		;
@@ -74,9 +74,9 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 	u8  key_pressed = FALSE;
 
 	while (1) {
+		printf("1");
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED1, button);
-		writeb_virtual_io(BARLED2, 0x00);
 
 		if ((key_pressed == FALSE) && (sw & KEY_L)) {
 			if(button < 0x80){
@@ -97,28 +97,26 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 				key_pressed = FALSE;
 		}
 
-		if (NDS_SWITCH() & KEY_START)
-			break;
 		vTaskDelay(50);
-
-		//vTaskDelay(MSEC2TICK(500));
 	}
 }
 
 static
-portTASK_FUNCTION(Sample_Task_2, pvParameters)
+portTASK_FUNCTION(Homework_2, pvParameters)
 {
-	u8 barled = 0;
+	u8 barled = 0x01;
 	portTickType xLastWakeTime = xTaskGetTickCount();
-	int i;
 
+	writeb_virtual_io(BARLED2, barled);
 	while (1) {
 		printf("2");
-		barled = ~barled;
-		writeb_virtual_io(BARLED2, barled);
-
-		for (i = 0; i < 100000; i++)
-			barled = ~barled;
+		if(barled < 0x80 && barled > 0x00){
+			barled = barled << 1;
+			writeb_virtual_io(BARLED2, barled);
+		}else{
+			barled = 0x01;
+			writeb_virtual_io(BARLED2, barled);
+		}
 
 		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500));
 	}
