@@ -1,0 +1,102 @@
+[1] When Interrupt Occurs
+
+  00000018  b      128h                ;IRQ vector: jump to actual BIOS handler
+  --> JUMP to 128H
+  00000128  stmfd  r13!,r0-r3,r12,r14  ;save registers to SP_irq (r13)
+  0000012C  mov    r0,4000000h         ;ptr+4 to 03FFFFFC (mirror of 03007FFC)
+  00000130  add    r14,r15,0h          ;retadr for USER handler $+8=138h
+  00000134  ldr    r15,[r0,-4h]        ;jump to [03FFFFFC] USER handler
+
+  ==> RUNNING USER (LIBNDS) ISR, HERE
+
+  00000138  ldmfd  r13!,r0-r3,r12,r14  ;restore registers from SP_irq
+  0000013C  subs   r15,r14,4h          ;return from IRQ (PC=LR-4, CPSR <= SPSR)
+
+// NDS BIOS: Interrupt Stack (R13=SP_irq)
+//              R14 (LR_irq), LR_irq = User Context
+//              R12
+//              R3
+//              R2
+//              R1
+//              R0
+R13(SP_irq)---->
+//              ; LR_irq = 0x134 & jump to ox3fffffc
+
+// DEVKIT LIBNDS: Interrupt STACK   after disable IME
+//              R14 (LR_irq), LR_irq = 0x134 (BIOS)
+//              R12 (REGBASE = 0x4000000)
+//              R1  (IME - original)
+//              R0  (SPSR)
+//-
+Top-Of-The- Interrupt Stack
+
+Thread (System Mode - 즉 interrupt 걸리기전 !) Stack !!! Here
+//              R14 (LR), 원래 user thread의 LR
+//              R2  (CPSR) : cpsr contains interrupt mode
+
+(Maintaining Context as 16 registers including GPR(R0-R12), SPR(R13-R15),
+ PSW(SPSR), and Global variable CriticalNesting)
+
+SP points here -> (just above the R15)
+Highest Addr    R15 (PC) <- User Context Return Addr
+                R14 (LR) LR = 원래 user thread의 LR
+                R13 (SP) -> R13 loaded into SP, before Resume
+                R12
+                R11
+                R10
+                R09
+                R08
+                R07
+                R06
+                R05
+                R04
+                R03
+                R02
+                R01
+                R00
+                SPSR
+                CriticalNesting  (of the Task)
+
+------------------------------------------------
+typedef struct tskTaskControlBlock
+{
+	volatile portSTACK_TYPE	*pxTopOfStack;
+
+4000210h - NDS9/NDS7 - IE - 32bit - Interrupt Enable (R/W)
+4000214h - NDS9/NDS7 - IF - 32bit - Interrupt Request Flags (R/W)
+  Bit 0     LCD V-Blank                    (0=Disable)
+  Bit 1     LCD H-Blank                    (etc.)
+  Bit 2     LCD V-Counter Match            (etc.)
+  Bit 3     Timer 0 Overflow               (etc.)
+  Bit 4     Timer 1 Overflow               (etc.)
+  Bit 5     Timer 2 Overflow               (etc.)
+  Bit 6     Timer 3 Overflow               (etc.)
+  Bit 7     NDS7 only: SIO/RCNT/RTC (Real Time Clock)
+  Bit 8     DMA 0                          (etc.)
+  Bit 9     DMA 1                          (etc.)
+  Bit 10    DMA 2                          (etc.)
+  Bit 11    DMA 3                          (etc.)
+  Bit 12    Keypad                         (etc.)
+  Bit 13    Game Pak (external IRQ source) (etc.)
+  Bit 14-15 Not used
+  Bit 16    IPC Sync
+  Bit 17    IPC Send FIFO Empty
+  Bit 18    IPC Recv FIFO Not Empty
+  Bit 19    Game Card Data Transfer Completion
+  Bit 20    Game Card IREQ_MC
+  Bit 21    NDS9 only: Geometry Command FIFO
+  Bit 22    NDS7 only: Screens unfolding
+  Bit 23    NDS7 only: SPI bus
+  Bit 24    NDS7 only: Wifi
+  Bit 25-31 Not used
+
+Raw TCM-only IRQs can be processed even during DMA ?
+
+  10    DMA 2                          (etc.)
+  11    DMA 3                          (etc.)
+  12    Keypad                         (etc.)
+  13    Game Pak (external IRQ source) (etc.)
+  14-15 Not used
+
+
+

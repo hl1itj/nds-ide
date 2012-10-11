@@ -88,7 +88,6 @@ portTASK_FUNCTION(Homework_2, pvParameters) {
 		} else {
 			led_state = led_state << 1;
 		}
-		writeb_virtual_io(BARLED2, led_state);
 		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
 	}
 }
