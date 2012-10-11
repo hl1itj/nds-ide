@@ -102,7 +102,7 @@ struct state_machine_x SM[NUM_STATE] = {
      //스위치 스위치  타임아웃하고
      //누른상태 뗄상태  나서 뭐하냐?
   { 0, { 1, 0, 0 }, { f_ts, NULL, NULL } }, // state 0 - 기본값은 뭐...
-  { 1, { 1, 0, 2 }, {f_ts , f_led2_on, f_ts} }, // state 1
+  { 1, { 1, 0, 2 }, { , f_led2_on, f_ts} }, // state 1
               /*
              누르고 나서 - 바로떼는거하고
                 바로안떼는 것도 잇고

@@ -1,59 +1,44 @@
-13:36:11 **** Incremental Build of configuration Default for project simple-io-3 ****
+16:16:06 **** Incremental Build of configuration Default for project simple-io-3 ****
 make 
-grit /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/image/down.png -fts -odown
-STATUS: ---grit v0.8.10 ---
-STATUS: Individual runs.
-STATUS: Input file /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/image/down.png
-WARNING: No main mode specified (-gt/-gb).
-STATUS: Output file: 'down'.
-STATUS: Started run at: 2012-10-11, 13:36:11
-STATUS: Validating gr.
-WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
-STATUS: Validation succeeded.
-STATUS: Preparing data.
-STATUS: Work-DIB creation.
-WARNING:   converting from 32 bpp to 16 bpp.
-STATUS: converting to: 16bpp BGR, alpha=1.
-STATUS: Work-DIB creation complete: 256x192@16.
-STATUS: Graphics preparation.
-STATUS: Compressing: 01
-STATUS: Graphics preparation complete.
-STATUS: Data preparation complete.
-STATUS: Export to GNU asm: down into down.s .
-STATUS: Run completed :).
-STATUS: Done!
-down.s
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
-grit /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/image/up.png -fts -oup
-STATUS: ---grit v0.8.10 ---
-STATUS: Individual runs.
-STATUS: Input file /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/image/up.png
-WARNING: No main mode specified (-gt/-gb).
-STATUS: Output file: 'up'.
-STATUS: Started run at: 2012-10-11, 13:36:11
-STATUS: Validating gr.
-WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
-STATUS: Validation succeeded.
-STATUS: Preparing data.
-STATUS: Work-DIB creation.
-WARNING:   converting from 32 bpp to 16 bpp.
-STATUS: converting to: 16bpp BGR, alpha=1.
-STATUS: Work-DIB creation complete: 256x192@16.
-STATUS: Graphics preparation.
-STATUS: Compressing: 01
-STATUS: Graphics preparation complete.
-STATUS: Data preparation complete.
-STATUS: Export to GNU asm: up into up.s .
-STATUS: Run completed :).
-STATUS: Done!
-up.s
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
-sevencore_io.c
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: excess elements in array initializer [enabled by default]
 linking simple-io-3.elf
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: (near initialization for 'SM[0].next_state') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: (near initialization for 'SM[0].next_state') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: (near initialization for 'SM[0].action') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:104:3: warning: (near initialization for 'SM[0].action') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: (near initialization for 'SM[1].next_state') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: (near initialization for 'SM[1].next_state') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: (near initialization for 'SM[1].action') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: (near initialization for 'SM[1].action') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:105:3: warning: (near initialization for 'SM') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: (near initialization for 'SM[1].next_state') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: excess elements in array initializer [enabled by default]
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: (near initialization for 'SM[1].next_state') [enabled by default]
 built ... simple-io-3.nds
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: (near initialization for 'SM[1].action') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: (near initialization for 'SM[1].action') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: excess elements in array initializer [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:114:3: warning: (near initialization for 'SM') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:40:1: warning: 'f_led2_off' defined but not used [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:49:1: warning: 'f_every_led_on' defined but not used [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:58:1: warning: 'f_every_led_off' defined but not used [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:67:1: warning: 'f_all_led1_on' defined but not used [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/source/Exp_Homework.c:75:1: warning: 'f_led1_on' defined but not used [-Wunused-function]
 
-13:36:13 Build Finished (took 2s.639ms)
+16:16:11 Build Finished (took 5s.516ms)
 
