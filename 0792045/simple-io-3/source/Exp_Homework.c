@@ -50,6 +50,7 @@ void h_led1(void *p) {
 }
 static
 void h_led2(void *p) {
+	state = TRUE;
 	barled = 0xFF;
 	writeb_virtual_io(BARLED1, barled);
 	writeb_virtual_io(BARLED2, 0x00);
@@ -71,20 +72,23 @@ void h_led3(void *p) {
 }
 static
 void h_led4(void *p) {
+	state = TRUE;
 	barled = 0xFC;
 	writeb_virtual_io(BARLED1, barled);
+	writeb_virtual_io(BARLED2, 0);
 }
 static
 void h_led5(void *p) {
 	state = FALSE;
 	barled = 0xFF;
 	writeb_virtual_io(BARLED1, 0xFF);
-	writeb_virtual_io(BARLED2, 0xFF);
+	writeb_virtual_io(BARLED2, barled);
 }
 static
 void h_led6(void *p) {
+	state = TRUE;
 	barled = 0x00;
-	writeb_virtual_io(BARLED1, 0);
+	writeb_virtual_io(BARLED1, barled);
 	writeb_virtual_io(BARLED2, 0);
 }
 
