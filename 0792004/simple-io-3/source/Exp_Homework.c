@@ -14,41 +14,95 @@
 #include "sevencore_io.h"
 
 portTickType short_timer;
-portTickType interval_timer;
 u16 barled;
-int pre_click = 0;
+u8 sw_bar;
 
-#define NUM_STATE	6
+#define NUM_STATE	9
 #define NUM_INPUT	3
-#define MIN_LED 0x01
-#define MAX_LED 0x80
+
+#define SW_ON_TIME MSEC2TICK(200)
+#define SW_OFF_TIME MSEC2TICK(200)
+
+#define OFF_LED 0x00
+#define ON_LED 0xFF
 #define LED1(x) writeb_virtual_io(BARLED1, x)
 #define LED2(x) writeb_virtual_io(BARLED2, x)
 
 // Actions
 static
 void
-f_dcs(void *p)
+f_s(void *p)
 {
-	printf("%s\n", (pre_click == 1) ? "SS" : "LS");
-}
-
-static
-void
-f_dcl(void *p)
-{
-	printf("%s\n", (pre_click == 1) ? "SL" : "LL");
-}
-
-static
-void
-f_sc(void *p)
-{
-	printf("%s\n", (pre_click == 1) ? "S" : "L");
-
-	if (pre_clicked == 1) {
-		barled
+	if(barled == OFF_LED)
+		barled = 0x80;
+	else if ((!sw_bar) && (barled == ON_LED)) {
+		sw_bar = TRUE;
+		barled = 0x80;
 	}
+	else
+		barled = barled | (barled >> 1);
+
+	(sw_bar) ? LED2(barled) : LED1(barled);
+	printf("<S>\n");
+}
+
+static
+void
+f_l(void *p)
+{
+	sw_bar = FALSE;
+	LED1(barled = ON_LED);
+	LED2(OFF_LED);
+	printf("<L>\n");
+}
+
+static
+void
+f_ss(void *p)
+{
+	if(((sw_bar) && (barled == OFF_LED)) ||
+		((!sw_bar) && (barled == ON_LED))) {
+		sw_bar = FALSE;
+		barled = ON_LED & (ON_LED << 1);
+	}
+	else
+		barled = barled & (barled << 1);
+
+	(sw_bar) ? LED2(barled) : LED1(barled);
+	printf("<SS>\n");
+}
+
+static
+void
+f_sl(void *p)
+{
+	barled = 0xFC;
+	sw_bar = FALSE;
+	LED2(0);
+	LED1(barled);
+	printf("<SL>\n");
+}
+
+static
+void
+f_ls(void *p)
+{
+	sw_bar = TRUE;
+	barled = ON_LED;
+	LED1(ON_LED);
+	LED2(ON_LED);
+	printf("<LS>\n");
+}
+
+static
+void
+f_ll(void *p)
+{
+	sw_bar = FALSE;
+	barled = OFF_LED;
+	LED1(OFF_LED);
+	LED2(OFF_LED);
+	printf("<LL>\n");
 }
 
 static
@@ -68,11 +122,14 @@ enum { SW_ON, SW_OFF, TO };
 struct state_machine_x SM[NUM_STATE] = {
 		   // SW_ON              SW_OFF           TO
 	    { 0, { 1, 0, 0 }, { f_ts, NULL, NULL } },    /* State 0 */
-	    { 1, { 1, 3, 2 }, { NULL, NULL, NULL } },    /* State 1 */
-	    { 0, { 2, 3, 2 }, { NULL, NULL, NULL } },     /* State 2 */
-	    { 0, { 4, 0, 0 }, { f_ts, f_sc, NULL } },     /* State 3 */
-	    { 1, { 4, 0, 5 }, { NULL, f_dcs, NULL } },    /* State 4 */
-	    { 0, { 5, 0, 5 }, { NULL, f_dcl, NULL } },    /* State 5 */
+	    { 1, { 1, 3, 2 }, { NULL, f_ts, NULL } },    /* State 1 */
+	    { 0, { 2, 6, 2 }, { NULL, f_ts, NULL } },     /* State 2 */
+	    { 1, { 4, 3, 0 }, { f_ts, NULL, f_s } },     /* State 3 */
+	    { 1, { 4, 0, 5 }, { NULL, f_ss, NULL } },    /* State 4 */
+	    { 0, { 5, 0, 5 }, { NULL, f_sl, NULL } },    /* State 5 */
+	    { 1, { 7, 6, 0 }, { f_ts, NULL, f_l } },    /* State 6 */
+	    { 1, { 7, 0, 8 }, { NULL, f_ls, NULL } },    /* State 7 */
+	    { 0, { 8, 0, 8 }, { NULL, f_ll, NULL } },    /* State 7 */
 };
 
 void
@@ -81,34 +138,33 @@ Exp_3_Homework(void)
     // variables
 	int state;
 	int input;
-	barled = MIN_LED;
+
+	//barled = 0;
+	LED1(0);
+	LED2(0);
 
 	printf("Exp_3_Homework\n");
 
 	while (1) {
 		if (SM[state].check_timer) {
-			if ((xTaskGetTickCount() - short_timer) >= MSEC2TICK(200)) {
-				input = TO;
-				goto do_action;		// Input happens
+			if (input == SW_ON) {
+				if ((xTaskGetTickCount() - short_timer) >= SW_ON_TIME) {
+					input = TO;
+					goto do_action;		// Input happens
+				}
+			}
+			else {
+				if ((xTaskGetTickCount() - short_timer) >= SW_OFF_TIME) {
+					input = TO;
+					goto do_action;		// Input happens
+				}
 			}
 		}
 
-		if(state == 3) {
-			if (NDS_SWITCH() & KEY_A) {
-				if ((xTaskGetTickCount() - interval_timer) <= MSEC2TICK(200))
-					input = SW_ON;
-				else
-					input = SW_OFF;
-			}
-			else
-				input = SW_OFF;
-		}
-		else {
-			if (NDS_SWITCH() & KEY_A)
-				input = SW_ON;
-			else
-				input = SW_OFF;
-		}
+		if (NDS_SWITCH() & KEY_A)
+			input = SW_ON;
+		else
+			input = SW_OFF;
 
 		/* Step 1: Do Action */
 do_action:
@@ -116,12 +172,7 @@ do_action:
 				SM[state].action[input](NULL);
 
 		/* Step 2: Set Next State */
-		if(state==1 || state==2)
-			pre_click = state;
-
 		state = SM[state].next_state[input];
-		if(state == 3)
-			interval_timer = xTaskGetTickCount();
 
 		if (NDS_SWITCH() & KEY_START)
 			break;

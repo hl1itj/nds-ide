@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-17:15:29 **** Incremental Build of configuration Default for project simple-io-3 ****
+01:31:00 **** Incremental Build of configuration Default for project simple-io-3 ****
 make 
 Exp_Homework.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/simple-io-3/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0792004/simple-io-3/source/Exp_Homework.c -o Exp_Homework.o 
@@ -7,15 +6,3 @@ linking simple-io-3.elf
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... simple-io-3.nds
-=======
-16:45:20 **** Incremental Build of configuration Default for project simple-io-2 ****
-make 
-down.s
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/simple-io-2/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
-down.s: Assembler messages:
-down.s:11: Error: junk at end of line, first unrecognized character is `<'
-down.s:13: Error: junk at end of line, first unrecognized character is `='
-down.s:15: Error: junk at end of line, first unrecognized character is `>'
-make[1]: *** [down.o] 오류 1
-make: *** [build] 오류 2
->>>>>>> 28973d698367d473792c2fff7941049b7bd95454
