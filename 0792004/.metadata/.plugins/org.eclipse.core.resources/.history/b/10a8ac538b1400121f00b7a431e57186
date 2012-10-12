@@ -129,7 +129,7 @@ struct state_machine_x SM[NUM_STATE] = {
 	    { 0, { 5, 0, 5 }, { NULL, f_sl, NULL } },    /* State 5 */
 	    { 1, { 7, 6, 0 }, { f_ts, NULL, f_l } },    /* State 6 */
 	    { 1, { 7, 0, 8 }, { NULL, f_ls, NULL } },    /* State 7 */
-	    { 0, { 8, 0, 8 }, { NULL, f_ll, NULL } },    /* State 8 */
+	    { 0, { 8, 0, 8 }, { NULL, f_ll, NULL } },    /* State 7 */
 };
 
 void
