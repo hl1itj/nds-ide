@@ -30,9 +30,9 @@ enum { SW_ON, SW_OFF, TO };
 int ledFlag=0;
 void Short_Click(void *p)
 {
-	printf("Short_Click\n");
 	int i,led=128;
 	if(ledFlag==16){
+		printf("ledFlag: %d",ledFlag);
 		return;
 	}
 	else if(ledFlag>7){
@@ -42,6 +42,7 @@ void Short_Click(void *p)
 		writeb_virtual_io(BARLED1, 0xFF);
 		writeb_virtual_io(BARLED2, led);
 		ledFlag++;
+		printf("ledFlag: %d",ledFlag);
 	}
 	else{
 		for(i=0;i<ledFlag;i++){
@@ -49,6 +50,7 @@ void Short_Click(void *p)
 		}
 		writeb_virtual_io(BARLED1, led);
 		ledFlag++;
+		printf("ledFlag: %d",ledFlag);
 	}
 }
 void Long_Click(void *p)
@@ -60,7 +62,6 @@ void Long_Click(void *p)
 }
 void ShortShort_Click(void *p)
 {
-	printf("ShortShort_Click\n");
 	int i,led=0xFF;
 	if (ledFlag==0)
 		return;

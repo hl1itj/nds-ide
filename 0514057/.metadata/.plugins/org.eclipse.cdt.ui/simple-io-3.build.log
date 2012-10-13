@@ -1,13 +1,13 @@
-02:38:57 **** Incremental Build of configuration Default for project simple-io-3 ****
+02:46:58 **** Build of configuration Default for project simple-io-3 ****
 make 
 Exp_Homework.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/simple-io-3/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/simple-io-3/source/Exp_Homework.c -o Exp_Homework.o 
-/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/source/Exp_Homework.c:114:2: warning: missing braces around initializer [-Wmissing-braces]
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/source/Exp_Homework.c:113:2: warning: missing braces around initializer [-Wmissing-braces]
 linking simple-io-3.elf
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... simple-io-3.nds
-/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/source/Exp_Homework.c:114:2: warning: (near initialization for 'SM[0]') [-Wmissing-braces]
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-3/source/Exp_Homework.c:113:2: warning: (near initialization for 'SM[0]') [-Wmissing-braces]
 
-02:38:58 Build Finished (took 710ms)
+02:46:59 Build Finished (took 820ms)
 
