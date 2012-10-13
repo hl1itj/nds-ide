@@ -1,11 +1,6 @@
-15:43:39 **** Incremental Build of configuration Default for project simple-io-1 ****
+02:38:57 **** Incremental Build of configuration Default for project simple-io-1 ****
 make 
-Exp_Homework.c
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/simple-io-1/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-1/include -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-1/build -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-1/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-1/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/simple-io-1/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/simple-io-1/source/Exp_Homework.c -o Exp_Homework.o 
-linking simple-io-1.elf
-Nintendo DS rom tool 1.50.1 - Jun 19 2012
-by Rafael Vuijk, Dave Murphy, Alexei Karpenko
-built ... simple-io-1.nds
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/simple-io-1/simple-io-1.nds'는 이미 갱신되었습니다.
 
-15:43:40 Build Finished (took 931ms)
+02:38:57 Build Finished (took 71ms)
 
