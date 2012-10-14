@@ -150,6 +150,3 @@ Exp_1_Homework_B(void)
 		while(NDS_SWITCH() & KEY_START)
 			vTaskDelay(10);
 }
-
-
-
