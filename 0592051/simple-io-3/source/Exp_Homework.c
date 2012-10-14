@@ -121,12 +121,12 @@ struct state_machine_x SM[NUM_STATE] = {
 		{ 0, { 1, 0, 0 }, { f_ts, NULL, NULL } },           //state0
 		{ 1, { 1, 3, 2 }, { NULL, f_ts, NULL } },           //state1
 		{ 0, { 2, 4, 0 }, { NULL, f_ts, NULL } },		   	   //state2
-		{ 1, { 5, 0, 3 }, { f_ts, f_sClick, NULL } }, 	   //state3   s
-		{ 1, { 7, 0, 4 }, { f_ts, f_lClick, NULL } },       //state4   l
-		{ 1, { 5, 0, 6 }, { NULL, f_ssdClick, NULL } },     //state5   ss
-		{ 0, { 6, 0, 0 }, { NULL, f_sldClick, NULL } },     //state6   sl
-		{ 1, { 7, 0, 8 }, { NULL, f_lsdClick, NULL } },     //state7   ls
-		{ 0, { 8, 0, 0 }, { NULL, f_lldClick, NULL } },     //state8   ll
+		{ 1, { 5, 0, 3 }, { f_ts, f_sClick, NULL } }, 	   //state3   Short Click
+		{ 1, { 7, 0, 4 }, { f_ts, f_lClick, NULL } },       //state4   Long Click
+		{ 1, { 5, 0, 6 }, { NULL, f_ssdClick, NULL } },     //state5   Short-Short Double Click
+		{ 0, { 6, 0, 0 }, { NULL, f_sldClick, NULL } },     //state6   Short-Long Double Click
+		{ 1, { 7, 0, 8 }, { NULL, f_lsdClick, NULL } },     //state7   Long-Short Double Click
+		{ 0, { 8, 0, 0 }, { NULL, f_lldClick, NULL } },     //state8   Long-Long Double Click
 		};
 
 void Exp_3_Homework(void) {
