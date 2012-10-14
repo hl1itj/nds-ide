@@ -1,6 +1,5 @@
-card_spi.o: \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/card_spi.c \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/card_spi.h \
+card_spi.o: /home/hansung/workspace/simple-io-1/FreeRTOS/NDS/card_spi.c \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/NDS/card_spi.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/libversion.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/ndstypes.h \
@@ -56,18 +55,18 @@ card_spi.o: \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/trig_lut.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/FreeRTOS.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/projdefs.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/portable.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/portmacro.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/mpu_wrappers.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/semphr.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/queue.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/define.h \
- /home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/gdbStubAsm.h
+ /home/hansung/workspace/simple-io-1/FreeRTOS/include/FreeRTOS.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/include/projdefs.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/include/portable.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/NDS/portmacro.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/include/mpu_wrappers.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/include/semphr.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/include/queue.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/NDS/define.h \
+ /home/hansung/workspace/simple-io-1/FreeRTOS/NDS/gdbStubAsm.h
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/card_spi.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/NDS/card_spi.h:
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:
 
@@ -179,22 +178,22 @@ card_spi.o: \
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/FreeRTOS.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/include/FreeRTOS.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/projdefs.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/include/projdefs.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/portable.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/include/portable.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/portmacro.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/NDS/portmacro.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/mpu_wrappers.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/include/mpu_wrappers.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/semphr.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/include/semphr.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/include/queue.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/include/queue.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/define.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/NDS/define.h:
 
-/home/hansung/ndsdev/nds-ide/0592051/simple-io-1/FreeRTOS/NDS/gdbStubAsm.h:
+/home/hansung/workspace/simple-io-1/FreeRTOS/NDS/gdbStubAsm.h:

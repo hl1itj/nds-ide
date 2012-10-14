@@ -18,6 +18,7 @@
 
 // LED Bar Left-and-Right (BARLED 1)
 // LEFT key - going left, RIGHT key - going right
+
 void
 Exp_1_Homework_A(void)
 {
@@ -69,6 +70,7 @@ Exp_1_Homework_A(void)
 
 // LED Bar Left-and-Right & Round (BARLED 1 and BARLED 2)
 // L key - going left, R key - going right
+
 void
 Exp_1_Homework_B(void)
 {
@@ -150,6 +152,3 @@ Exp_1_Homework_B(void)
 		while(NDS_SWITCH() & KEY_START)
 			vTaskDelay(10);
 }
-
-
-
