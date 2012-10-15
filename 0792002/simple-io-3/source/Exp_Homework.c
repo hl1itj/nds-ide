@@ -43,6 +43,8 @@ static void x_led1(void *p) {
 }
 
 static void x_led2(void *p) {
+	if(position==BARLED1&& barled==0xFF)
+		barled= (barled-0x80) <<1;
 	if(position==BARLED1 && barled == 0x00);
 	else
 	barled= (barled-0x80) <<1;
