@@ -69,36 +69,32 @@ static void f_clear(void *p) {
 
 static void f_plusplus(void *p) {
 
-	if (position == BARLED1 && barled == 0xFF) {
-		barled = 0x80;
-		position = BARLED2;
-	} else if (position == BARLED2 && barled == 0xFF)
-		;
-	else {
+	if (barled == 0xFF) {
+		if (position == BARLED1) {
+			barled = 0x80;
+			position = BARLED2;
+		} else if (position == BARLED2)
+			;
+	} else {
 		barled = (barled >> 1) + 0x80;
 		printf("<S>\n");
 	}
-	if (position == BARLED1)
-		writeb_virtual_io(BARLED1, (barled));
-	else
-		writeb_virtual_io(BARLED2, (barled));
+	writeb_virtual_io(position, barled);
 }
 
 static void f_minus(void *p) {
 
-	if (position == BARLED2 && barled == 0x00) {
-		barled = 0xFE;
-		position = BARLED1;
-	} else if (position == BARLED1 && barled == 0x00)
-		;
-	else {
+	if (barled == 0x00) {
+		if (position == BARLED2) {
+			barled = 0xFE;
+			position = BARLED1;
+		} else if (position == BARLED1)
+			;
+	} else {
 		barled = (barled - 0x80) << 1;
 		printf("<SS>\n");
 	}
-	if (position == BARLED1)
-		writeb_virtual_io(BARLED1, (barled));
-	else
-		writeb_virtual_io(BARLED2, (barled));
+	writeb_virtual_io(position, (barled));
 }
 
 static
@@ -112,8 +108,8 @@ void f_dts(void *p) {
 	doublecheck = TRUE;
 }
 
-struct state_machine_x SM[NUM_STATE] = { { 0, { 1, 0, 0, 0 }, { f_ts, NULL,
-		NULL, NULL } }, /* State 0 */
+struct state_machine_x SM[NUM_STATE] = {
+{ 0, { 1, 0, 0, 0 }, { f_ts, NULL,	NULL, NULL } }, /* State 0 */
 { 1, { 1, 2, 5, 1 }, { NULL, f_dts, NULL, NULL } }, /* State 1 */
 { 1, { 3, 2, 2, 0 }, { f_ts, NULL, NULL, f_plusplus } }, /* State 2 */
 { 1, { 3, 0, 4, 3 }, { NULL, f_minus, NULL, NULL } }, /* State 3 */
