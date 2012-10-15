@@ -32,27 +32,27 @@ enum {
 };
 
 static void x_led1(void *p) {
-	if(position==BARLED2 && barled == 0xFF);
+	if (position == BARLED1 && barled == 0xFF) {
+			barled = 0x80;
+			position = BARLED2;
+		}
+	else if(position==BARLED2 && barled == 0xFF);
 	else
 	barled = (barled >> 1) + 0x80;
 	writeb_virtual_io(position, barled);
-	if (position == BARLED1 && barled == 0xFF) {
-		barled = 0x00;
-		position = BARLED2;
-	}
+
 }
 
 static void x_led2(void *p) {
-	if(position==BARLED1&& barled==0xFF)
-		barled= (barled-0x80) <<1;
-	if(position==BARLED1 && barled == 0x00);
+	if (position == BARLED2 && barled == 0x00) {
+			barled= 0xFE;
+			position =BARLED1;
+		}
+	else if(position==BARLED1 && barled == 0x00);
 	else
 	barled= (barled-0x80) <<1;
 	writeb_virtual_io(position, barled);
-	if (position == BARLED2 && barled == 0x00) {
-		barled= 0xFF;
-		position =BARLED1;
-	}
+
 }
 
 static void x_led3(void *p) {

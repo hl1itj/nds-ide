@@ -394,16 +394,16 @@ Linker script and memory map
                 0x0200461c                readb_virtual_io
                 0x02004670                writeb_virtual_io
                 0x0200471c                close_virtual_io
- .text          0x02004720      0x424 Exp_Homework.o
-                0x0200495c                Exp_3_Homework
- .text          0x02004b44      0x388 Exp_Sample.o
-                0x02004b44                Exp_3_Sample_A
-                0x02004c6c                Exp_3_Sample_B
-                0x02004ddc                Exp_3_Sample_C
- .text          0x02004ecc       0x6c main.o
-                0x02004ecc                main
-                0x02004f10                InitDebug
- *fill*         0x02004f38        0x8 ff
+ .text          0x02004720      0x428 Exp_Homework.o
+                0x02004960                Exp_3_Homework
+ .text          0x02004b48      0x388 Exp_Sample.o
+                0x02004b48                Exp_3_Sample_A
+                0x02004c70                Exp_3_Sample_B
+                0x02004de0                Exp_3_Sample_C
+ .text          0x02004ed0       0x6c main.o
+                0x02004ed0                main
+                0x02004f14                InitDebug
+ *fill*         0x02004f3c        0x4 ff
  .text          0x02004f40       0xf0 gdbStubAsm.o
                 0x02004f40                BreakPoint
                 0x02004f48                ICInvalidateAll
