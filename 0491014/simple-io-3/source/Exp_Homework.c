@@ -146,13 +146,13 @@ Exp_3_Homework(void)
 			}
 		}
 		if (SM[state].check_timer[SW_WT]) {
-			if ((xTaskGetTickCount() - wait_time_x) <= MSEC2TICK(200) && (NDS_SWITCH() & KEY_A)){
-				input = SW_ON;
-				goto do_action;
+			while ((xTaskGetTickCount() - wait_time_x) < MSEC2TICK(200)){
+				if (NDS_SWITCH() & KEY_A) {
+					input = SW_ON;
+					goto do_action;
+				}
 			}
-			else if((xTaskGetTickCount() - wait_time_x) >= MSEC2TICK(200)){
-				input = SW_OFF;
-			}
+			input = SW_OFF;
 		}
 		else if (NDS_SWITCH() & KEY_A)
 			input = SW_ON;
