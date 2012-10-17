@@ -26,7 +26,6 @@
 #define NUM_INPUT	3
 
 portTickType short_timer;
-portTickType click_timer;
 
 u8 led_num = LED1;
 u16 barled = 0;
@@ -39,6 +38,7 @@ static
 void f_ts(void *p) {
 	short_timer = xTaskGetTickCount();
 }
+
 
 static
 void f_left_on(void *p) {
@@ -67,7 +67,6 @@ void f_left_on(void *p) {
 	}
 
 	else {
-<<<<<<< HEAD
 		if(barled > LED_MIN) {
 			barled /= 2;
 		   led2_sum += barled;
@@ -78,13 +77,6 @@ void f_left_on(void *p) {
 			led2_sum = LED_ALL;
 		}
 
-=======
-		barled /= 2;
-		led2_sum += barled;
-
-		if (barled == LED_MIN)
-			barled = LED_MIN;
->>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 
 		writeb_virtual_io(BARLED1, led1_sum);
 		writeb_virtual_io(BARLED2, led2_sum);
@@ -97,14 +89,9 @@ void f_led1(void *p) {
 	led_num = LED1;
 	barled = LED_MIN;
 	led1_sum = LED_ALL;
-<<<<<<< HEAD
 	led2_sum = LED_NON;
 	writeb_virtual_io(BARLED1, led1_sum);
 	writeb_virtual_io(BARLED2, led2_sum);
-=======
-	writeb_virtual_io(BARLED1, led1_sum);
-	writeb_virtual_io(BARLED2, 0);
->>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 }
 
 static
@@ -121,14 +108,11 @@ void f_right_off(void *p) {
 			barled = LED_MIN;
 			led1_sum = LED_ALL;
 		}
-<<<<<<< HEAD
 		else {
 			led2_sum -= barled;
 			barled *= 2;
 		}
 
-=======
->>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 	}
 	else {
 		if(barled < LED_MAX) {
@@ -190,14 +174,14 @@ enum {
 struct state_machine_x SM[NUM_STATE] = {
 // SW_ON              SW_OFF           TO
 		{ 0, { 1, 0, 0 }, { f_ts, NULL, NULL } }, /* State 0 */
-		{ 1, { 1, 3, 2 }, { NULL, NULL, NULL } }, /* State 1 */
-		{ 0, { 2, 5, 2 }, { NULL, NULL, NULL } }, /* State 2 */
-		{ 0, { 7, 0, 3 }, { f_ts, f_left_on, NULL } }, /* State 3 */
-		{ 0, { 4, 0, 4 }, { NULL, f_left6, NULL } }, /* State 4 */
-		{ 0, { 8, 0, 6 }, { f_ts, f_led1, NULL } }, /* State 5 */
-		{ 0, { 6, 0, 6 }, { NULL, f_led_init, NULL } }, /* State 6 */
-		{ 1, { 7, 0, 4 }, { NULL, f_right_off, NULL } }, /* State 7 */
-		{ 1, { 8, 0, 6 }, { NULL, f_led1_2, NULL } } /* State 8 */
+		{ 1, { 1, 3, 2 }, { NULL, f_ts, NULL } }, /* State 1 */
+		{ 0, { 2, 6, 2 }, { NULL, f_ts, NULL } }, /* State 2 */
+		{ 1, { 4, 3, 0 }, { f_ts, NULL, f_left_on } }, /* State 3 */
+		{ 1, { 4, 0, 5 }, { NULL, f_right_off, NULL } }, /* State 4 */
+		{ 0, { 5, 0, 5 }, { NULL, f_left6, NULL } }, /* State 5 */
+		{ 1, { 7, 6, 0 }, { f_ts, NULL, f_led1 } }, /* State 6 */
+		{ 1, { 7, 0, 8 }, { NULL, f_led1_2, NULL } }, /* State 7 */
+		{ 0, { 8, 0, 8 }, { NULL, f_led_init, NULL } } /* State 8 */
 };
 
 void Exp_3_Homework(void) {
@@ -219,52 +203,19 @@ void Exp_3_Homework(void) {
 				// Input happens
 			}
 		}
-		if (state == 3) {
-<<<<<<< HEAD
-			if (((xTaskGetTickCount() - click_timer) <= MSEC2TICK(200) )
-			&& (NDS_SWITCH() & KEY_A)){
-			input = SW_ON;
+/*		if (state == 3) {
+			if (((xTaskGetTickCount() - click_timer) >= MSEC2TICK(200) )){
+			input = TO;
 			goto do_action;
 		}
-		else {
-			input = SW_OFF;
-			goto do_action;
-		}
-
 	}
 		if (state == 5) {
-			if (((xTaskGetTickCount() - click_timer) <= MSEC2TICK(200) )
-			&& (NDS_SWITCH() & KEY_A)){
-			input = SW_ON;
+			if (((xTaskGetTickCount() - click_timer) >= MSEC2TICK(200) )){
+			input = TO;
 			goto do_action;
 		}
-		else {
-			input = SW_OFF;
-			goto do_action;
-		}
-
-	}
-
+	} */
 	if(NDS_SWITCH() & KEY_A)
-=======
-			if (((xTaskGetTickCount() - click_timer) < MSEC2TICK(200) )
-			&& (NDS_SWITCH() & KEY_A)){
-			input = SW_ON;
-		}
-		else
-		input = SW_OFF;
-	}
-		if (state == 5) {
-			if (((xTaskGetTickCount() - click_timer) < MSEC2TICK(200) )
-			&& (NDS_SWITCH() & KEY_A)){
-			input = SW_ON;
-		}
-		else
-		input = SW_OFF;
-	}
-
-	else if(NDS_SWITCH() & KEY_A)
->>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 	input = SW_ON;
 	else
 	input = SW_OFF;
@@ -275,7 +226,6 @@ void Exp_3_Homework(void) {
 
 		/* Step 2: Set Next State */
 		state = SM[state].next_state[input];
-		click_timer = xTaskGetTickCount();
 
 		if (NDS_SWITCH() & KEY_START)
 			break;
