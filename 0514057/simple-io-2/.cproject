@@ -29,8 +29,6 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1692332607" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.908731358" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;C:\ndsdev\devkitPro\devkitARM\arm-eabi\include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\ndsdev\devkitPro\libnds\include&quot;"/>
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/devkitARM/arm-none-eabi/include"/>
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/libnds/include"/>
 								</option>
@@ -38,8 +36,6 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.435954826" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.843959441" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;C:\ndsdev\devkitPro\devkitARM\arm-eabi\include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\ndsdev\devkitPro\libnds\include&quot;"/>
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/devkitARM/arm-none-eabi/include"/>
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/libnds/include"/>
 								</option>
@@ -64,8 +60,10 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="1">
-		<resource resourceType="PROJECT" workspacePath="/simple-io-2"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/simple-io-2"/>
+		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>

@@ -30,7 +30,7 @@ void Exp_1_Homework_A(void) {
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED2, 0);
 
-		if (key_pressed == FALSE){
+		if ((key_pressed == FALSE) && ((sw & KEY_LEFT) ||(sw & KEY_RIGHT) )){
 			key_pressed = TRUE;
 
 			if ((led_state != 0x0080) && (sw & KEY_LEFT)) // max left

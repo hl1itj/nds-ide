@@ -66,19 +66,22 @@ static
 portTASK_FUNCTION(homework_1, pvParameters)
 {
 	u16 sw,bsw=KEY_UP;
-	int led=8;
+	int led=8,i;
+	long temp=2.33124;
 	while (1) {
-		printf("1");
 		sw = NDS_SWITCH();
 		writeb_virtual_io(BARLED1, led);
 		if(sw!=bsw){
-			if (sw & KEY_R && led!=1)
+			if ((sw & KEY_R) && led!=1)
 				led=led/2;
-			if (sw & KEY_L && led!=128)
+			if ((sw & KEY_L) && led!=128)
 				led=led*2;
 		}
 		bsw=sw;
-		vTaskDelay(MSEC2TICK(50));
+		for(i=0;i<10000;i++)
+			temp=temp/0.3413;
+
+		vTaskDelay(MSEC2TICK(1));
 	}
 }
 
@@ -86,11 +89,12 @@ static
 portTASK_FUNCTION(homework_2, pvParameters)
 {
 	u8 barled = 1;
+	int t = 0;
 	portTickType xLastWakeTime = xTaskGetTickCount();
-	int i;
 
 	while (1) {
-		printf("2");
+		printf(" %d",t);
+		t++;
 		writeb_virtual_io(BARLED2, barled);
 		if(barled!=128)
 			barled=barled*2;

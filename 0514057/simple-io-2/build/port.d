@@ -1,12 +1,13 @@
-port.o: /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/port.c \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/FreeRTOS.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/projdefs.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/FreeRTOSConfig.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/portable.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/portmacro.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/mpu_wrappers.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/task.h \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/list.h \
+port.o: \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/NDS/port.c \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/FreeRTOS.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/projdefs.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/NDS/FreeRTOSConfig.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/portable.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/NDS/portmacro.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/mpu_wrappers.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/task.h \
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/list.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/libversion.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/ndstypes.h \
@@ -63,21 +64,21 @@ port.o: /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/port.c \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/FreeRTOS.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/FreeRTOS.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/projdefs.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/projdefs.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/FreeRTOSConfig.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/NDS/FreeRTOSConfig.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/portable.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/portable.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/portmacro.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/NDS/portmacro.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/mpu_wrappers.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/mpu_wrappers.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/task.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/task.h:
 
-/home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/include/list.h:
+/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/include/list.h:
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:
 

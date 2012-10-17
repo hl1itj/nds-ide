@@ -471,11 +471,258 @@ Binding(CTRL+SHIFT+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.cdt.core 1 0 2012-10-10 01:02:10.489
 !MESSAGE Indexed 'Simple-IO-2' (66 sources, 20 headers) in 1.42 sec: 2,918 declarations; 11,403 references; 251 unresolved inclusions; 0 syntax errors; 4,390 unresolved names (23.46%)
 
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:05:25.594
+=======
+!SESSION 2012-10-10 17:23:39.529 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-10-10 17:35:39.009
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2012-10-10 17:36:16.866
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@24e90b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@24e90b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.MakeHandlersGo@13febeb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.MakeHandlersGo@13febeb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@199c434,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@20704a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@20704a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ac3a8d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@381147,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@381147,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@f64c6d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@13b9d6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@13b9d6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@10db698,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1aa0721,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1aa0721,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ba0d82,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ccf698,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ccf698,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1517928,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1e9422e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1e9422e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@f8115b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-10 17:36:16.867
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3b7d3f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3b7d3f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@19bcbd6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-10 17:40:42.946
+!MESSAGE Indexed 'Simple-IO-2' (66 sources, 20 headers) in 2.69 sec: 2,918 declarations; 11,403 references; 251 unresolved inclusions; 0 syntax errors; 4,390 unresolved names (23.46%)
+
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 17:41:34.264
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -510,7 +757,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:05:25.598
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:41:34.274
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -542,7 +793,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:05:25.599
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:41:34.275
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -575,9 +830,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:05:25.697
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:05:25.697
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 17:41:34.518
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 17:41:34.518
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -612,7 +873,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:05:25.697
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:41:34.518
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -644,7 +909,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:05:25.698
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:41:34.519
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -677,7 +946,14 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:07:04.365
+=======
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-10 17:43:30.671
+!MESSAGE Indexed 'Simple-IO-2' (66 sources, 104 headers) in 5.39 sec: 7,559 declarations; 21,535 references; 17 unresolved inclusions; 13 syntax errors; 484 unresolved names (1.64%)
+
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 17:43:40.030
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -712,7 +988,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:04.365
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:43:40.030
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -744,7 +1024,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:04.365
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:43:40.031
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -777,9 +1061,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:07:04.448
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:07:04.448
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 17:43:40.302
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 17:43:40.302
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -814,7 +1104,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:04.449
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:43:40.304
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -846,7 +1140,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:04.449
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:43:40.304
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -879,7 +1177,11 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:07:29.975
+=======
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 17:44:03.117
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -898,8 +1200,14 @@ org.eclipse.core.runtime.CoreException: Internal error building project Simple-I
 	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
 	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
 	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+<<<<<<< HEAD
 	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:422)
 	at org.eclipse.ui.actions.GlobalBuildAction$1.run(GlobalBuildAction.java:180)
+=======
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.core.resources.RefreshScopeManager.initializeConfigMap(RefreshScopeManager.java:523)
@@ -912,8 +1220,13 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
+<<<<<<< HEAD
 	... 17 more
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:29.976
+=======
+	... 18 more
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:44:03.118
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -941,10 +1254,18 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
 	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
 	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+<<<<<<< HEAD
 	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:422)
 	at org.eclipse.ui.actions.GlobalBuildAction$1.run(GlobalBuildAction.java:180)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:29.976
+=======
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:44:03.118
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -972,6 +1293,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
 	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
 	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+<<<<<<< HEAD
 	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:422)
 	at org.eclipse.ui.actions.GlobalBuildAction$1.run(GlobalBuildAction.java:180)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
@@ -979,6 +1301,16 @@ java.lang.NullPointerException
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:07:30.926
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:07:30.926
+=======
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 17:44:03.268
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 17:44:03.268
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -997,8 +1329,14 @@ org.eclipse.core.runtime.CoreException: Internal error building project Simple-I
 	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
 	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
 	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+<<<<<<< HEAD
 	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:422)
 	at org.eclipse.ui.actions.GlobalBuildAction$1.run(GlobalBuildAction.java:180)
+=======
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.core.resources.RefreshScopeManager.initializeConfigMap(RefreshScopeManager.java:523)
@@ -1011,8 +1349,13 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
+<<<<<<< HEAD
 	... 17 more
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:30.927
+=======
+	... 18 more
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:44:03.269
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1040,10 +1383,18 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
 	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
 	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+<<<<<<< HEAD
 	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:422)
 	at org.eclipse.ui.actions.GlobalBuildAction$1.run(GlobalBuildAction.java:180)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:30.927
+=======
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:44:03.269
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1071,11 +1422,29 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
 	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
 	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+<<<<<<< HEAD
 	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:422)
 	at org.eclipse.ui.actions.GlobalBuildAction$1.run(GlobalBuildAction.java:180)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:07:38.226
+=======
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-10 17:45:38.663
+!MESSAGE Indexed 'simple-io-1' (70 sources, 23 headers) in 4.07 sec: 2,938 declarations; 11,528 references; 257 unresolved inclusions; 0 syntax errors; 4,412 unresolved names (23.37%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-10 17:46:32.698
+!MESSAGE Indexed 'simple-io-1' (70 sources, 107 headers) in 5.79 sec: 7,578 declarations; 21,651 references; 15 unresolved inclusions; 12 syntax errors; 482 unresolved names (1.62%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-10 17:48:20.746
+!MESSAGE Indexed 'Simple-IO-2' (66 sources, 104 headers) in 4.05 sec: 7,559 declarations; 21,535 references; 17 unresolved inclusions; 13 syntax errors; 484 unresolved names (1.64%)
+
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 17:52:08.569
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -1110,7 +1479,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:38.227
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:08.570
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1142,7 +1515,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:38.227
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:08.571
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1175,9 +1552,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:07:38.333
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:07:38.333
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 17:52:08.815
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 17:52:08.816
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -1212,7 +1595,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:38.333
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:08.837
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1244,7 +1631,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:07:38.334
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:08.838
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1277,7 +1668,11 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:08:23.803
+=======
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 17:52:16.160
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -1312,7 +1707,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:08:23.803
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:16.161
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1344,7 +1743,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:08:23.803
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:16.162
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1377,9 +1780,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:08:23.835
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:08:23.835
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 17:52:16.218
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 17:52:16.218
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -1414,7 +1823,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:08:23.836
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:16.218
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1446,7 +1859,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:08:23.836
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:52:16.218
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1479,7 +1896,11 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:10:56.391
+=======
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 17:53:23.305
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -1514,7 +1935,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:10:56.392
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:53:23.305
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1546,7 +1971,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:10:56.392
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:53:23.306
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1579,9 +2008,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:10:56.472
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:10:56.472
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 17:53:23.373
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 17:53:23.374
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
@@ -1616,7 +2051,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:10:56.472
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:53:23.374
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1648,7 +2087,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:10:56.473
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 17:53:23.374
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1681,14 +2124,25 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:19:07.374
+=======
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-10 18:05:11.496
+!MESSAGE Indexed 'Simple-IO-2' (67 sources, 124 headers) in 10.96 sec: 7,801 declarations; 22,186 references; 16 unresolved inclusions; 12 syntax errors; 490 unresolved names (1.61%)
+
+!ENTRY org.eclipse.core.resources 4 2 2012-10-10 18:05:24.980
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:142)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+<<<<<<< HEAD
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+=======
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
@@ -1716,7 +2170,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:19:07.375
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 18:05:24.982
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1732,7 +2190,11 @@ java.lang.NullPointerException
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+<<<<<<< HEAD
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+=======
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
@@ -1748,7 +2210,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:19:07.375
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 18:05:24.983
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1764,7 +2230,11 @@ java.lang.NullPointerException
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+<<<<<<< HEAD
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+=======
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
@@ -1781,16 +2251,26 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-10 01:19:07.467
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 01:19:07.467
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-10 18:05:25.419
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-10 18:05:25.419
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-2'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-2 configuration Default
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:142)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+<<<<<<< HEAD
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+=======
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
@@ -1818,7 +2298,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:19:07.467
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 18:05:25.420
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1834,7 +2318,11 @@ java.lang.NullPointerException
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+<<<<<<< HEAD
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+=======
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
@@ -1850,7 +2338,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 01:19:07.467
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-10 18:05:25.424
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE Internal error building project Simple-IO-2 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -1866,7 +2358,11 @@ java.lang.NullPointerException
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeBuild(ExternalBuildRunner.java:72)
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:753)
+<<<<<<< HEAD
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510)
+=======
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459)
 	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
@@ -1882,6 +2378,7 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.core.resources 4 2 2012-10-10 01:19:36.816
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
@@ -2088,10 +2585,90 @@ java.lang.NullPointerException
 eclipse.buildId=I20120608-1400
 java.version=1.6.0_24
 java.vendor=Sun Microsystems Inc.
+=======
+!SESSION 2012-10-11 13:08:14.547 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
 BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.cpp.product
 Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
 
+!ENTRY org.eclipse.core.resources 4 567 2012-10-11 13:08:22.967
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2012-10-11 13:08:22.967
+!MESSAGE Could not read metadata for 'Simple-IO-2'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'Simple-IO-2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:874)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:854)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:703)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1528)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2502)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2012-10-11 13:08:22.977
+!MESSAGE The project description file (.project) for 'Simple-IO-2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-11 13:09:13.860
+!MESSAGE Indexed 'simple-io-2' (67 sources, 124 headers) in 3.75 sec: 7,801 declarations; 22,186 references; 16 unresolved inclusions; 12 syntax errors; 490 unresolved names (1.61%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-11 13:10:39.107
+!MESSAGE Indexed 'simple-io-2' (67 sources, 124 headers) in 2.24 sec: 7,801 declarations; 22,186 references; 16 unresolved inclusions; 12 syntax errors; 490 unresolved names (1.61%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-11 13:32:25.752
+!MESSAGE Indexed 'simple-io-3' (69 sources, 38 headers) in 1.61 sec: 3,212 declarations; 12,246 references; 260 unresolved inclusions; 0 syntax errors; 4,401 unresolved names (22.16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-11 13:33:30.584
+!MESSAGE Indexed 'simple-io-1' (70 sources, 60 headers) in 3.07 sec: 5,092 declarations; 13,759 references; 212 unresolved inclusions; 2 syntax errors; 4,190 unresolved names (18.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-11 13:34:18.245
+!MESSAGE Indexed 'simple-io-1' (70 sources, 107 headers) in 3.86 sec: 7,578 declarations; 21,659 references; 15 unresolved inclusions; 12 syntax errors; 482 unresolved names (1.62%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-11 13:36:08.056
+!MESSAGE Indexed 'simple-io-3' (68 sources, 106 headers) in 3.94 sec: 7,614 declarations; 21,705 references; 15 unresolved inclusions; 12 syntax errors; 482 unresolved names (1.62%)
+!SESSION 2012-10-11 16:06:55.658 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
+
+<<<<<<< HEAD
 !ENTRY org.eclipse.cdt.core 1 0 2012-10-18 01:16:26.005
 !MESSAGE Indexed 'Simple-IO-3' (68 sources, 106 headers) in 3.47 sec: 7,628 declarations; 21,740 references; 15 unresolved inclusions; 12 syntax errors; 482 unresolved names (1.61%)
 
@@ -4780,12 +5357,21 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 !ENTRY org.eclipse.jface 2 0 2012-10-18 01:32:46.908
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+!ENTRY org.eclipse.jface 2 0 2012-10-11 16:12:08.631
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.632
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for ALT+CTRL+I:
 Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@9fefc3,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@230696,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4793,17 +5379,29 @@ Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@9fefc3,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@230696,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.632
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@36052c,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@185984a,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4811,7 +5409,11 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@36052c,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@185984a,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4819,17 +5421,29 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@8d9d40,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1d13377,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.632
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for F3:
 Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@14ed923,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@189ef7d,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4837,7 +5451,11 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@14ed923,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@189ef7d,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4845,17 +5463,29 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
 		Open an editor on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1918d9b,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@ca1b35,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.632
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@e7c733,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@c0673e,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4863,7 +5493,11 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@e7c733,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@c0673e,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4871,17 +5505,29 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@c710d1,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1ba39ae,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.633
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for F4:
 Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1212883,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@12102af,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4889,7 +5535,11 @@ Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1212883,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@12102af,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4897,17 +5547,29 @@ Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1eac9a7,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@374234,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.633
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for CTRL+G:
 Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@15d3072,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1db715e,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4915,7 +5577,11 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@15d3072,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1db715e,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4923,17 +5589,29 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@117b92d,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1efe3af,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.633
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for CTRL+SHIFT+G:
 Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@7e4d68,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@4d1e22,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4941,7 +5619,11 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@7e4d68,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@4d1e22,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4949,17 +5631,29 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@bea2c,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@f56b29,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.633
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for ALT+CTRL+H:
 Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@3b16bb,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@4e5450,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4967,7 +5661,11 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@3b16bb,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@4e5450,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -4975,17 +5673,29 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
 		Open a call hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@151888d,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 01:32:46.908
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@817e81,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-11 16:12:08.633
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 !MESSAGE A conflict occurred for CTRL+SHIFT+H:
 Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1dbfd5a,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1986e64,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -4993,7 +5703,11 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1dbfd5a,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1986e64,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -5001,7 +5715,11 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1d64598,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@778cfb,
+>>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
