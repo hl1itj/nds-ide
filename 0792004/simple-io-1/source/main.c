@@ -45,8 +45,8 @@ main(void)
 	return 0;
 }
 
-void Exp_1_Sample_A(void);
-void Exp_1_Sample_B(void);
+//void Exp_1_Sample_A(void);
+//void Exp_1_Sample_B(void);
 void Exp_1_Homework_A(void);
 void Exp_1_Homework_B(void);
 

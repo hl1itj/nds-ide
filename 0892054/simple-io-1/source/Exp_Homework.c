@@ -79,6 +79,7 @@ Exp_1_Homework_B(void)
 
 			if((L_key_pressed == FALSE) && (sw & KEY_L)){
 				if(curr_led >= 0x080){
+			 		L_key_pressed = TRUE;
 					writeb_virtual_io(barled_sw, 0);
 					if(barled_sw == BARLED2)
 						barled_sw = BARLED1;
@@ -99,6 +100,7 @@ Exp_1_Homework_B(void)
 
 			if((R_key_pressed == FALSE) && (sw & KEY_R)){
 				if(curr_led <= 0X001){
+					R_key_pressed = TRUE;
 					writeb_virtual_io(barled_sw, 0);
 					if(barled_sw == BARLED2)
 						barled_sw = BARLED1;

@@ -67,6 +67,7 @@ void f_left_on(void *p) {
 	}
 
 	else {
+<<<<<<< HEAD
 		if(barled > LED_MIN) {
 			barled /= 2;
 		   led2_sum += barled;
@@ -77,6 +78,13 @@ void f_left_on(void *p) {
 			led2_sum = LED_ALL;
 		}
 
+=======
+		barled /= 2;
+		led2_sum += barled;
+
+		if (barled == LED_MIN)
+			barled = LED_MIN;
+>>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 
 		writeb_virtual_io(BARLED1, led1_sum);
 		writeb_virtual_io(BARLED2, led2_sum);
@@ -89,9 +97,14 @@ void f_led1(void *p) {
 	led_num = LED1;
 	barled = LED_MIN;
 	led1_sum = LED_ALL;
+<<<<<<< HEAD
 	led2_sum = LED_NON;
 	writeb_virtual_io(BARLED1, led1_sum);
 	writeb_virtual_io(BARLED2, led2_sum);
+=======
+	writeb_virtual_io(BARLED1, led1_sum);
+	writeb_virtual_io(BARLED2, 0);
+>>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 }
 
 static
@@ -108,11 +121,14 @@ void f_right_off(void *p) {
 			barled = LED_MIN;
 			led1_sum = LED_ALL;
 		}
+<<<<<<< HEAD
 		else {
 			led2_sum -= barled;
 			barled *= 2;
 		}
 
+=======
+>>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 	}
 	else {
 		if(barled < LED_MAX) {
@@ -204,6 +220,7 @@ void Exp_3_Homework(void) {
 			}
 		}
 		if (state == 3) {
+<<<<<<< HEAD
 			if (((xTaskGetTickCount() - click_timer) <= MSEC2TICK(200) )
 			&& (NDS_SWITCH() & KEY_A)){
 			input = SW_ON;
@@ -229,6 +246,25 @@ void Exp_3_Homework(void) {
 	}
 
 	if(NDS_SWITCH() & KEY_A)
+=======
+			if (((xTaskGetTickCount() - click_timer) < MSEC2TICK(200) )
+			&& (NDS_SWITCH() & KEY_A)){
+			input = SW_ON;
+		}
+		else
+		input = SW_OFF;
+	}
+		if (state == 5) {
+			if (((xTaskGetTickCount() - click_timer) < MSEC2TICK(200) )
+			&& (NDS_SWITCH() & KEY_A)){
+			input = SW_ON;
+		}
+		else
+		input = SW_OFF;
+	}
+
+	else if(NDS_SWITCH() & KEY_A)
+>>>>>>> 1fc079dd7be353aec78946b4dd04e80331385f73
 	input = SW_ON;
 	else
 	input = SW_OFF;
