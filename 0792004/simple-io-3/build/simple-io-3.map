@@ -402,10 +402,9 @@ Linker script and memory map
                 0x02004a8c                Exp_3_Sample_A
                 0x02004bb4                Exp_3_Sample_B
                 0x02004d24                Exp_3_Sample_C
- .text          0x02004e14       0x60 main.o
+ .text          0x02004e14       0x6c main.o
                 0x02004e14                main
                 0x02004e58                InitDebug
- *fill*         0x02004e74        0xc ff
  .text          0x02004e80       0xf0 gdbStubAsm.o
                 0x02004e80                BreakPoint
                 0x02004e88                ICInvalidateAll
@@ -2094,7 +2093,7 @@ ARM.exidx
  .debug_abbrev  0x00003806      0x26a /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
  .debug_abbrev  0x00003a70      0x209 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
 
-.debug_line     0x00000000     0x5f3d
+.debug_line     0x00000000     0x5f4c
  *(.debug_line)
  .debug_line    0x00000000      0x234 croutine.o
  .debug_line    0x00000234      0x141 list.o
@@ -2108,32 +2107,32 @@ ARM.exidx
  .debug_line    0x0000180a      0x48f sevencore_io.o
  .debug_line    0x00001c99      0x27a Exp_Homework.o
  .debug_line    0x00001f13      0x27d Exp_Sample.o
- .debug_line    0x00002190      0x1b6 main.o
- .debug_line    0x00002346       0xb7 gdbStubAsm.o
- .debug_line    0x000023fd       0xc9 port_asm.o
- .debug_line    0x000024c6      0x2b2 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_line    0x00002778      0x715 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_line    0x00002e8d      0x1c6 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
- .debug_line    0x00003053      0x199 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
- .debug_line    0x000031ec      0x23f /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_line    0x0000342b      0x1b6 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
- .debug_line    0x000035e1      0x21e /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
- .debug_line    0x000037ff      0x2a4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_line    0x00003aa3      0x9dc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
- .debug_line    0x0000447f      0x37e /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_line    0x000047fd      0x6c9 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_line    0x00004ec6      0x26e /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_line    0x00005134      0x1cc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_line    0x00005300      0x141 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
- .debug_line    0x00005441       0xb8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
- .debug_line    0x000054f9      0x101 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_line    0x000055fa       0xc3 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_line    0x000056bd       0x9f /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .debug_line    0x0000575c       0xc7 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_line    0x00005823       0x97 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_line    0x000058ba      0x1bc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
- .debug_line    0x00005a76      0x286 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_line    0x00005cfc      0x241 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_line    0x00002190      0x1c5 main.o
+ .debug_line    0x00002355       0xb7 gdbStubAsm.o
+ .debug_line    0x0000240c       0xc9 port_asm.o
+ .debug_line    0x000024d5      0x2b2 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_line    0x00002787      0x715 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_line    0x00002e9c      0x1c6 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
+ .debug_line    0x00003062      0x199 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
+ .debug_line    0x000031fb      0x23f /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_line    0x0000343a      0x1b6 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
+ .debug_line    0x000035f0      0x21e /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
+ .debug_line    0x0000380e      0x2a4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_line    0x00003ab2      0x9dc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
+ .debug_line    0x0000448e      0x37e /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_line    0x0000480c      0x6c9 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_line    0x00004ed5      0x26e /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_line    0x00005143      0x1cc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_line    0x0000530f      0x141 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
+ .debug_line    0x00005450       0xb8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
+ .debug_line    0x00005508      0x101 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_line    0x00005609       0xc3 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_line    0x000056cc       0x9f /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .debug_line    0x0000576b       0xc7 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_line    0x00005832       0x97 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_line    0x000058c9      0x1bc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
+ .debug_line    0x00005a85      0x286 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_line    0x00005d0b      0x241 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
 
 .debug_frame    0x00000000     0x1de4
  *(.debug_frame)
