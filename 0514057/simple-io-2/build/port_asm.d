@@ -1,2 +1,2 @@
 port_asm.o: \
- /home/hansung/ndsdev/workspace/simple-io-2/FreeRTOS/NDS/port_asm.s
+ /home/hansung/ndsdev/nds-ide/0514057/simple-io-2/FreeRTOS/NDS/port_asm.s

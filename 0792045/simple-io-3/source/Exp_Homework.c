@@ -15,8 +15,9 @@
 
 portTickType short_timer = 0;
 portTickType start_time_H = 0;
-u16 barled = 0x01;
+u16 barled = 0x00;
 u8 d_check = FALSE;
+u8 state = TRUE;
 
 #define NUM_STATE 9
 #define NUM_INPUT 4
@@ -34,32 +35,60 @@ enum {
 
 static
 void h_led1(void *p) {
-	if (barled <= 0xFF)
-		barled = barled << 1;
-	writeb_virtual_io(BARLED2, (barled - 0x01));
+	if (state && barled == 0xFF) {
+		barled = 0x80;
+		state = FALSE;
+	} else if (!state && barled == 0xFF)
+		;
+	else {
+		barled = (barled >> 1) + 0x80;
+	}
+	if (state)
+		writeb_virtual_io(BARLED1, (barled));
+	else
+		writeb_virtual_io(BARLED2, (barled));
 }
 static
 void h_led2(void *p) {
-	writeb_virtual_io(BARLED1, 0xFF);
+	state = TRUE;
+	barled = 0xFF;
+	writeb_virtual_io(BARLED1, barled);
+	writeb_virtual_io(BARLED2, 0x00);
 }
 static
 void h_led3(void *p) {
-	if (barled > 0x01)
-		barled = barled >> 1;
-	writeb_virtual_io(BARLED2, (barled - 0x01));
+	if (!state && barled == 0x00) {
+		barled = 0xFE;
+		state = TRUE;
+	} else if (state && barled == 0x00)
+		;
+	else {
+		barled = (barled - 0x80) << 1;
+	}
+	if (state)
+		writeb_virtual_io(BARLED1, (barled));
+	else
+		writeb_virtual_io(BARLED2, (barled));
 }
 static
 void h_led4(void *p) {
-	writeb_virtual_io(BARLED1, 0xFC);
+	state = TRUE;
+	barled = 0xFC;
+	writeb_virtual_io(BARLED1, barled);
+	writeb_virtual_io(BARLED2, 0);
 }
 static
 void h_led5(void *p) {
+	state = FALSE;
+	barled = 0xFF;
 	writeb_virtual_io(BARLED1, 0xFF);
-	writeb_virtual_io(BARLED2, 0xFF);
+	writeb_virtual_io(BARLED2, barled);
 }
 static
 void h_led6(void *p) {
-	writeb_virtual_io(BARLED1, 0);
+	state = TRUE;
+	barled = 0x00;
+	writeb_virtual_io(BARLED1, barled);
 	writeb_virtual_io(BARLED2, 0);
 }
 

@@ -99,6 +99,11 @@ portTASK_FUNCTION(Homework_1, pvParameters)
 
 		if((keyLeft_pressed == TRUE) && !(sw & KEY_L))
 			keyLeft_pressed = FALSE;
+<<<<<<< HEAD
+
+		vTaskDelay(50);
+=======
+>>>>>>> 28973d698367d473792c2fff7941049b7bd95454
 	}
 }
 
