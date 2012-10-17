@@ -151,7 +151,7 @@ Exp_3_Homework(void)
 		while (1) {
 			/* Step 0: Generate Input Event */
 			if (SM[state].check_timer) {
-				if ((xTaskGetTickCount() - start_time) >= MSEC2TICK(300)) {
+				if ((xTaskGetTickCount() - start_time) >= MSEC2TICK(200)) {
 					input = TO;
 					goto do_action;		// Input happens
 				}

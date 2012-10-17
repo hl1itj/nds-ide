@@ -148,7 +148,4 @@ void Exp_1_Homework_B(void) {
 
 	while (NDS_SWITCH() & KEY_START)
 		vTaskDelay(10);
-
-// LED Bar Left-and-Right & Round (BARLED 1 and BARLED 2)
-// L key - going left, R key - going right
 }

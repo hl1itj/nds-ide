@@ -1,4 +1,4 @@
-01:39:01 **** Incremental Build of configuration Default for project simple-io-3 ****
+02:49:09 **** Incremental Build of configuration Default for project simple-io-3 ****
 make 
 Exp_Homework.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/simple-io-3/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0792004/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0792004/simple-io-3/source/Exp_Homework.c -o Exp_Homework.o 
@@ -7,5 +7,5 @@ Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... simple-io-3.nds
 
-01:39:03 Build Finished (took 1s.135ms)
+02:49:11 Build Finished (took 1s.434ms)
 
