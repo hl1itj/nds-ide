@@ -31,7 +31,7 @@ static void f_led1(void *p) { //s
 }
 
 static void f_led2(void *p) { // l
-	barled1 = 0xFF00;
+	barled1 = 0xff00;
 	writeb_virtual_io(BARLED1, barled1 >> 8);
 	writeb_virtual_io(BARLED2, barled2);
 }
