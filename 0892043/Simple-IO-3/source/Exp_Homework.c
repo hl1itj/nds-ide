@@ -7,8 +7,7 @@
 #include "sevencore_io.h"
 
 portTickType short_timer;
-u16 barled1 = 0x0000;
-u16 barled2 = 0x0000;
+u16 barled = 0x0000;
 
 #define NUM_STATE 9
 #define NUM_INPUT 3
@@ -23,43 +22,47 @@ struct state_machine_x {
 };
 
 static void f_led1(void *p) { //s
-	if (barled2 == 0x0000)
-		barled2 = 0x0080;
-	else if (barled2 != 0xFFFF) {
-		barled2 = barled2 | (barled2 >> 1);
+	if (barled == 0x0000) {
+		barled = 0x0080;
 	}
-	writeb_virtual_io(BARLED1, barled1 >> 8);
-	writeb_virtual_io(BARLED2, barled2);
+	else if (barled != 0xFFFF) {
+		barled = barled | (barled >> 1);
+	}
+	writeb_virtual_io(BARLED1, barled >> 8);
+	writeb_virtual_io(BARLED2, barled);
 }
 
 static void f_led2(void *p) { // l
-	barled1 = 0xFF00;
-	writeb_virtual_io(BARLED1, barled1 >> 8);
-	writeb_virtual_io(BARLED2, barled2);
+	barled = 0xFF00;
+
+	writeb_virtual_io(BARLED1, barled >> 8);
+	writeb_virtual_io(BARLED2, barled);
 }
 static void f_led3(void *p) { // ss
-	if (barled2 != 0x0000) {
-		barled2 = barled2 << 1;
+	if (barled != 0x0000) {
+		barled = barled & (barled << 1);
 	}
-	writeb_virtual_io(BARLED1, barled1 >> 8);
-	writeb_virtual_io(BARLED2, barled2);
+
+	writeb_virtual_io(BARLED1, barled >> 8);
+	writeb_virtual_io(BARLED2, barled);
 }
 static void f_led4(void *p) { //sl
-	barled1 = 0xFC00;
-	writeb_virtual_io(BARLED1, barled1 >> 8);
-	writeb_virtual_io(BARLED2, barled2);
+	barled = 0xFC00;
+
+	writeb_virtual_io(BARLED1, barled >> 8);
+	writeb_virtual_io(BARLED2, barled);
 }
 static void f_led5(void *p) {
-	barled1 = 0xFFFF;
-	barled2 = 0xFFFF;
-	writeb_virtual_io(BARLED1, barled1);
-	writeb_virtual_io(BARLED2, barled2);
+	barled = 0xFFFF;
+
+	writeb_virtual_io(BARLED1, barled);
+	writeb_virtual_io(BARLED2, barled);
 }
 static void f_led6(void *p) { //초기상태
-	barled1 = 0;
-	barled2 = 0;
-	writeb_virtual_io(BARLED1, barled1);
-	writeb_virtual_io(BARLED2, barled2);
+	barled = 0;
+
+	writeb_virtual_io(BARLED1, barled);
+	writeb_virtual_io(BARLED2, barled);
 }
 
 static void f_ts(void *p) {
