@@ -10,6 +10,7 @@
 	</section>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+<<<<<<< HEAD
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 	</section>
 	<section name="SaveAsDialogSettings">
@@ -27,5 +28,8 @@
 		<item value="477" key="DIALOG_HEIGHT"/>
 		<item value="263" key="DIALOG_X_ORIGIN"/>
 		<item value="false" key="TOGGLE_SELECTED"/>
+=======
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+>>>>>>> a55b633643f4014e2c226a2e8955c59927953c98
 	</section>
 </section>
