@@ -4,30 +4,12 @@
 		<item value="78" key="DIALOG_Y_ORIGIN"/>
 		<item value="53" key="DIALOG_X_ORIGIN"/>
 	</section>
-<<<<<<< HEAD
-=======
-	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-	</section>
->>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	<section name="WORKBENCH_SETTINGS">
 		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
-<<<<<<< HEAD
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-=======
-	<section name="CleanDialogSettings">
-		<item value="565" key="DIALOG_WIDTH"/>
-		<item value="true" key="BUILD_NOW"/>
-		<item value="93" key="DIALOG_Y_ORIGIN"/>
-		<item value="true" key="BUILD_ALL"/>
-		<item value="263" key="DIALOG_X_ORIGIN"/>
-		<item value="477" key="DIALOG_HEIGHT"/>
-		<item value="false" key="TOGGLE_SELECTED"/>
->>>>>>> a4d24ee626d460082994459bcd1fac047b1839c8
 	</section>
 </section>
