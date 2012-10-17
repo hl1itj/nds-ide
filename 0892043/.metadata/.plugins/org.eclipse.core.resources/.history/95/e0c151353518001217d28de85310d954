@@ -40,11 +40,11 @@ static void f_led2(void *p) { // l
 }
 static void f_led3(void *p) { // ss
 	if (barled != 0x0000) {
-		barled = barled & (barled << 1);
+		barled = barled << 1;
 	}
 
 	writeb_virtual_io(BARLED1, barled >> 8);
-	writeb_virtual_io(BARLED2, barled);
+	writeb_virtual_io(BARLED2, barled & 0xFF);
 }
 static void f_led4(void *p) { //sl
 	barled = 0xFC00;

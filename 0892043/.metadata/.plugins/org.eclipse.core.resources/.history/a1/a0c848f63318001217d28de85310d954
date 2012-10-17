@@ -22,10 +22,7 @@ struct state_machine_x {
 };
 
 static void f_led1(void *p) { //s
-	if (barled == 0x0000) {
-		barled = 0x0080;
-	}
-	else if (barled != 0xFFFF) {
+	if (barled != 0xFFFF) {
 		barled = barled | (barled >> 1);
 	}
 	writeb_virtual_io(BARLED1, barled >> 8);
@@ -40,14 +37,14 @@ static void f_led2(void *p) { // l
 }
 static void f_led3(void *p) { // ss
 	if (barled != 0x0000) {
-		barled = barled & (barled << 1);
+		barled = barled << 1;
 	}
 
 	writeb_virtual_io(BARLED1, barled >> 8);
 	writeb_virtual_io(BARLED2, barled);
 }
 static void f_led4(void *p) { //sl
-	barled = 0xFC00;
+	barled1 = 0xFC00;
 
 	writeb_virtual_io(BARLED1, barled >> 8);
 	writeb_virtual_io(BARLED2, barled);
