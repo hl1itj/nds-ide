@@ -64,12 +64,15 @@ static void f_ssdClick(void *p) {
 	if (Barled2_on == TRUE) {
 
 		if (barled == 0x00) {
+
 			barled = 0xFF;
 			Barled2_on = FALSE;
 			barled = barled << 1;
 			writeb_virtual_io(BARLED1, barled);
 			writeb_virtual_io(BARLED2, 0x00);
+
 		} else {
+
 			barled = barled << 1;
 			writeb_virtual_io(BARLED1, 0xFF);
 			writeb_virtual_io(BARLED2, barled);
@@ -111,7 +114,6 @@ static void f_ts(void *p) {
 	start_time = xTaskGetTickCount();
 }
 
-
 struct state_machine_x {
 	int check_timer;
 	int next_state[NUM_INPUT];
@@ -123,20 +125,19 @@ enum {
 };
 
 struct state_machine_x SM[NUM_STATE] = {
-		{ 0, { 1, 0, 0 }, { f_ts, NULL, NULL } },           //state0
-		{ 1, { 1, 3, 2 }, { NULL, f_ts, NULL } },           //state1
-		{ 0, { 2, 4, 0 }, { NULL, f_ts, NULL } },		   	   //state2
+		{ 0, { 1, 0, 0 }, { f_ts, NULL, NULL } },
+		{ 1, { 1, 3, 2 }, { NULL, f_ts, NULL } },
+		{ 0, { 2, 4, 0 }, { NULL, f_ts, NULL } },
 
-		{ 1, { 5, 3, 0 }, { f_ts, NULL, f_sClick} }, 	   //state3   Short Click
-		{ 1, { 7, 4, 0 }, { f_ts, NULL, f_lClick } },       //state4   Long Click
+		{ 1, { 5, 3, 0 }, { f_ts, NULL, f_sClick } },
+		{ 1, { 7, 4, 0 }, { f_ts, NULL, f_lClick } },
 
-		{ 1, { 5, 0, 6 }, { NULL, f_ssdClick, NULL } },     //state5   Short-Short Double Click
-		{ 0, { 6, 0, 0 }, { NULL, f_sldClick, NULL } },     //state6   Short-Long Double Click
-		{ 1, { 7, 0, 8 }, { NULL, f_lsdClick, NULL } },     //state7   Long-Short Double Click
-		{ 0, { 8, 0, 0 }, { NULL, f_lldClick, NULL } }   //state8   Long-Long Double Click
+		{ 1, { 5, 0, 6 }, { NULL, f_ssdClick, NULL } },
+		{ 0, { 6, 0, 0 }, { NULL, f_sldClick, NULL } },
+		{ 1, { 7, 0, 8 }, { NULL, f_lsdClick, NULL } },
+		{ 0, { 8, 0, 0 }, { NULL, f_lldClick, NULL } }
 
-
-		};
+};
 
 void Exp_3_Homework(void) {
 
@@ -154,13 +155,6 @@ void Exp_3_Homework(void) {
 		if (SM[state].check_timer) {
 			if ((xTaskGetTickCount() - start_time) >= MSEC2TICK(200) ) {
 				input = TO;
-				goto do_action;
-			}
-		}
-
-		if (SM[state].check_timer == 2) {
-			if ((xTaskGetTickCount() - start_time) <= MSEC2TICK(200) ) {
-				input = SW_OFF;
 				goto do_action;
 			}
 		}
