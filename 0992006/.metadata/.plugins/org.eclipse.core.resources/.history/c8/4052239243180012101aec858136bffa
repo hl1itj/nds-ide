@@ -173,7 +173,6 @@ break;
 vTaskDelay(MSEC2TICK(50) );
 }
 
-while (NDS_SWITCH() & KEY_START)
-	vTaskDelay(MSEC2TICK(10) );
-}// Wait while START KEY is being pressed
-
+while (NDS_SWITCH() & KEY_START){
+vTaskDelay(MSEC2TICK(10) ); // Wait while START KEY is being pressed
+}

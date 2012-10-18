@@ -1,6 +1,6 @@
-17:34:49 **** Incremental Build of configuration Default for project FreeRTOS-Sample ****
+19:11:39 **** Incremental Build of configuration Default for project FreeRTOS-Sample ****
 make 
 make[1]: `/home/hansung/ndsdev/nds-ide/0992006/FreeRTOS-Sample/FreeRTOS-Sample.nds'는 이미 갱신되었습니다.
 
-17:34:49 Build Finished (took 326ms)
+19:11:40 Build Finished (took 536ms)
 
