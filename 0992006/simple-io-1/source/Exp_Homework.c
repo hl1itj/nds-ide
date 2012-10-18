@@ -38,11 +38,9 @@ Exp_1_Homework_A(void)
 			key_pressed = TRUE;
 			if((led_state == (0x01 << 7))){
 				led_state = 0x01 <<7 ;
-				key_pressed = TRUE;
 			}
 			else
 				led_state = led_state << 1;
-				key_pressed = TRUE;
 			writeb_virtual_io(BARLED1, led_state);
 		}
 		if (((key_pressed == TRUE) && (sw & KEY_LEFT))) {
@@ -54,12 +52,9 @@ Exp_1_Homework_A(void)
 		if (((key_pressed == FALSE) && (sw & KEY_RIGHT))) {
 			key_pressed = TRUE;
 			if((led_state == (0x01))){
-				led_state = 0x01;
-				key_pressed = TRUE;}
-
+				led_state = 0x01;}
 			else{
 				led_state = led_state >> 1;
-				key_pressed = TRUE;
 			}
 			writeb_virtual_io(BARLED1, led_state);
 		}
@@ -88,11 +83,11 @@ void Exp_1_Homework_B(void)
 	u8 keypressed = FALSE;
 
 	u16 sw;
-	u16 led_state = 0x01;
+	u16 led_state = 0x00;
 	u16 location = BARLED1;
 
-	writeb_virtual_io(BARLED1, 0);
-	writeb_virtual_io(BARLED2, led_state);
+	writeb_virtual_io(BARLED1, led_state);
+	writeb_virtual_io(BARLED2, 0);
 
 while (1) {
 sw = NDS_SWITCH();

@@ -145,13 +145,15 @@ Exp_3_Homework(void)
 		printf("EXP_3_Homework\n");
 
 		state = 0;							// Initial State 0 : All LED Off
+		led_state1=0;
+		led_state2=0;
 		writeb_virtual_io(BARLED1, 0);
 		writeb_virtual_io(BARLED2, 0);
 
 		while (1) {
 			/* Step 0: Generate Input Event */
 			if (SM[state].check_timer) {
-				if ((xTaskGetTickCount() - start_time) >= MSEC2TICK(300)) {
+				if ((xTaskGetTickCount() - start_time) >= MSEC2TICK(200)) {
 					input = TO;
 					goto do_action;		// Input happens
 				}
