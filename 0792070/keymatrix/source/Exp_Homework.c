@@ -76,8 +76,10 @@ void Exp_4_Homework_A(void) {
 			initseg7pos(seg7pos);
 			if (state == TOLEFT) {
 				state = TORIGHT;
+				continue;
 			} else if (state == TORIGHT) {
 				state = TOLEFT;
+				continue;
 			}
 		}
 
