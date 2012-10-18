@@ -20,6 +20,8 @@ u8 Barled2_on = FALSE;
 #define NUM_STATE 9
 #define NUM_INPUT 3
 
+static void LED2_on(void *p) {
+
 static void f_sClick(void *p) {
 printf("<S>\n");
 if (Barled2_on == FALSE) {
@@ -49,6 +51,7 @@ writeb_virtual_io(BARLED2, 0xFF);
 
 }
 
+static void ALL_LED1_on(void *p) {
 static void f_lClick(void *p) {
 printf("<L>\n");
 barled = 0xFF;
@@ -58,6 +61,7 @@ writeb_virtual_io(BARLED2, 0);
 
 }
 
+static void LED2_off(void *p) {
 static void f_ssdClick(void *p) {
 printf("<SS>\n");
 
@@ -79,6 +83,7 @@ writeb_virtual_io(BARLED2, 0x00);
 
 }
 
+static void LED1_on(void *p) {
 static void f_sldClick(void *p) {
 printf("<SL>\n");
 barled = 0xFC;
@@ -87,6 +92,7 @@ writeb_virtual_io(BARLED1, barled);
 writeb_virtual_io(BARLED2, 0);
 }
 
+static void Every_LED_on(void *p) {
 static void f_lsdClick(void *p) {
 printf("<LS>\n");
 barled = 0xFF;
@@ -95,6 +101,7 @@ writeb_virtual_io(BARLED1, barled);
 writeb_virtual_io(BARLED2, barled);
 }
 
+static void Every_LED_off(void *p) {
 static void f_lldClick(void *p) {
 printf("<LL>\n");
 barled = 0x00;
@@ -121,12 +128,12 @@ struct state_machine_x SM[NUM_STATE] = {
 { 0, { 1, 0, 0 }, { f_ts, NULL, NULL } }, //state0
 { 1, { 1, 3, 2 }, { NULL, f_ts, NULL } }, //state1
 { 0, { 2, 4, 0 }, { NULL, f_ts, NULL } }, //state2
-{ 1, { 5, 0, 3 }, { f_ts, f_sClick, NULL } }, //state3 Short Click
-{ 1, { 7, 0, 4 }, { f_ts, f_lClick, NULL } }, //state4 Long Click
-{ 1, { 5, 0, 6 }, { NULL, f_ssdClick, NULL } }, //state5 Short-Short Double Click
-{ 0, { 6, 0, 0 }, { NULL, f_sldClick, NULL } }, //state6 Short-Long Double Click
-{ 1, { 7, 0, 8 }, { NULL, f_lsdClick, NULL } }, //state7 Long-Short Double Click
-{ 0, { 8, 0, 0 }, { NULL, f_lldClick, NULL } }, //state8 Long-Long Double Click
+{ 1, { 5, 0, 3 }, { f_ts, LED2_on, NULL } }, //state3 Short Click
+{ 1, { 7, 0, 4 }, { f_ts, ALL_LED1_on, NULL } }, //state4 Long Click
+{ 1, { 5, 0, 6 }, { NULL, LED2_off, NULL } }, //state5 Short-Short Double Click
+{ 0, { 6, 0, 0 }, { NULL, LED1_on, NULL } }, //state6 Short-Long Double Click
+{ 1, { 7, 0, 8 }, { NULL, Every_LED_on, NULL } }, //state7 Long-Short Double Click
+{ 0, { 8, 0, 0 }, { NULL, Every_LED_off, NULL } }, //state8 Long-Long Double Click
 };
 
 void Exp_3_Homework(void) {
@@ -167,5 +174,6 @@ vTaskDelay(MSEC2TICK(50) );
 }
 
 while (NDS_SWITCH() & KEY_START)
-vTaskDelay(MSEC2TICK(10) ); // Wait while START KEY is being pressed
-}
+	vTaskDelay(MSEC2TICK(10) );
+}// Wait while START KEY is being pressed
+
