@@ -13,14 +13,12 @@
 #include <stdlib.h>
 #include "sevencore_io.h"
 
-portTickType start_time_x = 0;
-portTickType wait_time_x = 0;
-u16 barled;
-
 #define NUM_STATE	9
 #define NUM_INPUT	3
 
 // Actions
+portTickType start_time_x = 0;
+portTickType wait_time_x = 0;
 u8 barled1_st = 0x00;
 u8 barled2_st = 0x00;
 u8 barled_count = 0;
@@ -145,6 +143,12 @@ struct state_machine_x SM[NUM_STATE] = {
 void
 Exp_3_Homework(void)
 {
+	start_time_x = 0;
+	wait_time_x = 0;
+	barled1_st = 0x00;
+	barled2_st = 0x00;
+	barled_count = 0;
+
     int state;
     int input;
 
