@@ -145,6 +145,8 @@ Exp_3_Homework(void)
 		printf("EXP_3_Homework\n");
 
 		state = 0;							// Initial State 0 : All LED Off
+		led_state1=0;
+		led_state2=0;
 		writeb_virtual_io(BARLED1, 0);
 		writeb_virtual_io(BARLED2, 0);
 
