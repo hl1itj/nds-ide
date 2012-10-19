@@ -63,8 +63,10 @@ static void f_led1(void *p) {
 
 static void f_led2(void *p) {
 	printf("<L>\n");
-	writeb_virtual_io(BARLED1, LED_MAX);
-	writeb_virtual_io(BARLED2, LED_OFF);
+	LED1_offset = LED_MAX;
+	LED2_offset = LED_OFF;
+	writeb_virtual_io(BARLED1, LED1_offset);
+	writeb_virtual_io(BARLED2, LED2_offset);
 }
 
 static void f_led3(void *p) {
@@ -82,19 +84,24 @@ static void f_led3(void *p) {
 
 static void f_led4(void *p) {
 	printf("<S-L>\n");
-	writeb_virtual_io(BARLED1, 254);
-	writeb_virtual_io(BARLED2, LED_OFF);
+	LED1_offset = 252;
+	LED2_offset = LED_OFF;
+	writeb_virtual_io(BARLED1, LED1_offset);
+	writeb_virtual_io (BARLED2, LED2_offset);
 }
 
 static void f_led5(void *p) {
 	printf("<L-S>\n");
-	writeb_virtual_io(BARLED1, LED_MAX);
-	writeb_virtual_io(BARLED2, LED_MAX);
+	LED1_offset = LED_MAX;
+	LED2_offset = LED_MAX;
+	writeb_virtual_io(BARLED1, LED1_offset);
+	writeb_virtual_io(BARLED2, LED2_offset);
 }
 
 static void f_led6(void *p) {
 	printf("<L-L>\n");
 	LED1_offset = LED_OFF;
+	LED2_offset = LED_OFF;
 	writeb_virtual_io(BARLED1, LED_OFF);
 	writeb_virtual_io(BARLED2, LED_OFF);
 }
