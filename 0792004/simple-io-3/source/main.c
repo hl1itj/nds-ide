@@ -53,9 +53,9 @@ portTASK_FUNCTION(Exp_3_Task, pvParameters )
 {
 	while (1) {
 		printf("Start Experiment 3 Start\n");
-		//Exp_3_Sample_A();
-		//Exp_3_Sample_B();
-		//Exp_3_Sample_C();
+		Exp_3_Sample_A();
+		Exp_3_Sample_B();
+		Exp_3_Sample_C();
 
 		Exp_3_Homework();
 	}
