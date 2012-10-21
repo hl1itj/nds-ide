@@ -9,6 +9,8 @@
 #define TOLEFT 0
 #define TORIGHT 1
 
+u8 prevKey = 255;
+
 void init7SEG() {
 	int i;
 	for (i = 0; i < NUM_7SEG_LED; i++)					// Turn Off All
@@ -89,7 +91,7 @@ void Exp_4_Homework_A(void) {
 		if (scan == 4)
 			scan = 0;
 
-		if (key < 16) {
+		if (key < 16 && key != prevKey) {
 			if (state == TOLEFT) {
 				leftShift(seg7pos);
 				seg7pos[7] = key;
@@ -99,6 +101,7 @@ void Exp_4_Homework_A(void) {
 			}
 			for (i = 0; i < NUM_7SEG_LED; i++)
 				writeb_virtual_io(SEG7LED, (i << 4) + seg7pos[i]);
+			prevKey = key;
 		}
 
 		if (NDS_SWITCH() & KEY_START)
