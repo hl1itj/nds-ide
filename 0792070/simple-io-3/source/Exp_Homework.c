@@ -108,8 +108,8 @@ void f_dts(void *p) {
 	doublecheck = TRUE;
 }
 
-struct state_machine_x SM[NUM_STATE] = {
-{ 0, { 1, 0, 0, 0 }, { f_ts, NULL,	NULL, NULL } }, /* State 0 */
+struct state_machine_x SM[NUM_STATE] = { { 0, { 1, 0, 0, 0 }, { f_ts, NULL,
+		NULL, NULL } }, /* State 0 */
 { 1, { 1, 2, 5, 1 }, { NULL, f_dts, NULL, NULL } }, /* State 1 */
 { 1, { 3, 2, 2, 0 }, { f_ts, NULL, NULL, f_plusplus } }, /* State 2 */
 { 1, { 3, 0, 4, 3 }, { NULL, f_minus, NULL, NULL } }, /* State 3 */
@@ -158,8 +158,11 @@ void Exp_3_Homework(void) {
 	/* Step 2: Set Next State */
 	state = SM[state].next_state[input];
 
-	if (NDS_SWITCH() & KEY_START)
-	break;
+	if (NDS_SWITCH() & KEY_START) {
+		barled = 0x00;
+		position = BARLED1;
+		break;
+	}
 	vTaskDelay(MSEC2TICK(50) );
 }
 	while (NDS_SWITCH() & KEY_START)
