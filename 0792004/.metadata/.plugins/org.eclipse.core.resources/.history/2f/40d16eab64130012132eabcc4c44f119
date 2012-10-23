@@ -1,0 +1,127 @@
+/*
+ * Exp_Homework.c
+ *
+ *  Created on: 2011. 9. 22.
+ *      Author: Minsuk Lee
+ */
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include <nds.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include "sevencore_io.h"
+
+portTickType short_timer;
+portTickType interval_timer;
+u16 barled;
+u8 db_clicked = FALSE;
+int pre_state;
+
+#define NUM_STATE	3
+#define NUM_INPUT	3
+
+// Actions
+static
+void
+f_s(void *p)
+{
+	if(db_clicked) {
+		db_clicked = FALSE;
+		printf("%s\n", (pre_state == 1) ? "SS" : "LS");
+	}
+	else {
+		printf("S\n");
+	}
+}
+
+static
+void
+f_l(void *p)
+{
+	if(db_clicked) {
+			db_clicked = FALSE;
+			printf("%s\n", (pre_state == 1) ? "LS" : "LL");
+		}
+	else {
+		printf("L\n");
+	}
+}
+
+static
+void
+f_ts(void *p)
+{
+	short_timer = xTaskGetTickCount();
+}
+
+struct state_machine_x {
+	int check_timer;
+	int next_state[NUM_INPUT];
+	void (* action[NUM_INPUT])(void *p);
+};
+enum { SW_ON, SW_OFF, TO };
+
+struct state_machine_x SM[NUM_STATE] = {
+		   // SW_ON              SW_OFF           TO
+	    { 0, { 1, 0, 0 }, { f_ts, NULL,   NULL } },    /* State 0 */
+	    { 1, { 1, 0, 2 }, { NULL, f_s, NULL } },    /* State 1 */
+	    { 0, { 2, 0, 2 }, { NULL, f_l, NULL } }     /* State 2 */
+};
+
+void
+Exp_3_Homework(void)
+{
+    // variables
+	int state;
+	int input;
+	u8 clicked = FALSE;
+
+	printf("Exp_3_Homework\n");
+
+	while (1) {
+		/* Step 0: Generate Input Event */
+/*
+		if (clicked) {
+			clicked = FALSE;
+			if ((xTaskGetTickCount() - interval_timer) <= MSEC2TICK(200))
+				db_clicked = TRUE;
+		}
+*/
+		if (SM[state].check_timer) {
+			if (clicked) {
+				if ((short_timer - interval_timer) <= MSEC2TICK(200)) {
+					clicked = FALSE;
+					db_clicked = TRUE;
+				}
+			}
+			if ((xTaskGetTickCount() - short_timer) >= MSEC2TICK(200)) {
+				input = TO;
+				if(db_clicked == FALSE) clicked = TRUE;
+				goto do_action;		// Input happens
+			}
+		}
+		if (NDS_SWITCH() & KEY_A)
+			input = SW_ON;
+		else {
+			input = SW_OFF;
+			interval_timer = xTaskGetTickCount();
+		}
+
+		/* Step 1: Do Action */
+do_action:
+		if (SM[state].action[input])
+			SM[state].action[input](NULL);
+
+		/* Step 2: Set Next State */
+		pre_state = SM[state].next_state[input];
+		state = SM[state].next_state[input];
+
+		if (NDS_SWITCH() & KEY_START)
+			break;
+		vTaskDelay(MSEC2TICK(50));
+	}
+	while (NDS_SWITCH() & KEY_START)
+		vTaskDelay(MSEC2TICK(10));		// Wait while START KEY is being pressed
+}
