@@ -26,8 +26,8 @@
 
 portTickType short_timer;
 
-u16 barled1 = 0x00;
-u16 barled2 = 0x00;
+u16 barled1;
+u16 barled2;
 
 int chk;
 
@@ -87,7 +87,7 @@ void f_led_B(void *p) {
 	else if (chk == LONG) {
 
 		barled1 = 0xFF;
-		barled2 = 0;
+		barled2 = 0x00;
 		writeb_virtual_io(BARLED1, barled1);
 		writeb_virtual_io(BARLED2, barled2);
 		chk = 0;
@@ -133,7 +133,7 @@ void f_led_L(void *p) {
 	if (chk == SHORT) {
 
 		barled1 = 0xFC;
-		barled2 = 0;
+		barled2 = 0x00;
 		writeb_virtual_io(BARLED1, barled1);
 
 		writeb_virtual_io(BARLED2, barled2);
@@ -149,8 +149,8 @@ void f_led_L(void *p) {
 
 		chk = 0;
 
-		barled1 = 0;
-		barled2 = 0;
+		barled1 = 0x00;
+		barled2 = 0x00;
 
 	}
 
@@ -207,13 +207,16 @@ void Exp_3_Homework(void) {
 
 	int input;
 
+	barled1 = 0x00;
+	barled2 = 0x00;
+
 	printf("EXP_3_HomeWork\n");
 
 	state = 0;       // Initial State 0 : All LED Off
 
-	writeb_virtual_io(BARLED1, 0);
+	writeb_virtual_io(BARLED1, barled1);
 
-	writeb_virtual_io(BARLED2, 0);
+	writeb_virtual_io(BARLED2, barled2);
 
 	while (1) {
 
