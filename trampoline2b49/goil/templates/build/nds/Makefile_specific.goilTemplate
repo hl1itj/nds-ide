@@ -17,7 +17,7 @@ export LIBNDS_LIBPATHS := $(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 # choose the right instruction set
 ARM9_ARCH := -mthumb -mthumb-interwork
 ASFLAGS += -g $(ARM9_ARCH) 
-CFLAGS += -g -Wall -O2 \
+CFLAGS += -g -Wall \
        -march=armv5te -mtune=arm946e-s -fomit-frame-pointer -ffast-math $(ARM9_ARCH) \
        -std=c99 -DARM9 -DTHUMB_INTERWORK $(LIBNDS_INCLUDE)
 

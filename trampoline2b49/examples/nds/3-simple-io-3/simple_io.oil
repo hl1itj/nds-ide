@@ -48,6 +48,7 @@ CPU test {
         ERRORHOOK = FALSE;
         PRETASKHOOK = FALSE;
         APP_SRC = "simple_io.c"; 
+        APP_SRC = "exp_homework.c"; 
         APP_NAME = "simple_io_exe";
         TRAMPOLINE_BASE_PATH = "../../..";
         SYSTEM_CALL = FALSE;
@@ -56,11 +57,16 @@ CPU test {
     APPMODE std {
     };
 
+  EVENT EventLoopEvent {
+    MASK = AUTO;
+  };
+
     TASK task1 {
         PRIORITY = 1;
         AUTOSTART = TRUE { APPMODE = std; };
         ACTIVATION = 1;
         SCHEDULE = FULL;
+	EVENT = EventLoopEvent;
     };   
 
     TASK task5 {
@@ -70,24 +76,33 @@ CPU test {
         SCHEDULE = FULL;
     };
     
-    COUNTER SystemCounter {
-      SOURCE = timer0_overflow;
-      MAXALLOWEDVALUE = 2000;
-      TICKSPERBASE = 1;
-      MINCYCLE = 1; 
-    };
+  COUNTER SystemCounter {
+    SOURCE = timer0_overflow;
+    MAXALLOWEDVALUE = 20000;
+    TICKSPERBASE = 1;
+    MINCYCLE = 1; 
+  };
 
-    ALARM Alarm1{
+  ALARM Alarm1 {
+    COUNTER = SystemCounter;
+    ACTION = ACTIVATETASK {
+      TASK = task5;
+    };
+    AUTOSTART = TRUE {
+      ALARMTIME = 100;
+      CYCLETIME = 100; //each 1000 ms.
+      APPMODE = std;
+    };
+  };
+
+  ALARM EventLoopAlarm {
       COUNTER = SystemCounter;
-      ACTION = ACTIVATETASK {
-         TASK = task5;
+      AUTOSTART = FALSE;    
+      ACTION = SETEVENT {
+        TASK = task1;
+        EVENT = EventLoopEvent;
       };
-      AUTOSTART = TRUE {
-            ALARMTIME = 200;
-            CYCLETIME = 100; //each 1000 ms.
-            APPMODE = std;
-	     };
-      };
+  };
 };
 
 /* End of file nxt_simple.oil */
