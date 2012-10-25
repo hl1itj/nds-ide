@@ -80,6 +80,6 @@ u8   getkey(void);
 #define KEY_LEFT	0x0020
 #define KEY_RIGHT	0x0010
 
-#define MSEC2TICK(msec)		((int)(msec / portTICK_RATE_MS))
+#define MSEC2TICK(msec)		((int)(msec))
 
 #endif /* NDS_IO_H_ */
