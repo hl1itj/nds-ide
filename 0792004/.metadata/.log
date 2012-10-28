@@ -1291,3 +1291,6 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY org.eclipse.core.resources 2 10035 2012-10-17 01:45:31.076
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-28 16:15:55.608
+!MESSAGE Indexed 'keymatrix' (70 sources, 38 headers) in 1.74 sec: 3,176 declarations; 12,232 references; 261 unresolved inclusions; 0 syntax errors; 4,395 unresolved names (22.19%)

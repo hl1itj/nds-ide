@@ -1,0 +1,11 @@
+16:49:53 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/keymatrix/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0792004/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0792004/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0792004/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0792004/keymatrix/source/Exp_Homework.c -o Exp_Homework.o 
+linking keymatrix.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... keymatrix.nds
+
+16:49:54 Build Finished (took 1s.48ms)
+
