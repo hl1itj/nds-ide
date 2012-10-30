@@ -56,7 +56,6 @@ portTASK_FUNCTION(Exp_3_Task, pvParameters )
 		Exp_3_Sample_A();
 		Exp_3_Sample_B();
 		Exp_3_Sample_C();
-
 		Exp_3_Homework();
 	}
 }

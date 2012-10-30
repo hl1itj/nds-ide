@@ -16,14 +16,23 @@
 portTickType short_timer = 0;
 portTickType start_time_x = 0;
 u16 barled;
-u32 barled_sw = BARLED1;
-int cur_led;
-int
+
+int cur_led1 = 0x00;
+int cur_led2 = 0x00;
+int led_cnt=0;
 #define NUM_STATE	9
 #define NUM_INPUT	4
 
 // Actions
+void init(){
+	cur_led1 = 0x00;
+	cur_led2 = 0x00;
+	led_cnt =0;
 
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
+
+}
 f_ts(void *p)
 {
 	start_time_x = xTaskGetTickCount();
@@ -37,65 +46,87 @@ static
 void
 S(void *p)
 {
-	if(cur_led != 8)
-		cur_led = 0x080;
-	else
-		cur_led = cur_led/2;
-
-	if(cur_led = 0xff){
-		if(barled_sw == BARLED2)
-			barled_sw = BARLED1;
-		else
-			barled_sw = BARLED2;
-		cur_led = 0x080;
+	if(led_cnt < 8 && led_cnt >=0){
+		cur_led1 += (0x80 >> led_cnt);
+		led_cnt++;
+	}
+	else if(led_cnt <16){
+		cur_led2 += (0x80 >> led_cnt-8);
+		led_cnt++;
 	}
 
 	printf("S\n");
-	writeb_virtual_io(BARLED1, cur_led);
-	writeb_virtual_io(BARLED2, 0);
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
 }
 
 static
 void
 L(void *p)
 {
+	cur_led1 = 0xFF;
+	cur_led2 = 0x00;
+	led_cnt = 8;
+
 	printf("L\n");
-	writeb_virtual_io(BARLED1, 0x80);
-	writeb_virtual_io(BARLED2, 0);
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
 }
 static
 void
 S_S(void *p)
 {
-	printf("SS\n");
-	cur_led= cur_led *2;
-	writeb_virtual_io(BARLED1, cur_led);
+	if(led_cnt <= 8 && led_cnt > 0){
+		cur_led1 -= (0x01 << 8-led_cnt);
+		led_cnt--;
 
+	}
+	else if(led_cnt <= 16 && led_cnt > 0){
+
+		cur_led2 -= (0x01 << 16-led_cnt);
+		led_cnt--;
+	}
+
+	printf("SS\n");
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
 }
 static
 void
 S_L(void *p)
 {
+	cur_led1 = 0xFC;
+	cur_led2 = 0x00;
+	led_cnt = 6;
+
 	printf("SL\n");
-	writeb_virtual_io(BARLED1, 0xfc);
-	writeb_virtual_io(BARLED2, 0);
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
 }
 static
 void
 L_S(void *p)
 {
+	cur_led1 = 0xFF;
+	cur_led2 = 0xFF;
+	led_cnt = 16;
+
 	printf("LS\n");
-	writeb_virtual_io(BARLED1, 0xFF);
-	writeb_virtual_io(BARLED2, 0xFF);
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
 }
 
 static
 void
 L_L(void *p)
 {
+	cur_led1 = 0x00;
+	cur_led2 = 0x00;
+	led_cnt = 0;
+
 	printf("LL\n");
-	writeb_virtual_io(BARLED1, 0);
-	writeb_virtual_io(BARLED2, 0);
+	writeb_virtual_io(BARLED1, cur_led1);
+	writeb_virtual_io(BARLED2, cur_led2);
 }
 
 struct state_machine_x {
@@ -110,8 +141,8 @@ struct state_machine_x SM[NUM_STATE] = {
     { 0, { 1, 0, 0, 0 }, { f_ts, NULL, NULL, NULL },},    /* State 0 */
     { 1, { 1, 3, 2, 0 }, { NULL, end_ts, NULL, NULL },},
     { 0, { 2, 4, 0, 0 }, { NULL, end_ts, NULL, NULL },},
-    { 2, { 5, 3, 0, 0 }, { NULL, f_ts, NULL, S },},
-    { 2, { 6, 4, 0, 0 }, { NULL, f_ts, NULL, L },},
+    { 2, { 5, 3, 0, 0 }, { f_ts, NULL, NULL, S },},
+    { 2, { 6, 4, 0, 0 }, { f_ts, NULL, NULL, L },},
     { 1, { 5, 0, 7, 0 }, { NULL, S_S, NULL, NULL },},
     { 1, { 6, 0, 8, 0 }, { NULL, L_S, NULL, NULL },},
     { 0, { 7, 0, 0, 0 }, { NULL, S_L, NULL, NULL },},
@@ -159,8 +190,10 @@ do_action:
 		}
 		/* Step 2: Set Next State */
 		state = SM[state].next_state[input];
-		if (NDS_SWITCH() & KEY_START)
+		if (NDS_SWITCH() & KEY_START){
+			init();
 			break;
+		}
 		vTaskDelay(MSEC2TICK(50));
 	}
 	while (NDS_SWITCH() & KEY_START)

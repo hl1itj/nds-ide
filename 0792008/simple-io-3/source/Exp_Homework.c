@@ -203,18 +203,6 @@ void Exp_3_Homework(void) {
 				// Input happens
 			}
 		}
-/*		if (state == 3) {
-			if (((xTaskGetTickCount() - click_timer) >= MSEC2TICK(200) )){
-			input = TO;
-			goto do_action;
-		}
-	}
-		if (state == 5) {
-			if (((xTaskGetTickCount() - click_timer) >= MSEC2TICK(200) )){
-			input = TO;
-			goto do_action;
-		}
-	} */
 	if(NDS_SWITCH() & KEY_A)
 	input = SW_ON;
 	else

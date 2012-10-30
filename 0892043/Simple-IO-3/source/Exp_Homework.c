@@ -22,9 +22,8 @@ struct state_machine_x {
 };
 
 static void f_led1(void *p) { //s
-	if (barled == 0x0000) {
-		barled = 0x0080;
-	}
+	if (barled == 0x0000)
+		barled = 0x8000;
 	else if (barled != 0xFFFF) {
 		barled = barled | (barled >> 1);
 	}
@@ -92,6 +91,7 @@ void Exp_3_Homework(void) {
 	printf("Exp_3_Homework");
 
 	state = 0;
+	barled = 0;
 	writeb_virtual_io(BARLED1, 0);
 	writeb_virtual_io(BARLED2, 0);
 
