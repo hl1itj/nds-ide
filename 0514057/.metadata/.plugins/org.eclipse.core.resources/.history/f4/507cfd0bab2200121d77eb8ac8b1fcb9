@@ -1,0 +1,72 @@
+#include "FreeRTOS.h"
+#include "task.h"
+#include <nds.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include "sevencore_io.h"
+
+
+
+void
+Exp_4_Homework_A(void)
+{
+    u8 key,keyState[4]={255,255,255,255},pushSW = 0,scan = 0;
+    int i;
+    u8 keyQue[8];
+    int keyQueFlag = 0;
+    int LeftRight = 1;
+    for (i=0;i<8;i++)
+    	keyQue[i] = 0x80;
+	for (i = 0; i < NUM_7SEG_LED; i++)					// Turn Off All
+		writeb_virtual_io(SEG7LED, 0x80 + (i << 4));
+
+	while (1) {
+		if (readb_virtual_io(PUSH_SW)==VIRTUAL_SW_1){
+			if(pushSW==0){
+				if(LeftRight==1)
+					LeftRight=0;
+				else
+					LeftRight=1;
+				for (i=0;i<8;i++)
+					keyQue[i] = 0x80;
+				pushSW=1;
+			}
+		}
+		else
+			pushSW=0;
+
+		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
+		key = scan * 4;
+		switch (readb_virtual_io(KEY_MATRIX)) {
+		  case 8 :  key += 1; break;
+		  case 4 :  key += 2; break;
+		  case 2 :  key += 3; break;
+		  case 1 :  key += 4; if (key == 16) key = 0; break;
+		  default : key = 255; break;
+		}
+		scan++;
+		if (scan == 4)
+			scan = 0;
+		if ((key < 16) && (key != keyState[scan])){
+			keyQue[keyQueFlag%8]=key;
+			keyQueFlag++;
+			keyState[scan]=key;
+		}
+		else
+			keyState[scan]=key;
+		if(LeftRight == 1){  //오른쪽 끝에 출력
+			for(i=0;i<8;i++)
+				writeb_virtual_io(SEG7LED, (0x00+(0x10*i))+keyQue[(keyQueFlag+i)%8]);
+		}
+		else if(LeftRight == 0){  //왼쪽 끝에 출력
+			for(i=0;i<8;i++)
+				writeb_virtual_io(SEG7LED, (0x70-(0x10*i))+keyQue[(keyQueFlag+i)%8]);
+		}
+		if (NDS_SWITCH() & KEY_START)
+			break;
+		vTaskDelay(MSEC2TICK(30));
+	}
+	while (NDS_SWITCH() & KEY_START)
+		vTaskDelay(MSEC2TICK(10));		// Wait for releasing START KEY
+}
