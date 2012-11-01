@@ -1,4 +1,4 @@
-16:51:01 **** Build of configuration Default for project simple-io-3 ****
+15:58:12 **** Build of configuration Default for project simple-io-3 ****
 make 
 grit /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/image/down.png -fts -odown
 STATUS: ---grit v0.8.10 ---
@@ -6,7 +6,7 @@ STATUS: Individual runs.
 STATUS: Input file /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/image/down.png
 WARNING: No main mode specified (-gt/-gb).
 STATUS: Output file: 'down'.
-STATUS: Started run at: 2012-10-11, 16:51:01
+STATUS: Started run at: 2012-11-01, 15:58:13
 STATUS: Validating gr.
 WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
 STATUS: Validation succeeded.
@@ -30,7 +30,7 @@ STATUS: Individual runs.
 STATUS: Input file /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/image/up.png
 WARNING: No main mode specified (-gt/-gb).
 STATUS: Output file: 'up'.
-STATUS: Started run at: 2012-10-11, 16:51:02
+STATUS: Started run at: 2012-11-01, 15:58:13
 STATUS: Validating gr.
 WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
 STATUS: Validation succeeded.
@@ -64,41 +64,49 @@ heap_3.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/heap_3.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/heap_3.c -o heap_3.o 
 port.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/port.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/port.c -o port.o 
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:36:1: warning: return type defaults to 'int' [-Wreturn-type]
 portISR.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/portISR.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/portISR.c -o portISR.o 
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:41:1: warning: return type defaults to 'int' [-Wreturn-type]
 sevencore_io.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:26:1: warning: return type defaults to 'int' [-Wreturn-type]
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:31:1: warning: return type defaults to 'int' [-Wreturn-type]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c: In function 'S':
 Exp_Homework.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c -o Exp_Homework.o 
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:99:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:54:3: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
 Exp_Sample.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/Exp_Sample.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Sample.c -o Exp_Sample.o 
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:99:5: warning: (near initialization for 'SM[0].action[0]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c: In function 'S_S':
 main.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/main.c -o main.o 
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:100:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:80:3: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
 gdbStubAsm.s
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/gdbStubAsm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/gdbStubAsm.s -o gdbStubAsm.o 
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:100:5: warning: (near initialization for 'SM[1].action[1]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:86:3: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
 port_asm.s
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/build/port_asm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/port_asm.s -o port_asm.o 
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:101:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c: At top level:
 linking simple-io-3.elf
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... simple-io-3.nds
 rm down.s up.s
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:101:5: warning: (near initialization for 'SM[2].action[1]') [enabled by default]
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:102:5: warning: initialization from incompatible pointer type [enabled by default]
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:102:5: warning: (near initialization for 'SM[3].action[1]') [enabled by default]
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:103:5: warning: initialization from incompatible pointer type [enabled by default]
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:103:5: warning: (near initialization for 'SM[4].action[1]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:141:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:141:5: warning: (near initialization for 'SM[0].action[0]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:142:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:142:5: warning: (near initialization for 'SM[1].action[1]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:143:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:143:5: warning: (near initialization for 'SM[2].action[1]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:144:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:144:5: warning: (near initialization for 'SM[3].action[0]') [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:145:5: warning: initialization from incompatible pointer type [enabled by default]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:145:5: warning: (near initialization for 'SM[4].action[0]') [enabled by default]
 /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c: In function 'end_ts':
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:34:1: warning: control reaches end of non-void function [-Wreturn-type]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
 /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c: In function 'f_ts':
-/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:29:1: warning: control reaches end of non-void function [-Wreturn-type]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Homework.c:39:1: warning: control reaches end of non-void function [-Wreturn-type]
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Sample.c: In function 'Exp_3_Sample_A':
+/home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/Exp_Sample.c:63:4: warning: implicit declaration of function 'init' [-Wimplicit-function-declaration]
 In file included from /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/main.c:10:0:
 /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
@@ -127,5 +135,5 @@ In file included from /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/source/ma
 /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892054/simple-io-3/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
 
-16:51:20 Build Finished (took 18s.999ms)
+15:58:34 Build Finished (took 21s.588ms)
 
