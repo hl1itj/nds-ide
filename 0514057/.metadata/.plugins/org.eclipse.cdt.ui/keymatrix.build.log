@@ -1,0 +1,6 @@
+01:29:22 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/keymatrix/keymatrix.nds'는 이미 갱신되었습니다.
+
+01:29:22 Build Finished (took 75ms)
+

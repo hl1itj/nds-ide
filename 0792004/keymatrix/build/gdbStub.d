@@ -1,4 +1,18 @@
 gdbStub.o: \
+<<<<<<< HEAD
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStub.c \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStub.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/FreeRTOS.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/projdefs.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/FreeRTOSConfig.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/portable.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/portmacro.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/mpu_wrappers.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/task.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/list.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStubAsm.h \
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/card_spi.h \
+=======
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStub.c \
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStub.h \
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/include/FreeRTOS.h \
@@ -11,6 +25,7 @@ gdbStub.o: \
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/include/list.h \
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStubAsm.h \
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/card_spi.h \
+>>>>>>> d80e67684e0164141af564935ac0de416636a18d
  /home/hansung/ndsdev/devkitPro/libnds/include/nds.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/libversion.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/ndstypes.h \
@@ -66,6 +81,31 @@ gdbStub.o: \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/trig_lut.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h \
+<<<<<<< HEAD
+ /home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/define.h
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStub.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/FreeRTOS.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/projdefs.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/FreeRTOSConfig.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/portable.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/portmacro.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/mpu_wrappers.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/task.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/include/list.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStubAsm.h:
+
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/card_spi.h:
+=======
  /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/define.h
 
 /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStub.h:
@@ -89,6 +129,7 @@ gdbStub.o: \
 /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/gdbStubAsm.h:
 
 /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/card_spi.h:
+>>>>>>> d80e67684e0164141af564935ac0de416636a18d
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:
 
@@ -200,4 +241,8 @@ gdbStub.o: \
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h:
 
+<<<<<<< HEAD
+/home/hansung/ndsdev/nds-ide/0792004/keymatrix/FreeRTOS/NDS/define.h:
+=======
 /home/hansung/nds/nds-ide/0792004/keymatrix/FreeRTOS/NDS/define.h:
+>>>>>>> d80e67684e0164141af564935ac0de416636a18d
