@@ -18,7 +18,6 @@ Exp_4_Sample_A(void)
 {
     u8 key, scan = 0;
     int i;
-    int 7seg_cnt = 0x70;
 
 	for (i = 0; i < NUM_7SEG_LED; i++)					// Turn Off All
 		writeb_virtual_io(SEG7LED, 0x80 + (i << 4));

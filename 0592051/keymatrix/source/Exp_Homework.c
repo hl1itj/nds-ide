@@ -21,21 +21,19 @@ void Exp_4_Homework_A(void) {
 	u8 key, scan = 0;
 	u8 Mode_Change = FALSE;
 	u8 LED[8];
-	int time;
+	int time1, time2;
 	int i;
 
 
 	reset(LED);
 
 	while (1) {
-
+		if(xTaskGetTickCount()-time1 > MSEC2TICK(200)){
 			switch (readb_virtual_io(PUSH_SW)) {
 			case VIRTUAL_SW_1:
 				reset(LED);
-				if(Mode_Change == FALSE)
-					Mode_Change = TRUE;
-				else
-					Mode_Change = FALSE;
+				Mode_Change = !Mode_Change;
+				time1 = xTaskGetTickCount();
 				break;
 			case VIRTUAL_SW_2:
 				break;
@@ -47,7 +45,7 @@ void Exp_4_Homework_A(void) {
 			default:
 				break;
 			}
-
+		}
 		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
 		key = scan * 4;
 		switch (readb_virtual_io(KEY_MATRIX)) {
@@ -79,7 +77,7 @@ void Exp_4_Homework_A(void) {
 
 		if (key < 16) {
 
-			if(xTaskGetTickCount()-time > MSEC2TICK(200)){
+			if(xTaskGetTickCount()-time2 > MSEC2TICK(200)){
 				for (i = 7; i > 0; i--) {
 					LED[i] = LED[i - 1];
 				}
@@ -98,7 +96,7 @@ void Exp_4_Homework_A(void) {
 							(0x00 + (0x10 * i)) + LED[7 - i]);
 				}
 			}
-			time = xTaskGetTickCount();
+			time2 = xTaskGetTickCount();
 		}
 
 		if (NDS_SWITCH() & KEY_START)
