@@ -9,7 +9,8 @@
 #define TOLEFT 0
 #define TORIGHT 1
 
-u8 prevKey = 255;
+#define TRUE 1
+#define FALSE 0
 
 void init7SEG() {
 	int i;
@@ -24,10 +25,11 @@ void initseg7pos(u16 *seg7pos) { // seg Array init
 	}
 }
 
-u8 readKey(u8 key, u8 scan) {
+u8 readKey(u8 key, u8 scan, u8 *prevkey) {
 	key = scan * 4;
 
-	switch (readb_virtual_io(KEY_MATRIX)) {
+	*prevkey = readb_virtual_io(KEY_MATRIX);
+	switch (*prevkey) {
 	case 8:
 		key += 1;
 		break;
@@ -65,7 +67,7 @@ void rightShift(u16 *seg7pos) {
 }
 
 void Exp_4_Homework_A(void) {
-	u8 key, scan = 0, state = TOLEFT;
+	u8 key = 0, prevkey, scan = 0, state = TOLEFT, keypressed = FALSE;
 	u16 seg7pos[8];
 	int i;
 
@@ -85,23 +87,29 @@ void Exp_4_Homework_A(void) {
 			}
 		}
 
-		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
-		key = readKey(key, scan);
-		scan++;
-		if (scan == 4)
-			scan = 0;
+		if (keypressed == TRUE
+				&& (readb_virtual_io(KEY_MATRIX) != prevkey
+						|| !readb_virtual_io(KEY_MATRIX)))
+			keypressed = FALSE;
 
-		if (key < 16 && key != prevKey) {
-			if (state == TOLEFT) {
-				leftShift(seg7pos);
-				seg7pos[7] = key;
-			} else if (state == TORIGHT) {
-				rightShift(seg7pos);
-				seg7pos[0] = key;
+		if (!keypressed) {
+			writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
+			key = readKey(key, scan, &prevkey);
+			scan++;
+			if (scan == 4)
+				scan = 0;
+			if (key < 16) {
+				if (state == TOLEFT) {
+					leftShift(seg7pos);
+					seg7pos[7] = key;
+				} else if (state == TORIGHT) {
+					rightShift(seg7pos);
+					seg7pos[0] = key;
+				}
+				for (i = 0; i < NUM_7SEG_LED; i++)
+					writeb_virtual_io(SEG7LED, (i << 4) + seg7pos[i]);
+				keypressed = TRUE;
 			}
-			for (i = 0; i < NUM_7SEG_LED; i++)
-				writeb_virtual_io(SEG7LED, (i << 4) + seg7pos[i]);
-			prevKey = key;
 		}
 
 		if (NDS_SWITCH() & KEY_START)
