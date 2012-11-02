@@ -1782,3 +1782,6 @@ Binding(CTRL+SHIFT+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-01 22:30:55.843
+!MESSAGE Indexed 'keyqueue' (70 sources, 38 headers) in 1.99 sec: 3,335 declarations; 13,020 references; 259 unresolved inclusions; 0 syntax errors; 4,420 unresolved names (21.28%)
