@@ -1,13 +1,13 @@
 Exp_Sample.o: \
- /home/hansung/ndsdev/workspace/simple-io-1/source/Exp_Sample.c \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/FreeRTOS.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/projdefs.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/portable.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/portmacro.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/mpu_wrappers.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/task.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/list.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/source/Exp_Sample.c \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/FreeRTOS.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/projdefs.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/portable.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/NDS/portmacro.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/mpu_wrappers.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/task.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/list.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/libversion.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/ndstypes.h \
@@ -63,25 +63,25 @@ Exp_Sample.o: \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/trig_lut.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/sevencore_io.h \
- /home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/queue.h \
- /home/hansung/ndsdev/workspace/simple-io-1/source/realio.h
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/NDS/sevencore_io.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/queue.h \
+ /home/hansung/ndsdev/nds-ide/0892001/simple-io-1/source/realio.h
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/FreeRTOS.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/FreeRTOS.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/projdefs.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/projdefs.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/NDS/FreeRTOSConfig.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/portable.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/portable.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/portmacro.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/NDS/portmacro.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/mpu_wrappers.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/mpu_wrappers.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/task.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/task.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/list.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/list.h:
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:
 
@@ -193,8 +193,8 @@ Exp_Sample.o: \
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/NDS/sevencore_io.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/NDS/sevencore_io.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/FreeRTOS/include/queue.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/FreeRTOS/include/queue.h:
 
-/home/hansung/ndsdev/workspace/simple-io-1/source/realio.h:
+/home/hansung/ndsdev/nds-ide/0892001/simple-io-1/source/realio.h:
