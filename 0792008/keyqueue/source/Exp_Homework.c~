@@ -10,7 +10,7 @@
 extern xQueueHandle KeyQueue;
 
 #define MAX_KEY_LOG		10
-#define KEY_ZERO 		0
+#define KEY_ZERO 			0
 #define LED_MIN			0x01
 #define LED_MAX			0x80
 #define LED_DELAY 		500
