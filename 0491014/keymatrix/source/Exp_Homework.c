@@ -12,7 +12,7 @@ Exp_4_Homework_A(void)
     u8 key[NUM_7SEG_LED], key_dump;
     u8 scan = 0;
     u8 turn_lr = TRUE;
-    u8 sw_pressed = TRUE;
+    u8 sw_pressed = FALSE;
     u8 key_pressed = FALSE;
     u8 key_temp;
     int i;

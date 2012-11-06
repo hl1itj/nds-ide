@@ -1,4 +1,11 @@
-17:09:12 **** Incremental Build of configuration Default for project keymatrix ****
-make 
-croutine.d:3: *** 분리기호 이(가) 빠졌음.  멈춤.
-make: *** [build] 오류 2
+
+Invoking autoreconf in build directory: /home/hansung/ndsdev/nds-ide/0792004/prac
+
+sh -c "autoreconf -i" 
+sh: 1: autoreconf: not found
+
+Configuration failed with error
+Build stopped
+()07:52:05 **** Build of configuration Build (GNU) for project prac ****
+make all 
+make: *** 타겟 `all'를 만들 규칙이 없음.  멈춤.

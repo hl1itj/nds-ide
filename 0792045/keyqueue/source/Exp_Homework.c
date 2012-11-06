@@ -68,23 +68,23 @@ void Exp_5_Homework_B(void) {
 	portTickType xLastWakeTime = xTaskGetTickCount();
 	while (1) {
 		writeb_virtual_io(BARLED1, barled);
-		if (xTaskGetTickCount() > xLastWakeTime+MSEC2TICK(450)){
-				if (barled == 0x80)
-					state = TRUE;
-				else if (barled == 0x01)
-					state = FALSE;
-				if (state == TRUE)
-					barled = barled >> 1;
-				else
-					barled = barled << 1;
-				vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500));
+		if (xTaskGetTickCount() > xLastWakeTime + MSEC2TICK(450) ) {
+			if (barled == 0x80)
+				state = TRUE;
+			else if (barled == 0x01)
+				state = FALSE;
+			if (state == TRUE)
+				barled = barled >> 1;
+			else
+				barled = barled << 1;
+			vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
 		}
-		if(kbhit()){
-		for (i = 0; i < NUM_7SEG_LED - 1; i++)
-			key[i] = key[i + 1];
-		key[NUM_7SEG_LED - 1] = getkey();
-		for (i = 0; i < NUM_7SEG_LED; i++)
-			writeb_virtual_io(SEG7LED, key[i] + (i << 4));
+		while (kbhit()) {
+			for (i = 0; i < NUM_7SEG_LED - 1; i++)
+				key[i] = key[i + 1];
+			key[NUM_7SEG_LED - 1] = getkey();
+			for (i = 0; i < NUM_7SEG_LED; i++)
+				writeb_virtual_io(SEG7LED, key[i] + (i << 4));
 		}
 		if (NDS_SWITCH() & KEY_START)
 			break;
@@ -95,34 +95,44 @@ void Exp_5_Homework_B(void) {
 }
 
 portTASK_FUNCTION(Key_Task, pvParameters) {
-	u8 key, scan = 0;
+	u8 key_s = FALSE, scan = 0, key_m, key;
 	while (1) {
-		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
-		key = scan * 4;
-		switch (readb_virtual_io(KEY_MATRIX)) {
-		case 8:
-			key += 1;
-			break;
-		case 4:
-			key += 2;
-			break;
-		case 2:
-			key += 3;
-			break;
-		case 1:
-			key += 4;
-			if (key == 16)
-				key = 0;
-			break;
-		default:
-			key = 255;
-			break;
+		if (key_s
+				&& (readb_virtual_io(KEY_MATRIX) != key_m
+						|| !readb_virtual_io(KEY_MATRIX)))
+			key_s = FALSE;
+		if (!key_s) {
+			writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
+			key = scan * 4;
+			key_m = readb_virtual_io(KEY_MATRIX);
+			switch (key_m) {
+			case 8:
+				key += 1;
+				break;
+			case 4:
+				key += 2;
+				break;
+			case 2:
+				key += 3;
+				break;
+			case 1:
+				key += 4;
+				if (key == 16)
+					key = 0;
+				break;
+			default:
+				key = 255;
+				break;
+			}
+			scan++;
+			if (scan == 4)
+				scan = 0;
+
+			if (key < 16) {
+				xQueueSend(KeyQueue, &key, portMAX_DELAY);
+				key_s = TRUE;
+			}
+			vTaskDelay(MSEC2TICK(30));
 		}
-		scan++;
-		if (scan == 4)
-			scan = 0;
-		if (key < 16)
-			xQueueSend(KeyQueue, &key, portMAX_DELAY);
-		vTaskDelay(MSEC2TICK(30) );
 	}
 }
