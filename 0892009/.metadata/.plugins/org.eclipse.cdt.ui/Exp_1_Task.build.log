@@ -1,7 +1,0 @@
-13:40:43 **** Incremental Build of configuration Default for project Exp_1_Task ****
-make 
-make[1]: *** `main.o'에서 필요로 하는  타겟 `/home/hansung/ndsdev/nds-ide/0892009/helloworld/source/main.c'를 만들 규칙이 없습니다.  멈춤.
-make: *** [build] 오류 2
-
-13:40:43 Build Finished (took 142ms)
-
