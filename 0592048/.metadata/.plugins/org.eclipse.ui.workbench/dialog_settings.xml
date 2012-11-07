@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="526" key="dialogWidth"/>
+		<item value="454" key="dialogWidth"/>
 		<item value="424" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
