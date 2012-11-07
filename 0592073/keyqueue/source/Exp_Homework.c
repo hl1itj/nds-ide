@@ -75,31 +75,35 @@ void Exp_5_Homework_A(void) {
 void Exp_5_Homework_B(void) {
 	u8 led_flow = TRUE, barled = LED_8TH;
 	u8 key, key_values[NUM_7SEG_LED];
-	int i, input_key_count = 0;
-	portTickType xLastWakeTime;
+	int i, input_key_count = 0, time = 0;
 
-	writeb_virtual_io(BARLED1, barled);
 	init_7SEG_LED();
 	key_init();
 
 	while (1) {
-		xLastWakeTime = xTaskGetTickCount();
-		if (xLastWakeTime == 500) {
+		portTickType xLastWakeTime = xTaskGetTickCount();
+		time += xLastWakeTime;
+		if (time >= 500) {
+			writeb_virtual_io(BARLED1, barled);
 			if (led_flow) {
 				if (barled > LED_1ST) {
 					barled = barled / OFFSET_MOVEMENT;
 				} else {
 					led_flow = FALSE;
+					barled = barled * OFFSET_MOVEMENT;
 				}
 			} else {
 				if (barled < LED_8TH) {
 					barled = barled * OFFSET_MOVEMENT;
 				} else {
 					led_flow = TRUE;
+					barled = barled / OFFSET_MOVEMENT;
 				}
 			}
-			writeb_virtual_io(BARLED1, barled);
+
+			time = 0;
 		}
+		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
 
 		if (kbhit() == 1) {
 			key = getkey();
@@ -122,7 +126,7 @@ void Exp_5_Homework_B(void) {
 
 		if (NDS_SWITCH() & KEY_START)
 			break;
-		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
+
 	}
 	key_init();
 }
