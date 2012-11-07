@@ -63,8 +63,10 @@ static void f_led1(void *p) {
 
 static void f_led2(void *p) {
 	printf("<L>\n");
-	writeb_virtual_io(BARLED1, LED_MAX);
-	writeb_virtual_io(BARLED2, LED_OFF);
+	LED1_offset = LED_MAX;
+	LED2_offset = LED_OFF;
+	writeb_virtual_io(BARLED1, LED1_offset);
+	writeb_virtual_io(BARLED2, LED2_offset);
 }
 
 static void f_led3(void *p) {
@@ -82,19 +84,24 @@ static void f_led3(void *p) {
 
 static void f_led4(void *p) {
 	printf("<S-L>\n");
-	writeb_virtual_io(BARLED1, 254);
-	writeb_virtual_io(BARLED2, LED_OFF);
+	LED1_offset = 252;
+	LED2_offset = LED_OFF;
+	writeb_virtual_io(BARLED1, LED1_offset);
+	writeb_virtual_io (BARLED2, LED2_offset);
 }
 
 static void f_led5(void *p) {
 	printf("<L-S>\n");
-	writeb_virtual_io(BARLED1, LED_MAX);
-	writeb_virtual_io(BARLED2, LED_MAX);
+	LED1_offset = LED_MAX;
+	LED2_offset = LED_MAX;
+	writeb_virtual_io(BARLED1, LED1_offset);
+	writeb_virtual_io(BARLED2, LED2_offset);
 }
 
 static void f_led6(void *p) {
 	printf("<L-L>\n");
 	LED1_offset = LED_OFF;
+	LED2_offset = LED_OFF;
 	writeb_virtual_io(BARLED1, LED_OFF);
 	writeb_virtual_io(BARLED2, LED_OFF);
 }
@@ -104,10 +111,10 @@ struct state_machine_x Exam_SM_X[NUM_STATE] = {
 		{ 0, { 1, 0, 0 }, { f_ts, NULL, NULL } }, /* state 1 */
 		{ 1, { 1, 3, 2 }, { NULL, f_ts, NULL } }, /* state 2 */
 		{ 0, { 2, 6, 0 }, { NULL, f_ts, NULL } }, /* state 3 */
-		{ 1, { 4, 0, 3 }, { f_ts, f_led1, NULL } },/* state 4 */
+		{ 1, { 4, 3, 0 }, { f_ts, NULL, f_led1 } },/* state 4 */
 		{ 1, { 4, 0, 5 }, { NULL, f_led3, NULL } },/* state 5 */
 		{ 0, { 5, 0, 0 }, { NULL, f_led4, NULL } },/* state 6 */
-		{ 1, { 7, 0, 6 }, { f_ts, f_led2, NULL } },/* state 7 */
+		{ 1, { 7, 6, 0 }, { f_ts, NULL, f_led2 } },/* state 7 */
 		{ 1, { 7, 0, 8 }, { NULL, f_led5, NULL } },/* state 8 */
 		{ 0, { 8, 0, 0 }, { NULL, f_led6, NULL } } };/* state 9 */
 

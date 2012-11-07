@@ -59,8 +59,10 @@ Exp_3_Sample_A(void)
 			break;
 		}
 
-		if (NDS_SWITCH() & KEY_START)
+		if (NDS_SWITCH() & KEY_START){
+			init();
 			break;
+		}
 		vTaskDelay(MSEC2TICK(50));
 	}
 	while (NDS_SWITCH() & KEY_START)
@@ -129,8 +131,10 @@ Exp_3_Sample_B(void)
 		/* Step 2: Set Next State */
 		state = Exam_SM_B[state][input].next_state;
 
-		if (NDS_SWITCH() & KEY_START)
+		if (NDS_SWITCH() & KEY_START){
+			init();
 			break;
+		}
 		vTaskDelay(MSEC2TICK(50));
 	}
 	while (NDS_SWITCH() & KEY_START)
@@ -208,8 +212,10 @@ do_action:
 		/* Step 2: Set Next State */
 		state = Exam_SM_B[state][input].next_state;
 
-		if (NDS_SWITCH() & KEY_START)
+		if (NDS_SWITCH() & KEY_START){
+			init();
 			break;
+		}
 		vTaskDelay(MSEC2TICK(50));
 	}
 	while (NDS_SWITCH() & KEY_START)

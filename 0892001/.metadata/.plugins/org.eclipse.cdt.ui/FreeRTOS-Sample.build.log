@@ -1,0 +1,6 @@
+14:10:12 **** Clean-only build of configuration Default for project FreeRTOS-Sample ****
+make clean 
+clean ...
+
+14:10:12 Build Finished (took 282ms)
+

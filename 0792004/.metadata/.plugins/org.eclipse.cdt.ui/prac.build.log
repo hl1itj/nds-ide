@@ -1,0 +1,6 @@
+07:52:05 **** Build of configuration Build (GNU) for project prac ****
+make all 
+make: *** 타겟 `all'를 만들 규칙이 없음.  멈춤.
+
+07:52:05 Build Finished (took 68ms)
+
