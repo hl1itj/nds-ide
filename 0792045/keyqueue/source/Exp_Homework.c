@@ -79,12 +79,13 @@ void Exp_5_Homework_B(void) {
 				barled = barled << 1;
 			vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(500) );
 		}
-		while (kbhit()) {
+		else if (kbhit()) {
 			for (i = 0; i < NUM_7SEG_LED - 1; i++)
 				key[i] = key[i + 1];
 			key[NUM_7SEG_LED - 1] = getkey();
 			for (i = 0; i < NUM_7SEG_LED; i++)
 				writeb_virtual_io(SEG7LED, key[i] + (i << 4));
+			writeb_virtual_io(BARLED1, barled);
 		}
 		if (NDS_SWITCH() & KEY_START)
 			break;
