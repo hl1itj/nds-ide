@@ -19,38 +19,29 @@ void InitDebug(void);
 xQueueHandle KeyQueue;
 #define MAX_KEY_LOG		10
 
-int
-main(void)
-{
+int main(void) {
 	InitDebug();
-	init_virtual_io(ENABLE_LED | ENABLE_SW | ENABLE_MATRIX);	// Enable Virtual LED's on Top Screen
+	init_virtual_io(ENABLE_LED | ENABLE_SW | ENABLE_MATRIX);// Enable Virtual LED's on Top Screen
 	//init_printf();							// Initialize Bottom Screen for printf()
 
-	xTaskCreate(Key_Task,
-					     (const signed char * const)"Key_Task",
-					     2048,
-					     (void *)NULL,
-					     tskIDLE_PRIORITY + 10,
-					     NULL);
+	xTaskCreate(Key_Task, (const signed char * const)"Key_Task", 2048,
+			(void *)NULL, tskIDLE_PRIORITY + 10, NULL);
 
 	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8));
-	xTaskCreate(Exp_5_Task,
-					     (const signed char * const)"Exp_Task",
-					     2048,
-					     (void *)NULL,
-					     tskIDLE_PRIORITY + 1,
-					     NULL);
+	if (KeyQueue == NULL) {
+		return 0;
+	}
 
+	xTaskCreate(Exp_5_Task, (const signed char * const)"Exp_Task", 2048,
+			(void *)NULL, tskIDLE_PRIORITY + 1, NULL);
 
 	vTaskStartScheduler();		// Never returns
-	while(1)
+	while (1)
 		;
 	return 0;
 }
 
-void
-InitDebug(void)
-{
+void InitDebug(void) {
 #ifdef DEBUG
 	irqInit();
 	initSpi();
@@ -63,8 +54,7 @@ void Exp_5_Homework_A(void);
 void Exp_5_Homework_B(void);
 
 static
-portTASK_FUNCTION(Exp_5_Task, pvParameters)
-{
+portTASK_FUNCTION(Exp_5_Task, pvParameters) {
 	while (1) {
 		Exp_5_Homework_A();
 		Exp_5_Homework_B();
