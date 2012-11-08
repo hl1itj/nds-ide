@@ -13,7 +13,7 @@ extern xQueueHandle KeyQueue;
 void
 key_init(void)
 {
-	int i;
+	int i,j;
 	u8 key;
 
 	for (i = 0; i < MAX_KEY_LOG; i++)
@@ -49,4 +49,6 @@ Exp_5_Homework_B(void)
 
 portTASK_FUNCTION(Key_Task, pvParameters)
 {
+	/*
+	 *KeyMatrix를 scan하여 앞서 선언된 KeyQueue에 xQueueSend()를 이용하여 눌린 Key (0x00 ~ 0x0F)를 넣 도록 작성된다. */
 }
