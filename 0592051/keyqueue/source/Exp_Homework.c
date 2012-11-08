@@ -90,8 +90,8 @@ Exp_5_Homework_B(void)
 
 	while (1) {
 
-		if (NDS_SWITCH() & KEY_START){
-					break;
+		if (NDS_SWITCH() & KEY_START) {
+			break;
 		}
 
 		writeb_virtual_io(BARLED1, led);
