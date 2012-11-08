@@ -103,7 +103,7 @@ void Exp_Sample(void) {
 		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
-void Box_1(int direction, int basePoint, u32 color, int delay) {
+void Box_HORIZONTAL(int direction, int basePoint, u32 color, int delay) {
 	u8 key = 0, old_key = -1;
 	int directionb1 = direction;
 	while (1) {
@@ -126,95 +126,7 @@ void Box_1(int direction, int basePoint, u32 color, int delay) {
 	}
 }
 
-void Box_2(int direction, int basePoint, u32 color, int delay) {
-	u8 key = 0, old_key = -1;
-	int directionb1 = direction;
-	while (1) {
-		draw_my_box(old_key, basePoint, COLOR_BLACK);// Erase the Previous Box
-		draw_my_box(key, basePoint, color);	 		// Draw a New Box
-		vTaskDelay(300);
-		draw_my_box(key, basePoint, COLOR_BLACK);	 // Erase the Previous Box
-		old_key = key;
-
-		if (key < HORIZONTAL_MAX && directionb1 == DIRECTION_RIGHT) {
-			key++;
-			if (key == HORIZONTAL_MAX)
-				directionb1 = DIRECTION_LEFT;
-		} else if (key >= 0 && directionb1 == DIRECTION_LEFT) {
-			key--;
-			if (key == 0)
-				directionb1 = DIRECTION_RIGHT;
-		}
-		vTaskDelay(delay);		// Wait while START KEY is being pressed
-	}
-}
-void Box_3(int direction, int basePoint, u32 color, int delay) {
-	u8 key = 0, old_key = -1;
-	int directionb1 = direction;
-	while (1) {
-		draw_my_box(old_key, basePoint, COLOR_BLACK);// Erase the Previous Box
-		draw_my_box(key, basePoint, color);	 		// Draw a New Box
-		vTaskDelay(300);
-		draw_my_box(key, basePoint, COLOR_BLACK);	 // Erase the Previous Box
-		old_key = key;
-
-		if (key < HORIZONTAL_MAX && directionb1 == DIRECTION_RIGHT) {
-			key++;
-			if (key == HORIZONTAL_MAX)
-				directionb1 = DIRECTION_LEFT;
-		} else if (key >= 0 && directionb1 == DIRECTION_LEFT) {
-			key--;
-			if (key == 0)
-				directionb1 = DIRECTION_RIGHT;
-		}
-		vTaskDelay(delay);		// Wait while START KEY is being pressed
-	}
-}
-void Box_4(int direction, int basePoint, u32 color, int delay) {
-	u8 key = 0, old_key = -1;
-	int directionb1 = direction;
-	while (1) {
-		draw_my_box(basePoint, old_key, COLOR_BLACK);// Erase the Previous Box
-		draw_my_box(basePoint, key, color);	 		// Draw a New Box
-		vTaskDelay(300);
-		draw_my_box(basePoint, key, COLOR_BLACK);	 // Erase the Previous Box
-		old_key = key;
-
-		if (key < VERTICAL_MAX && directionb1 == DIRECTION_DOWN) {
-			key++;
-			if (key == VERTICAL_MAX)
-				directionb1 = DIRECTION_UP;
-		} else if (key >= 0 && directionb1 == DIRECTION_UP) {
-			key--;
-			if (key == 0)
-				directionb1 = DIRECTION_DOWN;
-		}
-		vTaskDelay(delay);		// Wait while START KEY is being pressed
-	}
-}
-void Box_5(int direction, int basePoint, u32 color, int delay) {
-	u8 key = 0, old_key = -1;
-	int directionb1 = direction;
-	while (1) {
-		draw_my_box(basePoint, old_key, COLOR_BLACK);// Erase the Previous Box
-		draw_my_box(basePoint, key, color);	 		// Draw a New Box
-		vTaskDelay(300);
-		draw_my_box(basePoint, key, COLOR_BLACK);	 // Erase the Previous Box
-		old_key = key;
-
-		if (key < VERTICAL_MAX && directionb1 == DIRECTION_DOWN) {
-			key++;
-			if (key == VERTICAL_MAX)
-				directionb1 = DIRECTION_UP;
-		} else if (key >= 0 && directionb1 == DIRECTION_UP) {
-			key--;
-			if (key == 0)
-				directionb1 = DIRECTION_DOWN;
-		}
-		vTaskDelay(delay);		// Wait while START KEY is being pressed
-	}
-}
-void Box_6(int direction, int basePoint, u32 color, int delay) {
+void Box_VERTICAL(int direction, int basePoint, u32 color, int delay) {
 	u8 key = 0, old_key = -1;
 	int directionb1 = direction;
 	while (1) {
