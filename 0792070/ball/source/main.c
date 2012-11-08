@@ -1,0 +1,183 @@
+// Free RTOS Headers
+#include <FreeRTOS.h>
+#include <task.h>
+#include <queue.h>
+#include <semphr.h>
+#include <nds.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+#include "sevencore_io.h"
+
+#include "card_spi.h"
+#include "gdbStub.h"
+#include "gdbStubAsm.h"
+
+// define added 11/08/2012
+#define NUM_TASK 6
+#define DIRECTION_LEFT 0
+#define DIRECTION_RIGHT 1
+#define DIRECTION_UP 2
+#define DIRECTION_DOWN 3
+
+#define COLOR_GREEN     RGB( 0,  31, 0) /* Green */
+#define COLOR_RED       RGB(31,  0,  0) /* Bright Red  	*/
+
+struct parameters {
+	char *taskname;
+	int direction;
+	int basePoint;
+	u32 color;
+	int delay;
+};
+
+struct parameters Param[NUM_TASK] = {
+		{ "1", DIRECTION_RIGHT, 3, COLOR_RED, 50 }, /* Box 1 */
+		{ "2", DIRECTION_RIGHT, 6, COLOR_RED, 10 }, /* Box 2 */
+		{ "3", DIRECTION_RIGHT, 9, COLOR_RED, 100 }, /* Box 3 */
+		{ "4", DIRECTION_DOWN, 4, COLOR_GREEN, 20 }, /* Box 4 */
+		{ "5", DIRECTION_DOWN, 8, COLOR_GREEN, 70 }, /* Box 5 */
+		{ "6", DIRECTION_DOWN, 12, COLOR_GREEN, 150 } /* Box 6 */
+};
+
+static portTASK_FUNCTION(Exp_Task, pvParameters);
+static portTASK_FUNCTION(Ball_Task, pvParameters);
+portTASK_FUNCTION(Key_Task, pvParameters);
+void Exp_Sample(void);
+void Box_1(int direction, int basePoint, u32 color, int delay);
+void Box_2(int direction, int basePoint, u32 color, int delay);
+void Box_3(int direction, int basePoint, u32 color, int delay);
+void Box_4(int direction, int basePoint, u32 color, int delay);
+void Box_5(int direction, int basePoint, u32 color, int delay);
+void Box_6(int direction, int basePoint, u32 color, int delay);
+
+void InitDebug(void);
+
+int main(void) {
+	int i;
+	struct parameters *p;
+	InitDebug();
+	init_virtual_io(ENABLE_SW | ENABLE_MATRIX);	// Enable Virtual LED's on Top Screen
+	//init_printf();							// Initialize Bottom Screen for printf()
+
+//	xTaskCreate(Key_Task, (const signed char * const)"Key_Task", 2048,
+//			(void *)NULL, tskIDLE_PRIORITY + 10, NULL);
+//	xTaskCreate(Exp_Task, (const signed char * const)"Exp_Task", 2048,
+//			(void *)NULL, tskIDLE_PRIORITY + 9, NULL);
+
+	for (i = 0, p = Param; i < NUM_TASK; i++, p++) {
+		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024,
+				(void *)p, tskIDLE_PRIORITY + 5, NULL);
+	}
+
+	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8));
+	// Error Processing Needed !
+
+	vTaskStartScheduler();		// Never returns
+	while (1)
+		;
+	return 0;
+}
+
+void InitDebug(void) {
+#ifdef DEBUG
+	irqInit();
+	initSpi();
+	initDebug();
+	BreakPoint();
+#endif
+}
+
+static
+portTASK_FUNCTION(Exp_Task, pvParameters) {
+	videoSetMode(MODE_5_2D);
+	vramSetBankA(VRAM_A_MAIN_BG);
+	bgInit(3, BgType_Bmp16, BgSize_B16_256x256, 0, 0);
+
+	while (1) {
+		Exp_Sample();
+	}
+}
+// task add
+portTASK_FUNCTION(Key_Task, pvParameters) {
+
+	u8 key, scan = 0;
+	u8 key_pressed = FALSE;
+	key_init();
+
+	while (1) {
+
+		if (key_pressed == FALSE) {
+
+			writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
+			key = scan * 4;
+
+			switch (readb_virtual_io(KEY_MATRIX)) {
+			case 8:
+				key += 1;
+				break;
+			case 4:
+				key += 2;
+				break;
+			case 2:
+				key += 3;
+				break;
+			case 1:
+				key += 4;
+				if (key == 16)
+					key = 0;
+				break;
+			default:
+				key = 255;
+				break;
+			}
+			scan++;
+			if (scan == 4)
+				scan = 0;
+
+			if ((key < 16)) {
+				key_pressed = TRUE;
+				xQueueSend(KeyQueue, &key, 0);
+			}
+		}
+
+		if ((key_pressed == TRUE) && (readb_virtual_io(KEY_MATRIX) == 0))
+			key_pressed = FALSE;
+
+		vTaskDelay(MSEC2TICK(30) );
+	}
+}
+
+// ball task
+static
+portTASK_FUNCTION(Ball_Task, pvParameters) {
+	videoSetMode(MODE_5_2D);
+	vramSetBankA(VRAM_A_MAIN_BG);
+	bgInit(3, BgType_Bmp16, BgSize_B16_256x256, 0, 0);
+
+	struct parameters *p = (struct parameters *) pvParameters;
+	int cnt = 0;
+
+	while (1) {
+		if (cnt < NUM_TASK) {
+			if (strcmp(p->taskname, "1") == 0)
+				Box_1(p->direction, p->basePoint, p->color, p->delay);
+			else if (strcmp(p->taskname, "2") == 0)
+				Box_2(p->direction, p->basePoint, p->color, p->delay);
+			else if (strcmp(p->taskname, "3") == 0)
+				Box_3(p->direction, p->basePoint, p->color, p->delay);
+			else if (strcmp(p->taskname, "4") == 0)
+				Box_4(p->direction, p->basePoint, p->color, p->delay);
+			else if (strcmp(p->taskname, "5") == 0)
+				Box_5(p->direction, p->basePoint, p->color, p->delay);
+			else if (strcmp(p->taskname, "6") == 0)
+				Box_6(p->direction, p->basePoint, p->color, p->delay);
+			p++;
+			cnt++;
+		} else {
+			cnt = 0;
+			p = Param;
+		}
+	}
+}
