@@ -291,7 +291,7 @@ Linker script and memory map
 .plt
  *(.plt)
 
-.text           0x02000240    0x14340
+.text           0x02000240    0x14330
  *(EXCLUDE_FILE(*.itcm*) .text)
  .text          0x02000240        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
  .text          0x02000240        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
@@ -393,521 +393,521 @@ Linker script and memory map
                 0x0200461c                readb_virtual_io
                 0x02004670                writeb_virtual_io
                 0x0200471c                close_virtual_io
- .text          0x02004720      0x3c0 Exp_Homework.o
+ .text          0x02004720      0x3b8 Exp_Homework.o
                 0x02004720                Exp_4_Homework_A
- .text          0x02004ae0      0x1c0 Exp_Sample.o
-                0x02004ae0                Exp_4_Sample_A
- .text          0x02004ca0       0x54 main.o
-                0x02004ca0                main
-                0x02004ce0                InitDebug
- *fill*         0x02004cf4        0xc ff
- .text          0x02004d00       0xf0 gdbStubAsm.o
-                0x02004d00                BreakPoint
-                0x02004d08                ICInvalidateAll
-                0x02004d14                DCFlushAll
-                0x02004d40                enable_IRQs
-                0x02004d4c                disable_IRQs
-                0x02004d58                getSPSR
-                0x02004d60                setBankedReg
-                0x02004d84                setRegs
-                0x02004d8c                getPC
-                0x02004d94                test_func
-                0x02004db8                v5T_semantics_asm
-                0x02004dc0                add
-                0x02004dd0                mul
- .text          0x02004df0      0x140 port_asm.o
-                0x02004df0                vPortDisableInterruptsFromThumb
-                0x02004e08                vPortEnableInterruptsFromThumb
-                0x02004e20                portRESTORE_CONTEXT_FIRST
-                0x02004e38                portRESTORE_CONTEXT
-                0x02004e70                vPreemptiveTick
-                0x02004ecc                vPortYIELD
- .text          0x02004f30      0x2e8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
-                0x02004f30                bgIsText
-                0x02004f3c                checkIfText
-                0x02004f94                bgUpdate
-                0x02005088                bgInit_call
-                0x0200514c                bgInitSub_call
- .text          0x02005218      0xa4c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x020052b8                nocash_write
-                0x020052c8                consoleGetDefault
-                0x020052d4                consoleSelect
-                0x020052e4                consoleDebugInit
-                0x02005334                consolePrintChar
-                0x02005500                consoleLoadFont
-                0x02005788                consoleSetFont
-                0x020057a8                consoleInit
-                0x02005910                consoleDemoInit
-                0x02005954                con_write
-                0x02005c30                consoleClear
-                0x02005c40                consoleSetWindow
- .text          0x02005c64       0x84 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
-                0x02005c64                getHeader
-                0x02005c68                readByte
-                0x02005c6c                decompress
-                0x02005cac                decompressStream
- .text          0x02005ce8       0x28 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
-                0x02005ce8                setExceptionHandler
- .text          0x02005d10       0xf4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
-                0x02005d10                scanKeys
-                0x02005d7c                keysHeld
-                0x02005d88                keysDown
-                0x02005d98                keysDownRepeat
-                0x02005da8                keysSetRepeat
-                0x02005dc0                keysUp
-                0x02005dd0                keysCurrent
- .text          0x02005e04       0x24 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
-                0x02005e04                __sassert
- .text          0x02005e28       0x4c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
-                0x02005e28                touchRead
-                0x02005e50                touchReadXY
- .text          0x02005e74      0x244 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
-                0x02005e74                asinComp
-                0x02005e9c                sinLutLookup
-                0x02005ed8                sinLerp
-                0x02005f10                cosLerp
-                0x02005f24                tanLutLookup
-                0x02005f5c                tanLerp
-                0x02006000                asinLerp
-                0x0200607c                acosLerp
-                0x02006090                atanComp
- .text          0x020060b8     0x15cc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
-                0x020060b8                glGetGlobals
-                0x020060c0                glRotatef32i
-                0x02006394                glMaterialf
-                0x02006400                glTexCoord2f32
-                0x02006474                vramBlock_init
-                0x020064e0                vramBlock_Construct
-                0x02006508                vramBlock_terminate
-                0x02006530                vramBlock_Deconstruct
-                0x02006544                vramBlock__allocateBlock
-                0x020066b0                vramBlock__deallocateBlock
-                0x0200680c                vramBlock_examineSpecial
-                0x02006a2c                vramBlock_allocateSpecial
-                0x02006a98                vramBlock_allocateBlock
-                0x02006acc                vramBlock_deallocateBlock
-                0x02006b0c                vramBlock_deallocateAll
-                0x02006b1c                vramBlock_getAddr
-                0x02006b30                vramBlock_getSize
-                0x02006b44                glInit_C
-                0x02006cec                glResetTextures
-                0x02006d74                removePaletteFromTexture
-                0x02006de4                glGenTextures
-                0x02006e80                glDeleteTextures
-                0x02006f50                vramGetBank
-                0x02007010                glBindTexture
-                0x02007070                glColorTableEXT
-                0x020071f0                glColorSubTableEXT
-                0x02007240                glGetColorTableEXT
-                0x0200727c                glAssignColorTable
-                0x020072f0                glTexParameter
-                0x02007328                glGetTexturePointer
-                0x02007348                glGetTexParameter
-                0x02007368                glGetColorTableParameterEXT
-                0x020073a0                glTexImage2D
- .text          0x02007684      0x140 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
-                0x02007684                initSystem
- .text          0x020077c4      0xc58 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x02007a18                fifoSendAddress
-                0x02007a44                fifoSendValue32
-                0x02007a84                fifoSendDatamsg
-                0x02007af4                fifoGetAddress
-                0x02007b6c                fifoSetAddressHandler
-                0x02007be0                fifoGetValue32
-                0x02007c54                fifoSetValue32Handler
-                0x02007cc8                fifoGetDatamsg
-                0x0200814c                fifoSetDatamsgHandler
-                0x020081e4                fifoCheckAddress
-                0x02008208                fifoCheckDatamsg
-                0x0200822c                fifoCheckValue32
-                0x02008250                fifoInit
- .text          0x0200841c      0x1ec /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
-                0x0200841c                irqDummy
-                0x02008420                irqSet
-                0x0200848c                irqInit
-                0x020084d8                irqInitHandler
-                0x02008508                irqEnable
-                0x0200856c                irqDisable
-                0x020085d0                irqClear
- .text          0x02008608       0x58 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
-                0x02008608                systemErrorExit
-                0x0200860c                __libnds_exit
- .text          0x02008660       0x1c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
-                0x02008660                swiDecompressLZSSVram
- .text          0x0200867c       0xdc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
-                0x0200867c                getCPSR
-                0x02008684                enterException
-                0x020086f8                exceptionC
-                0x020086fc                exceptionStack
-                0x02008700                exceptionRegisters
- .text          0x02008758      0x1b4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
-                0x02008758                __libnds_mpu_setup
-                0x02008898                memCached
-                0x020088b0                memUncached
- *fill*         0x0200890c        0x4 ff
- .text          0x02008910       0x70 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
-                0x02008910                swiDelay
-                0x02008914                swiIntrWait
-                0x02008918                swiWaitForVBlank
-                0x0200891c                swiSleep
-                0x02008920                swiChangeSoundBias
-                0x02008924                swiDivide
-                0x02008928                swiRemainder
-                0x0200892e                swiDivMod
-                0x0200893a                swiCopy
-                0x0200893e                swiFastCopy
-                0x02008942                swiSqrt
-                0x02008946                swiCRC16
-                0x0200894a                swiIsDebugger
-                0x0200894e                swiUnpackBits
-                0x02008952                swiDecompressLZSSWram
-                0x02008956                swiDecompressLZSSVramNTR
-                0x0200895a                swiDecompressLZSSVramTWL
-                0x0200895e                swiDecompressHuffman
-                0x02008962                swiDecompressRLEWram
-                0x02008966                swiDecompressRLEVram
-                0x0200896a                swiWaitForIRQ
-                0x0200896e                swiDecodeDelta8
-                0x02008972                swiDecodeDelta16
-                0x02008976                swiSetHaltCR
- .text          0x02008980       0xa4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
-                0x02008980                nocashWrite
-                0x02008982                nocashMessage
- .text          0x02008a24        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- *fill*         0x02008a24        0xc ff
- .text          0x02008a30       0x30 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
-                0x02008a30                swiSoftReset
- .text          0x02008a60        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
- .text          0x02008a60       0x8c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
-                0x02008a60                DynamicArrayInit
-                0x02008a78                DynamicArrayDelete
-                0x02008a8c                DynamicArrayGet
-                0x02008aa4                DynamicArraySet
- .text          0x02008aec      0x128 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
-                0x02008aec                setSDcallback
-                0x02008af8                systemMsgHandler
-                0x02008b3c                systemSleep
-                0x02008b54                systemValueHandler
-                0x02008b90                powerOn
-                0x02008bbc                powerOff
-                0x02008be4                ledBlink
-                0x02008bf4                getBatteryLevel
- .text          0x02008c14      0x1f8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
-                0x02008c14                vramSetPrimaryBanks
-                0x02008c58                vramSetMainBanks
-                0x02008c9c                vramSetBanks_EFG
-                0x02008cd4                vramRestorePrimaryBanks
-                0x02008ce0                vramRestoreMainBanks
-                0x02008cec                vramRestoreBanks_EFG
-                0x02008cf8                setBrightness
-                0x02008d38                vramDefault
- .text          0x02008e0c      0x11c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivsi3.o)
-                0x02008e0c                __udivsi3
-                0x02008e0c                __aeabi_uidiv
-                0x02008f08                __aeabi_uidivmod
- .text          0x02008f28      0x150 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divsi3.o)
-                0x02008f28                __aeabi_idiv
-                0x02008f28                __divsi3
-                0x02009058                __aeabi_idivmod
- .text          0x02009078        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_dvmd_tls.o)
-                0x02009078                __aeabi_ldiv0
-                0x02009078                __aeabi_idiv0
- .text          0x0200907c       0x4c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_muldi3.o)
-                0x0200907c                __aeabi_lmul
-                0x0200907c                __muldi3
- .text          0x020090c8       0x64 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-bsearch.o)
-                0x020090c8                bsearch
- .text          0x0200912c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
- .text          0x0200912c       0x54 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
-                0x0200912c                __libc_init_array
- .text          0x02009180       0x40 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
-                0x02009180                iprintf
-                0x020091a4                _iprintf_r
- .text          0x020091c0       0x30 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
-                0x020091c0                malloc
-                0x020091d8                free
- .text          0x020091f0      0x51c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
-                0x020091f0                _malloc_r
- .text          0x0200970c       0x90 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memcpy-stub.o)
-                0x0200970c                memcpy
- .text          0x0200979c       0x98 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memset.o)
-                0x0200979c                memset
- .text          0x02009834        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mlock.o)
-                0x02009834                __malloc_lock
-                0x02009838                __malloc_unlock
- .text          0x0200983c       0x1c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-realloc.o)
-                0x0200983c                realloc
- .text          0x02009858      0x3e8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-reallocr.o)
-                0x02009858                _realloc_r
- .text          0x02009c40      0x120 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-setvbuf.o)
-                0x02009c40                setvbuf
- .text          0x02009d60       0xa0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-siscanf.o)
-                0x02009d60                siscanf
-                0x02009db0                _siscanf_r
- .text          0x02009e00       0x84 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sprintf.o)
-                0x02009e00                _sprintf_r
-                0x02009e40                sprintf
- .text          0x02009e84       0xac /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-stdio.o)
-                0x02009e84                __sread
-                0x02009eb0                __seofread
-                0x02009eb4                __swrite
-                0x02009ef0                __sseek
-                0x02009f20                __sclose
- .text          0x02009f30       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcat.o)
-                0x02009f30                strcat
- .text          0x02009f80       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcpy.o)
-                0x02009f80                strcpy
- .text          0x02009f90       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlen.o)
-                0x02009f90                strlen
- .text          0x02009fa0       0x60 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncpy.o)
-                0x02009fa0                strncpy
- .text          0x0200a000      0xa98 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
-                0x0200a000                _sungetc_r
-                0x0200a088                __ssrefill_r
-                0x0200a0cc                _sfread_r
-                0x0200a158                __ssvfiscanf_r
- .text          0x0200aa98     0x1728 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
-                0x0200aa98                _svfprintf_r
- .text          0x0200c1c0      0x188 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ungetc.o)
-                0x0200c1c0                __submore
-                0x0200c248                _ungetc_r
-                0x0200c32c                ungetc
- .text          0x0200c348      0xed4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
-                0x0200c348                __sprint_r
-                0x0200c3cc                _vfiprintf_r
-                0x0200d1f8                vfiprintf
- .text          0x0200d21c       0xe8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcrtomb.o)
-                0x0200d21c                _wcrtomb_r
-                0x0200d284                wcrtomb
- .text          0x0200d304       0x40 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsrtombs.o)
-                0x0200d304                _wcsrtombs_r
-                0x0200d31c                wcsrtombs
- .text          0x0200d344      0x2a4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wctomb_r.o)
-                0x0200d344                __utf8_wctomb
-                0x0200d3f8                _wctomb_r
-                0x0200d430                __ascii_wctomb
-                0x0200d450                __sjis_wctomb
-                0x0200d4cc                __eucjp_wctomb
-                0x0200d568                __jis_wctomb
- .text          0x0200d5e8       0xd0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wsetup.o)
-                0x0200d5e8                __swsetup_r
- .text          0x0200d6b8       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
-                0x0200d6b8                __set_ctype
- .text          0x0200d6c8     0x10a0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
-                0x0200d820                _dtoa_r
- .text          0x0200e768      0x1b8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fflush.o)
-                0x0200e768                __sflush_r
-                0x0200e8c0                _fflush_r
-                0x0200e8f0                fflush
- .text          0x0200e920      0x1d8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-findfp.o)
-                0x0200e928                _cleanup_r
-                0x0200e988                __sfmoreglue
-                0x0200e9b8                _cleanup
-                0x0200e9cc                __sinit
-                0x0200ea20                __sfp
-                0x0200eab0                __sfp_lock_acquire
-                0x0200eab4                __sfp_lock_release
-                0x0200eab8                __sinit_lock_acquire
-                0x0200eabc                __sinit_lock_release
-                0x0200eac0                __fp_lock_all
-                0x0200eadc                __fp_unlock_all
- .text          0x0200eaf8      0x104 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fputwc.o)
-                0x0200eaf8                _fputwc_r
-                0x0200ebd0                fputwc
- .text          0x0200ebfc      0x238 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-freer.o)
-                0x0200ebfc                _malloc_trim_r
-                0x0200eca0                _free_r
- .text          0x0200ee34      0x2fc /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fvwrite.o)
-                0x0200ee34                __sfvwrite_r
- .text          0x0200f130       0xb4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fwalk.o)
-                0x0200f130                _fwalk
-                0x0200f184                _fwalk_reent
- .text          0x0200f1e4       0x78 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iswspace.o)
-                0x0200f1e4                iswspace
- .text          0x0200f25c      0x1f0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
-                0x0200f3e8                _jp2uc
- .text          0x0200f44c      0x950 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
-                0x0200fb40                _setlocale_r
-                0x0200fd3c                __locale_charset
-                0x0200fd44                __locale_mb_cur_max
-                0x0200fd50                __locale_msgcharset
-                0x0200fd5c                __locale_cjk_lang
-                0x0200fd68                _localeconv_r
-                0x0200fd74                setlocale
-                0x0200fd90                localeconv
- .text          0x0200fd9c       0xe0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-makebuf.o)
-                0x0200fd9c                __smakebuf_r
- .text          0x0200fe7c      0x104 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
-                0x0200fe7c                _mbrtowc_r
-                0x0200fef4                mbrtowc
- .text          0x0200ff80      0x584 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
-                0x0200ff80                __utf8_mbtowc
-                0x020101e0                _mbtowc_r
-                0x0201021c                __ascii_mbtowc
-                0x0201024c                __sjis_mbtowc
-                0x0201030c                __eucjp_mbtowc
-                0x020103d4                __jis_mbtowc
- .text          0x02010504       0x98 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memchr-stub.o)
-                0x02010504                memchr
- .text          0x0201059c       0xb0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memmove.o)
-                0x0201059c                memmove
- *fill*         0x0201064c        0x4 ff
- .text          0x02010650      0x978 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
-                0x02010650                _Balloc
-                0x020106a4                _Bfree
-                0x020106bc                __multadd
-                0x02010768                __s2b
-                0x02010804                __hi0bits
-                0x0201083c                __lo0bits
-                0x0201089c                __i2b
-                0x020108b4                __multiply
-                0x02010a18                __pow5mult
-                0x02010ac8                __lshift
-                0x02010b98                __mcmp
-                0x02010bd4                __mdiff
-                0x02010cc4                __ulp
-                0x02010d0c                __b2d
-                0x02010db0                __d2b
-                0x02010e68                __ratio
-                0x02010ee4                _mprec_log10
-                0x02010f24                __copybits
-                0x02010f6c                __any_on
- .text          0x02010fc8       0x7c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sccl.o)
-                0x02010fc8                __sccl
- .text          0x02011044       0x5c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-s_fpclassify.o)
-                0x02011044                __fpclassifyd
- .text          0x020110a0       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcasecmp.o)
-                0x020110a0                strcasecmp
- .text          0x020110f0       0xd4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strchr.o)
-                0x020110f0                strchr
- .text          0x020111c4       0x14 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcmp.o)
-                0x020111c4                strcmp
- .text          0x020111d8       0x48 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlcpy.o)
-                0x020111d8                strlcpy
- .text          0x02011220       0x60 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncasecmp.o)
-                0x02011220                strncasecmp
- .text          0x02011280       0xbc /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncmp.o)
-                0x02011280                strncmp
- *fill*         0x0201133c        0x4 ff
- .text          0x02011340      0x208 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoll_r.o)
-                0x02011340                _strtoll_r
- .text          0x02011548      0x190 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtol.o)
-                0x02011548                _strtol_r
-                0x020116b8                strtol
- .text          0x020116d8      0x238 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoull_r.o)
-                0x020116d8                _strtoull_r
- .text          0x02011910      0x198 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoul.o)
-                0x02011910                _strtoul_r
-                0x02011a88                strtoul
- .text          0x02011aa8      0xeb4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
-                0x02011aa8                __ssprint_r
-                0x02011bd8                _svfiprintf_r
- .text          0x0201295c       0xd0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wbuf.o)
-                0x0201295c                __swbuf_r
-                0x02012a10                __swbuf
- .text          0x02012a2c      0x150 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsnrtombs.o)
-                0x02012a2c                _wcsnrtombs_r
-                0x02012b4c                wcsnrtombs
- .text          0x02012b7c       0x64 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-callocr.o)
-                0x02012b7c                _calloc_r
- .text          0x02012be0       0xb0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fclose.o)
-                0x02012be0                _fclose_r
-                0x02012c74                fclose
- .text          0x02012c90       0xa8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-getenv_r.o)
-                0x02012c90                _findenv_r
-                0x02012d28                _getenv_r
- .text          0x02012d38        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-environ.o)
- .text          0x02012d38        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-envlock.o)
-                0x02012d38                __env_lock
-                0x02012d3c                __env_unlock
- .text          0x02012d40      0x144 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
-                0x02012d40                setDefaultDevice
-                0x02012d54                FindDevice
-                0x02012dc4                RemoveDevice
-                0x02012de8                AddDevice
-                0x02012e64                GetDeviceOpTab
- .text          0x02012e84       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(close.o)
-                0x02012e84                _close_r
- .text          0x02012ed4       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(fstat.o)
-                0x02012ed4                _fstat_r
- .text          0x02012f24        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(isatty.o)
-                0x02012f24                _isatty_r
- .text          0x02012f28       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(lseek.o)
-                0x02012f28                _lseek_r
- .text          0x02012f78       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(read.o)
-                0x02012f78                _read_r
- .text          0x02012fc8       0x54 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(sbrk.o)
-                0x02012fc8                _sbrk_r
- .text          0x0201301c       0x44 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
-                0x0201301c                _times
-                0x02013030                _times_r
-                0x02013038                _gettimeofday_r
- .text          0x02013060       0x58 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(write.o)
-                0x02013060                _write_r
- .text          0x020130b8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(malloc_vars.o)
- .text          0x020130b8       0x4c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(build_argv.o)
-                0x020130b8                build_argv
- .text          0x02013104        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(syscall_support.o)
- .text          0x02013104       0x84 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(handle_manager.o)
-                0x02013104                __release_handle
-                0x02013130                __alloc_handle
-                0x02013168                __get_handle
- .text          0x02013188      0x41c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_addsubdf3.o)
-                0x02013188                __aeabi_drsub
-                0x02013190                __aeabi_dsub
-                0x02013190                __subdf3
-                0x02013194                __adddf3
-                0x02013194                __aeabi_dadd
-                0x020134a4                __aeabi_ui2d
-                0x020134a4                __floatunsidf
-                0x020134c8                __floatsidf
-                0x020134c8                __aeabi_i2d
-                0x020134f0                __extendsfdf2
-                0x020134f0                __aeabi_f2d
-                0x02013530                __aeabi_ul2d
-                0x02013530                __floatundidf
-                0x02013544                __floatdidf
-                0x02013544                __aeabi_l2d
- .text          0x020135a4      0x49c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_muldivdf3.o)
-                0x020135a4                __aeabi_dmul
-                0x020135a4                __muldf3
-                0x02013834                __aeabi_ddiv
-                0x02013834                __divdf3
- .text          0x02013a40      0x144 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_cmpdf2.o)
-                0x02013a40                __gtdf2
-                0x02013a40                __gedf2
-                0x02013a48                __ltdf2
-                0x02013a48                __ledf2
-                0x02013a50                __cmpdf2
-                0x02013a50                __eqdf2
-                0x02013a50                __nedf2
-                0x02013ad8                __aeabi_cdrcmple
-                0x02013af4                __aeabi_cdcmple
-                0x02013af4                __aeabi_cdcmpeq
-                0x02013b0c                __aeabi_dcmpeq
-                0x02013b24                __aeabi_dcmplt
-                0x02013b3c                __aeabi_dcmple
-                0x02013b54                __aeabi_dcmpge
-                0x02013b6c                __aeabi_dcmpgt
- .text          0x02013b84       0x5c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_fixdfsi.o)
-                0x02013b84                __fixdfsi
-                0x02013b84                __aeabi_d2iz
- .text          0x02013be0       0x3c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_aeabi_uldivmod.o)
-                0x02013be0                __aeabi_uldivmod
- .text          0x02013c1c       0x7c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(bpabi.o)
-                0x02013c1c                __gnu_ldivmod_helper
-                0x02013c5c                __gnu_uldivmod_helper
- .text          0x02013c98      0x3d4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divdi3.o)
-                0x02013c98                __divdi3
- .text          0x0201406c      0x3a0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivdi3.o)
-                0x0201406c                __udivdi3
- .text          0x0201440c       0x48 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_clzsi2.o)
-                0x0201440c                __clzsi2
- .text          0x02014454        0xc /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-errno.o)
-                0x02014454                __errno
- .text          0x02014460        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
- .text          0x02014460        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
- .text.stub     0x02014460      0x108 linker stubs
+ .text          0x02004ad8      0x1c0 Exp_Sample.o
+                0x02004ad8                Exp_4_Sample_A
+ .text          0x02004c98       0x54 main.o
+                0x02004c98                main
+                0x02004cd8                InitDebug
+ *fill*         0x02004cec        0x4 ff
+ .text          0x02004cf0       0xf0 gdbStubAsm.o
+                0x02004cf0                BreakPoint
+                0x02004cf8                ICInvalidateAll
+                0x02004d04                DCFlushAll
+                0x02004d30                enable_IRQs
+                0x02004d3c                disable_IRQs
+                0x02004d48                getSPSR
+                0x02004d50                setBankedReg
+                0x02004d74                setRegs
+                0x02004d7c                getPC
+                0x02004d84                test_func
+                0x02004da8                v5T_semantics_asm
+                0x02004db0                add
+                0x02004dc0                mul
+ .text          0x02004de0      0x140 port_asm.o
+                0x02004de0                vPortDisableInterruptsFromThumb
+                0x02004df8                vPortEnableInterruptsFromThumb
+                0x02004e10                portRESTORE_CONTEXT_FIRST
+                0x02004e28                portRESTORE_CONTEXT
+                0x02004e60                vPreemptiveTick
+                0x02004ebc                vPortYIELD
+ .text          0x02004f20      0x2e8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
+                0x02004f20                bgIsText
+                0x02004f2c                checkIfText
+                0x02004f84                bgUpdate
+                0x02005078                bgInit_call
+                0x0200513c                bgInitSub_call
+ .text          0x02005208      0xa4c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x020052a8                nocash_write
+                0x020052b8                consoleGetDefault
+                0x020052c4                consoleSelect
+                0x020052d4                consoleDebugInit
+                0x02005324                consolePrintChar
+                0x020054f0                consoleLoadFont
+                0x02005778                consoleSetFont
+                0x02005798                consoleInit
+                0x02005900                consoleDemoInit
+                0x02005944                con_write
+                0x02005c20                consoleClear
+                0x02005c30                consoleSetWindow
+ .text          0x02005c54       0x84 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
+                0x02005c54                getHeader
+                0x02005c58                readByte
+                0x02005c5c                decompress
+                0x02005c9c                decompressStream
+ .text          0x02005cd8       0x28 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
+                0x02005cd8                setExceptionHandler
+ .text          0x02005d00       0xf4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
+                0x02005d00                scanKeys
+                0x02005d6c                keysHeld
+                0x02005d78                keysDown
+                0x02005d88                keysDownRepeat
+                0x02005d98                keysSetRepeat
+                0x02005db0                keysUp
+                0x02005dc0                keysCurrent
+ .text          0x02005df4       0x24 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
+                0x02005df4                __sassert
+ .text          0x02005e18       0x4c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
+                0x02005e18                touchRead
+                0x02005e40                touchReadXY
+ .text          0x02005e64      0x244 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
+                0x02005e64                asinComp
+                0x02005e8c                sinLutLookup
+                0x02005ec8                sinLerp
+                0x02005f00                cosLerp
+                0x02005f14                tanLutLookup
+                0x02005f4c                tanLerp
+                0x02005ff0                asinLerp
+                0x0200606c                acosLerp
+                0x02006080                atanComp
+ .text          0x020060a8     0x15cc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
+                0x020060a8                glGetGlobals
+                0x020060b0                glRotatef32i
+                0x02006384                glMaterialf
+                0x020063f0                glTexCoord2f32
+                0x02006464                vramBlock_init
+                0x020064d0                vramBlock_Construct
+                0x020064f8                vramBlock_terminate
+                0x02006520                vramBlock_Deconstruct
+                0x02006534                vramBlock__allocateBlock
+                0x020066a0                vramBlock__deallocateBlock
+                0x020067fc                vramBlock_examineSpecial
+                0x02006a1c                vramBlock_allocateSpecial
+                0x02006a88                vramBlock_allocateBlock
+                0x02006abc                vramBlock_deallocateBlock
+                0x02006afc                vramBlock_deallocateAll
+                0x02006b0c                vramBlock_getAddr
+                0x02006b20                vramBlock_getSize
+                0x02006b34                glInit_C
+                0x02006cdc                glResetTextures
+                0x02006d64                removePaletteFromTexture
+                0x02006dd4                glGenTextures
+                0x02006e70                glDeleteTextures
+                0x02006f40                vramGetBank
+                0x02007000                glBindTexture
+                0x02007060                glColorTableEXT
+                0x020071e0                glColorSubTableEXT
+                0x02007230                glGetColorTableEXT
+                0x0200726c                glAssignColorTable
+                0x020072e0                glTexParameter
+                0x02007318                glGetTexturePointer
+                0x02007338                glGetTexParameter
+                0x02007358                glGetColorTableParameterEXT
+                0x02007390                glTexImage2D
+ .text          0x02007674      0x140 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+                0x02007674                initSystem
+ .text          0x020077b4      0xc58 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x02007a08                fifoSendAddress
+                0x02007a34                fifoSendValue32
+                0x02007a74                fifoSendDatamsg
+                0x02007ae4                fifoGetAddress
+                0x02007b5c                fifoSetAddressHandler
+                0x02007bd0                fifoGetValue32
+                0x02007c44                fifoSetValue32Handler
+                0x02007cb8                fifoGetDatamsg
+                0x0200813c                fifoSetDatamsgHandler
+                0x020081d4                fifoCheckAddress
+                0x020081f8                fifoCheckDatamsg
+                0x0200821c                fifoCheckValue32
+                0x02008240                fifoInit
+ .text          0x0200840c      0x1ec /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+                0x0200840c                irqDummy
+                0x02008410                irqSet
+                0x0200847c                irqInit
+                0x020084c8                irqInitHandler
+                0x020084f8                irqEnable
+                0x0200855c                irqDisable
+                0x020085c0                irqClear
+ .text          0x020085f8       0x58 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+                0x020085f8                systemErrorExit
+                0x020085fc                __libnds_exit
+ .text          0x02008650       0x1c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
+                0x02008650                swiDecompressLZSSVram
+ .text          0x0200866c       0xdc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
+                0x0200866c                getCPSR
+                0x02008674                enterException
+                0x020086e8                exceptionC
+                0x020086ec                exceptionStack
+                0x020086f0                exceptionRegisters
+ .text          0x02008748      0x1b4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+                0x02008748                __libnds_mpu_setup
+                0x02008888                memCached
+                0x020088a0                memUncached
+ *fill*         0x020088fc        0x4 ff
+ .text          0x02008900       0x70 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+                0x02008900                swiDelay
+                0x02008904                swiIntrWait
+                0x02008908                swiWaitForVBlank
+                0x0200890c                swiSleep
+                0x02008910                swiChangeSoundBias
+                0x02008914                swiDivide
+                0x02008918                swiRemainder
+                0x0200891e                swiDivMod
+                0x0200892a                swiCopy
+                0x0200892e                swiFastCopy
+                0x02008932                swiSqrt
+                0x02008936                swiCRC16
+                0x0200893a                swiIsDebugger
+                0x0200893e                swiUnpackBits
+                0x02008942                swiDecompressLZSSWram
+                0x02008946                swiDecompressLZSSVramNTR
+                0x0200894a                swiDecompressLZSSVramTWL
+                0x0200894e                swiDecompressHuffman
+                0x02008952                swiDecompressRLEWram
+                0x02008956                swiDecompressRLEVram
+                0x0200895a                swiWaitForIRQ
+                0x0200895e                swiDecodeDelta8
+                0x02008962                swiDecodeDelta16
+                0x02008966                swiSetHaltCR
+ .text          0x02008970       0xa4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+                0x02008970                nocashWrite
+                0x02008972                nocashMessage
+ .text          0x02008a14        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ *fill*         0x02008a14        0xc ff
+ .text          0x02008a20       0x30 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+                0x02008a20                swiSoftReset
+ .text          0x02008a50        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+ .text          0x02008a50       0x8c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
+                0x02008a50                DynamicArrayInit
+                0x02008a68                DynamicArrayDelete
+                0x02008a7c                DynamicArrayGet
+                0x02008a94                DynamicArraySet
+ .text          0x02008adc      0x128 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
+                0x02008adc                setSDcallback
+                0x02008ae8                systemMsgHandler
+                0x02008b2c                systemSleep
+                0x02008b44                systemValueHandler
+                0x02008b80                powerOn
+                0x02008bac                powerOff
+                0x02008bd4                ledBlink
+                0x02008be4                getBatteryLevel
+ .text          0x02008c04      0x1f8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
+                0x02008c04                vramSetPrimaryBanks
+                0x02008c48                vramSetMainBanks
+                0x02008c8c                vramSetBanks_EFG
+                0x02008cc4                vramRestorePrimaryBanks
+                0x02008cd0                vramRestoreMainBanks
+                0x02008cdc                vramRestoreBanks_EFG
+                0x02008ce8                setBrightness
+                0x02008d28                vramDefault
+ .text          0x02008dfc      0x11c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivsi3.o)
+                0x02008dfc                __udivsi3
+                0x02008dfc                __aeabi_uidiv
+                0x02008ef8                __aeabi_uidivmod
+ .text          0x02008f18      0x150 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divsi3.o)
+                0x02008f18                __aeabi_idiv
+                0x02008f18                __divsi3
+                0x02009048                __aeabi_idivmod
+ .text          0x02009068        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_dvmd_tls.o)
+                0x02009068                __aeabi_ldiv0
+                0x02009068                __aeabi_idiv0
+ .text          0x0200906c       0x4c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_muldi3.o)
+                0x0200906c                __aeabi_lmul
+                0x0200906c                __muldi3
+ .text          0x020090b8       0x64 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-bsearch.o)
+                0x020090b8                bsearch
+ .text          0x0200911c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
+ .text          0x0200911c       0x54 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
+                0x0200911c                __libc_init_array
+ .text          0x02009170       0x40 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
+                0x02009170                iprintf
+                0x02009194                _iprintf_r
+ .text          0x020091b0       0x30 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
+                0x020091b0                malloc
+                0x020091c8                free
+ .text          0x020091e0      0x51c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
+                0x020091e0                _malloc_r
+ .text          0x020096fc       0x90 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memcpy-stub.o)
+                0x020096fc                memcpy
+ .text          0x0200978c       0x98 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memset.o)
+                0x0200978c                memset
+ .text          0x02009824        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mlock.o)
+                0x02009824                __malloc_lock
+                0x02009828                __malloc_unlock
+ .text          0x0200982c       0x1c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-realloc.o)
+                0x0200982c                realloc
+ .text          0x02009848      0x3e8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-reallocr.o)
+                0x02009848                _realloc_r
+ .text          0x02009c30      0x120 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-setvbuf.o)
+                0x02009c30                setvbuf
+ .text          0x02009d50       0xa0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-siscanf.o)
+                0x02009d50                siscanf
+                0x02009da0                _siscanf_r
+ .text          0x02009df0       0x84 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sprintf.o)
+                0x02009df0                _sprintf_r
+                0x02009e30                sprintf
+ .text          0x02009e74       0xac /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-stdio.o)
+                0x02009e74                __sread
+                0x02009ea0                __seofread
+                0x02009ea4                __swrite
+                0x02009ee0                __sseek
+                0x02009f10                __sclose
+ .text          0x02009f20       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcat.o)
+                0x02009f20                strcat
+ .text          0x02009f70       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcpy.o)
+                0x02009f70                strcpy
+ .text          0x02009f80       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlen.o)
+                0x02009f80                strlen
+ .text          0x02009f90       0x60 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncpy.o)
+                0x02009f90                strncpy
+ .text          0x02009ff0      0xa98 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
+                0x02009ff0                _sungetc_r
+                0x0200a078                __ssrefill_r
+                0x0200a0bc                _sfread_r
+                0x0200a148                __ssvfiscanf_r
+ .text          0x0200aa88     0x1728 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
+                0x0200aa88                _svfprintf_r
+ .text          0x0200c1b0      0x188 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ungetc.o)
+                0x0200c1b0                __submore
+                0x0200c238                _ungetc_r
+                0x0200c31c                ungetc
+ .text          0x0200c338      0xed4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
+                0x0200c338                __sprint_r
+                0x0200c3bc                _vfiprintf_r
+                0x0200d1e8                vfiprintf
+ .text          0x0200d20c       0xe8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcrtomb.o)
+                0x0200d20c                _wcrtomb_r
+                0x0200d274                wcrtomb
+ .text          0x0200d2f4       0x40 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsrtombs.o)
+                0x0200d2f4                _wcsrtombs_r
+                0x0200d30c                wcsrtombs
+ .text          0x0200d334      0x2a4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wctomb_r.o)
+                0x0200d334                __utf8_wctomb
+                0x0200d3e8                _wctomb_r
+                0x0200d420                __ascii_wctomb
+                0x0200d440                __sjis_wctomb
+                0x0200d4bc                __eucjp_wctomb
+                0x0200d558                __jis_wctomb
+ .text          0x0200d5d8       0xd0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wsetup.o)
+                0x0200d5d8                __swsetup_r
+ .text          0x0200d6a8       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
+                0x0200d6a8                __set_ctype
+ .text          0x0200d6b8     0x10a0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
+                0x0200d810                _dtoa_r
+ .text          0x0200e758      0x1b8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fflush.o)
+                0x0200e758                __sflush_r
+                0x0200e8b0                _fflush_r
+                0x0200e8e0                fflush
+ .text          0x0200e910      0x1d8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-findfp.o)
+                0x0200e918                _cleanup_r
+                0x0200e978                __sfmoreglue
+                0x0200e9a8                _cleanup
+                0x0200e9bc                __sinit
+                0x0200ea10                __sfp
+                0x0200eaa0                __sfp_lock_acquire
+                0x0200eaa4                __sfp_lock_release
+                0x0200eaa8                __sinit_lock_acquire
+                0x0200eaac                __sinit_lock_release
+                0x0200eab0                __fp_lock_all
+                0x0200eacc                __fp_unlock_all
+ .text          0x0200eae8      0x104 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fputwc.o)
+                0x0200eae8                _fputwc_r
+                0x0200ebc0                fputwc
+ .text          0x0200ebec      0x238 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-freer.o)
+                0x0200ebec                _malloc_trim_r
+                0x0200ec90                _free_r
+ .text          0x0200ee24      0x2fc /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fvwrite.o)
+                0x0200ee24                __sfvwrite_r
+ .text          0x0200f120       0xb4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fwalk.o)
+                0x0200f120                _fwalk
+                0x0200f174                _fwalk_reent
+ .text          0x0200f1d4       0x78 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iswspace.o)
+                0x0200f1d4                iswspace
+ .text          0x0200f24c      0x1f0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
+                0x0200f3d8                _jp2uc
+ .text          0x0200f43c      0x950 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
+                0x0200fb30                _setlocale_r
+                0x0200fd2c                __locale_charset
+                0x0200fd34                __locale_mb_cur_max
+                0x0200fd40                __locale_msgcharset
+                0x0200fd4c                __locale_cjk_lang
+                0x0200fd58                _localeconv_r
+                0x0200fd64                setlocale
+                0x0200fd80                localeconv
+ .text          0x0200fd8c       0xe0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-makebuf.o)
+                0x0200fd8c                __smakebuf_r
+ .text          0x0200fe6c      0x104 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
+                0x0200fe6c                _mbrtowc_r
+                0x0200fee4                mbrtowc
+ .text          0x0200ff70      0x584 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
+                0x0200ff70                __utf8_mbtowc
+                0x020101d0                _mbtowc_r
+                0x0201020c                __ascii_mbtowc
+                0x0201023c                __sjis_mbtowc
+                0x020102fc                __eucjp_mbtowc
+                0x020103c4                __jis_mbtowc
+ .text          0x020104f4       0x98 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memchr-stub.o)
+                0x020104f4                memchr
+ .text          0x0201058c       0xb0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memmove.o)
+                0x0201058c                memmove
+ *fill*         0x0201063c        0x4 ff
+ .text          0x02010640      0x978 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
+                0x02010640                _Balloc
+                0x02010694                _Bfree
+                0x020106ac                __multadd
+                0x02010758                __s2b
+                0x020107f4                __hi0bits
+                0x0201082c                __lo0bits
+                0x0201088c                __i2b
+                0x020108a4                __multiply
+                0x02010a08                __pow5mult
+                0x02010ab8                __lshift
+                0x02010b88                __mcmp
+                0x02010bc4                __mdiff
+                0x02010cb4                __ulp
+                0x02010cfc                __b2d
+                0x02010da0                __d2b
+                0x02010e58                __ratio
+                0x02010ed4                _mprec_log10
+                0x02010f14                __copybits
+                0x02010f5c                __any_on
+ .text          0x02010fb8       0x7c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sccl.o)
+                0x02010fb8                __sccl
+ .text          0x02011034       0x5c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-s_fpclassify.o)
+                0x02011034                __fpclassifyd
+ .text          0x02011090       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcasecmp.o)
+                0x02011090                strcasecmp
+ .text          0x020110e0       0xd4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strchr.o)
+                0x020110e0                strchr
+ .text          0x020111b4       0x14 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcmp.o)
+                0x020111b4                strcmp
+ .text          0x020111c8       0x48 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlcpy.o)
+                0x020111c8                strlcpy
+ .text          0x02011210       0x60 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncasecmp.o)
+                0x02011210                strncasecmp
+ .text          0x02011270       0xbc /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncmp.o)
+                0x02011270                strncmp
+ *fill*         0x0201132c        0x4 ff
+ .text          0x02011330      0x208 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoll_r.o)
+                0x02011330                _strtoll_r
+ .text          0x02011538      0x190 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtol.o)
+                0x02011538                _strtol_r
+                0x020116a8                strtol
+ .text          0x020116c8      0x238 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoull_r.o)
+                0x020116c8                _strtoull_r
+ .text          0x02011900      0x198 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoul.o)
+                0x02011900                _strtoul_r
+                0x02011a78                strtoul
+ .text          0x02011a98      0xeb4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
+                0x02011a98                __ssprint_r
+                0x02011bc8                _svfiprintf_r
+ .text          0x0201294c       0xd0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wbuf.o)
+                0x0201294c                __swbuf_r
+                0x02012a00                __swbuf
+ .text          0x02012a1c      0x150 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsnrtombs.o)
+                0x02012a1c                _wcsnrtombs_r
+                0x02012b3c                wcsnrtombs
+ .text          0x02012b6c       0x64 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-callocr.o)
+                0x02012b6c                _calloc_r
+ .text          0x02012bd0       0xb0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fclose.o)
+                0x02012bd0                _fclose_r
+                0x02012c64                fclose
+ .text          0x02012c80       0xa8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-getenv_r.o)
+                0x02012c80                _findenv_r
+                0x02012d18                _getenv_r
+ .text          0x02012d28        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-environ.o)
+ .text          0x02012d28        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-envlock.o)
+                0x02012d28                __env_lock
+                0x02012d2c                __env_unlock
+ .text          0x02012d30      0x144 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
+                0x02012d30                setDefaultDevice
+                0x02012d44                FindDevice
+                0x02012db4                RemoveDevice
+                0x02012dd8                AddDevice
+                0x02012e54                GetDeviceOpTab
+ .text          0x02012e74       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(close.o)
+                0x02012e74                _close_r
+ .text          0x02012ec4       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(fstat.o)
+                0x02012ec4                _fstat_r
+ .text          0x02012f14        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(isatty.o)
+                0x02012f14                _isatty_r
+ .text          0x02012f18       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(lseek.o)
+                0x02012f18                _lseek_r
+ .text          0x02012f68       0x50 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(read.o)
+                0x02012f68                _read_r
+ .text          0x02012fb8       0x54 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(sbrk.o)
+                0x02012fb8                _sbrk_r
+ .text          0x0201300c       0x44 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
+                0x0201300c                _times
+                0x02013020                _times_r
+                0x02013028                _gettimeofday_r
+ .text          0x02013050       0x58 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(write.o)
+                0x02013050                _write_r
+ .text          0x020130a8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(malloc_vars.o)
+ .text          0x020130a8       0x4c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(build_argv.o)
+                0x020130a8                build_argv
+ .text          0x020130f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(syscall_support.o)
+ .text          0x020130f4       0x84 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(handle_manager.o)
+                0x020130f4                __release_handle
+                0x02013120                __alloc_handle
+                0x02013158                __get_handle
+ .text          0x02013178      0x41c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_addsubdf3.o)
+                0x02013178                __aeabi_drsub
+                0x02013180                __aeabi_dsub
+                0x02013180                __subdf3
+                0x02013184                __adddf3
+                0x02013184                __aeabi_dadd
+                0x02013494                __aeabi_ui2d
+                0x02013494                __floatunsidf
+                0x020134b8                __floatsidf
+                0x020134b8                __aeabi_i2d
+                0x020134e0                __extendsfdf2
+                0x020134e0                __aeabi_f2d
+                0x02013520                __aeabi_ul2d
+                0x02013520                __floatundidf
+                0x02013534                __floatdidf
+                0x02013534                __aeabi_l2d
+ .text          0x02013594      0x49c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_muldivdf3.o)
+                0x02013594                __aeabi_dmul
+                0x02013594                __muldf3
+                0x02013824                __aeabi_ddiv
+                0x02013824                __divdf3
+ .text          0x02013a30      0x144 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_cmpdf2.o)
+                0x02013a30                __gtdf2
+                0x02013a30                __gedf2
+                0x02013a38                __ltdf2
+                0x02013a38                __ledf2
+                0x02013a40                __cmpdf2
+                0x02013a40                __eqdf2
+                0x02013a40                __nedf2
+                0x02013ac8                __aeabi_cdrcmple
+                0x02013ae4                __aeabi_cdcmple
+                0x02013ae4                __aeabi_cdcmpeq
+                0x02013afc                __aeabi_dcmpeq
+                0x02013b14                __aeabi_dcmplt
+                0x02013b2c                __aeabi_dcmple
+                0x02013b44                __aeabi_dcmpge
+                0x02013b5c                __aeabi_dcmpgt
+ .text          0x02013b74       0x5c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_fixdfsi.o)
+                0x02013b74                __fixdfsi
+                0x02013b74                __aeabi_d2iz
+ .text          0x02013bd0       0x3c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_aeabi_uldivmod.o)
+                0x02013bd0                __aeabi_uldivmod
+ .text          0x02013c0c       0x7c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(bpabi.o)
+                0x02013c0c                __gnu_ldivmod_helper
+                0x02013c4c                __gnu_uldivmod_helper
+ .text          0x02013c88      0x3d4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divdi3.o)
+                0x02013c88                __divdi3
+ .text          0x0201405c      0x3a0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivdi3.o)
+                0x0201405c                __udivdi3
+ .text          0x020143fc       0x48 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_clzsi2.o)
+                0x020143fc                __clzsi2
+ .text          0x02014444        0xc /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-errno.o)
+                0x02014444                __errno
+ .text          0x02014450        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
+ .text          0x02014450        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
+ .text.stub     0x02014450      0x108 linker stubs
  *(.text.*)
  *(.stub)
  *(.gnu.warning)
@@ -916,364 +916,364 @@ Linker script and memory map
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
-                0x02014568                . = ALIGN (0x4)
+                0x02014558                . = ALIGN (0x4)
 
-.vfp11_veneer   0x02014580        0x0
+.vfp11_veneer   0x02014570        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x02014580        0x0
+.v4_bx          0x02014570        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x02014580        0x0
+.iplt           0x02014570        0x0
  .iplt          0x00000000        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
 
-.fini           0x02014580        0xc
+.fini           0x02014570        0xc
  *(.fini)
- .fini          0x02014580        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
-                0x02014580                _fini
- .fini          0x02014584        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
-                0x0201458c                __text_end = .
+ .fini          0x02014570        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
+                0x02014570                _fini
+ .fini          0x02014574        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
+                0x0201457c                __text_end = .
 
-.rodata         0x02014590     0xccd0
+.rodata         0x02014580     0xccd0
  *(.rodata)
- .rodata        0x02014590     0x3038 down.o
-                0x02014590                downBitmap
- .rodata        0x020175c8     0x2eac up.o
-                0x020175c8                upBitmap
- .rodata        0x0201a474       0x20 tasks.o
- .rodata        0x0201a494      0x1b8 gdbStub.o
- .rodata        0x0201a64c      0x354 sevencore_io.o
- .rodata        0x0201a9a0        0x8 Exp_Homework.o
- .rodata        0x0201a9a8        0xc main.o
- .rodata        0x0201a9b4      0x200 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
- .rodata        0x0201abb4       0x14 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
- .rodata        0x0201abc8      0x308 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
-                0x0201abc8                SIN_LUT
-                0x0201accc                TAN_LUT
- .rodata        0x0201aed0       0x8c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
- .rodata        0x0201af5c     0x2004 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
-                0x0201af5c                default_font_bin
-                0x0201cf5c                default_font_bin_end
-                0x0201cf5c                default_font_bin_size
- .rodata        0x0201cf60        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
-                0x0201cf60                _global_impure_ptr
- .rodata        0x0201cf64      0x340 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
- .rodata        0x0201d2a4      0x184 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
- .rodata        0x0201d428      0x184 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
- .rodata        0x0201d5ac      0x104 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
-                0x0201d5ac                _ctype_
- .rodata        0x0201d6b0     0x34f0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
- .rodata        0x02020ba0       0xf0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
- .rodata        0x02020c90       0xa8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
- .rodata        0x02020d38      0x128 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
-                0x02020d48                __mprec_tens
-                0x02020e10                __mprec_tinytens
-                0x02020e38                __mprec_bigtens
- .rodata        0x02020e60      0x184 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
- .rodata        0x02020fe4       0x64 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
-                0x02020fe4                dotab_stdnull
+ .rodata        0x02014580     0x3038 down.o
+                0x02014580                downBitmap
+ .rodata        0x020175b8     0x2eac up.o
+                0x020175b8                upBitmap
+ .rodata        0x0201a464       0x20 tasks.o
+ .rodata        0x0201a484      0x1b8 gdbStub.o
+ .rodata        0x0201a63c      0x354 sevencore_io.o
+ .rodata        0x0201a990        0x8 Exp_Homework.o
+ .rodata        0x0201a998        0xc main.o
+ .rodata        0x0201a9a4      0x200 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+ .rodata        0x0201aba4       0x14 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
+ .rodata        0x0201abb8      0x308 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
+                0x0201abb8                SIN_LUT
+                0x0201acbc                TAN_LUT
+ .rodata        0x0201aec0       0x8c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
+ .rodata        0x0201af4c     0x2004 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+                0x0201af4c                default_font_bin
+                0x0201cf4c                default_font_bin_end
+                0x0201cf4c                default_font_bin_size
+ .rodata        0x0201cf50        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
+                0x0201cf50                _global_impure_ptr
+ .rodata        0x0201cf54      0x340 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
+ .rodata        0x0201d294      0x184 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
+ .rodata        0x0201d418      0x184 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
+ .rodata        0x0201d59c      0x104 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
+                0x0201d59c                _ctype_
+ .rodata        0x0201d6a0     0x34f0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
+ .rodata        0x02020b90       0xf0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
+ .rodata        0x02020c80       0xa8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
+ .rodata        0x02020d28      0x128 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
+                0x02020d38                __mprec_tens
+                0x02020e00                __mprec_tinytens
+                0x02020e28                __mprec_bigtens
+ .rodata        0x02020e50      0x184 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
+ .rodata        0x02020fd4       0x64 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
+                0x02020fd4                dotab_stdnull
  *all.rodata*(*)
  *(.roda)
  *(.rodata.*)
  .rodata.str1.4
-                0x02021048       0x49 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x02021038       0x49 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
                                  0x4c (size before relaxing)
- *fill*         0x02021091        0x3 ff
+ *fill*         0x02021081        0x3 ff
  .rodata.str1.4
-                0x02021094       0x44 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
+                0x02021084       0x44 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
  .rodata.str1.4
-                0x020210d8        0x2 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
+                0x020210c8        0x2 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
                                   0x4 (size before relaxing)
- *fill*         0x020210da        0x2 ff
+ *fill*         0x020210ca        0x2 ff
  .rodata.str1.4
-                0x020210dc       0x42 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
+                0x020210cc       0x42 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
                                  0x44 (size before relaxing)
  .rodata.str1.4
                 0x00000000       0x30 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
- *fill*         0x0202111e        0x2 ff
+ *fill*         0x0202110e        0x2 ff
  .rodata.str1.4
-                0x02021120       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
+                0x02021110       0x10 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
                                  0x14 (size before relaxing)
  .rodata.str1.4
-                0x02021130       0x12 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
+                0x02021120       0x12 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
                                  0x14 (size before relaxing)
- *fill*         0x02021142        0x2 ff
+ *fill*         0x02021132        0x2 ff
  .rodata.str1.4
-                0x02021144      0x112 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
+                0x02021134      0x112 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
                                 0x130 (size before relaxing)
  .rodata.str1.4
                 0x00000000        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
  .rodata.str1.4
                 0x00000000       0x30 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
- *fill*         0x02021256        0x2 ff
+ *fill*         0x02021246        0x2 ff
  .rodata.str1.4
-                0x02021258        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
+                0x02021248        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
  *(.gnu.linkonce.r*)
-                0x02021260                . = ALIGN (0x4)
+                0x02021250                . = ALIGN (0x4)
 
-.rel.dyn        0x02021260        0x0
+.rel.dyn        0x02021250        0x0
  .rel.iplt      0x00000000        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x02021260                __exidx_start = .
+                0x02021250                __exidx_start = .
 
 ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x02021260                __exidx_end = .
-                0x02021260                . = ALIGN (0x4)
-                0x02021260                PROVIDE (__preinit_array_start, .)
+                0x02021250                __exidx_end = .
+                0x02021250                . = ALIGN (0x4)
+                0x02021250                PROVIDE (__preinit_array_start, .)
 
 .preinit_array
  *(.preinit_array)
-                0x02021260                PROVIDE (__preinit_array_end, .)
-                0x02021260                PROVIDE (__init_array_start, .)
+                0x02021250                PROVIDE (__preinit_array_end, .)
+                0x02021250                PROVIDE (__init_array_start, .)
 
-.init_array     0x02021260        0x4
+.init_array     0x02021250        0x4
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x02021260        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
-                0x02021264                PROVIDE (__init_array_end, .)
-                0x02021264                PROVIDE (__fini_array_start, .)
+ .init_array    0x02021250        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+                0x02021254                PROVIDE (__init_array_end, .)
+                0x02021254                PROVIDE (__fini_array_start, .)
 
-.fini_array     0x02021264        0x4
+.fini_array     0x02021254        0x4
  *(.fini_array)
- .fini_array    0x02021264        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+ .fini_array    0x02021254        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
  *(SORT(.fini_array.*))
-                0x02021268                PROVIDE (__fini_array_end, .)
+                0x02021258                PROVIDE (__fini_array_end, .)
 
-.ctors          0x02021268        0x0
+.ctors          0x02021258        0x0
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x02021268                . = ALIGN (0x4)
+                0x02021258                . = ALIGN (0x4)
 
-.dtors          0x02021268        0x0
+.dtors          0x02021258        0x0
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x02021268                . = ALIGN (0x4)
+                0x02021258                . = ALIGN (0x4)
 
-.eh_frame       0x02021268        0x4
+.eh_frame       0x02021258        0x4
  *(.eh_frame)
- .eh_frame      0x02021268        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
- .eh_frame      0x02021268        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
-                0x0202126c                . = ALIGN (0x4)
+ .eh_frame      0x02021258        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+ .eh_frame      0x02021258        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
+                0x0202125c                . = ALIGN (0x4)
 
 .gcc_except_table
-                0x0202126c        0x0
+                0x0202125c        0x0
  *(.gcc_except_table)
-                0x0202126c                . = ALIGN (0x4)
+                0x0202125c                . = ALIGN (0x4)
 
-.jcr            0x0202126c        0x4
+.jcr            0x0202125c        0x4
  *(.jcr)
- .jcr           0x0202126c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
- .jcr           0x0202126c        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
+ .jcr           0x0202125c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+ .jcr           0x0202125c        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
 
 .got
  *(.got.plt)
  *(.got)
  *(.rel.got)
 
-.ewram          0x02021270        0x0
-                0x02021270                __ewram_start = ABSOLUTE (.)
+.ewram          0x02021260        0x0
+                0x02021260                __ewram_start = ABSOLUTE (.)
  *(.ewram)
  *ewram.*(.text)
-                0x02021270                . = ALIGN (0x4)
+                0x02021260                . = ALIGN (0x4)
 
-.data           0x02021270      0xb58
-                0x02021270                __data_start = ABSOLUTE (.)
+.data           0x02021260      0xb58
+                0x02021260                __data_start = ABSOLUTE (.)
  *(.data)
- .data          0x02021270        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
- .data          0x02021270        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
- .data          0x02021270        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
-                0x02021270                __dso_handle
- .data          0x02021274        0x0 down.o
- .data          0x02021274        0x0 up.o
- .data          0x02021274        0x0 croutine.o
- .data          0x02021274        0x0 list.o
- .data          0x02021274        0x0 queue.o
- .data          0x02021274        0x4 tasks.o
- .data          0x02021278        0x4 card_spi.o
- .data          0x0202127c        0x8 gdbStub.o
-                0x02021280                pRegisters
- .data          0x02021284        0x0 heap_3.o
- .data          0x02021284        0x4 port.o
- .data          0x02021288        0x4 portISR.o
-                0x02021288                ulCriticalNesting
- .data          0x0202128c       0x34 sevencore_io.o
- .data          0x020212c0        0x4 Exp_Homework.o
- .data          0x020212c4        0x4 Exp_Sample.o
- .data          0x020212c8        0x4 main.o
- .data          0x020212cc        0x0 gdbStubAsm.o
- .data          0x020212cc        0x0 port_asm.o
- .data          0x020212cc       0x60 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
-                0x020212cc                bgScrollTable
-                0x020212ec                bgTransform
-                0x0202130c                bgControl
- .data          0x0202132c       0x64 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x0202132c                currentConsole
-                0x02021330                defaultConsole
- .data          0x02021390        0xc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
-                0x02021390                decomStream
- .data          0x0202139c        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
- .data          0x0202139c        0x3 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
- .data          0x0202139f        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
- .data          0x0202139f        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
- .data          0x0202139f        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
- *fill*         0x0202139f        0x1 ff
- .data          0x020213a0        0x4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
- .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .data          0x020213a4       0x10 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x020213a4                fifo_buffer_free
-                0x020213a8                fifo_freewords
-                0x020213ac                fifo_send_queue
-                0x020213b0                fifo_receive_queue
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivsi3.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divsi3.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_dvmd_tls.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_muldi3.o)
- .data          0x020213b4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-bsearch.o)
- *fill*         0x020213b4        0x4 ff
- .data          0x020213b8      0x430 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
-                0x020213b8                _impure_ptr
- .data          0x020217e8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
- .data          0x020217e8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
- .data          0x020217e8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
- .data          0x020217e8      0x410 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
-                0x020217e8                __malloc_av_
-                0x02021bf0                __malloc_sbrk_base
-                0x02021bf4                __malloc_trim_threshold
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memcpy-stub.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memset.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mlock.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-realloc.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-reallocr.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-setvbuf.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-siscanf.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sprintf.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-stdio.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcat.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcpy.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlen.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncpy.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ungetc.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcrtomb.o)
- .data          0x02021bf8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsrtombs.o)
- .data          0x02021bf8        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wctomb_r.o)
-                0x02021bf8                __wctomb
- .data          0x02021bfc        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wsetup.o)
- .data          0x02021bfc        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
-                0x02021bfc                __ctype_ptr__
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fflush.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-findfp.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fputwc.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-freer.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fvwrite.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fwalk.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iswspace.o)
- .data          0x02021c00        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
- .data          0x02021c00      0x17c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
-                0x02021c00                __default_locale
-                0x02021d20                __mb_cur_max
- .data          0x02021d7c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-makebuf.o)
- .data          0x02021d7c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
- .data          0x02021d7c        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
-                0x02021d7c                __mbtowc
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memchr-stub.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memmove.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sccl.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-s_fpclassify.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcasecmp.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strchr.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcmp.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlcpy.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncasecmp.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncmp.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoll_r.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtol.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoull_r.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoul.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wbuf.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsnrtombs.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-callocr.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fclose.o)
- .data          0x02021d80        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-getenv_r.o)
- .data          0x02021d80        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-environ.o)
-                0x02021d80                environ
- .data          0x02021d84        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-envlock.o)
- .data          0x02021d84       0x44 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
-                0x02021d88                devoptab_list
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(close.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(fstat.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(isatty.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(lseek.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(read.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(sbrk.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(write.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(malloc_vars.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(build_argv.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(syscall_support.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(handle_manager.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_addsubdf3.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_muldivdf3.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_cmpdf2.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_fixdfsi.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_aeabi_uldivmod.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(bpabi.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divdi3.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivdi3.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_clzsi2.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-errno.o)
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
- .data          0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
+ .data          0x02021260        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
+ .data          0x02021260        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
+ .data          0x02021260        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+                0x02021260                __dso_handle
+ .data          0x02021264        0x0 down.o
+ .data          0x02021264        0x0 up.o
+ .data          0x02021264        0x0 croutine.o
+ .data          0x02021264        0x0 list.o
+ .data          0x02021264        0x0 queue.o
+ .data          0x02021264        0x4 tasks.o
+ .data          0x02021268        0x4 card_spi.o
+ .data          0x0202126c        0x8 gdbStub.o
+                0x02021270                pRegisters
+ .data          0x02021274        0x0 heap_3.o
+ .data          0x02021274        0x4 port.o
+ .data          0x02021278        0x4 portISR.o
+                0x02021278                ulCriticalNesting
+ .data          0x0202127c       0x34 sevencore_io.o
+ .data          0x020212b0        0x4 Exp_Homework.o
+ .data          0x020212b4        0x4 Exp_Sample.o
+ .data          0x020212b8        0x4 main.o
+ .data          0x020212bc        0x0 gdbStubAsm.o
+ .data          0x020212bc        0x0 port_asm.o
+ .data          0x020212bc       0x60 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
+                0x020212bc                bgScrollTable
+                0x020212dc                bgTransform
+                0x020212fc                bgControl
+ .data          0x0202131c       0x64 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x0202131c                currentConsole
+                0x02021320                defaultConsole
+ .data          0x02021380        0xc /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
+                0x02021380                decomStream
+ .data          0x0202138c        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
+ .data          0x0202138c        0x3 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .data          0x0202138f        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
+ .data          0x0202138f        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
+ .data          0x0202138f        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
+ *fill*         0x0202138f        0x1 ff
+ .data          0x02021390        0x4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
+ .data          0x02021394        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .data          0x02021394       0x10 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x02021394                fifo_buffer_free
+                0x02021398                fifo_freewords
+                0x0202139c                fifo_send_queue
+                0x020213a0                fifo_receive_queue
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivsi3.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divsi3.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_dvmd_tls.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_muldi3.o)
+ .data          0x020213a4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-bsearch.o)
+ *fill*         0x020213a4        0x4 ff
+ .data          0x020213a8      0x430 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
+                0x020213a8                _impure_ptr
+ .data          0x020217d8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
+ .data          0x020217d8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
+ .data          0x020217d8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
+ .data          0x020217d8      0x410 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
+                0x020217d8                __malloc_av_
+                0x02021be0                __malloc_sbrk_base
+                0x02021be4                __malloc_trim_threshold
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memcpy-stub.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memset.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mlock.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-realloc.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-reallocr.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-setvbuf.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-siscanf.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sprintf.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-stdio.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcat.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcpy.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlen.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncpy.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ungetc.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcrtomb.o)
+ .data          0x02021be8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsrtombs.o)
+ .data          0x02021be8        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wctomb_r.o)
+                0x02021be8                __wctomb
+ .data          0x02021bec        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wsetup.o)
+ .data          0x02021bec        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
+                0x02021bec                __ctype_ptr__
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fflush.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-findfp.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fputwc.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-freer.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fvwrite.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fwalk.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iswspace.o)
+ .data          0x02021bf0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
+ .data          0x02021bf0      0x17c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
+                0x02021bf0                __default_locale
+                0x02021d10                __mb_cur_max
+ .data          0x02021d6c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-makebuf.o)
+ .data          0x02021d6c        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
+ .data          0x02021d6c        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
+                0x02021d6c                __mbtowc
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memchr-stub.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memmove.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sccl.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-s_fpclassify.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcasecmp.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strchr.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcmp.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlcpy.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncasecmp.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncmp.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoll_r.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtol.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoull_r.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoul.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wbuf.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsnrtombs.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-callocr.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fclose.o)
+ .data          0x02021d70        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-getenv_r.o)
+ .data          0x02021d70        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-environ.o)
+                0x02021d70                environ
+ .data          0x02021d74        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-envlock.o)
+ .data          0x02021d74       0x44 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
+                0x02021d78                devoptab_list
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(close.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(fstat.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(isatty.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(lseek.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(read.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(sbrk.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(write.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(malloc_vars.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(build_argv.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(syscall_support.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(handle_manager.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_addsubdf3.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_muldivdf3.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_cmpdf2.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_fixdfsi.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_aeabi_uldivmod.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(bpabi.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divdi3.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivdi3.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_clzsi2.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-errno.o)
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
+ .data          0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
  *(.data.*)
  *(.gnu.linkonce.d*)
-                0x02021dc8                . = ALIGN (0x4)
-                0x02021dc8                __data_end = ABSOLUTE (.)
-                0x02021dc8                __dtcm_lma = .
-                0x02021dc8                __bss_vma = .
+                0x02021db8                . = ALIGN (0x4)
+                0x02021db8                __data_end = ABSOLUTE (.)
+                0x02021db8                __dtcm_lma = .
+                0x02021db8                __bss_vma = .
 
-.igot.plt       0x02021dc8        0x0
+.igot.plt       0x02021db8        0x0
  .igot.plt      0x00000000        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
 
 .tm_clone_table
-                0x02021dc8        0x0
+                0x02021db8        0x0
  .tm_clone_table
-                0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+                0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
  .tm_clone_table
-                0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
+                0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
 
-.dtcm           0x0b000000        0x0 load address 0x02021dc8
+.dtcm           0x0b000000        0x0 load address 0x02021db8
  *(.dtcm)
  *(.dtcm.*)
                 0x0b000000                . = ALIGN (0x4)
                 0x0b000000                __dtcm_end = ABSOLUTE (.)
-                0x02021dc8                __itcm_lma = (__dtcm_lma + SIZEOF (.dtcm))
+                0x02021db8                __itcm_lma = (__dtcm_lma + SIZEOF (.dtcm))
 
-.itcm           0x01000100      0x194 load address 0x02021dc8
+.itcm           0x01000100      0x194 load address 0x02021db8
  *(.itcm)
  .itcm          0x01000100       0xc8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
                 0x01000100                irqTable
@@ -1282,9 +1282,9 @@ ARM.exidx
  *itcm.*(.text)
                 0x01000294                . = ALIGN (0x4)
                 0x01000294                __itcm_end = ABSOLUTE (.)
-                0x02021f5c                __vectors_lma = (__itcm_lma + SIZEOF (.itcm))
+                0x02021f4c                __vectors_lma = (__itcm_lma + SIZEOF (.itcm))
 
-.vectors        0x01000000        0x0 load address 0x02021f5c
+.vectors        0x01000000        0x0 load address 0x02021f4c
  *(.vectors)
  *vectors.*(.text)
                 0x01000000                . = ALIGN (0x4)
@@ -1297,196 +1297,196 @@ ARM.exidx
                 0x0b000000                . = ALIGN (0x4)
                 0x0b000000                __sbss_end = ABSOLUTE (.)
 
-.bss            0x02021dc8     0x465c
-                0x02021dc8                __bss_start = ABSOLUTE (.)
-                0x02021dc8                __bss_start__ = ABSOLUTE (.)
+.bss            0x02021db8     0x465c
+                0x02021db8                __bss_start = ABSOLUTE (.)
+                0x02021db8                __bss_start__ = ABSOLUTE (.)
  *(.dynbss)
  *(.gnu.linkonce.b*)
  *(.bss*)
- .bss           0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
- .bss           0x02021dc8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
- .bss           0x02021dc8       0x1c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
- .bss           0x02021de4        0x0 down.o
- .bss           0x02021de4        0x0 up.o
- .bss           0x02021de4       0x80 croutine.o
-                0x02021e50                pxCurrentCoRoutine
- .bss           0x02021e64        0x0 list.o
- .bss           0x02021e64        0x0 queue.o
- .bss           0x02021e64     0x14cc tasks.o
-                0x02021e64                pxCurrentTCB
- .bss           0x02023330        0x8 card_spi.o
- .bss           0x02023338     0x1050 gdbStub.o
-                0x02024338                regMem
- .bss           0x02024388        0x0 heap_3.o
- .bss           0x02024388        0x0 port.o
- .bss           0x02024388        0x0 portISR.o
- .bss           0x02024388       0x70 sevencore_io.o
- .bss           0x020243f8        0x0 Exp_Homework.o
- .bss           0x020243f8        0x0 Exp_Sample.o
- .bss           0x020243f8        0x0 main.o
- .bss           0x020243f8        0x0 gdbStubAsm.o
- .bss           0x020243f8        0x0 port_asm.o
- .bss           0x020243f8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
- .bss           0x020243f8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
- .bss           0x020243f8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
- .bss           0x020243f8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
- .bss           0x020243f8        0x6 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
- .bss           0x020243fe        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
- .bss           0x020243fe        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
- .bss           0x020243fe        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
- *fill*         0x020243fe        0x2 00
- .bss           0x02024400        0x8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
- .bss           0x02024408        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .bss           0x02024408        0x8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x0202440c                processing
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
- .bss           0x02024410        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
- .bss           0x02024410        0x4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivsi3.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divsi3.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_dvmd_tls.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_muldi3.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-bsearch.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
- .bss           0x02024414        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
- .bss           0x02024414       0x34 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
-                0x02024414                __malloc_top_pad
-                0x02024418                __malloc_current_mallinfo
-                0x02024440                __malloc_max_sbrked_mem
-                0x02024444                __malloc_max_total_mem
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memcpy-stub.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memset.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mlock.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-realloc.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-reallocr.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-setvbuf.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-siscanf.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sprintf.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-stdio.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcat.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcpy.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlen.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncpy.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ungetc.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcrtomb.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsrtombs.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wctomb_r.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wsetup.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fflush.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-findfp.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fputwc.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-freer.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fvwrite.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fwalk.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iswspace.o)
- .bss           0x02024448        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
- .bss           0x02024448      0x2b8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
-                0x020246f4                _PathLocale
-                0x020246f8                __mlocale_changed
-                0x020246fc                __nlocale_changed
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-makebuf.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memchr-stub.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memmove.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sccl.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-s_fpclassify.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcasecmp.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strchr.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcmp.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlcpy.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncasecmp.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncmp.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoll_r.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtol.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoull_r.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoul.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wbuf.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsnrtombs.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-callocr.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fclose.o)
- .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-getenv_r.o)
- .bss           0x02024700        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-environ.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-envlock.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(close.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(fstat.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(isatty.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(lseek.o)
- .bss           0x02024704        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(read.o)
- .bss           0x02024704        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(sbrk.o)
- .bss           0x02024708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
- .bss           0x02024708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(write.o)
- .bss           0x02024708        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(malloc_vars.o)
-                0x02024708                fake_heap_start
-                0x0202470c                fake_heap_end
- .bss           0x02024710        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(build_argv.o)
- .bss           0x02024710        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(syscall_support.o)
-                0x02024710                __syscalls
- .bss           0x02024718     0x1000 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(handle_manager.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_addsubdf3.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_muldivdf3.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_cmpdf2.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_fixdfsi.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_aeabi_uldivmod.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(bpabi.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divdi3.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivdi3.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_clzsi2.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-errno.o)
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
- .bss           0x02025718        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
+ .bss           0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o
+ .bss           0x02021db8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crti.o
+ .bss           0x02021db8       0x1c /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtbegin.o
+ .bss           0x02021dd4        0x0 down.o
+ .bss           0x02021dd4        0x0 up.o
+ .bss           0x02021dd4       0x80 croutine.o
+                0x02021e40                pxCurrentCoRoutine
+ .bss           0x02021e54        0x0 list.o
+ .bss           0x02021e54        0x0 queue.o
+ .bss           0x02021e54     0x14cc tasks.o
+                0x02021e54                pxCurrentTCB
+ .bss           0x02023320        0x8 card_spi.o
+ .bss           0x02023328     0x1050 gdbStub.o
+                0x02024328                regMem
+ .bss           0x02024378        0x0 heap_3.o
+ .bss           0x02024378        0x0 port.o
+ .bss           0x02024378        0x0 portISR.o
+ .bss           0x02024378       0x70 sevencore_io.o
+ .bss           0x020243e8        0x0 Exp_Homework.o
+ .bss           0x020243e8        0x0 Exp_Sample.o
+ .bss           0x020243e8        0x0 main.o
+ .bss           0x020243e8        0x0 gdbStubAsm.o
+ .bss           0x020243e8        0x0 port_asm.o
+ .bss           0x020243e8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
+ .bss           0x020243e8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+ .bss           0x020243e8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(decompress.o)
+ .bss           0x020243e8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptions.o)
+ .bss           0x020243e8        0x6 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .bss           0x020243ee        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(sassert.o)
+ .bss           0x020243ee        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(touch.o)
+ .bss           0x020243ee        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(trig.o)
+ *fill*         0x020243ee        0x2 00
+ .bss           0x020243f0        0x8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
+ .bss           0x020243f8        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .bss           0x020243f8        0x8 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x020243fc                processing
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(syscalls.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(exceptionHandler.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+ .bss           0x02024400        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(dynamicArray.o)
+ .bss           0x02024400        0x4 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(system.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(video.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivsi3.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divsi3.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_dvmd_tls.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_muldi3.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-bsearch.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-impure.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-init.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iprintf.o)
+ .bss           0x02024404        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-malloc.o)
+ .bss           0x02024404       0x34 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mallocr.o)
+                0x02024404                __malloc_top_pad
+                0x02024408                __malloc_current_mallinfo
+                0x02024430                __malloc_max_sbrked_mem
+                0x02024434                __malloc_max_total_mem
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memcpy-stub.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memset.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mlock.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-realloc.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-reallocr.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-setvbuf.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-siscanf.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sprintf.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-stdio.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcat.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcpy.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlen.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncpy.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiscanf.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfprintf.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ungetc.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-vfiprintf.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcrtomb.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsrtombs.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wctomb_r.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wsetup.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-ctype_.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-dtoa.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fflush.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-findfp.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fputwc.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-freer.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fvwrite.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fwalk.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-iswspace.o)
+ .bss           0x02024438        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-jp2uc.o)
+ .bss           0x02024438      0x2b8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-locale.o)
+                0x020246e4                _PathLocale
+                0x020246e8                __mlocale_changed
+                0x020246ec                __nlocale_changed
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-makebuf.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbrtowc.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mbtowc_r.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memchr-stub.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-memmove.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-mprec.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-sccl.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-s_fpclassify.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcasecmp.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strchr.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strcmp.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strlcpy.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncasecmp.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strncmp.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoll_r.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtol.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoull_r.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-strtoul.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-svfiprintf.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wbuf.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-wcsnrtombs.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-callocr.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-fclose.o)
+ .bss           0x020246f0        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-getenv_r.o)
+ .bss           0x020246f0        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-environ.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-envlock.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(iosupport.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(close.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(fstat.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(isatty.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(lseek.o)
+ .bss           0x020246f4        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(read.o)
+ .bss           0x020246f4        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(sbrk.o)
+ .bss           0x020246f8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
+ .bss           0x020246f8        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(write.o)
+ .bss           0x020246f8        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(malloc_vars.o)
+                0x020246f8                fake_heap_start
+                0x020246fc                fake_heap_end
+ .bss           0x02024700        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(build_argv.o)
+ .bss           0x02024700        0x8 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(syscall_support.o)
+                0x02024700                __syscalls
+ .bss           0x02024708     0x1000 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(handle_manager.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_addsubdf3.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_muldivdf3.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_cmpdf2.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_arm_fixdfsi.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(bpabi.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_divdi3.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_udivdi3.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/libgcc.a(_clzsi2.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libg.a(lib_a-errno.o)
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtend.o
+ .bss           0x02025708        0x0 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/thumb/crtn.o
  *(COMMON)
- COMMON         0x02025718       0xd0 gdbStub.o
-                0x02025718                altRegisters
-                0x02025780                registers
- COMMON         0x020257e8        0x4 sevencore_io.o
-                0x020257e8                KeyQueue
- COMMON         0x020257ec      0x148 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
-                0x020257ec                bgState
-                0x0202592c                bgIsTextLut
- COMMON         0x02025934       0x5c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x02025934                currentCopy
- COMMON         0x02025990       0x4c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
-                0x02025990                glGlobalData
- COMMON         0x020259dc        0x1 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
-                0x020259dc                __dsimode
- *fill*         0x020259dd        0x3 00
- COMMON         0x020259e0      0xa40 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x020259e0                fifo_datamsg_data
-                0x02025a20                fifo_buffer
-                0x02026220                fifo_value32_func
-                0x02026260                fifo_address_func
-                0x020262a0                fifo_value32_data
-                0x020262e0                fifo_value32_queue
-                0x02026320                fifo_data_queue
-                0x02026360                fifo_address_data
-                0x020263a0                fifo_datamsg_func
-                0x020263e0                fifo_address_queue
- COMMON         0x02026420        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
-                0x02026420                punixTime
-                0x02026424                . = ALIGN (0x4)
-                0x02026424                __bss_end__ = ABSOLUTE (.)
-                0x02026424                __end__ = ABSOLUTE (.)
+ COMMON         0x02025708       0xd0 gdbStub.o
+                0x02025708                altRegisters
+                0x02025770                registers
+ COMMON         0x020257d8        0x4 sevencore_io.o
+                0x020257d8                KeyQueue
+ COMMON         0x020257dc      0x148 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(background.o)
+                0x020257dc                bgState
+                0x0202591c                bgIsTextLut
+ COMMON         0x02025924       0x5c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x02025924                currentCopy
+ COMMON         0x02025980       0x4c /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(videoGL.o)
+                0x02025980                glGlobalData
+ COMMON         0x020259cc        0x1 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+                0x020259cc                __dsimode
+ *fill*         0x020259cd        0x3 00
+ COMMON         0x020259d0      0xa40 /home/hansung/ndsdev/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x020259d0                fifo_datamsg_data
+                0x02025a10                fifo_buffer
+                0x02026210                fifo_value32_func
+                0x02026250                fifo_address_func
+                0x02026290                fifo_value32_data
+                0x020262d0                fifo_value32_queue
+                0x02026310                fifo_data_queue
+                0x02026350                fifo_address_data
+                0x02026390                fifo_datamsg_func
+                0x020263d0                fifo_address_queue
+ COMMON         0x02026410        0x4 /home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/libsysbase.a(times.o)
+                0x02026410                punixTime
+                0x02026414                . = ALIGN (0x4)
+                0x02026414                __bss_end__ = ABSOLUTE (.)
+                0x02026414                __end__ = ABSOLUTE (.)
 
 .stab
  *(.stab)
