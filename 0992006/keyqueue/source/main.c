@@ -1,6 +1,6 @@
 #include "FreeRTOS.h"
 #include "task.h"
-#include "queue.h"
+#include "queue.h" // queue 우선순위를 위한 헤더
 #include <nds.h>
 #include <stdio.h>
 #include <time.h>
@@ -16,7 +16,7 @@ portTASK_FUNCTION(Key_Task, pvParameters);
 
 void InitDebug(void);
 
-xQueueHandle KeyQueue;
+xQueueHandle KeyQueue; // KQ 선언
 #define MAX_KEY_LOG		10
 
 int
@@ -33,7 +33,7 @@ main(void)
 					     tskIDLE_PRIORITY + 10,
 					     NULL);
 
-	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8));
+	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8)); // KQ 생성
 	// Error Processing Needed !
 
 	xTaskCreate(Exp_5_Task,

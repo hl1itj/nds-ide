@@ -59,7 +59,7 @@ void Exp_3_Homework(void)
     int state;
     int input;
 
-	printf("EXP_3_Homework GO! GO!\n");
+	printf("EXP_3_Homework_0892080\n");
 
 	state = 0;							// Initial State 0 : All LED Off
 	writeb_virtual_io(BARLED1, 0);
@@ -103,7 +103,7 @@ do_action:
 
  void short_action()//A2
 {
-	printf("< S >\n");
+	printf(" S \n");
 
 	if((led_state == 0x0000)){
 		led_state = 0x0080;
@@ -130,7 +130,7 @@ do_action:
 }
 void long_action()//A3
 {
-	printf("< L >\n");
+	printf(" L \n");
 	writeb_virtual_io(BARLED2, 0x0000);
 	writeb_virtual_io(BARLED1, 0xFFFF);
 	cur_barled = BARLED1;
@@ -139,7 +139,7 @@ void long_action()//A3
 }
  void double_short_action()//A4
 {
-	printf("< SS >\n");
+	printf(" SS \n");
 
 	if ((led_state == 0x0080) && (cur_barled == BARLED1)){
 		writeb_virtual_io(cur_barled, 0);
@@ -164,7 +164,7 @@ void long_action()//A3
 }
  void short_long_action()//A5
 {
-	printf("< SL >\n");
+	printf(" SL \n");
 	cur_barled = BARLED1;
 	led_state = 0x0004;
 	led_result_state = 0x80|0x40|0x20|0x10|0x08|0x04;
@@ -173,7 +173,7 @@ void long_action()//A3
 }
  void long_short_action()//A6
 {
-	printf("< LS >\n");
+	printf(" LS \n");
 	writeb_virtual_io(BARLED1, 0xFFFF);
 	writeb_virtual_io(BARLED2, 0xFFFF);
 	cur_barled = BARLED2;
@@ -182,7 +182,7 @@ void long_action()//A3
 }
 void double_long_action()//A7
 {
-	printf("< LL >\n");
+	printf(" LL \n");
 	writeb_virtual_io(BARLED1, 0);
 	writeb_virtual_io(BARLED2, 0);
 	cur_barled = BARLED1;
