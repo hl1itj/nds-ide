@@ -34,10 +34,13 @@ main(void)
 					     NULL);
 
 	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8));
+<<<<<<< HEAD
 	if(KeyQueue == NULL){
 		return 0;
 	}
 
+=======
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 	xTaskCreate(Exp_5_Task,
 					     (const signed char * const)"Exp_Task",
 					     2048,

@@ -91,7 +91,11 @@ void Exp_3_Homework(void) {
 	printf("Exp_3_Homework");
 
 	state = 0;
+<<<<<<< HEAD
 	barled = 0x0000;
+=======
+	barled = 0;
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 	writeb_virtual_io(BARLED1, 0);
 	writeb_virtual_io(BARLED2, 0);
 

@@ -9790,11 +9790,16 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SESSION 2012-10-18 13:27:11.129 -----------------------------------------------
+=======
+!SESSION 2012-10-24 13:08:27.741 -----------------------------------------------
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 eclipse.buildId=I20120608-1400
 java.version=1.7.0_07
 java.vendor=Oracle Corporation
 BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+<<<<<<< HEAD
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product
 Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -data /home/hansung/ndsdev/nds-ide/0892043 -product org.eclipse.epp.package.cpp.product
 
@@ -10607,6 +10612,241 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
 !ENTRY org.eclipse.core.resources 4 2 2012-10-18 13:43:43.319
+=======
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1c68f60,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1c68f60,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.MakeHandlersGo@ef2301,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.MakeHandlersGo@ef2301,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1e35093,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@bf1620,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@bf1620,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@145c07f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@60e2e9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@60e2e9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@d1658e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1628ead,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1628ead,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@18533db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@f8428,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@f8428,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@ad9377,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ac9409,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ac9409,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@12adbba,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@bfc646,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@bfc646,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@725da6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-10-24 13:09:01.022
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@6246c0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@6246c0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@12f0ad,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.core.resources 4 2 2012-10-24 13:09:44.688
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-3 configuration Default
@@ -10641,7 +10881,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:43:43.320
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:09:44.690
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10673,7 +10917,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:43:43.320
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:09:44.691
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10706,9 +10954,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-18 13:43:43.501
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-18 13:43:43.501
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-24 13:09:44.861
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-24 13:09:44.862
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-3'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-3 configuration Default
@@ -10743,7 +10997,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:43:43.501
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:09:44.862
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10775,7 +11033,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:43:43.502
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:09:44.862
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10808,7 +11070,11 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-18 13:46:24.615
+=======
+!ENTRY org.eclipse.core.resources 4 2 2012-10-24 13:10:10.604
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-3 configuration Default
@@ -10843,7 +11109,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:46:24.616
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:10:10.605
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10875,7 +11145,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:46:24.616
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:10:10.606
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10908,9 +11182,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-18 13:46:24.738
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-18 13:46:24.738
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-24 13:10:10.742
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-24 13:10:10.742
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-3'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-3 configuration Default
@@ -10945,7 +11225,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:46:24.738
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:10:10.743
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -10977,7 +11261,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:46:24.739
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:10:10.743
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -11010,7 +11298,11 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 2 2012-10-18 13:49:38.530
+=======
+!ENTRY org.eclipse.core.resources 4 2 2012-10-24 13:11:20.122
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-3 configuration Default
@@ -11045,7 +11337,11 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:49:38.531
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:11:20.122
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -11077,7 +11373,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:49:38.531
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:11:20.122
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -11110,9 +11410,15 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 75 2012-10-18 13:49:38.647
 !MESSAGE Errors occurred during the build.
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-18 13:49:38.647
+=======
+!ENTRY org.eclipse.core.resources 4 75 2012-10-24 13:11:20.249
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2012-10-24 13:11:20.249
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Errors running builder 'CDT Builder' on project 'Simple-IO-3'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Internal error building project Simple-IO-3 configuration Default
@@ -11147,6 +11453,7 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.internal.core.BuildRunnerHelper.refreshProject(BuildRunnerHelper.java:334)
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:49:38.647
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
@@ -11248,6 +11555,9 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.cdt.managedbuilder.core.ExternalBuildRunner.invokeExternalBuild(ExternalBuildRunner.java:133)
 	... 18 more
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:50:57.914
+=======
+!SUBENTRY 2 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:11:20.249
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -11279,7 +11589,11 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-18 13:50:57.914
+=======
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2012-10-24 13:11:20.250
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE Internal error building project Simple-IO-3 configuration Default
 !STACK 0
 java.lang.NullPointerException
@@ -11311,6 +11625,7 @@ java.lang.NullPointerException
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.core.resources 4 75 2012-10-18 13:50:58.056
 !MESSAGE Errors occurred during the build.
@@ -11420,12 +11735,35 @@ java.lang.NullPointerException
 !ENTRY org.eclipse.jface 2 0 2012-10-18 13:56:01.797
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+!SESSION 2012-11-01 14:58:39.619 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-11-01 15:36:26.192
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-01 15:37:09.204
+!MESSAGE Indexed 'keymatrix' (69 sources, 38 headers) in 4.62 sec: 3,160 declarations; 12,099 references; 260 unresolved inclusions; 0 syntax errors; 4,393 unresolved names (22.35%)
+
+!ENTRY org.eclipse.jface 2 0 2012-11-01 15:37:09.566
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.566
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for ALT+CTRL+I:
 Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@623d94,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@df7e76,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11433,17 +11771,29 @@ Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@623d94,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@df7e76,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.566
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1b8ece1,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@e79a5a,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11451,7 +11801,11 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1b8ece1,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@e79a5a,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11459,17 +11813,29 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1c7b4f8,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@146b01a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.566
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for F3:
 Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@3a2471,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1d3aacd,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11477,7 +11843,11 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@3a2471,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1d3aacd,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11485,17 +11855,29 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
 		Open an editor on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@12e9180,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1729f9f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.566
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@529630,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@4d9b22,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11503,7 +11885,11 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@529630,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@4d9b22,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11511,17 +11897,29 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@25cc4,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@10412e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.567
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for F4:
 Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1187e3b,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@73cb8b,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11529,7 +11927,11 @@ Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1187e3b,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@73cb8b,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11537,17 +11939,29 @@ Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@10774e0,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@382d94,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.567
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for CTRL+G:
 Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@8a363f,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@385f0b,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11555,7 +11969,11 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@8a363f,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@385f0b,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11563,17 +11981,29 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1ef6b9b,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@e809dd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.567
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for CTRL+SHIFT+G:
 Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@181a5b3,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1df91c3,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11581,7 +12011,11 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@181a5b3,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1df91c3,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11589,17 +12023,29 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@a592b9,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@da9d3e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.567
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for ALT+CTRL+H:
 Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@43b41e,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@898633,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11607,7 +12053,11 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@43b41e,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@898633,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11615,17 +12065,29 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
 		Open a call hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@e6354c,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2012-10-18 13:56:01.797
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@c98be1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-01 15:37:09.567
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 !MESSAGE A conflict occurred for CTRL+SHIFT+H:
 Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1b54140,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1fe7eee,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -11633,7 +12095,11 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@1b54140,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@1fe7eee,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -11641,7 +12107,84 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.MakeHandlersGo@ceffc9,
+=======
+		org.eclipse.ui.internal.MakeHandlersGo@13f3e55,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-01 15:38:42.504
+!MESSAGE Indexed 'keymatrix' (68 sources, 104 headers) in 7.40 sec: 7,566 declarations; 21,657 references; 17 unresolved inclusions; 12 syntax errors; 484 unresolved names (1.63%)
+!SESSION 2012-11-07 22:41:30.224 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-11-07 22:42:25.759
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-07 22:43:19.572
+!MESSAGE Indexed 'keyqueue' (68 sources, 38 headers) in 2.71 sec: 3,174 declarations; 12,056 references; 256 unresolved inclusions; 0 syntax errors; 4,401 unresolved names (22.42%)
+
+!ENTRY org.eclipse.jface 2 0 2012-11-07 23:43:19.938
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-07 23:43:19.938
+!MESSAGE A conflict occurred for ALT+ARROW_LEFT:
+Binding(ALT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.hover.backwardMacroExpansion,Back,
+		Step backward in macro expansions,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1b14b08,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(ALT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.backwardHistory,Backward History,
+		Move backward in the editor navigation history,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@117acda,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-07 23:43:19.938
+!MESSAGE A conflict occurred for ALT+ARROW_RIGHT:
+Binding(ALT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.hover.forwardMacroExpansion,Forward,
+		Step forward in macro expansions,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@b50451,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(ALT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.forwardHistory,Forward History,
+		Move forward in the editor navigation history,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@15547db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-07 23:43:19.938
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1b0a806,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.macroExpansionHoverScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1e07d99,
+>>>>>>> 81799c0281186b553d315be2415c49d21956d94e
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
