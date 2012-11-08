@@ -147,7 +147,7 @@ portTASK_FUNCTION(Key_Task, pvParameters)
 				xQueueSend(KeyQueue,&key, portMAX_DELAY);
 				sw_pressed=TRUE;
 			}
-			vTaskDelay(MSEC2TICK(30));
+			vTaskDelay(MSEC2TICK(10));
 	}
 	}
 }
