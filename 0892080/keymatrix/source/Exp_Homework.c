@@ -8,7 +8,7 @@
 
 void Exp_4_Homework_A(void) {
 	u8 key, scan = 0;
-	u8 present_mode = 1;
+	u8 present_mode = 0;
 	u8 present_key = FALSE;
 	u8 past_key[8] = { 123, 123, 123, 123, 123, 123, 123, 123 };
 	int i;
@@ -22,18 +22,16 @@ void Exp_4_Homework_A(void) {
 		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
 		switch (readb_virtual_io(PUSH_SW)) {
 		case VIRTUAL_SW_1:
-			if (present_mode == 1) {
+			if (count%2 == 1) {
+				count++;
 				for (i = 0; i < NUM_7SEG_LED; i++)
 					past_key[i] = 123;
-
-				present_mode = 2;
 				for (i = 0; i < NUM_7SEG_LED; i++)
 					writeb_virtual_io(SEG7LED, 0x80 + (i << 4));
-			} else if (present_mode == 2) {
+			} else {
+				count++;
 				for (i = 0; i < NUM_7SEG_LED; i++)
 					past_key[i] = 123;
-
-				present_mode = 1;
 				for (i = 0; i < NUM_7SEG_LED; i++)
 					writeb_virtual_io(SEG7LED, 0x80 + (i << 4));
 			}
@@ -65,7 +63,7 @@ void Exp_4_Homework_A(void) {
 			scan = 0;
 		if (present_key == FALSE) {
 			if (key < 16) {
-				if (present_mode == 1) {
+				if (count%2 == 0) {
 					for (i = 6; i >= 0; i--)
 						past_key[i + 1] = past_key[i];
 					past_key[0] = key;
