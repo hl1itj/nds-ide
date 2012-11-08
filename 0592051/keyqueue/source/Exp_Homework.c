@@ -88,7 +88,13 @@ Exp_5_Homework_B(void)
 		LED[i] = 0x80;
 	}
 
-	while (key != 0) {
+	while (1) {
+
+		if (NDS_SWITCH() & KEY_START) {
+			break;
+		}
+
+		writeb_virtual_io(BARLED1, led);
 
 		if (kbhit() == 1) {
 			key = getkey();
@@ -103,7 +109,7 @@ Exp_5_Homework_B(void)
 				writeb_virtual_io(SEG7LED, (0x00 + (0x10 * i)) + LED[7 - i]);
 			}
 		} else {
-			writeb_virtual_io(BARLED1, led);
+
 			if (change) {
 				if (led < 0x80) {
 					led *= 2;
@@ -119,14 +125,9 @@ Exp_5_Homework_B(void)
 					led *= 2;
 				}
 			}
-			vTaskDelay(MSEC2TICK(500) );
+			vTaskDelay(MSEC2TICK(500));
 		}
-		if (NDS_SWITCH() & KEY_START)
-			break;
-
 	}
-	while (NDS_SWITCH() & KEY_START)
-		vTaskDelay(MSEC2TICK(10) );
 }
 
 portTASK_FUNCTION(Key_Task, pvParameters)

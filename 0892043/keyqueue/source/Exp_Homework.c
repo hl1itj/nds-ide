@@ -57,10 +57,10 @@ void Exp_5_Homework_A(void) {
 			vTaskDelay(MSEC2TICK(10) );
 		}
 
-		for (i = 0; i < 8; i++) {
-			led[i] = led[i + 1];
+		for (i = 7; i > 0; i--) {
+			led[i] = led[i - 1];
 		}
-		led[7] = key;
+		led[0] = key;
 
 		writeb_virtual_io(SEG7LED, 0x70 + led[0]);
 		writeb_virtual_io(SEG7LED, 0x60 + led[1]);
@@ -124,10 +124,10 @@ void Exp_5_Homework_B(void) {
 		if (kbhit()) {
 			key = getkey();
 
-			for (i = 0; i < 8; i++) {
-				led[i] = led[i + 1];
+			for (i = 7; i > 0; i--) {
+				led[i] = led[i - 1];
 			}
-			led[7] = key;
+			led[0] = key;
 
 			writeb_virtual_io(SEG7LED, 0x70 + led[0]);
 			writeb_virtual_io(SEG7LED, 0x60 + led[1]);

@@ -8,7 +8,7 @@
 //	+ bitmap lz77 compressed
 //	Total size: 11948 = 11948
 //
-//	Time-stamp: 2012-11-01, 15:57:27
+//	Time-stamp: 2012-11-08, 15:18:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.10
 //	( http://www.coranac.com/projects/#grit )
 //

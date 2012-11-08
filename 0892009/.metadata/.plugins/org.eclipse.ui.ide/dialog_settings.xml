@@ -2,6 +2,6 @@
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
-		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 	</section>
 </section>

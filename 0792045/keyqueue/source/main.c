@@ -40,7 +40,7 @@ main(void)
 					     (const signed char * const)"Exp_Task",
 					     2048,
 					     (void *)NULL,
-					     tskIDLE_PRIORITY + 1,
+					     tskIDLE_PRIORITY + 10,
 					     NULL);
 
 

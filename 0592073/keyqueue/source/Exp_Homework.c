@@ -55,16 +55,14 @@ void Exp_5_Homework_A(void) {
 		if ((key = getkey()) == EXIT)
 			break;
 
-		if (input_key_count == NUM_7SEG_LED) {
-			for (i = NUM_7SEG_LED - 1; i > 0; i--) {
-				key_values[i] = key_values[i - 1];
-			}
-			key_values[0] = key;
-		} else {
-			key_values[input_key_count] = key;
-			input_key_count++;
+		for (i = NUM_7SEG_LED - 1; i > 0; i--) {
+			key_values[i] = key_values[i - 1];
 		}
 
+		key_values[0] = key;
+		if (input_key_count < NUM_7SEG_LED) {
+			input_key_count++;
+		}
 		for (i = 0; i < input_key_count; i++) {
 			writeb_virtual_io(SEG7LED,
 					0x70 - ((0x01 << 4) * i) + key_values[i]);
@@ -108,13 +106,11 @@ void Exp_5_Homework_B(void) {
 		if (kbhit() == 1) {
 			key = getkey();
 
-			if (input_key_count == NUM_7SEG_LED) {
-				for (i = NUM_7SEG_LED - 1; i > 0; i--) {
-					key_values[i] = key_values[i - 1];
-				}
-				key_values[0] = key;
-			} else {
-				key_values[input_key_count] = key;
+			for (i = NUM_7SEG_LED - 1; i > 0; i--) {
+				key_values[i] = key_values[i - 1];
+			}
+			key_values[0] = key;
+			if (input_key_count < NUM_7SEG_LED) {
 				input_key_count++;
 			}
 
@@ -122,10 +118,10 @@ void Exp_5_Homework_B(void) {
 				writeb_virtual_io(SEG7LED,
 						0x70 - ((0x01 << 4) * i) + key_values[i]);
 			}
-		}
 
+		}
 		if (NDS_SWITCH() & KEY_START)
-			break;
+						break;
 
 	}
 	key_init();
@@ -172,3 +168,4 @@ portTASK_FUNCTION(Key_Task, pvParameters) {
 		vTaskDelay(MSEC2TICK(20) );
 	}
 }
+

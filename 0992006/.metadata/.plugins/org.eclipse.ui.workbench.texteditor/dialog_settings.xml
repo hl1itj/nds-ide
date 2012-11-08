@@ -2,58 +2,26 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="313" key="DIALOG_WIDTH"/>
-<<<<<<< HEAD
-		<item value="253" key="DIALOG_Y_ORIGIN"/>
-		<item value="563" key="DIALOG_X_ORIGIN"/>
-=======
-		<item value="91" key="DIALOG_Y_ORIGIN"/>
-		<item value="339" key="DIALOG_X_ORIGIN"/>
->>>>>>> a55b633643f4014e2c226a2e8955c59927953c98
+		<item value="78" key="DIALOG_Y_ORIGIN"/>
 		<item value="440" key="DIALOG_HEIGHT"/>
+		<item value="276" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-<<<<<<< HEAD
-		<item value="&lt;S&gt;" key="selection"/>
+		<item value="200" key="selection"/>
 		<list key="findhistory">
-			<item value="&lt;S&gt;"/>
-			<item value="barled"/>
-			<item value="f_LED2_on"/>
-			<item value="f_lldClick"/>
-			<item value="f_lsdClick"/>
-			<item value="f_LED2_off"/>
-			<item value="f_sldClick"/>
-			<item value="f_ssdClick"/>
-		</list>
-		<list key="replacehistory">
-			<item value="&lt;Short&gt;"/>
-			<item value="led_state"/>
-			<item value="LED2_on"/>
-			<item value="Every_LED_off"/>
-			<item value="Every_LED_on"/>
-			<item value="LED2_off"/>
+			<item value="200"/>
+			<item value="f_sClick"/>
 			<item value="LED1_on"/>
-			<item value="f_LED2_off"/>
-=======
-		<item value="led_state" key="selection"/>
-		<list key="findhistory">
-			<item value="num"/>
-			<item value="0x80"/>
-			<item value="continue"/>
-			<item value="preposition"/>
-			<item value="libs"/>
+			<item value="&lt;ss&gt;"/>
 		</list>
 		<list key="replacehistory">
-			<item value="led_state"/>
-			<item value="(0x01 &lt;&lt; 7)"/>
-			<item value="location"/>
-			<item value="switches"/>
->>>>>>> a55b633643f4014e2c226a2e8955c59927953c98
+			<item value="LED1_on"/>
 		</list>
 	</section>
 </section>
