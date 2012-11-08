@@ -22,7 +22,7 @@ u8 Barled2_on = FALSE;
 
 static void LED2_on(void *p) {
 
-static void f_sClick(void *p) {
+static void LED1_on(void *p) {
 printf("<S>\n");
 if (Barled2_on == FALSE) {
 
