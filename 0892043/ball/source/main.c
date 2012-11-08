@@ -25,16 +25,11 @@ int main(void) {
 	init_virtual_io(ENABLE_SW | ENABLE_MATRIX);	// Enable Virtual LED's on Top Screen
 	//init_printf();							// Initialize Bottom Screen for printf()
 
-	xTaskCreate(Key_Task, (const signed char * const)"Key_Task", 2048,
-			(void *)NULL, tskIDLE_PRIORITY + 10, NULL);
-	xTaskCreate(Exp_Task, (const signed char * const)"Exp_Task", 2048,
-			(void *)NULL, tskIDLE_PRIORITY + 9, NULL);
-	struct parameters *p;
-	int i;
-
-	for (i = 0, p = Param; i < 6; i++, p++)
-		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024,
-				(void *)p, tskIDLE_PRIORITY + 5, NULL);
+	/*xTaskCreate(Key_Task, (const signed char * const)"Key_Task", 2048,
+	 (void *)NULL, tskIDLE_PRIORITY + 2, NULL);*/
+	/*xTaskCreate(Exp_Task, (const signed char * const)"Exp_Task", 2048,
+			(void *)NULL, tskIDLE_PRIORITY + 2, NULL);*/
+	Exp_Sample();
 
 	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8));
 	// Error Processing Needed !
@@ -56,13 +51,10 @@ void InitDebug(void) {
 
 static
 portTASK_FUNCTION(Exp_Task, pvParameters) {
-	videoSetMode(MODE_5_2D);
-	vramSetBankA(VRAM_A_MAIN_BG);
-	bgInit(3, BgType_Bmp16, BgSize_B16_256x256, 0, 0);
 
-	while (1) {
+
 		Exp_Sample();
-	}
+
 }
 // task add
 portTASK_FUNCTION(Key_Task, pvParameters) {
@@ -113,3 +105,4 @@ portTASK_FUNCTION(Key_Task, pvParameters) {
 		vTaskDelay(MSEC2TICK(30) );
 	}
 }
+

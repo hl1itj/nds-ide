@@ -43,6 +43,7 @@
 // define added 11/10/2011
 #define BG_GFX			((u16*)0x6000000)
 #define SCREEN_WIDTH	256
+#define SCREEN_HEIGHT 192
 
 static
 portTASK_FUNCTION(Ball_Task, pvParameters);
@@ -59,8 +60,8 @@ struct parameters Param[NUM_TASK] = {
 		{ "1", DIRECTION_RIGHT, 3, COLOR_RED, 50 }, { "2", DIRECTION_RIGHT, 6,
 				COLOR_RED, 10 }, { "3", DIRECTION_RIGHT, 9, COLOR_RED, 100 }, {
 				"4", DIRECTION_DOWN, 4, COLOR_GREEN, 20 }, { "5",
-				DIRECTION_DOWN, 8, COLOR_GREEN, 70 }, { "6", DIRECTION_DOWN, 12,
-				COLOR_GREEN, 150 }, };
+				DIRECTION_DOWN, 8, COLOR_GREEN, 70 }, { "6", DIRECTION_DOWN, 10,
+				COLOR_GREEN, 150 } };
 
 // fucntion added 11/10/2011
 void key_init(void) {
@@ -102,12 +103,14 @@ void Exp_Sample(void) {
 	struct parameters *p;
 	int i;
 
+	videoSetMode(MODE_5_2D);
+	vramSetBankA(VRAM_A_MAIN_BG);
+	bgInit(3, BgType_Bmp16, BgSize_B16_256x256, 0, 0);
+
 	for (i = 0, p = Param; i < NUM_TASK; i++, p++)
 		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024,
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
-	while (NDS_SWITCH() & KEY_START)
-		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
 portTASK_FUNCTION(Ball_Task, pvParameters) {
@@ -116,38 +119,55 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 
 	x = p->basePoint;
 	y = p->basePoint;
-	oldX = 0;
-	oldY = 0;
-
-	draw_my_box(x, y, p->color);
 
 	while (1) {
-		draw_my_box(oldX, oldY, COLOR_BLACK);
-
+		draw_my_box(x, y, p->color);
 		vTaskDelay(MSEC2TICK(300) );
+		draw_my_box(x, y, COLOR_BLACK);
+
+		/*	switch (p->direction) {
+		 case DIRECTION_RIGHT:
+		 x++;
+		 if (x == MAX_X - 1)
+		 p->direction = DIRECTION_LEFT;
+		 break;
+		 case DIRECTION_LEFT:
+		 x--;
+		 if (x == 0)
+		 p->direction = DIRECTION_RIGHT;
+		 break;
+		 case DIRECTION_DOWN:
+		 y++;
+		 if (y == MAX_Y - 1)
+		 p->direction = DIRECTION_UP;
+		 break;
+		 case DIRECTION_UP:
+		 y--;
+		 if (y == 0)
+		 p->direction = DIRECTION_DOWN;
+		 break;
+		 }*/
 
 		if (p->direction == DIRECTION_RIGHT) {
-			draw_my_box(x++, y, p->color);
-			if (x == 16)
+			x++;
+			if (x == MAX_X - 1)
 				p->direction = DIRECTION_LEFT;
+
 		} else if (p->direction == DIRECTION_LEFT) {
-			draw_my_box(x--, y, p->color);
-			if (x == 1)
+			x--;
+			if (x == 0)
 				p->direction = DIRECTION_RIGHT;
+
 		} else if (p->direction == DIRECTION_DOWN) {
-			draw_my_box(x, y--, p->color);
-			if (y == 16)
+			y++;
+			if (y == MAX_Y - 1)
 				p->direction = DIRECTION_UP;
-		}
-		else if (p->direction == DIRECTION_UP) {
-			draw_my_box(x, y++, p->color);
-			if (y == 1)
+		} else if (p->direction == DIRECTION_UP) {
+			y--;
+			if (y == 0)
 				p->direction = DIRECTION_DOWN;
 		}
-
 		vTaskDelay(MSEC2TICK(p->delay) );
 
-		oldX = x;
-		oldY = y;
 	}
 }
