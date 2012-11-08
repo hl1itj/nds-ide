@@ -7,7 +7,7 @@
 #include "sevencore_io.h"
 
 void Exp_4_Homework_A(void) {
-	u8 mode = FALSE, sw = TRUE, key, scan = 0,led[7];
+	u8 mode = FALSE, sw = TRUE, key, scan = 0,led[7],sw_pressed=FALSE,sw2;
 	int i, j = 0;
 
 	for (i = 0; i < NUM_7SEG_LED; i++)
@@ -30,10 +30,13 @@ void Exp_4_Homework_A(void) {
 			sw = TRUE;
 			break;
 		}
-
+		if(sw_pressed && (readb_virtual_io(KEY_MATRIX) != sw2 || !readb_virtual_io(KEY_MATRIX)))
+			sw_pressed = FALSE;
+		if (!sw_pressed) {
 		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
 		key = scan * 4;
-		switch (readb_virtual_io(KEY_MATRIX)) {
+		sw2=readb_virtual_io(KEY_MATRIX);
+		switch (sw2) {
 		case 8:
 			key += 1;
 			break;
@@ -70,11 +73,12 @@ void Exp_4_Homework_A(void) {
 				for (i = 7; i > 0; i--)
 					led[i] = led[i - 1];
 			}
+			sw_pressed=TRUE;
 		}
 
 		if (j != 8 && key != 255)
 			j++;
-
+		}
 		if (NDS_SWITCH() & KEY_START)
 			break;
 		vTaskDelay(MSEC2TICK(30) );
