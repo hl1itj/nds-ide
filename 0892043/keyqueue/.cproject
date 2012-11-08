@@ -45,6 +45,24 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="0.1964055793.2072418723" name="Exp_Homework.c" rcbsApplicability="disable" resourcePath="source/Exp_Homework.c" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.1719234354.1356332145">
+						<tool id="org.eclipse.cdt.build.core.settings.holder.1719234354.1356332145" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder.1719234354">
+							<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.257595349" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/libnds/include"/>
+								<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/devkitARM/arm-none-eabi/include"/>
+							</option>
+							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1116317738" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="0.1964055793.750354211" name="main.c" rcbsApplicability="disable" resourcePath="source/main.c" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.1719234354.626734396">
+						<tool id="org.eclipse.cdt.build.core.settings.holder.1719234354.626734396" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder.1153900715">
+							<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.461455024" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/libnds/include"/>
+								<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/devkitARM/arm-none-eabi/include"/>
+							</option>
+							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.365771946" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+						</tool>
+					</fileInfo>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
