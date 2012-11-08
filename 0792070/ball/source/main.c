@@ -45,8 +45,8 @@ static portTASK_FUNCTION(Exp_Task, pvParameters);
 static portTASK_FUNCTION(Ball_Task, pvParameters);
 portTASK_FUNCTION(Key_Task, pvParameters);
 void Exp_Sample(void);
-void Box_HORIZONTAL(int direction, int basePoint, u32 color, int delay);
-void Box_VERTICAL(int direction, int basePoint, u32 color, int delay);
+void BoxMove_HORIZONTAL(int direction, int basePoint, u32 color, int delay);
+void BoxMove_VERTICAL(int direction, int basePoint, u32 color, int delay);
 
 void InitDebug(void);
 
@@ -159,9 +159,11 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 		if (cnt < NUM_TASK) {
 			if (strcmp(p->taskname, "1") == 0 || strcmp(p->taskname, "2") == 0
 					|| strcmp(p->taskname, "3") == 0)
-				Box_HORIZONTAL(p->direction, p->basePoint, p->color, p->delay);
+				BoxMove_HORIZONTAL(p->direction, p->basePoint, p->color,
+						p->delay);
 			else
-				Box_VERTICAL(p->direction, p->basePoint, p->color, p->delay);
+				BoxMove_VERTICAL(p->direction, p->basePoint, p->color,
+						p->delay);
 			p++;
 			cnt++;
 		} else {
