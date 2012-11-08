@@ -53,7 +53,7 @@ static
 portTASK_FUNCTION(Exp_4_Task, pvParameters)
 {
 	while (1) {
-		//Exp_4_Sample_A();
+		Exp_4_Sample_A();
 		Exp_4_Homework_A();
 	}
 }
