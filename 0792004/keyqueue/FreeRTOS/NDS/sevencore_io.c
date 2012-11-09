@@ -1,7 +1,7 @@
 /*
  * Virutal_io.c
  *
- *  Created on: 2010. 5. 27 by Àü´öÁØ
+ *  Created on: 2010. 5. 27 by ï¿½ï¿½ï¿½ï¿½ï¿½
  *  Rewrite on: 2010. 10. 7 by Minsuk Lee
  */
 

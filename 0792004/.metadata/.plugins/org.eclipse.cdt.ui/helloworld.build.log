@@ -1,0 +1,6 @@
+22:46:39 **** Incremental Build of configuration Default for project helloworld ****
+make all 
+make: *** 타겟 `all'를 만들 규칙이 없음.  멈춤.
+
+22:46:39 Build Finished (took 80ms)
+
