@@ -22,7 +22,6 @@
 #define COLOR_RED       RGB(31,  0,  0) /* Bright Red  	*/
 #define COLOR_WHITE     RGB(31, 31, 31) /* Bright White */
 #define COLOR_BLACK     RGB( 0,  0,  0)
-#define COLOR_GREEN	   RGB(0,  31,  0) /* Bright Green */
 
 #define BOX_WIDTH	16
 #define BOX_HEIGHT	16
@@ -34,10 +33,6 @@
 #define SCREEN_WIDTH	256
 
 #define NUM_TASK     6
-#define DIRECTION_RIGHT 0
-#define DIRECTION_DOWN 1
-
-
 
 // fucntion added 11/10/2011
 void key_init(void) {
@@ -75,7 +70,6 @@ void draw_my_box(int pos_x, int pos_y, u16 color) {
 	}
 }
 
-
 void Exp_Sample(void) {
 	u8 key, old_key = -1;
 	int i;
@@ -86,17 +80,15 @@ void Exp_Sample(void) {
 			vTaskDelay(30);
 			continue;
 		}
-		/*
-		 key = getkey();
-		 if (key == old_key)
-		 continue;
-		 */
+
+		key = getkey();
+		if (key == old_key)
+			continue;
 
 		while (1) {
-			draw_my_box(key, 8, COLOR_RED);	 			// Draw a New Box
-		//	delay(300);
 			if (old_key >= 0)
 				draw_my_box(old_key, 8, COLOR_BLACK);// Erase the Previous Box
+			draw_my_box(key, 8, COLOR_RED);	 			// Draw a New Box
 			old_key = key;
 		}
 	}

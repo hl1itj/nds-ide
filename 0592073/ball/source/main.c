@@ -16,7 +16,9 @@
 
 #define NUM_TASK     6
 #define DIRECTION_RIGHT 0
-#define DIRECTION_DOWN 1
+#define DIRECTION_LEFT 1
+#define DIRECTION_DOWN 2
+#define DIRECTION_UP 3
 
 #define COLOR_RED       RGB(31,  0,  0) /* Bright Red  	*/
 #define COLOR_WHITE     RGB(31, 31, 31) /* Bright White */
@@ -24,14 +26,8 @@
 #define COLOR_GREEN	   RGB(0,  31,  0) /* Bright Green */
 
 static portTASK_FUNCTION(Exp_Task, pvParameters);
-
-static portTASK_FUNCTION(Ball_Task, pvParameters) {
-	struct parameters *p = (struct parameters *) pvParameters;
-}
+static portTASK_FUNCTION(Ball_Task, pvParameters);
 portTASK_FUNCTION(Key_Task, pvParameters);
-void Exp_Sample(void);
-
-void InitDebug(void);
 
 struct parameters {
 	char *taskname;
@@ -50,6 +46,11 @@ static struct parameters Param[NUM_TASK] = {
 		{ "6", DIRECTION_DOWN,  12, COLOR_GREEN, 150},
 };
 
+void Exp_Sample(void);
+void Exp_Homework(struct parameters *p);
+void InitDebug(void);
+
+
 int
 main(void)
 {
@@ -58,7 +59,7 @@ main(void)
 	InitDebug();
 	init_virtual_io(ENABLE_SW | ENABLE_MATRIX);	// Enable Virtual LED's on Top Screen
 	//init_printf();							// Initialize Bottom Screen for printf()
-
+/*
 	xTaskCreate(Key_Task,
 					     (const signed char * const)"Key_Task",
 					     2048,
@@ -71,10 +72,14 @@ main(void)
 					     (void *)NULL,
 					     tskIDLE_PRIORITY + 9,
 					     NULL);
-
+*/
 	for ( i = 0, p = Param; i < NUM_TASK; i++, p++) {
-		xTaskCreate(Ball_Task, (const signed char *)(p->taskname),
-				1024, (void *)p, tskIDLE_PRIORITY + 5, NULL);
+		xTaskCreate(Ball_Task,
+							(const signed char *)(p->taskname),
+							1024,
+							(void *)p,
+							tskIDLE_PRIORITY + 5,
+							NULL);
 	}
 
 	KeyQueue = xQueueCreate(MAX_KEY_LOG, sizeof(u8));
@@ -109,6 +114,18 @@ portTASK_FUNCTION(Exp_Task, pvParameters)
 	}
 }
 // task add
+portTASK_FUNCTION(Ball_Task, pvParameters)
+{
+	struct parameters *p = (struct parameters *) pvParameters;
+    videoSetMode(MODE_5_2D);
+    vramSetBankA(VRAM_A_MAIN_BG);
+    bgInit(3,BgType_Bmp16, BgSize_B16_256x256, 0, 0);
+
+	while (1) {
+		Exp_Homework(p);
+	}
+}
+
 portTASK_FUNCTION(Key_Task, pvParameters) {
 
 	u8 key, scan = 0;
