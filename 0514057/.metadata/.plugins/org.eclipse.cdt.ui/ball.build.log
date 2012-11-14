@@ -1,6 +1,6 @@
-21:09:05 **** Incremental Build of configuration Default for project ball ****
+03:41:53 **** Incremental Build of configuration Default for project ball ****
 make 
 make[1]: `/home/hansung/ndsdev/nds-ide/0514057/ball/ball.nds'는 이미 갱신되었습니다.
 
-21:09:05 Build Finished (took 74ms)
+03:41:53 Build Finished (took 69ms)
 
