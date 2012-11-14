@@ -115,38 +115,18 @@ void Exp_Sample(void) {
 
 portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *) pvParameters;
-	int x, y, oldX, oldY;
+
+	int x, y, prevX, prevY;
 
 	x = p->basePoint;
 	y = p->basePoint;
 
-	while (1) {
+	while(1) {
+		draw_my_box(prevX, prevY, COLOR_BLACK);
 		draw_my_box(x, y, p->color);
-		vTaskDelay(MSEC2TICK(300) );
-		draw_my_box(x, y, COLOR_BLACK);
+		vTaskDelay(MSEC2TICK(p->delay));
 
-		/*	switch (p->direction) {
-		 case DIRECTION_RIGHT:
-		 x++;
-		 if (x == MAX_X - 1)
-		 p->direction = DIRECTION_LEFT;
-		 break;
-		 case DIRECTION_LEFT:
-		 x--;
-		 if (x == 0)
-		 p->direction = DIRECTION_RIGHT;
-		 break;
-		 case DIRECTION_DOWN:
-		 y++;
-		 if (y == MAX_Y - 1)
-		 p->direction = DIRECTION_UP;
-		 break;
-		 case DIRECTION_UP:
-		 y--;
-		 if (y == 0)
-		 p->direction = DIRECTION_DOWN;
-		 break;
-		 }*/
+		prevX = x; prevY = y;
 
 		if (p->direction == DIRECTION_RIGHT) {
 			x++;
@@ -167,7 +147,6 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 			if (y == 0)
 				p->direction = DIRECTION_DOWN;
 		}
-		vTaskDelay(MSEC2TICK(p->delay) );
-
+		vTaskDelay(MSEC2TICK(300) );
 	}
 }
