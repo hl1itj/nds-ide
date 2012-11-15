@@ -29,6 +29,7 @@
 // define added 11/10/2011
 #define BG_GFX			((u16*)0x6000000)
 #define SCREEN_WIDTH	256
+#define SCREEN_HEIGHT 192
 
 struct parameters {
 	char *taskname;
