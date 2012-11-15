@@ -12,6 +12,11 @@ extern xQueueHandle KeyQueue;
 #define TO_LEFT 0
 #define TO_RIGHT 1
 
+#define TRUE 1
+#define FALSE 0
+
+u8 keypressed = FALSE;
+
 void key_init(void) {
 	int i;
 	u8 key;
@@ -54,7 +59,7 @@ void leftShift(u16 *seg7pos) {
 }
 
 void Exp_5_Homework_A(void) {
-	u8 key, prevkey = 255;
+	u8 key;
 	u16 seg7pos[8];
 	int i;
 
@@ -62,21 +67,21 @@ void Exp_5_Homework_A(void) {
 	initseg7pos(seg7pos);
 
 	while (1) {
-		key = getkey();
 
-		if (key == 0) {
-			init7SEG();
-			initseg7pos(seg7pos);
-			break;
-		}
+		if (!keypressed) {
+			key = getkey();
 
-		if (key < 16 && key != prevkey) {
+			if (key == 0) {
+				init7SEG();
+				initseg7pos(seg7pos);
+				break;
+			}
+
 			leftShift(seg7pos);
 			seg7pos[7] = key;
 
 			for (i = 0; i < NUM_7SEG_LED; i++)
 				writeb_virtual_io(SEG7LED, (i << 4) + seg7pos[i]);
-			prevkey = key;
 		}
 	}
 
@@ -86,7 +91,7 @@ void Exp_5_Homework_A(void) {
 
 void Exp_5_Homework_B(void) {
 	u8 led = 0x80, state = TO_RIGHT;
-	u8 key, prevkey = 255;
+	u8 key;
 	u16 seg7pos[8];
 	int i;
 
@@ -112,14 +117,12 @@ void Exp_5_Homework_B(void) {
 		if (kbhit()) {
 			key = getkey();
 
-			if (key < 16 && key != prevkey) {
-				leftShift(seg7pos);
-				seg7pos[7] = key;
+			leftShift(seg7pos);
+			seg7pos[7] = key;
 
-				for (i = 0; i < NUM_7SEG_LED; i++)
-					writeb_virtual_io(SEG7LED, (i << 4) + seg7pos[i]);
-				prevkey = key;
-			}
+			for (i = 0; i < NUM_7SEG_LED; i++)
+				writeb_virtual_io(SEG7LED, (i << 4) + seg7pos[i]);
+
 		}
 
 		if (NDS_SWITCH() & KEY_START) {
@@ -133,10 +136,11 @@ void Exp_5_Homework_B(void) {
 		vTaskDelay(MSEC2TICK(10) );
 }
 
-u8 readKey(u8 key, u8 scan) {
+u8 readKey(u8 key, u8 scan, u8 *inkey) {
 	key = scan * 4;
 
-	switch (readb_virtual_io(KEY_MATRIX)) {
+	*inkey = readb_virtual_io(KEY_MATRIX);
+	switch (*inkey) {
 	case 8:
 		key += 1;
 		break;
@@ -160,20 +164,26 @@ u8 readKey(u8 key, u8 scan) {
 }
 
 portTASK_FUNCTION(Key_Task, pvParameters) {
-	u8 key, prevKey = 255, scan = 0;
+	u8 key, scan = 0, prevkey;
 
 	portTickType xLastWakeTime = xTaskGetTickCount();
 
 	while (1) {
-		writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
-		key = readKey(key, scan);
-		scan++;
-		if (scan == 4)
-			scan = 0;
+		if (keypressed == TRUE
+				&& (readb_virtual_io(KEY_MATRIX) != prevkey
+						|| !readb_virtual_io(KEY_MATRIX)))
+			keypressed = FALSE;
 
-		if (key < 16 && key != prevKey) {
-			xQueueSend(KeyQueue, &key, 0);
-			prevKey = key;
+		if (!keypressed) {
+			writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
+			key = readKey(key, scan, &prevkey);
+			scan++;
+			if (scan == 4)
+				scan = 0;
+			if (key < 16) {
+				xQueueSend(KeyQueue, &key, 0);
+				keypressed = TRUE;
+			}
 		}
 
 		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(10) );
