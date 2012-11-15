@@ -153,22 +153,10 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 	bgInit(3, BgType_Bmp16, BgSize_B16_256x256, 0, 0);
 
 	struct parameters *p = (struct parameters *) pvParameters;
-	int cnt = 0;
 
-	while (1) {
-		if (cnt < NUM_TASK) {
-			if (strcmp(p->taskname, "1") == 0 || strcmp(p->taskname, "2") == 0
-					|| strcmp(p->taskname, "3") == 0)
-				BoxMove_HORIZONTAL(p->direction, p->basePoint, p->color,
-						p->delay);
-			else
-				BoxMove_VERTICAL(p->direction, p->basePoint, p->color,
-						p->delay);
-			p++;
-			cnt++;
-		} else {
-			cnt = 0;
-			p = Param;
-		}
-	}
+	if (strcmp(p->taskname, "1") == 0 || strcmp(p->taskname, "2") == 0
+			|| strcmp(p->taskname, "3") == 0)
+		BoxMove_HORIZONTAL(p->direction, p->basePoint, p->color, p->delay);
+	else
+		BoxMove_VERTICAL(p->direction, p->basePoint, p->color, p->delay);
 }
