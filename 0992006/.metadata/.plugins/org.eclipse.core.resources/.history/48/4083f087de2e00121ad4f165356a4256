@@ -102,7 +102,7 @@ void Exp_5_Homework_A(void) {
 //	 *
 //	 * kbhit() 필요 - 리턴값 0/1 - 0도 스크롤
 //	 * start누르면 실험 종료
-//	 * 반응 빠르게 구현하면 됨
+//	 * 반응 빠르게 구현하면 됨 - 이건 키 안눌려도 되나
 //	 * */
 //}
 void Exp_5_Homework_B(void) {
