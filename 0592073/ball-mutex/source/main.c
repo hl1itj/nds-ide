@@ -61,7 +61,6 @@ void InitDebug(void);
 void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
-// ���⿡ �ʿ��� �� ��ŭ�� Semaphore �ڵ� ����  <--------
 xSemaphoreHandle xSemaphore[9];
 
 int main(void) {
@@ -98,6 +97,7 @@ void draw_my_box(int pos_x, int pos_y, u16 color) {
 			*basePoint++ = pixel;
 	}
 }
+
 void vStartExpTasks(void) {
 	struct parameters *p;
 	int i;
@@ -111,7 +111,7 @@ void vStartExpTasks(void) {
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 	}
-	// ���⿡ �ʿ��� �� ��ŭ Semaphore �ʱ�ȭ (vSemaphoreCreateBinary) <--------
+
 	for (i = 0; i < (NUM_COL * NUM_ROW); i++) {
 		vSemaphoreCreateBinary(xSemaphore[i]);
 	}
@@ -132,30 +132,25 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct pos pos, prev_pos;
 	pos_init(&pos, p);
 
-	// each Ball's destination (x,y) set
 	while (1) {
-
-		// each Ball's crossing point && R Key is pressed  Semaphore take <--------
 		if ((NDS_SWITCH() & KEY_R)) {
 			if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
 				while (!xSemaphoreTake(xSemaphore[ (pos.x/4) + (pos.y-4) ], 0)) {
 
 				}
 			}
-
 		}
+
 		draw_my_box(prev_pos.x, prev_pos.y, COLOR_BLACK);	// ���� ��ġ ����
 		draw_my_box(pos.x, pos.y, p->color);		// �� ��ġ�� �׸�
 		vTaskDelay(MSEC2TICK(p->delay) );		// Delay
 
-		// ���⿡ �� Ball�� �������� ������, Semaphore Give <--------
 		if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
 			xSemaphoreGive(xSemaphore[ (pos.x / 4) + (pos.y-4) ]);
 		}
 
 		prev_pos = pos;
 
-		// ���� ��ġ ���  <----- ���� ���� ����
 		switch (p->direction) {
 		case DIRECTION_RIGHT:
 			if (pos.x < MAX_X - 1) {
