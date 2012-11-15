@@ -1,13 +1,13 @@
-13:49:06 **** Incremental Build of configuration Default for project ball-mutex ****
+13:59:25 **** Incremental Build of configuration Default for project ball-mutex ****
 make 
 main.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c -o main.o 
 In file included from /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c:11:0:
 linking ball-mutex.elf
-/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... ball-mutex.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
@@ -34,5 +34,5 @@ built ... ball-mutex.nds
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
 
-13:49:09 Build Finished (took 2s.694ms)
+13:59:27 Build Finished (took 2s.659ms)
 

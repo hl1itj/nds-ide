@@ -98,15 +98,18 @@ void vStartExpTasks(void) {
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 	// (vSemaphoreCreateBinary) <--------
-
-	for (i = 0; i < 9; i++)
-		vSemaphoreCreateBinary(xSemaphore[i]);
+	vSemaphoreCreateBinary(xSemaphore1);
+	vSemaphoreCreateBinary(xSemaphore2);
+	vSemaphoreCreateBinary(xSemaphore3);
+	vSemaphoreCreateBinary(xSemaphore4);
+	vSemaphoreCreateBinary(xSemaphore5);
+	vSemaphoreCreateBinary(xSemaphore6);
+	vSemaphoreCreateBinary(xSemaphore7);
+	vSemaphoreCreateBinary(xSemaphore8);
+	vSemaphoreCreateBinary(xSemaphore9);
 
 //	xSemaphore = xSemaphoreCreateMutex();
 }
-
-int xx[9] = { 4, 4, 4, 8, 8, 8, 10, 10, 10 };
-int yy[9] = { 3, 6, 9, 3, 6, 9, 3, 6, 9 };
 
 static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *) pvParameters;
@@ -121,21 +124,16 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	while (1) {
 		/*&& (NDS_SWITCH() & KEY_R)*/
 		// Semaphore take <--------
-		for (i = 0; i < 9; i++) {
-			if (xx[i] == x && yy[i] == y) {
-				while (!xSemaphoreTake(xSemaphore[i], (portTickType)0));
-					break;
-			}
-		}
+		if (x == 4 && y == 3)
+			while(!xSemaphoreTake(xSemaphore1, (portTickType)0))
+				break;
 
 		draw_my_box(prevX, prevY, COLOR_BLACK);
 		draw_my_box(x, y, p->color);
 		vTaskDelay(MSEC2TICK(p->delay) );
 
-		for (i = 0; i < 9; i++) {
-			if (xx[i] == x && yy[i] == y)
-				xSemaphoreGive(xSemaphore[i]);
-		}
+		if (x == 4 && y == 3)
+			xSemaphoreGive(xSemaphore1);
 
 		prevX = x;
 		prevY = y;

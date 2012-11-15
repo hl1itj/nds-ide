@@ -49,7 +49,15 @@ void InitDebug(void);
 void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
-xSemaphoreHandle xSemaphore[9];
+xSemaphoreHandle xSemaphore1;
+xSemaphoreHandle xSemaphore2;
+xSemaphoreHandle xSemaphore3;
+xSemaphoreHandle xSemaphore4;
+xSemaphoreHandle xSemaphore5;
+xSemaphoreHandle xSemaphore6;
+xSemaphoreHandle xSemaphore7;
+xSemaphoreHandle xSemaphore8;
+xSemaphoreHandle xSemaphore9;
 
 int main(void) {
 	InitDebug();
@@ -98,20 +106,22 @@ void vStartExpTasks(void) {
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 	// (vSemaphoreCreateBinary) <--------
-
-	for (i = 0; i < 9; i++)
-		vSemaphoreCreateBinary(xSemaphore[i]);
+	vSemaphoreCreateBinary(xSemaphore1);
+	vSemaphoreCreateBinary(xSemaphore2);
+	vSemaphoreCreateBinary(xSemaphore3);
+	vSemaphoreCreateBinary(xSemaphore4);
+	vSemaphoreCreateBinary(xSemaphore5);
+	vSemaphoreCreateBinary(xSemaphore6);
+	vSemaphoreCreateBinary(xSemaphore7);
+	vSemaphoreCreateBinary(xSemaphore8);
+	vSemaphoreCreateBinary(xSemaphore9);
 
 //	xSemaphore = xSemaphoreCreateMutex();
 }
 
-int xx[9] = { 4, 4, 4, 8, 8, 8, 10, 10, 10 };
-int yy[9] = { 3, 6, 9, 3, 6, 9, 3, 6, 9 };
-
 static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *) pvParameters;
 	int x, y, prevX, prevY;
-	int i;
 
 	x = p->basePoint;
 	y = p->basePoint;
@@ -121,21 +131,47 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	while (1) {
 		/*&& (NDS_SWITCH() & KEY_R)*/
 		// Semaphore take <--------
-		for (i = 0; i < 9; i++) {
-			if (xx[i] == x && yy[i] == y) {
-				while (!xSemaphoreTake(xSemaphore[i], (portTickType)0));
-					break;
-			}
-		}
+		if (x == 4 && y == 3)
+			xSemaphoreTake(xSemaphore1, (portTickType)0);
+		else if (x == 4 && y == 6)
+			xSemaphoreTake(xSemaphore2, (portTickType)0);
+		else if (x == 4 && y == 9)
+			xSemaphoreTake(xSemaphore3, (portTickType)0);
+		else if (x == 8 && y == 3)
+			xSemaphoreTake(xSemaphore4, (portTickType)0);
+		else if (x == 8 && y == 6)
+			xSemaphoreTake(xSemaphore5, (portTickType)0);
+		else if (x == 8 && y == 9)
+			xSemaphoreTake(xSemaphore6, (portTickType)0);
+		else if (x == 10 && y == 3)
+			xSemaphoreTake(xSemaphore7, (portTickType)0);
+		else if (x == 10 && y == 6)
+			xSemaphoreTake(xSemaphore8, (portTickType)0);
+		else if (x == 10 && y == 9)
+			xSemaphoreTake(xSemaphore9, (portTickType)0);
 
 		draw_my_box(prevX, prevY, COLOR_BLACK);
 		draw_my_box(x, y, p->color);
 		vTaskDelay(MSEC2TICK(p->delay) );
 
-		for (i = 0; i < 9; i++) {
-			if (xx[i] == x && yy[i] == y)
-				xSemaphoreGive(xSemaphore[i]);
-		}
+		if (x == 4 && y == 3)
+			xSemaphoreGive(xSemaphore1);
+		else if (x == 4 && y == 6)
+			xSemaphoreGive(xSemaphore2);
+		else if (x == 4 && y == 9)
+			xSemaphoreGive(xSemaphore3);
+		else if (x == 8 && y == 3)
+			xSemaphoreGive(xSemaphore4);
+		else if (x == 8 && y == 6)
+			xSemaphoreGive(xSemaphore5);
+		else if (x == 8 && y == 9)
+			xSemaphoreGive(xSemaphore6);
+		else if (x == 10 && y == 3)
+			xSemaphoreGive(xSemaphore7);
+		else if (x == 10 && y == 6)
+			xSemaphoreGive(xSemaphore8);
+		else if (x == 10 && y == 9)
+			xSemaphoreGive(xSemaphore9);
 
 		prevX = x;
 		prevY = y;
