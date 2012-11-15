@@ -149,12 +149,10 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 		vTaskDelay(MSEC2TICK(p->delay) );		// Delay
 
 		// ���⿡ �� Ball�� �������� ������, Semaphore Give <--------
-		if ((NDS_SWITCH() & KEY_R)) {
-			if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
-				xSemaphoreGive(xSemaphore[ (pos.x / 4) + (pos.y-4) ]);
-			}
-
+		if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
+			xSemaphoreGive(xSemaphore[ (pos.x / 4) + (pos.y-4) ]);
 		}
+
 		prev_pos = pos;
 
 		// ���� ��ġ ���  <----- ���� ���� ����
