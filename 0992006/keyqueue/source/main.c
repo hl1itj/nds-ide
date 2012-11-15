@@ -1,6 +1,6 @@
 #include "FreeRTOS.h"
 #include "task.h"
-#include "queue.h" // queue 우선순위를 위한 헤더
+#include "queue.h"
 #include <nds.h>
 #include <stdio.h>
 #include <time.h>
