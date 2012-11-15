@@ -49,7 +49,15 @@ void InitDebug(void);
 void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
-xSemaphoreHandle xSemaphore;
+xSemaphoreHandle xSemaphore1;
+xSemaphoreHandle xSemaphore2;
+xSemaphoreHandle xSemaphore3;
+xSemaphoreHandle xSemaphore4;
+xSemaphoreHandle xSemaphore5;
+xSemaphoreHandle xSemaphore6;
+xSemaphoreHandle xSemaphore7;
+xSemaphoreHandle xSemaphore8;
+xSemaphoreHandle xSemaphore9;
 
 int main(void) {
 	InitDebug();
@@ -98,7 +106,16 @@ void vStartExpTasks(void) {
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 	// (vSemaphoreCreateBinary) <--------
-	vSemaphoreCreateBinary(xSemaphore);
+	vSemaphoreCreateBinary(xSemaphore1);
+	vSemaphoreCreateBinary(xSemaphore2);
+	vSemaphoreCreateBinary(xSemaphore3);
+	vSemaphoreCreateBinary(xSemaphore4);
+	vSemaphoreCreateBinary(xSemaphore5);
+	vSemaphoreCreateBinary(xSemaphore6);
+	vSemaphoreCreateBinary(xSemaphore7);
+	vSemaphoreCreateBinary(xSemaphore8);
+	vSemaphoreCreateBinary(xSemaphore9);
+
 //	xSemaphore = xSemaphoreCreateMutex();
 }
 
@@ -112,67 +129,72 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	prevY = 0;
 
 	while (1) {
-
+		/*&& (NDS_SWITCH() & KEY_R)*/
 		// Semaphore take <--------
-		if ((x == 4 || x == 8 || x == 10) && (y == 3 || y == 6 || y == 9)
-		/*&& (NDS_SWITCH() & KEY_R)*/) {
-			if (xSemaphoreTake(xSemaphore, (portTickType)0)) {
+		if (x == 4 && y == 3)
+			xSemaphoreTake(xSemaphore1, (portTickType)0);
+		else if (x == 4 && y == 6)
+			xSemaphoreTake(xSemaphore2, (portTickType)0);
+		else if (x == 4 && y == 9)
+			xSemaphoreTake(xSemaphore3, (portTickType)0);
+		else if (x == 8 && y == 3)
+			xSemaphoreTake(xSemaphore4, (portTickType)0);
+		else if (x == 8 && y == 6)
+			xSemaphoreTake(xSemaphore5, (portTickType)0);
+		else if (x == 8 && y == 9)
+			xSemaphoreTake(xSemaphore6, (portTickType)0);
+		else if (x == 10 && y == 3)
+			xSemaphoreTake(xSemaphore7, (portTickType)0);
+		else if (x == 10 && y == 6)
+			xSemaphoreTake(xSemaphore8, (portTickType)0);
+		else if (x == 10 && y == 9)
+			xSemaphoreTake(xSemaphore9, (portTickType)0);
 
-				draw_my_box(prevX, prevY, COLOR_BLACK);
-				draw_my_box(x, y, p->color);
-				vTaskDelay(MSEC2TICK(p->delay) );
+		draw_my_box(prevX, prevY, COLOR_BLACK);
+		draw_my_box(x, y, p->color);
+		vTaskDelay(MSEC2TICK(p->delay) );
 
-				prevX = x;
-				prevY = y;
+		if (x == 4 && y == 3)
+			xSemaphoreGive(xSemaphore1);
+		else if (x == 4 && y == 6)
+			xSemaphoreGive(xSemaphore2);
+		else if (x == 4 && y == 9)
+			xSemaphoreGive(xSemaphore3);
+		else if (x == 8 && y == 3)
+			xSemaphoreGive(xSemaphore4);
+		else if (x == 8 && y == 6)
+			xSemaphoreGive(xSemaphore5);
+		else if (x == 8 && y == 9)
+			xSemaphoreGive(xSemaphore6);
+		else if (x == 10 && y == 3)
+			xSemaphoreGive(xSemaphore7);
+		else if (x == 10 && y == 6)
+			xSemaphoreGive(xSemaphore8);
+		else if (x == 10 && y == 9)
+			xSemaphoreGive(xSemaphore9);
 
-				if (p->direction == DIRECTION_RIGHT) {
-					x++;
-					if (x == MAX_X - 1)
-						p->direction = DIRECTION_LEFT;
+		prevX = x;
+		prevY = y;
 
-				} else if (p->direction == DIRECTION_LEFT) {
-					x--;
-					if (x == 0)
-						p->direction = DIRECTION_RIGHT;
+		if (p->direction == DIRECTION_RIGHT) {
+			x++;
+			if (x == MAX_X - 1)
+				p->direction = DIRECTION_LEFT;
 
-				} else if (p->direction == DIRECTION_DOWN) {
-					y++;
-					if (y == MAX_Y - 1)
-						p->direction = DIRECTION_UP;
-				} else if (p->direction == DIRECTION_UP) {
-					y--;
-					if (y == 0)
-						p->direction = DIRECTION_DOWN;
-				}
-				vTaskDelay(MSEC2TICK(p->delay) );
-				xSemaphoreGive(xSemaphore);
-			}
-		} else {
-			draw_my_box(prevX, prevY, COLOR_BLACK);
-			draw_my_box(x, y, p->color);
-			vTaskDelay(MSEC2TICK(p->delay) );
+		} else if (p->direction == DIRECTION_LEFT) {
+			x--;
+			if (x == 0)
+				p->direction = DIRECTION_RIGHT;
 
-			prevX = x;
-			prevY = y;
-
-			if (p->direction == DIRECTION_RIGHT) {
-				x++;
-				if (x == MAX_X - 1)
-					p->direction = DIRECTION_LEFT;
-
-			} else if (p->direction == DIRECTION_LEFT) {
-				x--;
-				if (x == 0)
-					p->direction = DIRECTION_RIGHT;
-
-			} else if (p->direction == DIRECTION_DOWN) {
-				y++;
-				if (y == MAX_Y - 1)
-					p->direction = DIRECTION_UP;
-			} else if (p->direction == DIRECTION_UP) {
-				y--;
-				if (y == 0)
-					p->direction = DIRECTION_DOWN;
-			}
+		} else if (p->direction == DIRECTION_DOWN) {
+			y++;
+			if (y == MAX_Y - 1)
+				p->direction = DIRECTION_UP;
+		} else if (p->direction == DIRECTION_UP) {
+			y--;
+			if (y == 0)
+				p->direction = DIRECTION_DOWN;
 		}
+	}
+}
 

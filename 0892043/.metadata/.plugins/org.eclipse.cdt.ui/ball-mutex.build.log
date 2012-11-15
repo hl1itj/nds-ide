@@ -1,13 +1,13 @@
-03:32:48 **** Incremental Build of configuration Default for project ball-mutex ****
+13:49:06 **** Incremental Build of configuration Default for project ball-mutex ****
 make 
 main.c
 arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c -o main.o 
-/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c: In function 'Ball_Task':
-/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c:177:3: error: expected declaration or statement at end of input
-/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c:177:3: error: expected declaration or statement at end of input
 In file included from /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c:11:0:
-/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c: At top level:
+linking ball-mutex.elf
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-mutex.nds
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
@@ -33,8 +33,6 @@ In file included from /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/mai
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
-make[1]: *** [main.o] 오류 1
-make: *** [build] 오류 2
 
-03:32:51 Build Finished (took 2s.956ms)
+13:49:09 Build Finished (took 2s.694ms)
 
