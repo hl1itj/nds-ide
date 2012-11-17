@@ -1,0 +1,11 @@
+19:24:01 **** Incremental Build of configuration Default for project ball ****
+make 
+Exp_Sample.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0592048/ball/build/Exp_Sample.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0592048/ball/include -I/home/hansung/ndsdev/nds-ide/0592048/ball/build -I/home/hansung/ndsdev/nds-ide/0592048/ball/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0592048/ball/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0592048/ball/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0592048/ball/source/Exp_Sample.c -o Exp_Sample.o 
+linking ball.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball.nds
+
+19:24:02 Build Finished (took 837ms)
+
