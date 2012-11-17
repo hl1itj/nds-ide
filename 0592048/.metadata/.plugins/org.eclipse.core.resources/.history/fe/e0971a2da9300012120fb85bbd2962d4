@@ -96,8 +96,7 @@ portTASK_FUNCTION(Ball_Task, pvParameters)
     int count = 0;
 
 	while (1) {
-		for(i=0;i<NUM_TASK;i++, p++){
-			Exp_Homework(p);
-		}
+		Exp_Homework(p);
+		p++;
 	}
 }
