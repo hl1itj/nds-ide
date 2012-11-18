@@ -17,13 +17,16 @@
  * Read    - 2009-XX-XX
  */
 
+#ifdef WIN32
 #include <winsock2.h>
 #include <windows.h>
 //#include <ws2tcpip.h>
-#include <stdlib.h>
 #include <conio.h>
-#include <stdio.h>
 #include <io.h>
+#endif
+
+#include <stdlib.h>
+#include <stdio.h>
 
 
 // download.h include in the usbdown or wifidown
@@ -32,14 +35,16 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-//typedef int SOCKET;
+#ifndef WIN32
+typedef int SOCKET;
 
-//#define INVALID_SOCKET	-1
-//#define SOCKET_ERROR	-1
+#define INVALID_SOCKET	-1
+#define SOCKET_ERROR	-1
 
 //fuction Override
-//#define closesocket close
-//#define Sleep sleep
+#define closesocket close
+
+#endif
 
 static SOCKET data_socket;
 static struct header    FHeader;
@@ -86,16 +91,16 @@ connect_nds()
 	COMMTIMEOUTS Timeout;
 #endif
 
-	//struct sockaddr_in nds_sin;
+	struct sockaddr_in nds_sin;
 
 	switch (Channel) {
 	case CHANNEL_TCP :
-		
+#ifdef WIN32		
         if (WSAStartup(MAKEWORD(2,2), &wsaData) != NO_ERROR) {
             fprintf(stderr, "Error at WSAStartup()\n");
             return -1;
         }
-		
+#endif
 		if ((data_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == INVALID_SOCKET) {
 			fprintf(stderr, "Error at socket(): %d\n", data_socket);
 			//fprintf(stderr, "Error at socket(): %ld\n", WSAGetLastError());
@@ -304,7 +309,9 @@ main(int argc, char* argv[])
 
 	int total_sent, size, ret, i, checksum;
 
-	//struct stat statinfo;
+#ifndef WIN32
+	struct stat statinfo;
+#endif
 
 	if (argc < 5) {
 		usage:  fprintf(stderr, "usage: dshdown t|s|u FILENAME FRD|XXX nds_ip_address|COMx [tcp_port]\n");
@@ -379,22 +386,21 @@ w_path: fname++;
 		return -1;
 	}
 	
-	/*
+#ifdef WIN32
+	if (filelength(fileno(f2send)) > MAX_FILE_SIZE) {
+        	fprintf(stderr, "File size too big : MAX = %dBytes\n", MAX_FILE_SIZE);
+        	goto leave0;
+    	}
+	sprintf(FHeader.filelength, "%d", _filelength(_fileno(f2send)));
+#else
 	stat(argv[2], &statinfo);
 	
 	if (statinfo.st_size > MAX_FILE_SIZE) {
 		fprintf(stderr, "File size too big : MAX = %dBytes\n", statinfo.st_size);
 		goto leave0;
 	}
-	*/
-	
-    if (_filelength(_fileno(f2send)) > MAX_FILE_SIZE) {
-        fprintf(stderr, "File size too big : MAX = %dBytes\n", MAX_FILE_SIZE);
-        goto leave0;
-    }
-
-	//sprintf(FHeader.filelength, "%d", statinfo.st_size);
-	sprintf(FHeader.filelength, "%d", _filelength(_fileno(f2send)));
+	sprintf(FHeader.filelength, "%d", statinfo.st_size);
+#endif	
 
 	ret = -1;   // if return in error clause, ret = -1
 
@@ -456,7 +462,7 @@ w_path: fname++;
 		switch (Channel) {
 		case CHANNEL_SERIAL:
 		case CHANNEL_USB:
-			Sleep(0);
+//			Sleep(0);
 			break;
 		}
 		total_sent += size;
@@ -501,8 +507,11 @@ w_path: fname++;
 	}
 	printf("Magic Cleanup Code Sent\n");
 
-	//printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, statinfo.st_size);
-	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, _filelength(f2send));
+#ifdef WIN32
+	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, _filelength(_fileno(f2send)));
+#else
+	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, statinfo.st_size);
+#endif
 
 	ret = 0;
 
