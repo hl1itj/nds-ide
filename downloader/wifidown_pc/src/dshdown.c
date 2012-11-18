@@ -89,9 +89,9 @@ connect_nds()
 	WSADATA wsaData;
 	DCB PortDCB;
 	COMMTIMEOUTS Timeout;
-#endif
-
+#else
 	struct sockaddr_in nds_sin;
+#endif
 
 	switch (Channel) {
 	case CHANNEL_TCP :
