@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-17:17:07 **** Incremental Build of configuration Default for project Simple-IO-3 ****
+19:36:46 **** Incremental Build of configuration Default for project simple-io-3 ****
 make 
-make[1]: `/home/hansung/ndsdev/nds-ide/0992006/Simple-IO-3/Simple-IO-3.nds'는 이미 갱신되었습니다.
-
-17:17:08 Build Finished (took 398ms)
-=======
-01:27:27 **** Incremental Build of configuration Default for project Simple-IO-3 ****
-make 
-make[1]: *** `croutine.o'에서 필요로 하는  타겟 `/home/hansung/ndsdev/nds-ide/0992006/simple-io-3/FreeRTOS/croutine.c'를 만들 규칙이 없습니다.  멈춤.
+make[1]: *** `croutine.o'에서 필요로 하는  타겟 `/home/hansung/ndsdev/nds-ide/0992006/Simple-IO-3/FreeRTOS/croutine.c'를 만들 규칙이 없습니다.  멈춤.
 make: *** [build] 오류 2
 
-01:27:28 Build Finished (took 244ms)
->>>>>>> a55b633643f4014e2c226a2e8955c59927953c98
+19:36:46 Build Finished (took 452ms)
 
