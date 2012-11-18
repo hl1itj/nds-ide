@@ -17,26 +17,34 @@
 * Read    - 2009-XX-XX
 */
 
+#ifdef WIN32
+
 #include <winsock2.h>
 #include <windows.h>
-//#include <ws2tcpip.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-//#include <unistd.h>
-//#include <fcntl.h>
 #include <conio.h>
 #include <io.h>
 
-//#include <arpa/inet.h>
-//#include <sys/types.h>
-//#include <sys/socket.h>
-//#include <sys/stat.h>
+#else
+
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+
+#endif
+
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 // download.h include in the usbdown or wifidown
 //#include "C:\nintendo\trunk\src\usbdown\source\download.h"
 #include "download.h"
 
 #pragma comment(lib, "ws2_32.lib")
+
 //int send();
 static int data_socket;
 static struct header    FHeader;
