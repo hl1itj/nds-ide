@@ -45,11 +45,20 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-//int send();
+#ifndef WIN32
+
+#define INVALID_SOCKET	-1
+#define SOCKET_ERROR	-1
+
+static struct stat statinfo;
+
+#endif
+
 static int data_socket;
 static struct header    FHeader;
 static struct response  FResp;
-//static struct stat statinfo;
+
+
 int   Channel;  // 't' : tcp, 's' : Serial, 'u' : USB
 char *Target;   // IP address or host for 't', COMx for 's'
 int   Port;     // TCP port number for 't'
@@ -65,18 +74,22 @@ int   Port;     // TCP port number for 't'
 int
 connect_nds()
 {
-	struct sockaddr_in nds_sin;
+#ifdef WIN32
 	WSADATA wsaData;
+#else
+	struct sockaddr_in nds_sin;
+#endif
 	
+#ifdef WIN32
 	if(WSAStartup(MAKEWORD(2,2), &wsaData) != NO_ERROR)
 	{
 		fprintf(stderr, "Error at WSAStartup()\n");
 		return -1;
 	}
-
+#endif
 	if ((data_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == INVALID_SOCKET)
 	{
-		fprintf(stderr, "Error at socket(): %d\n", WSAGetLastError());
+		fprintf(stderr, "Error at socket(): %d\n", data_socket);
 		return -1;
 	}
 	
@@ -233,28 +246,21 @@ w_path: fname++;
         return -1;
     }
 
-	/* fseek(f2send,0,SEEK_END);
-    filelength = ftell(f2send);
-    rewind(f2send);
-    * 1st/
-	/*stat(argv[2],&statinfo);
-	filelength = statinfo.st_size;
-	2st*/
-	/*
-    fstat(fileno(f2send),&statinfo);
-    filelength = statinfo.st_size;
-    //3st    
-	if (filelength > MAX_FILE_SIZE) {
-	fprintf(stderr, "File size too big : MAX = %dBytes\n", MAX_FILE_SIZE);
-	goto leave0;
-    }
-	*/
+#ifdef WIN32
 	if (_filelength(_fileno(f2send)) > MAX_FILE_SIZE) {
-        fprintf(stderr, "File size too big : MAX = %dBytes\n", MAX_FILE_SIZE);
-        goto leave0;
-    }
-	
-    sprintf(FHeader.filelength, "%d", _filelength(_fileno(f2send)));
+        	fprintf(stderr, "File size too big : MAX = %dBytes\n", MAX_FILE_SIZE);
+       		goto leave0;
+    	}
+	sprintf(FHeader.filelength, "%d", _filelength(_fileno(f2send)));
+#else
+	fstat(fileno(f2send),&statinfo);
+
+	if (statinfo.st_size > MAX_FILE_SIZE) {
+		fprintf(stderr, "File size too big : MAX = %dBytes\n", MAX_FILE_SIZE);
+		goto leave0;
+    	}
+	sprintf(FHeader.filelength, "%d", statinfo.st_size);
+#endif
 	
     ret = -1;   // if return in error clause, ret = -1
 	
@@ -272,7 +278,6 @@ w_path: fname++;
         printf("Failed to send File Header\n");
         goto leave1;
     }
-    printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, filelength);
     printf("Header Sent\n");
     
 	
@@ -309,9 +314,13 @@ w_path: fname++;
     }
     printf("Checksum Sent\n");
 	
-	
+#ifdef WIN32
+	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, _filelength(_fileno(f2send)));
+#else
+	printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, statinfo.st_size);
+#endif	
     
-    printf("Transfer file: '%s' (%dB) Done!\n", FHeader.filename, _filelength(_fileno(f2send)));
+    
     ret = 0;
 	
 leave1:
