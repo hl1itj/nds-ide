@@ -1,11 +1,6 @@
-03:41:53 **** Incremental Build of configuration Default for project keyqueue ****
+02:22:19 **** Incremental Build of configuration Default for project keyqueue ****
 make 
-Exp_Homework.c
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keyqueue/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keyqueue/include -I/home/hansung/ndsdev/nds-ide/0514057/keyqueue/build -I/home/hansung/ndsdev/nds-ide/0514057/keyqueue/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keyqueue/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keyqueue/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keyqueue/source/Exp_Homework.c -o Exp_Homework.o 
-linking keyqueue.elf
-Nintendo DS rom tool 1.50.1 - Jun 19 2012
-by Rafael Vuijk, Dave Murphy, Alexei Karpenko
-built ... keyqueue.nds
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/keyqueue/keyqueue.nds'는 이미 갱신되었습니다.
 
-03:41:54 Build Finished (took 715ms)
+02:22:19 Build Finished (took 121ms)
 

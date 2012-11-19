@@ -1,6 +1,6 @@
-03:41:54 **** Incremental Build of configuration Default for project simple-io-2 ****
+02:22:19 **** Incremental Build of configuration Default for project simple-io-2 ****
 make 
 make[1]: `/home/hansung/ndsdev/nds-ide/0514057/simple-io-2/simple-io-2.nds'는 이미 갱신되었습니다.
 
-03:41:54 Build Finished (took 116ms)
+02:22:19 Build Finished (took 71ms)
 

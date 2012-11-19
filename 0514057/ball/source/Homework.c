@@ -109,7 +109,5 @@ Homework(void)
 	}
 	vTaskSuspend(NULL);
 	vTaskSuspend(hkeyQue);
-	//while(1)
-	//{vTaskDelay(MSEC2TICK(30));}
 }
 

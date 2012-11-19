@@ -1,0 +1,11 @@
+02:52:14 **** Incremental Build of configuration Default for project Snake ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/Snake/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/Snake/include -I/home/hansung/ndsdev/nds-ide/0514057/Snake/build -I/home/hansung/ndsdev/nds-ide/0514057/Snake/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/Snake/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/Snake/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/Snake/source/main.c -o main.o 
+linking Snake.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... Snake.nds
+
+02:52:15 Build Finished (took 525ms)
+

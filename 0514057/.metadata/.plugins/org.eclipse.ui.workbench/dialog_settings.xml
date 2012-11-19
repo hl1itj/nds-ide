@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="FileSystemImportWizard">
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="1200" key="dialogWidth"/>
 		<item value="606" key="dialogHeight"/>
@@ -11,6 +13,10 @@
 		</list>
 		<list key="textEntries">
 		</list>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="118" key="DIALOG_Y_ORIGIN"/>
+		<item value="600" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
