@@ -52,7 +52,7 @@ void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
 // ���⿡ �ʿ��� �� ��ŭ�� Semaphore �ڵ� ����  <--------
-xSemaphoreHandle xSemaphore[3][3];
+xSemaphoreHandle xSemaphore[9];
 
 int main(void) {
 	InitDebug();
@@ -101,9 +101,10 @@ void vStartExpTasks(void) {
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 	// ���⿡ �ʿ��� �� ��ŭ Semaphore �ʱ�ȭ (vSemaphoreCreateBinary) <--------
-	for (i = 0; i < 3; i++) {
-		for (j = 0; j < 3; j++)
-			vSemaphoreCreateBinary(xSemaphore[i][j]);
+	for (i = 0; i < 9; i++) {
+		xSemaphore[i] = (xSemaphoreHandle *) calloc(
+				sizeof(xSemaphoreHandle) * 1, sizeof(xSemaphoreHandle));
+		vSemaphoreCreateBinary(xSemaphore[i]);
 	}
 
 }
@@ -127,30 +128,31 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	while (1) {
 		// ���⿡ �� Ball�� �������� �ְ�, R Key�� ���ȴٸ�  Semaphore take <--------
 		if (NDS_SWITCH() & KEY_R) {
-			for (i = 0; i < NUM_ROW; i++) {
-				if (x == Param[i].basePoint) {
-					if (strcmp(p->taskname, "4") == 1)
-						xSemaphoreTake(xSemaphore[i][0], p->delay);
-					else if (strcmp(p->taskname, "5") == 1)
-						xSemaphoreTake(xSemaphore[i][1], p->delay);
-					else if (strcmp(p->taskname, "6") == 1)
-						xSemaphoreTake(xSemaphore[i][2], p->delay);
-					break;
-				}
+			if (x == 4) {
+				if (y == 3)
+					xSemaphoreTake(xSemaphore[0], (portTickType)1000);
+				else if (y == 6)
+					xSemaphoreTake(xSemaphore[1], (portTickType)1000);
+				else if (y == 9)
+					xSemaphoreTake(xSemaphore[2], (portTickType)1000);
 			}
-		}
 
-		if (NDS_SWITCH() & KEY_R) {
-			for (i = 3; i < NUM_TASK; i++) {
-				if (y == Param[i].basePoint) {
-					if (strcmp(p->taskname, "1") == 1)
-						xSemaphoreTake(xSemaphore[0][i-3], p->delay);
-					else if (strcmp(p->taskname, "2") == 1)
-						xSemaphoreTake(xSemaphore[1][i-3], p->delay);
-					else if (strcmp(p->taskname, "3") == 1)
-						xSemaphoreTake(xSemaphore[2][i-3], p->delay);
-					break;
-				}
+			else if (x == 8) {
+				if (y == 3)
+					xSemaphoreTake(xSemaphore[3], (portTickType)1000);
+				else if (y == 6)
+					xSemaphoreTake(xSemaphore[4], (portTickType)1000);
+				else if (y == 9)
+					xSemaphoreTake(xSemaphore[5], (portTickType)1000);
+			}
+
+			else if (x == 12) {
+				if (y == 3)
+					xSemaphoreTake(xSemaphore[6], (portTickType)1000);
+				else if (y == 6)
+					xSemaphoreTake(xSemaphore[7], (portTickType)1000);
+				else if (y == 9)
+					xSemaphoreTake(xSemaphore[8], (portTickType)1000);
 			}
 		}
 
@@ -159,32 +161,38 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 		vTaskDelay(MSEC2TICK(p->delay) );		// Delay
 
 		// ���⿡ �� Ball�� �������� ������, Semaphore Give <--------
-		for (i = 0; i < NUM_ROW; i++) {
-			if (prevX == Param[i].basePoint) {
-				if (strcmp(p->taskname, "4") == 1)
-					xSemaphoreTake(xSemaphore[i][0], p->delay);
-				else if (strcmp(p->taskname, "5") == 1)
-					xSemaphoreTake(xSemaphore[i][1], p->delay);
-				else if (strcmp(p->taskname, "6") == 1)
-					xSemaphoreTake(xSemaphore[i][2], p->delay);
-				break;
-			}
-		}
-
-		for (i = 3; i < NUM_TASK; i++) {
-			if (prevY == Param[i].basePoint) {
-				if (strcmp(p->taskname, "1") == 1)
-					xSemaphoreTake(xSemaphore[0][i-3], p->delay);
-				else if (strcmp(p->taskname, "2") == 1)
-					xSemaphoreTake(xSemaphore[1][i-3], p->delay);
-				else if (strcmp(p->taskname, "3") == 1)
-					xSemaphoreTake(xSemaphore[2][i-3], p->delay);
-				break;
-			}
-		}
 
 		prevY = y;
 		prevX = x;
+
+		if (NDS_SWITCH() & KEY_R) {
+			if (x == 4) {
+				if (y == 3)
+					xSemaphoreGive(xSemaphore[0]);
+				else if (y == 6)
+					xSemaphoreGive(xSemaphore[1]);
+				else if (y == 9)
+					xSemaphoreGive(xSemaphore[2]);
+			}
+
+			else if (x == 8) {
+				if (y == 3)
+					xSemaphoreGive(xSemaphore[3]);
+				else if (y == 6)
+					xSemaphoreGive(xSemaphore[4]);
+				else if (y == 9)
+					xSemaphoreGive(xSemaphore[5]);
+			}
+
+			else if (x == 12) {
+				if (y == 3)
+					xSemaphoreGive(xSemaphore[5]);
+				else if (y == 6)
+					xSemaphoreGive(xSemaphore[6]);
+				else if (y == 9)
+					xSemaphoreGive(xSemaphore[7]);
+			}
+		}
 
 		// ���� ��ġ ���  <----- ���� ���� ����
 		if (y >= 0 && p->direction == DIRECTION_UP) {
