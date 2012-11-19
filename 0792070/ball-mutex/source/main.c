@@ -165,30 +165,30 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 		prevY = y;
 		prevX = x;
 
-		if (x == 4) {
-			if (y == 3)
+		if (prevX == 4) {
+			if (prevY == 3)
 				xSemaphoreGive(xSemaphore[0]);
-			else if (y == 6)
+			else if (prevY == 6)
 				xSemaphoreGive(xSemaphore[1]);
-			else if (y == 9)
+			else if (prevY == 9)
 				xSemaphoreGive(xSemaphore[2]);
 		}
 
-		else if (x == 8) {
-			if (y == 3)
+		else if (prevX == 8) {
+			if (prevY == 3)
 				xSemaphoreGive(xSemaphore[3]);
-			else if (y == 6)
+			else if (prevY == 6)
 				xSemaphoreGive(xSemaphore[4]);
-			else if (y == 9)
+			else if (prevY == 9)
 				xSemaphoreGive(xSemaphore[5]);
 		}
 
-		else if (x == 12) {
-			if (y == 3)
+		else if (prevX == 12) {
+			if (prevY == 3)
 				xSemaphoreGive(xSemaphore[5]);
-			else if (y == 6)
+			else if (prevY == 6)
 				xSemaphoreGive(xSemaphore[6]);
-			else if (y == 9)
+			else if (prevY == 9)
 				xSemaphoreGive(xSemaphore[7]);
 		}
 
