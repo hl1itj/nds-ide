@@ -165,33 +165,31 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 		prevY = y;
 		prevX = x;
 
-		if (NDS_SWITCH() & KEY_R) {
-			if (x == 4) {
-				if (y == 3)
-					xSemaphoreGive(xSemaphore[0]);
-				else if (y == 6)
-					xSemaphoreGive(xSemaphore[1]);
-				else if (y == 9)
-					xSemaphoreGive(xSemaphore[2]);
-			}
+		if (x == 4) {
+			if (y == 3)
+				xSemaphoreGive(xSemaphore[0]);
+			else if (y == 6)
+				xSemaphoreGive(xSemaphore[1]);
+			else if (y == 9)
+				xSemaphoreGive(xSemaphore[2]);
+		}
 
-			else if (x == 8) {
-				if (y == 3)
-					xSemaphoreGive(xSemaphore[3]);
-				else if (y == 6)
-					xSemaphoreGive(xSemaphore[4]);
-				else if (y == 9)
-					xSemaphoreGive(xSemaphore[5]);
-			}
+		else if (x == 8) {
+			if (y == 3)
+				xSemaphoreGive(xSemaphore[3]);
+			else if (y == 6)
+				xSemaphoreGive(xSemaphore[4]);
+			else if (y == 9)
+				xSemaphoreGive(xSemaphore[5]);
+		}
 
-			else if (x == 12) {
-				if (y == 3)
-					xSemaphoreGive(xSemaphore[5]);
-				else if (y == 6)
-					xSemaphoreGive(xSemaphore[6]);
-				else if (y == 9)
-					xSemaphoreGive(xSemaphore[7]);
-			}
+		else if (x == 12) {
+			if (y == 3)
+				xSemaphoreGive(xSemaphore[5]);
+			else if (y == 6)
+				xSemaphoreGive(xSemaphore[6]);
+			else if (y == 9)
+				xSemaphoreGive(xSemaphore[7]);
 		}
 
 		// ���� ��ġ ���  <----- ���� ���� ����
