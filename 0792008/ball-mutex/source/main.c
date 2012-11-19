@@ -55,7 +55,7 @@ void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
 // ���⿡ �ʿ��� �� ��ŭ�� Semaphore �ڵ� ����  <--------
-xSemaphoreHandle xSemaphore = NULL;
+xSemaphoreHandle xSemaphore[9];
 
 int
 main(void)
@@ -110,15 +110,14 @@ vStartExpTasks(void)
 		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024, (void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 	// ���⿡ �ʿ��� �� ��ŭ Semaphore �ʱ�ȭ (vSemaphoreCreateBinary) <--------
-	vSemaphoreCreateBinary( xSemaphore );
+	for(i=0; i<9; i++)
+		vSemaphoreCreateBinary( xSemaphore[i] );
 
 }
 
 static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *)pvParameters;
 	int x, y, prevX, prevY;
-	int direction = p->direction;
-	int i;
 
 	// 여기에 각 Ball의 초기위치 (x, y) 설정
 	if(p->direction == DIRECTION_RIGHT) {
@@ -131,76 +130,77 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	}
 
 	while(1) {
+		if(NDS_SWITCH() & KEY_R) {
+			if(x==4 && y == 3)
+				xSemaphoreTake( xSemaphore[0], (portTickType)1000);
+			else if(x==4 && y == 6)
+				xSemaphoreTake( xSemaphore[1], (portTickType)1000);
+			else if(x==4 && y == 9)
+				xSemaphoreTake( xSemaphore[2], (portTickType)1000);
+			else if(x==8 && y == 3)
+				xSemaphoreTake( xSemaphore[3], (portTickType)1000);
+			else if(x==8 && y == 6)
+				xSemaphoreTake( xSemaphore[4], (portTickType)1000);
+			else if(x==8 && y == 9)
+				xSemaphoreTake( xSemaphore[5], (portTickType)1000);
+			else if(x==12 && y == 3)
+				xSemaphoreTake( xSemaphore[6], (portTickType)1000);
+			else if(x==12 && y == 6)
+				xSemaphoreTake( xSemaphore[7], (portTickType)1000);
+			else if(x==12 && y == 9)
+				xSemaphoreTake( xSemaphore[8], (portTickType)1000);
+		}
+
 		draw_my_box(prevX, prevY, COLOR_BLACK);
 		draw_my_box(x, y, p->color);
+		vTaskDelay(MSEC2TICK(p->delay));
+
+		// 각 Ball이 교차점에 있으면, Semaphore Give <--------
+		if(prevX==4 && prevY == 3)
+			xSemaphoreGive( xSemaphore[0]);
+		else if(prevX==4 && prevY == 6)
+			xSemaphoreGive( xSemaphore[1]);
+		else if(prevX==4 && prevY == 9)
+			xSemaphoreGive( xSemaphore[2]);
+		else if(prevX==8 && prevY == 3)
+			xSemaphoreGive( xSemaphore[3]);
+		else if(prevX==8 && prevY == 6)
+			xSemaphoreGive( xSemaphore[4]);
+		else if(prevX==8 && prevY == 9)
+			xSemaphoreGive( xSemaphore[5]);
+		else if(prevX==12 && prevY == 3)
+			xSemaphoreGive( xSemaphore[6]);
+		else if(prevX==12 && prevY == 6)
+			xSemaphoreGive( xSemaphore[7]);
+		else if(prevX==12 && prevY == 9)
+			xSemaphoreGive( xSemaphore[8]);
 
 		prevX = x; prevY = y;
 
-		if(NDS_SWITCH() & KEY_R) {
-			if(direction == DIRECTION_RIGHT || direction == DIRECTION_LEFT) {
-				for(i=0; i<NUM_TASK; i++) {
-					if(p[i].direction == DIRECTION_UP || p[i].direction == DIRECTION_DOWN) {
-						if(x == p[i].basePoint) {
-							xSemaphoreTake( xSemaphore, 0 );
-						}
-					}
-				}
-			}
-			else {
-				for(i=0; i<NUM_TASK; i++) {
-					if(p[i].direction == DIRECTION_RIGHT || p[i].direction == DIRECTION_LEFT) {
-						if(y == p[i].basePoint) {
-							xSemaphoreTake( xSemaphore, 0 );
-						}
-					}
-				}
-			}
-		}
-
-		// 각 Ball이 교차점에 있으면, Semaphore Give <--------
-		if(direction == DIRECTION_RIGHT || direction == DIRECTION_LEFT) {
-			for(i=0; i<NUM_TASK; i++) {
-				if(p[i].direction == DIRECTION_UP || p[i].direction == DIRECTION_DOWN) {
-					if(x == p[i].basePoint) {
-						xSemaphoreGive( xSemaphore );
-					}
-				}
-			}
-		}
-		else if(direction == DIRECTION_UP || direction == DIRECTION_DOWN) {
-			for(i=0; i<NUM_TASK; i++) {
-				if(p[i].direction == DIRECTION_RIGHT || p[i].direction == DIRECTION_LEFT) {
-					if(y == p[i].basePoint) {
-						xSemaphoreGive( xSemaphore );
-					}
-				}
-			}
-		}
-
-		if(direction == DIRECTION_RIGHT) {
+		if(p->direction == DIRECTION_RIGHT) {
 			if(x < (MAX_X - 1)) {
 				x++;
 			}
 			else {
-				direction = DIRECTION_LEFT;
+				p->direction = DIRECTION_LEFT;
 				x--;
 			}
 		}
-		else if (direction == DIRECTION_LEFT) {
+		else if (p->direction == DIRECTION_LEFT) {
 			if(x > MIN_X) {
 				x--;
 			}
 			else {
-				direction = DIRECTION_RIGHT;
+				p->direction = DIRECTION_RIGHT;
 				x++;
 			}
 		}
-		else if (direction == DIRECTION_DOWN) {
+		else if (p->direction == DIRECTION_DOWN) {
 			if(y < (MAX_Y -1)) {
 				y++;
 			}
 			else {
-				direction = DIRECTION_UP;
+				p->direction = DIRECTION_UP;
 				y--;
 			}
 		}
@@ -209,10 +209,12 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 				y--;
 			}
 			else {
-				direction = DIRECTION_DOWN;
+				p->direction = DIRECTION_DOWN;
 				y++;
 			}
 		}
 		vTaskDelay(p->delay);
 	}
 }
+
+
