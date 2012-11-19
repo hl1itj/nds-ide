@@ -35,16 +35,9 @@
 
 #define DIRECTION_RIGHT 1
 #define DIRECTION_DOWN 0
-
 #define NUM_TASK 6
 
-struct parameters {
-char *taskname;
-int direction;
-int basePoint;
-u32 color;
-int delay;
-};
+
 
 // fucntion added 11/10/2011
 void key_init(void) {
@@ -109,32 +102,5 @@ Exp_Sample(void)
 		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
-void Ball_Homework(struct parameters *p){
-	u8 key = 0, old_key = -1, key_s = -1;
 
-	while (1) {
-	if(p->direction){ //right
-		draw_my_box(old_key,p->basePoint , COLOR_BLACK);// Erase the Previous Box
-		draw_my_box(key, p->basePoint, p->color);	// Draw a New Box
-		vTaskDelay(300);
-		draw_my_box(key, p->basePoint, COLOR_BLACK);	// Erase the Previous Box
-		old_key = key;
-		if (key == 15 || key == 0)
-			key_s = key_s*-1;
-		if(key <15 || key >= 0)
-			key+=key_s;
-	}
-	else{	//down
-		draw_my_box(p->basePoint, old_key, COLOR_BLACK);// Erase the Previous Box
-		draw_my_box(p->basePoint, key, p->color);	// Draw a New Box
-		vTaskDelay(300);
-		draw_my_box(p->basePoint, key, COLOR_BLACK);	// Erase the Previous Bo
-		old_key = key;
-		if (key == 11 || key == 0)
-			key_s = key_s*-1;
-		if(key <11 || key >= 0)
-				key+=key_s;
-	}
-	vTaskDelay(p->delay);	// Wait while START KEY is being pressed
-	}
-}
+
