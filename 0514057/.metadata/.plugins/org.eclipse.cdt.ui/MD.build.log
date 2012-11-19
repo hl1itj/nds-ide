@@ -1,0 +1,13 @@
+04:16:28 **** Incremental Build of configuration Default for project MD ****
+make 
+make -C lib/arm7
+make[1]: Entering directory `/home/hansung/ndsdev/workspace/MD_accepted/MD/lib/arm7'
+arm7.bin
+make[2]: arm-eabi-objcopy: 명령을 찾지 못했음
+make[1]: Leaving directory `/home/hansung/ndsdev/workspace/MD_accepted/MD/lib/arm7'
+make[2]: *** [arm7.o] 오류 127
+make[1]: *** [build] 오류 2
+make: *** [all] 오류 2
+
+04:16:28 Build Finished (took 73ms)
+

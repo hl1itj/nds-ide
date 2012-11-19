@@ -5799,3 +5799,454 @@ linking Snake.elf
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... Snake.nds
+03:34:49 **** Build of configuration Default for project keymatrix ****
+make 
+linking keymatrix.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... keymatrix.nds
+03:35:08 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/keymatrix/keymatrix.nds'는 이미 갱신되었습니다.
+03:43:57 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:45:33 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:12:0:
+linking keymatrix.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... keymatrix.nds
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+03:46:02 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:46:24 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:46:36 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:48:09 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:48:21 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:12: warning: extra tokens at end of #include directive [enabled by default]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:10: error: empty filename in #include
+In file included from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:12:0:
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:48:39 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:49:52 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:51:07 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+Makefile:9: /home/hansung/ndsdev/devkitPro/devkitARM/ds_rules: 그런 파일이나 디렉터리가 없습니다
+make: *** 타겟 `/home/hansung/ndsdev/devkitPro/devkitARM/ds_rules'를 만들 규칙이 없음.  멈춤.
+03:52:25 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:52:36 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:12:0:
+linking keymatrix.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+built ... keymatrix.nds
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+03:54:44 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:18:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/gbfs.h:1:2: error: #error gbfs is no longer supported on nds
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:24:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h: In function 'PA_CheckLid':
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:302:7: error: 'IPC' undeclared (first use in this function)
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:302:7: note: each undeclared identifier is reported only once for each function it appears in
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h: In function 'PA_SetScreenLight':
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:388:2: error: 'IPC' undeclared (first use in this function)
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h: In function 'PA_SetLedBlink':
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:405:2: error: 'IPC' undeclared (first use in this function)
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_GBFS.h:16:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Sound.h:14,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:37,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/gbfs.h: At top level:
+/home/hansung/ndsdev/devkitPro/libnds/include/gbfs.h:1:2: error: #error gbfs is no longer supported on nds
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Sound.h:14:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:37,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_GBFS.h:37:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'const'
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:37:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Sound.h:23:1: error: unknown type name 'TransferSound'
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:55:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_SpecialFx.h:7:0: warning: "REG_MOSAIC" redefined [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/background.h:87:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:250,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h:662:0: note: this is the location of the previous definition
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:55:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_SpecialFx.h:8:0: warning: "REG_BLDCNT" redefined [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/background.h:87:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:250,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h:665:0: note: this is the location of the previous definition
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:55:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_SpecialFx.h:9:0: warning: "REG_BLDALPHA" redefined [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/background.h:87:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:250,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h:667:0: note: this is the location of the previous definition
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:60:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Keyboard.h:45:18: error: 'Keyboard' redeclared as different kind of symbol
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:259:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/keyboard.h:98:2: note: previous declaration of 'Keyboard' was here
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:73:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_16c.h:507:7: warning: 'PA_16c16X16Letter' is static but used in inline function 'PA_16cLetter' which is not static [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:73:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_16c.h:105:2: warning: 'PA_16c8X8Color' is static but used in inline function 'PA_16c8X8Letter' which is not static [enabled by default]
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_16c.h:91:2: warning: 'PA_Plot8Pixels' is static but used in inline function 'PA_16c8pixels' which is not static [enabled by default]
+In file included from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:12:0:
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+03:56:29 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:18:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/gbfs.h:1:2: error: #error gbfs is no longer supported on nds
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:24:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h: In function 'PA_CheckLid':
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:302:7: error: 'IPC' undeclared (first use in this function)
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:302:7: note: each undeclared identifier is reported only once for each function it appears in
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h: In function 'PA_SetScreenLight':
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:388:2: error: 'IPC' undeclared (first use in this function)
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h: In function 'PA_SetLedBlink':
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_General.h:405:2: error: 'IPC' undeclared (first use in this function)
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_GBFS.h:16:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Sound.h:14,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:37,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/gbfs.h: At top level:
+/home/hansung/ndsdev/devkitPro/libnds/include/gbfs.h:1:2: error: #error gbfs is no longer supported on nds
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Sound.h:14:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:37,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_GBFS.h:37:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'const'
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:37:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_Sound.h:23:1: error: unknown type name 'TransferSound'
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:55:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_SpecialFx.h:7:0: warning: "REG_MOSAIC" redefined [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/background.h:87:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:250,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h:662:0: note: this is the location of the previous definition
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:55:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_SpecialFx.h:8:0: warning: "REG_BLDCNT" redefined [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/background.h:87:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:250,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h:665:0: note: this is the location of the previous definition
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:55:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_SpecialFx.h:9:0: warning: "REG_BLDALPHA" redefined [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/background.h:87:0,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:250,
+                 from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:10,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h:667:0: note: this is the location of the previous definition
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:73:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_16c.h:507:7: warning: 'PA_16c16X16Letter' is static but used in inline function 'PA_16cLetter' which is not static [enabled by default]
+In file included from /home/hansung/ndsdev/devkitPro/libnds/include/PA9.h:73:0,
+                 from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_16c.h:105:2: warning: 'PA_16c8X8Color' is static but used in inline function 'PA_16c8X8Letter' which is not static [enabled by default]
+/home/hansung/ndsdev/devkitPro/libnds/include/arm9/PA_16c.h:91:2: warning: 'PA_Plot8Pixels' is static but used in inline function 'PA_16c8pixels' which is not static [enabled by default]
+In file included from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:12:0:
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+make[1]: *** [main.o] 오류 1
+make: *** [build] 오류 2
+04:06:47 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+Exp_Sample.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/Exp_Sample.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/Exp_Sample.c -o Exp_Sample.o 
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:1:17: fatal error: PA9.h: No such file or directory
+main.c
+compilation terminated.
+make[1]: *** [main.o] 오류 1
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+make: *** [build] 오류 2
+04:06:59 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/keymatrix/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/keymatrix/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0514057/keymatrix/source/main.c:11:0:
+linking keymatrix.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... keymatrix.nds
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0514057/keymatrix/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+04:08:48 **** Build of configuration Default for project MD ****
+make 
+Makefile:46: /home/hansung/ndsdev/devkitPro/PAlib/lib/PA_Makefile: 그런 파일이나 디렉터리가 없습니다
+make: *** 타겟 `/home/hansung/ndsdev/devkitPro/PAlib/lib/PA_Makefile'를 만들 규칙이 없음.  멈춤.
+04:08:49 **** Incremental Build of configuration Default for project keymatrix ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/keymatrix/keymatrix.nds'는 이미 갱신되었습니다.
+04:09:06 **** Incremental Build of configuration Default for project MD ****
+make 
+Makefile:46: /home/hansung/ndsdev/devkitPro/PAlib/lib/PA_Makefile: 그런 파일이나 디렉터리가 없습니다
+make: *** 타겟 `/home/hansung/ndsdev/devkitPro/PAlib/lib/PA_Makefile'를 만들 규칙이 없음.  멈춤.
+04:09:49 **** Incremental Build of configuration Default for project MD ****
+make 
+Makefile:46: *** 분리기호 이(가) 빠졌음.  멈춤.
+04:10:05 **** Incremental Build of configuration Default for project MD ****
+make 
+make: *** 타겟 없음.  멈춤.
+04:11:47 **** Incremental Build of configuration Default for project MD ****
+make 
+make: *** 타겟 없음.  멈춤.
+04:11:51 **** Incremental Build of configuration Default for project MD ****
+make 
+Makefile:46: /home/hansung/ndsdev/devkitPro/PAlib/lib/PA_Makefile: 그런 파일이나 디렉터리가 없습니다
+make: *** 타겟 `/home/hansung/ndsdev/devkitPro/PAlib/lib/PA_Makefile'를 만들 규칙이 없음.  멈춤.
+04:15:15 **** Incremental Build of configuration Default for project MD ****
+make 
+make -C lib/arm7
+make: *** lib/arm7: 그런 파일이나 디렉터리가 없습니다.  멈춤.
+make: *** [all] 오류 2
+04:16:28 **** Incremental Build of configuration Default for project MD ****
+make 
+make -C lib/arm7
+make[1]: Entering directory `/home/hansung/ndsdev/workspace/MD_accepted/MD/lib/arm7'
+arm7.bin
+make[2]: arm-eabi-objcopy: 명령을 찾지 못했음
+make[1]: Leaving directory `/home/hansung/ndsdev/workspace/MD_accepted/MD/lib/arm7'
+make[2]: *** [arm7.o] 오류 127
+make[1]: *** [build] 오류 2
+make: *** [all] 오류 2

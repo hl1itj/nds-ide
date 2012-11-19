@@ -14,4 +14,11 @@
 <book enabled="true" title="glibc library"/>
 </provider>
 </project>
+<project name="keymatrix">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="devhelp"/>
+<book enabled="true" title="glibc library"/>
+</provider>
+</project>
 </cHelpSettings>

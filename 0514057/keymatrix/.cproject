@@ -31,6 +31,7 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1327748111" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/libnds/include"/>
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/devkitARM/arm-none-eabi/include"/>
+									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/PAlib/include/nds"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1804583966" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -38,6 +39,7 @@
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1729926014" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/libnds/include"/>
 									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/devkitARM/arm-none-eabi/include"/>
+									<listOptionValue builtIn="false" value="/home/hansung/ndsdev/devkitPro/PAlib/include/nds"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1649694168" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
