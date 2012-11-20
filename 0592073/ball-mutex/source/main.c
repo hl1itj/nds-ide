@@ -53,11 +53,13 @@ struct parameters {
 };
 
 struct parameters Param[NUM_TASK] = {
-		{ "1", DIRECTION_RIGHT, 3, COLOR_RED, 350 }, { "2", DIRECTION_RIGHT, 6,
-				COLOR_RED, 300 }, { "3", DIRECTION_RIGHT, 9, COLOR_RED, 320 }, {
-				"4", DIRECTION_DOWN, 4, COLOR_GREEN, 370 }, { "5",
-				DIRECTION_DOWN, 8, COLOR_GREEN, 400 }, { "6", DIRECTION_DOWN,
-				12, COLOR_GREEN, 330 } };
+		{ "1", DIRECTION_RIGHT, 3, COLOR_RED,   350 },
+		{ "2", DIRECTION_RIGHT, 6, COLOR_RED,   300 },
+		{ "3", DIRECTION_RIGHT, 9, COLOR_RED,   320 },
+		{ "4", DIRECTION_DOWN,  4, COLOR_GREEN, 370 },
+		{ "5", DIRECTION_DOWN,  8, COLOR_GREEN, 400 },
+		{ "6", DIRECTION_DOWN, 12, COLOR_GREEN, 330 }
+};
 
 struct pos {
 	int x;
@@ -146,29 +148,29 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 			switch (pos.x) {
 			case FIRST_CROSS_X:
 				if (pos.y == FIRST_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[0], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[0], (portTickType)410);
 				} else if (pos.y == SECOND_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[1], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[1], (portTickType)410);
 				} else if (pos.y == THIRD_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[2], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[2], (portTickType)410);
 				}
 				break;
 			case SECOND_CROSS_X:
 				if (pos.y == FIRST_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[3], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[3], (portTickType)410);
 				} else if (pos.y == SECOND_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[4], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[4], (portTickType)410);
 				} else if (pos.y == THIRD_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[5], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[5], (portTickType)410);
 				}
 				break;
 			case THIRD_CROSS_X:
 				if (pos.y == FIRST_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[6], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[6], (portTickType)410);
 				} else if (pos.y == SECOND_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[7], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[7], (portTickType)410);
 				} else if (pos.y == THIRD_CROSS_Y) {
-					xSemaphoreTake(xSemaphore[8], (portTickType)1000);
+					xSemaphoreTake(xSemaphore[8], (portTickType)410);
 				}
 				break;
 			default:
