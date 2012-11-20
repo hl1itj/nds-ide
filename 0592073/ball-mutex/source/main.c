@@ -138,27 +138,10 @@ void pos_init(struct pos *pos, struct parameters *p) {
 static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *) pvParameters;
 	struct pos pos, prev_pos;
-	int index = 0;
-	u8 isCross = FALSE;
 	pos_init(&pos, p);
 
 	while (1) {
-		/*
-		 index = (pos.x / 4) + (pos.y - 4);
 
-		 if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
-		 isCross = TRUE;
-		 }
-
-
-		 if ((NDS_SWITCH() & KEY_R)) {
-		 if (isCross) {
-		 //if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
-
-		 xSemaphoreTake(xSemaphore[index], (portTickType)1000);
-		 }
-		 }
-		 */
 		if (NDS_SWITCH() & KEY_R) {
 			switch (pos.x) {
 			case FIRST_CROSS_X:
@@ -196,13 +179,7 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 		draw_my_box(prev_pos.x, prev_pos.y, COLOR_BLACK);	// ���� ��ġ ����
 		draw_my_box(pos.x, pos.y, p->color);		// �� ��ġ�� �׸�
 		vTaskDelay(MSEC2TICK(p->delay) );		// Delay
-				/*
-				 if (isCross){
-				 //	if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
-				 xSemaphoreGive(xSemaphore[index]);
-				 isCross = FALSE;
-				 }
-				 */
+
 		switch (pos.x) {
 		case FIRST_CROSS_X:
 			if (pos.y == FIRST_CROSS_Y) {
