@@ -1,15 +1,12 @@
-23:51:15 **** Incremental Build of configuration Default for project ball ****
+01:09:49 **** Incremental Build of configuration Default for project ball ****
 make 
-Ball_Homework.c
-arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/ball/build/Ball_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0792004/ball/include -I/home/hansung/ndsdev/nds-ide/0792004/ball/build -I/home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0792004/ball/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0792004/ball/source/Ball_Homework.c -o Ball_Homework.o 
-/home/hansung/ndsdev/nds-ide/0792004/ball/source/Ball_Homework.c: In function 'Ball_Homework':
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/ball/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0792004/ball/include -I/home/hansung/ndsdev/nds-ide/0792004/ball/build -I/home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0792004/ball/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0792004/ball/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0792004/ball/source/main.c:15:0:
 linking ball.elf
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... ball.nds
-/home/hansung/ndsdev/nds-ide/0792004/ball/source/Ball_Homework.c:65:3: warning: implicit declaration of function 'draw_my_box' [-Wimplicit-function-declaration]
-In file included from /home/hansung/ndsdev/nds-ide/0792004/ball/source/Ball_Homework.c:14:0:
-/home/hansung/ndsdev/nds-ide/0792004/ball/source/Ball_Homework.c: At top level:
 /home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
@@ -36,6 +33,7 @@ In file included from /home/hansung/ndsdev/nds-ide/0792004/ball/source/Ball_Home
 /home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0792004/ball/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0792004/ball/source/main.c:46:8: warning: 'Exp_Task' declared 'static' but never defined [-Wunused-function]
 
-23:51:18 Build Finished (took 2s.462ms)
+01:09:51 Build Finished (took 2s.719ms)
 

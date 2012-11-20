@@ -1,3 +1,4 @@
+
 // Free RTOS Headers
 #include <FreeRTOS.h>
 #include <task.h>
@@ -19,8 +20,8 @@
 #define DIRECTION_LEFT	3
 #define DIRECTION_RIGHT	4
 
-#define COLOR_RED       RGB(31,  0,  0) /* Bright Red  	*/
-#define COLOR_WHITE     RGB(31, 31, 31) /* Bright White */
+#define COLOR_RED       RGB(31,  0,  0)
+#define COLOR_WHITE     RGB(31, 31, 31)
 #define COLOR_BLACK     RGB( 0,  0,  0)
 
 #define BOX_WIDTH		16
@@ -64,6 +65,8 @@ void Ball_Homework(struct parameters *p)
 
 		draw_my_box(old_pos_x, old_pos_y, COLOR_BLACK);
 		draw_my_box(pos_x, pos_y, p->color);
+		//if (strcmp(p->taskname, "5") == 0)
+		//	printf("%s %d\n", p->taskname, xTaskGetTickCount());
 
 		old_pos_x = pos_x;
 		old_pos_y = pos_y;

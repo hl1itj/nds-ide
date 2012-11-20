@@ -146,7 +146,6 @@ portTASK_FUNCTION(Key_Task, pvParameters)
 	u8 key, scan = 0;
 	u8 key_pressed = FALSE;
 	u8 pre_line;
-	int i;
 
 	while (1) {
 
