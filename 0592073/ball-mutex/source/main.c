@@ -36,6 +36,14 @@
 #define SCREEN_WIDTH	 256
 #define SCREEN_HEIGHT 192
 
+#define FIRST_CROSS_X 4
+#define SECOND_CROSS_X 8
+#define THIRD_CROSS_X 12
+
+#define FIRST_CROSS_Y 3
+#define SECOND_CROSS_Y 6
+#define THIRD_CROSS_Y 9
+
 struct parameters {
 	char *taskname;		// Task Name
 	int direction;		// Current Moving Direction
@@ -130,25 +138,103 @@ void pos_init(struct pos *pos, struct parameters *p) {
 static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *) pvParameters;
 	struct pos pos, prev_pos;
+	int index = 0;
+	u8 isCross = FALSE;
 	pos_init(&pos, p);
 
 	while (1) {
-		if ((NDS_SWITCH() & KEY_R)) {
-			if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
-				while (!xSemaphoreTake(xSemaphore[ (pos.x/4) + (pos.y-4) ], 0)) {
+		/*
+		 index = (pos.x / 4) + (pos.y - 4);
 
+		 if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
+		 isCross = TRUE;
+		 }
+
+
+		 if ((NDS_SWITCH() & KEY_R)) {
+		 if (isCross) {
+		 //if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
+
+		 xSemaphoreTake(xSemaphore[index], (portTickType)1000);
+		 }
+		 }
+		 */
+		if (NDS_SWITCH() & KEY_R) {
+			switch (pos.x) {
+			case FIRST_CROSS_X:
+				if (pos.y == FIRST_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[0], (portTickType)1000);
+				} else if (pos.y == SECOND_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[1], (portTickType)1000);
+				} else if (pos.y == THIRD_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[2], (portTickType)1000);
 				}
+				break;
+			case SECOND_CROSS_X:
+				if (pos.y == FIRST_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[3], (portTickType)1000);
+				} else if (pos.y == SECOND_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[4], (portTickType)1000);
+				} else if (pos.y == THIRD_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[5], (portTickType)1000);
+				}
+				break;
+			case THIRD_CROSS_X:
+				if (pos.y == FIRST_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[6], (portTickType)1000);
+				} else if (pos.y == SECOND_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[7], (portTickType)1000);
+				} else if (pos.y == THIRD_CROSS_Y) {
+					xSemaphoreTake(xSemaphore[8], (portTickType)1000);
+				}
+				break;
+			default:
+				// no effect
+				break;
 			}
 		}
-
 		draw_my_box(prev_pos.x, prev_pos.y, COLOR_BLACK);	// ���� ��ġ ����
 		draw_my_box(pos.x, pos.y, p->color);		// �� ��ġ�� �׸�
 		vTaskDelay(MSEC2TICK(p->delay) );		// Delay
-
-		if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
-			xSemaphoreGive(xSemaphore[ (pos.x / 4) + (pos.y-4) ]);
+				/*
+				 if (isCross){
+				 //	if ((pos.x % 4 == 0) && ((pos.y % 3) == 0)) {
+				 xSemaphoreGive(xSemaphore[index]);
+				 isCross = FALSE;
+				 }
+				 */
+		switch (pos.x) {
+		case FIRST_CROSS_X:
+			if (pos.y == FIRST_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[0]);
+			} else if (pos.y == SECOND_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[1]);
+			} else if (pos.y == THIRD_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[2]);
+			}
+			break;
+		case SECOND_CROSS_X:
+			if (pos.y == FIRST_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[3]);
+			} else if (pos.y == SECOND_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[4]);
+			} else if (pos.y == THIRD_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[5]);
+			}
+			break;
+		case THIRD_CROSS_X:
+			if (pos.y == FIRST_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[6]);
+			} else if (pos.y == SECOND_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[7]);
+			} else if (pos.y == THIRD_CROSS_Y) {
+				xSemaphoreGive(xSemaphore[8]);
+			}
+			break;
+		default:
+			// no effect
+			break;
 		}
-
 		prev_pos = pos;
 
 		switch (p->direction) {
@@ -161,7 +247,7 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 			}
 			break;
 		case DIRECTION_LEFT:
-			if (pos.x > BOTTOM) {
+			if (pos.x > LEFT) {
 				pos.x--;
 			} else {
 				pos.x++;
@@ -177,7 +263,7 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 			}
 			break;
 		case DIRECTION_UP:
-			if (pos.y > LEFT) {
+			if (pos.y > BOTTOM) {
 				pos.y--;
 			} else {
 				pos.y++;

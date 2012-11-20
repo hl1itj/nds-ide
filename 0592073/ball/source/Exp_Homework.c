@@ -89,7 +89,7 @@ void Exp_Homework(struct parameters *p) {
 			}
 			break;
 		case DIRECTION_LEFT:
-			if (pos.x > BOTTOM) {
+			if (pos.x > LEFT) {
 				pos.x--;
 			} else {
 				pos.x++;
@@ -105,7 +105,7 @@ void Exp_Homework(struct parameters *p) {
 			}
 			break;
 		case DIRECTION_UP:
-			if (pos.y > LEFT) {
+			if (pos.y > BOTTOM) {
 				pos.y--;
 			} else {
 				pos.y++;
