@@ -1,7 +1,15 @@
-00:40:01 **** Incremental Build of configuration Default for project test ****
+01:30:23 **** Incremental Build of configuration Default for project test ****
 make 
-croutine.d:31: *** 분리기호 이(가) 빠졌음.  멈춤.
-make: *** [build] 오류 2
+abcde.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/test/build/abcde.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c abcde.s -o abcde.o 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0792004/test/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0792004/test/include -I/home/hansung/ndsdev/nds-ide/0792004/test/build -I/home/hansung/ndsdev/nds-ide/0792004/test/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0792004/test/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0792004/test/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0792004/test/source/main.c -o main.o 
+/home/hansung/ndsdev/nds-ide/0792004/test/source/main.c: In function 'main':
+linking test.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... test.nds
+/home/hansung/ndsdev/nds-ide/0792004/test/source/main.c:11:2: warning: implicit declaration of function 'vTaskStartScheduler' [-Wimplicit-function-declaration]
 
-00:40:01 Build Finished (took 87ms)
+01:30:24 Build Finished (took 1s.106ms)
 

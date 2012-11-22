@@ -1,0 +1,11 @@
+14:06:59 **** Incremental Build of configuration Default for project asdf ****
+make 
+linking asdf.elf
+/home/hansung/ndsdev/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/ds_arm9_crt0.o: In function `CIDLoop':
+(.init+0x218): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make[1]: *** [/home/hansung/ndsdev/nds-ide/0514057/asdf/asdf.elf] 오류 1
+make: *** [build] 오류 2
+
+14:06:59 Build Finished (took 57ms)
+

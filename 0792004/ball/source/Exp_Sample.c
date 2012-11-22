@@ -7,6 +7,7 @@
 
 // Free RTOS Headers
 // See AI reference Document in http://www.freertos.org/
+
 #include <FreeRTOS.h>
 #include <task.h>
 #include <queue.h>
@@ -19,8 +20,8 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define COLOR_RED       RGB(31,  0,  0) /* Bright Red  	*/
-#define COLOR_WHITE     RGB(31, 31, 31) /* Bright White */
+#define COLOR_RED       RGB(31,  0,  0)
+#define COLOR_WHITE     RGB(31, 31, 31)
 #define COLOR_BLACK     RGB( 0,  0,  0)
 
 #define BOX_WIDTH	16

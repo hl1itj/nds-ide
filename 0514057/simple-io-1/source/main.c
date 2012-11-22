@@ -1,76 +1,49 @@
-/*
- * main.c
- *
- *  Created on: 2011. 9. 24.
- *      Author: Minsuk Lee
- */
 
-#include <stdio.h>          // C-Standard Header
-#include <time.h>
-#include <stdlib.h>
+/*---------------------------------------------------------------------------------
 
-#include <FreeRTOS.h>       // Free RTOS Headers
-#include <task.h>
-#include <queue.h>
-#include <semphr.h>
+	$Id: main.cpp,v 1.13 2008-12-02 20:21:20 dovoto Exp $
 
-#include <nds.h>            // NDS / Sevencore Board Headers
-#include <sevencore_io.h>
+	Simple console print demo
+	-- dovoto
 
-#include "card_spi.h"		// Debugging Headers
-#include "gdbStub.h"
-#include "gdbStubAsm.h"
 
-static portTASK_FUNCTION(Exp_1_Task, pvParameters);
+---------------------------------------------------------------------------------*/
+#include <nds.h>
 
-void InitDebug(void);
+#include <stdio.h>
 
-int
-main(void)
-{
-	InitDebug();
-	init_virtual_io(ENABLE_LED);	// Enable Virtual IO Devices
-	init_printf();					// Initialize Bottom Screen for printf()
+volatile int frame = 0;
 
-	xTaskCreate(Exp_1_Task,
-			(const signed char * const)"Exp_1_Task",
-			2048,
-			(void *)NULL,
-			tskIDLE_PRIORITY + 1,
-			NULL);
+//---------------------------------------------------------------------------------
+void Vblank() {
+//---------------------------------------------------------------------------------
+	frame++;
+}
 
-	vTaskStartScheduler();		// Never returns
-	while(1)
-		;
+//---------------------------------------------------------------------------------
+int main(void) {
+//---------------------------------------------------------------------------------
+	touchPosition touchXY;
+
+	irqSet(IRQ_VBLANK, Vblank);
+
+	consoleDemoInit();
+
+	iprintf("      Hello DS dev'rs\n");
+	iprintf("     \x1b[32mwww.devkitpro.org\n");
+	iprintf("   \x1b[32;1mwww.drunkencoders.com\x1b[39m");
+
+	while(1) {
+
+		swiWaitForVBlank();
+		touchRead(&touchXY);
+
+		// print at using ansi escape sequence \x1b[line;columnH
+		iprintf("\x1b[10;0HFrame = %d",frame);
+		iprintf("\x1b[16;0HTouch x = %04X, %04X\n", touchXY.rawx, touchXY.px);
+		iprintf("Touch y = %04X, %04X\n", touchXY.rawy, touchXY.py);
+
+	}
+
 	return 0;
 }
-
-void Exp_1_Sample_A(void);
-void Exp_1_Sample_B(void);
-void Exp_1_Homework_A(void);
-void Exp_1_Homework_B(void);
-
-void
-InitDebug(void)
-{
-#ifdef DEBUG
-	irqInit();
-	initSpi();
-	initDebug();
-	BreakPoint();
-#endif
-}
-
-static
-portTASK_FUNCTION(Exp_1_Task, pvParameters )
-{
-	while (1) {
-		Exp_1_Sample_A();
-		Exp_1_Sample_B();
-
-		Exp_1_Homework_A();
-		Exp_1_Homework_B();
-	}
-}
-
-

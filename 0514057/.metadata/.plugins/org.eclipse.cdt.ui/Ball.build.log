@@ -1,0 +1,6 @@
+14:06:59 **** Incremental Build of configuration Default for project Ball ****
+make 
+make[1]: `/home/hansung/ndsdev/workspace/ball/ball.nds'는 이미 갱신되었습니다.
+
+14:06:59 Build Finished (took 69ms)
+

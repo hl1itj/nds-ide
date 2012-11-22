@@ -1,13 +1,14 @@
 // Free RTOS Headers
 #include <FreeRTOS.h>
+
 #include <task.h>
 #include <queue.h>
 #include <semphr.h>
-#include <nds.h>
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
 
+#include <nds.h>
 #include "sevencore_io.h"
 
 #include "card_spi.h"
@@ -20,9 +21,9 @@
 #define DIRECTION_LEFT	3
 #define DIRECTION_RIGHT	4
 
-#define COLOR_RED       RGB(31,  0,  0) /* Bright Red  	*/
-#define COLOR_GREEN     RGB( 0, 31,  0) /* Bright Red  	*/
-#define COLOR_WHITE     RGB(31, 31, 31) /* Bright White */
+#define COLOR_RED       RGB(31,  0,  0)
+#define COLOR_GREEN     RGB( 0, 31,  0)
+#define COLOR_WHITE     RGB(31, 31, 31)
 #define COLOR_BLACK     RGB( 0,  0,  0)
 
 struct parameters {
@@ -57,8 +58,8 @@ main(void)
 	struct parameters *p;
 	InitDebug();
 	init_virtual_io(ENABLE_SW | ENABLE_MATRIX);	// Enable Virtual LED's on Top Screen
-	//init_printf();							// Initialize Bottom Screen for printf()
-
+	init_printf();							// Initialize Bottom Screen for printf()
+/*
 	xTaskCreate(Key_Task,
 			(const signed char * const)"Key_Task",
 			2048,
@@ -72,7 +73,7 @@ main(void)
 			(void *)NULL,
 			tskIDLE_PRIORITY + 1,
 			NULL);
-
+*/
 	for (i = 0, p = Param; i < NUM_TASK; i++, p++) {
 		xTaskCreate(Ball_Task,
 				(const signed char *) (p->taskname),
@@ -87,6 +88,7 @@ main(void)
 	vTaskStartScheduler();		// Never returns
 	while(1)
 		;
+
 	return 0;
 }
 
@@ -114,7 +116,7 @@ portTASK_FUNCTION(Ball_Task, pvParameters)
 		Ball_Homework(p);
 	}
 }
-
+/*
 static
 portTASK_FUNCTION(Exp_Task, pvParameters)
 {
@@ -175,3 +177,4 @@ portTASK_FUNCTION(Key_Task, pvParameters) {
 		vTaskDelay(MSEC2TICK(30));
 	}
 }
+*/
