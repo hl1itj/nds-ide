@@ -185,11 +185,11 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 
 		else if (prevX == 12) {
 			if (prevY == 3)
-				xSemaphoreGive(xSemaphore[5]);
-			else if (prevY == 6)
 				xSemaphoreGive(xSemaphore[6]);
-			else if (prevY == 9)
+			else if (prevY == 6)
 				xSemaphoreGive(xSemaphore[7]);
+			else if (prevY == 9)
+				xSemaphoreGive(xSemaphore[8]);
 		}
 
 		// ���� ��ġ ���  <----- ���� ���� ����
