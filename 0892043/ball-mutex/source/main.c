@@ -115,16 +115,19 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 
 	x = p->basePoint;
 	y = p->basePoint;
+
 	prevX = 0;
 	prevY = 0;
 
 	while (1) {
-		/*&& (NDS_SWITCH() & KEY_R)*/
-		// Semaphore take <--------
-		for (i = 0; i < 9; i++) {
-			if (xx[i] == x && yy[i] == y) {
-				while (!xSemaphoreTake(xSemaphore[i], (portTickType)0));
+		if (NDS_SWITCH() & KEY_R) {
+			// Semaphore take <--------
+			for (i = 0; i < 9; i++) {
+				if (xx[i] == x && yy[i] == y) {
+					while (!xSemaphoreTake(xSemaphore[i], (portTickType)0))
+						;
 					break;
+				}
 			}
 		}
 
