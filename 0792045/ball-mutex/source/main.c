@@ -96,22 +96,15 @@ void vStartExpTasks(void) {
 				(void *)p, tskIDLE_PRIORITY + 5, NULL);
 
 }
-xSemaphoreHandle xSemaphore1, xSemaphore2, xSemaphore3, xSemaphore4,
-		xSemaphore5, xSemaphore6, xSemaphore7, xSemaphore8, xSemaphore9;
+xSemaphoreHandle xSemaphore[9];
 
 static portTASK_FUNCTION(Ball_Task, pvParameters) {
 	struct parameters *p = (struct parameters *) pvParameters;
-	int x, y, prevX, prevY;
+	int x, y, prevX, prevY, i;
 
-	vSemaphoreCreateBinary(xSemaphore1);
-	vSemaphoreCreateBinary(xSemaphore2);
-	vSemaphoreCreateBinary(xSemaphore3);
-	vSemaphoreCreateBinary(xSemaphore4);
-	vSemaphoreCreateBinary(xSemaphore5);
-	vSemaphoreCreateBinary(xSemaphore6);
-	vSemaphoreCreateBinary(xSemaphore7);
-	vSemaphoreCreateBinary(xSemaphore8);
-	vSemaphoreCreateBinary(xSemaphore9);
+	for(i =0; i < 9; i++)
+		vSemaphoreCreateBinary(xSemaphore[i]);
+
 
 	if (p->taskname == "1" || p->taskname == "2" || p->taskname == "3") {
 		x = 0;
@@ -125,23 +118,23 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 
 		if (NDS_SWITCH() & KEY_R) {
 			if ((x == 4 && y == 3))
-				xSemaphoreTake(xSemaphore1, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[0], (portTickType)2000);
 			else if ((x == 4 && y == 6))
-				xSemaphoreTake(xSemaphore2, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[1], (portTickType)2000);
 			else if ((x == 4 && y == 9))
-				xSemaphoreTake(xSemaphore3, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[2], (portTickType)2000);
 			else if ((x == 8 && y == 3))
-				xSemaphoreTake(xSemaphore4, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[3], (portTickType)2000);
 			else if ((x == 8 && y == 6))
-				xSemaphoreTake(xSemaphore5, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[4], (portTickType)2000);
 			else if ((x == 8 && y == 9))
-				xSemaphoreTake(xSemaphore6, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[5], (portTickType)2000);
 			else if ((x == 12 && y == 3))
-				xSemaphoreTake(xSemaphore7, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[6], (portTickType)2000);
 			else if ((x == 12 && y == 6))
-				xSemaphoreTake(xSemaphore8, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[7], (portTickType)2000);
 			else if ((x == 12 && y == 9))
-				xSemaphoreTake(xSemaphore9, (portTickType)2000);
+				xSemaphoreTake(xSemaphore[8], (portTickType)2000);
 		}
 
 		draw_my_box(prevX, prevY, COLOR_BLACK);
@@ -152,23 +145,23 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 		prevY = y;
 
 		if ((prevX == 4 && prevY == 3))
-			xSemaphoreGive(xSemaphore1);
+			xSemaphoreGive(xSemaphore[0]);
 		else if ((prevX == 4 && prevY == 6))
-			xSemaphoreGive(xSemaphore2);
+			xSemaphoreGive(xSemaphore[1]);
 		else if ((prevX == 4 && prevY == 9))
-			xSemaphoreGive(xSemaphore3);
+			xSemaphoreGive(xSemaphore[2]);
 		else if ((prevX == 8 && prevY == 3))
-			xSemaphoreGive(xSemaphore4);
+			xSemaphoreGive(xSemaphore[3]);
 		else if ((prevX == 8 && prevY == 6))
-			xSemaphoreGive(xSemaphore5);
+			xSemaphoreGive(xSemaphore[4]);
 		else if ((prevX == 8 && prevY == 9))
-			xSemaphoreGive(xSemaphore6);
+			xSemaphoreGive(xSemaphore[5]);
 		else if ((prevX == 12 && prevY == 3))
-			xSemaphoreGive(xSemaphore7);
+			xSemaphoreGive(xSemaphore[6]);
 		else if ((prevX == 12 && prevY == 6))
-			xSemaphoreGive(xSemaphore8);
+			xSemaphoreGive(xSemaphore[7]);
 		else if ((prevX == 12 && prevY == 9))
-			xSemaphoreGive(xSemaphore9);
+			xSemaphoreGive(xSemaphore[8]);
 
 		if (p->taskname == "1" || p->taskname == "2" || p->taskname == "3") {
 			if (p->direction == DIRECTION_RIGHT) {
