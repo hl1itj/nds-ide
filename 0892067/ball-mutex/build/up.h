@@ -1,25 +1,25 @@
 
-//{{BLOCK(down)
+//{{BLOCK(up)
 
 //======================================================================
 //
-//	down, 256x192@16, 
+//	up, 256x192@16, 
 //	Alphabit on.
 //	+ bitmap lz77 compressed
-//	Total size: 12344 = 12344
+//	Total size: 11948 = 11948
 //
-//	Time-stamp: 2012-11-22, 16:28:11
+//	Time-stamp: 2012-11-22, 16:12:55
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.9
 //	( http://www.coranac.com/projects/#grit )
 //
 //======================================================================
 
-#ifndef GRIT_DOWN_H
-#define GRIT_DOWN_H
+#ifndef GRIT_UP_H
+#define GRIT_UP_H
 
-#define downBitmapLen 12344
-extern const unsigned int downBitmap[3086];
+#define upBitmapLen 11948
+extern const unsigned int upBitmap[2987];
 
-#endif // GRIT_DOWN_H
+#endif // GRIT_UP_H
 
-//}}BLOCK(down)
+//}}BLOCK(up)
