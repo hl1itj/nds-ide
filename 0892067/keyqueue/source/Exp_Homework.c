@@ -151,13 +151,16 @@ portTASK_FUNCTION( Key_Task, pvParameters) {
 		scan++;
 		if (scan == 4)
 			scan = 0;
-		if ((key < 16) && (key_pressed == 0)) {
+		if ((key < 16) {
+			if(key_pressed == 0)) {
 			key_pressed = (scan << 4) + in;
 			xQueueSend(KeyQueue, &key, 0);
+		    }
 		}
 
-		if ((key_pressed >> 4) == scan && ((key_pressed & 0x0f) != in))
-			key_pressed = 0;
+		if ((key_pressed >> 4) == scan)
+			if((key_pressed & 0x0f) != in)
+				key_pressed = 0;
 
 		vTaskDelay(MSEC2TICK(30));
 	}
