@@ -213,7 +213,6 @@ static portTASK_FUNCTION(Ball_Task, pvParameters) {
 				y++;
 			}
 		}
-		vTaskDelay(p->delay);
 	}
 }
 
