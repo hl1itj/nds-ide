@@ -6,7 +6,6 @@
 #include <queue.h>
 #include <semphr.h>
 
-// NDS / Sevencore Board Headers
 #include <nds.h>
 #include <sevencore_io.h>
 
@@ -20,14 +19,14 @@
 
 #define BALL_WIDTH	8
 #define BALL_HEIGHT	8
-#define BALL_Y_POS	14
+#define BALL_Y_POS	13
 #define BALL_X_MAX	(SCREEN_WIDTH / BALL_WIDTH) // 256/8 = 32
 #define SCREEN_WIDTH 256
 #define SCREEN_HEIGHT 192
-#define WALL_WIDTH 24
-#define WALL_HEIGHT 24
+#define WALL_WIDTH 32
+#define WALL_HEIGHT 32 // MAX=8
 #define WALL_Y_POS 4
-#define WALL_X_MAX (SCREEN_WIDTH / WALL_WIDTH)
+#define WALL_X_MAX 7
 
 #define BG_GFX ((u16*)0x6000000)
 
@@ -38,8 +37,7 @@ void draw_my_box(int pos_x, int pos_y, u16 color) {
 	pixel = (color << 16) + color;
 	for (i = 0; i < BALL_HEIGHT; i++) {
 		basePoint = (u32 *) BG_GFX
-				+ ((((pos_y * BALL_HEIGHT) + i) * SCREEN_WIDTH)
-						+ pos_x * BALL_WIDTH) / 2;
+				+ ((((pos_y * BALL_HEIGHT) + i) * SCREEN_WIDTH) + pos_x * BALL_WIDTH) / 2;
 		for (j = 0; j < (BALL_WIDTH / 2); j++)
 			*basePoint++ = pixel;
 	}
@@ -51,8 +49,7 @@ void draw_my_wall(int pos_x, int pos_y, u16 color) {
 	pixel = (color << 16) + color;
 	for (i = 0; i < WALL_HEIGHT; i++) {
 		basePoint = (u32 *) BG_GFX
-				+ ((((pos_y * WALL_HEIGHT) + i) * SCREEN_WIDTH)
-						+ pos_x * WALL_WIDTH) / 2;
+				+ ((((pos_y * WALL_HEIGHT) + i) * SCREEN_WIDTH) + pos_x * WALL_WIDTH) / 2;
 		for (j = 0; j < (WALL_WIDTH / 2); j++)
 			*basePoint++ = pixel;
 	}
@@ -60,41 +57,51 @@ void draw_my_wall(int pos_x, int pos_y, u16 color) {
 
 extern xTaskHandle BallTask;
 int wall = 0;
-xSemaphoreHandle xSemaphore[7];
+xSemaphoreHandle xSemaphore[WALL_X_MAX];
+
 void Exp_8_Homework_A(void) {
-	int i;
-	u8 key = 0;
-	key_init();
 	vTaskResume(BallTask);
-	for (i = 0; i < 7; i++) {
-		xSemaphoreCreateBinary(xSemaphore[i]);
-	}
+
 	while (1) {
-		key = getkey();
-		if (key > 7)
-			continue;
 
-		for (i = 0; i < WALL_X_MAX; i++) {
-			draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
-		}
-		wall = 0;
-		for (i = 0; i < key; i++) {
-			draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
-			wall++;
-		}
 
-		if (NDS_SWITCH() & KEY_START)
-			break;
+
+		if (NDS_SWITCH() & KEY_START) break;
 	}
 	while (NDS_SWITCH() & KEY_START)
 		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
 void Exp_8_Homework_B(void) {
+	int i;
+	u8 key, prev_key = -1;
+	key_init();
 	vTaskResume(BallTask);
-
-	while (1) {
+	for (i = 0; i < 7; i++) {
+		vSemaphoreCreateBinary(xSemaphore[i]);
 	}
+	while (1) {
+		if (kbhit()) {
+			prev_key = key;
+			key = getkey();
+			if (key > WALL_X_MAX) continue;
+			for (i = 0; i < prev_key; i++) {
+				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
+				xSemaphoreGive(xSemaphore[i]);
+			}
+			wall = 0;
+			for (i = 0; i < key; i++) {
+				while (!xSemaphoreTake(xSemaphore[i], 0))
+					;
+				draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
+				wall++;
+			}
+		}
+
+		if (NDS_SWITCH() & KEY_START) break;
+	}
+	while (NDS_SWITCH() & KEY_START)
+		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
 portTASK_FUNCTION(Ball_Task, pvParameters) {
@@ -104,17 +111,23 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 	int direction = FALSE; // TRUE is right
 	while (1) {
 		draw_my_box(x, BALL_Y_POS, COLOR_RED);
-		vTaskDelay(MSEC2TICK(1000 / (BALL_X_MAX - wall*3)) );
+		vTaskDelay(MSEC2TICK(1000 / (BALL_X_MAX - wall*4)) );
 		draw_my_box(x, BALL_Y_POS, COLOR_BLACK);
-		if (direction) {
+		if (!direction) {
+			x--;
+			if (x % 4 == 0) {
+				if (x == 0 || !xSemaphoreTake(xSemaphore[(x/4) - 1], 0)) {
+					direction = TRUE;
+				}
+			}
+
+		} else {
+			if (x % 4 == 0) {
+				xSemaphoreGive(xSemaphore[(x/4) - 1]);
+			}
 			x++;
 			if (x == BALL_X_MAX - 1) {
 				direction = FALSE;
-			}
-		} else {
-			x--;
-			if (x == wall * 3) {
-				direction = TRUE;
 			}
 		}
 	}
@@ -160,16 +173,14 @@ portTASK_FUNCTION(Key_Task, pvParameters) {
 				break;
 			case 1:
 				key += 4;
-				if (key == 16)
-					key = 0;
+				if (key == 16) key = 0;
 				break;
 			default:
 				key = 255;
 				break;
 			}
 			scan++;
-			if (scan == 4)
-				scan = 0;
+			if (scan == 4) scan = 0;
 			if (key < 16) {
 				xQueueSend(KeyQueue, &key, 0);
 				pressed = TRUE;
