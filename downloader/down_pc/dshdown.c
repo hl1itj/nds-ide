@@ -75,6 +75,7 @@ int
 connect_nds()
 {
 #ifdef WIN32
+	SOCKADDR_IN nds_sin;
 	WSADATA wsaData;
 #else
 	struct sockaddr_in nds_sin;
@@ -272,8 +273,6 @@ w_path: fname++;
         goto leave0;
     }
 	
-	
-    
     if (send_data((unsigned char *)&FHeader, sizeof(FHeader)) != sizeof(FHeader)) {
         printf("Failed to send File Header\n");
         goto leave1;

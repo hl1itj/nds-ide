@@ -7686,3 +7686,654 @@ built ... ball-mutex.nds
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
 /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+13:01:17 **** Incremental Build of configuration Default for project ball-mutex ****
+make 
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0892043/ball-mutex/source/main.c:11:0:
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+linking ball-mutex.elf
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-mutex.nds
+13:06:14 **** Incremental Build of configuration Default for project ball-mutex ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0892043/ball-mutex/ball-mutex.nds'는 이미 갱신되었습니다.
+13:33:47 **** Build of configuration Default for project ball-wall ****
+make 
+grit /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/down.png -fts -odown
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/down.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'down'.
+STATUS: Started run at: 2012-11-22, 13:33:47
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: down into down.s .
+STATUS: Run completed :).
+STATUS: Done!
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+grit /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/up.png -fts -oup
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/up.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'up'.
+STATUS: Started run at: 2012-11-22, 13:33:48
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: up into up.s .
+STATUS: Run completed :).
+STATUS: Done!
+up.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
+croutine.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/croutine.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/croutine.c -o croutine.o 
+list.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/list.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/list.c -o list.o 
+queue.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/queue.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/queue.c -o queue.o 
+tasks.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/tasks.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/tasks.c -o tasks.o 
+card_spi.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/card_spi.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/card_spi.c -o card_spi.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+gdbStub.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/gdbStub.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.c -o gdbStub.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+heap_3.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/heap_3.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/heap_3.c -o heap_3.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Ball_Task':
+port.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/port.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/port.c -o port.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:100:13: error: expected expression before ')' token
+portISR.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/portISR.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/portISR.c -o portISR.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:74:6: warning: unused variable 'i' [-Wunused-variable]
+sevencore_io.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
+make[1]: *** [Exp_Homework.o] 오류 1
+make: *** [build] 오류 2
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+rm down.s up.s
+13:34:29 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+grit /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/down.png -fts -odown
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/down.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'down'.
+STATUS: Started run at: 2012-11-22, 13:34:30
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: down into down.s .
+STATUS: Run completed :).
+STATUS: Done!
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+grit /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/up.png -fts -oup
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892043/ball-wall/image/up.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'up'.
+STATUS: Started run at: 2012-11-22, 13:34:30
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: up into up.s .
+STATUS: Run completed :).
+STATUS: Done!
+up.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
+sevencore_io.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/sevencore_io.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/sevencore_io.c -o sevencore_io.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+main.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/main.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/main.c -o main.o 
+In file included from /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/main.c:14:0:
+gdbStubAsm.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/gdbStubAsm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStubAsm.s -o gdbStubAsm.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:115:12: warning: 'memAddrCheck' declared 'static' but never defined [-Wunused-function]
+port_asm.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/port_asm.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/port_asm.s -o port_asm.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:116:12: warning: 'hex' declared 'static' but never defined [-Wunused-function]
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:117:12: warning: 'hexToInt' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:118:23: warning: 'mem2hex' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:119:23: warning: 'hex2mem' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:120:23: warning: 'getpacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:121:13: warning: 'putPacket' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:122:13: warning: 'indicateHaltedReason' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:123:12: warning: 'regOffset' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:128:13: warning: 'readRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:129:13: warning: 'writeRegisters' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:130:13: warning: 'readMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:131:13: warning: 'writeMemory' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:132:13: warning: 'debugStub' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:133:17: warning: 'v5TSemantics' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:134:17: warning: 'insWillExecute' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:135:17: warning: 'RmShifted' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:136:18: warning: 'targetIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:137:17: warning: 'targetThumbIns' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:138:13: warning: 'singleStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:139:13: warning: 'clearStep' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:140:13: warning: 'jumpBack' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:141:17: warning: 'computeReturnAddress' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:143:13: warning: 'build_t_packet' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:144:13: warning: 'exceptionHandler' declared 'static' but never defined [-Wunused-function]
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS/gdbStub.h:145:13: warning: 'firstHandler' declared 'static' but never defined [-Wunused-function]
+13:35:18 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+13:35:32 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+13:35:59 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+13:36:58 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+13:37:18 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:61:5: warning: variable 'key' set but not used [-Wunused-but-set-variable]
+13:59:19 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:00:04 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:01:09 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:03:54 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:04:19 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:04:53 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:05:42 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:06:37 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:06:48 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0892043/ball-wall/ball-wall.nds'는 이미 갱신되었습니다.
+14:06:58 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0892043/ball-wall/ball-wall.nds'는 이미 갱신되었습니다.
+14:14:54 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:16:55 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:21:11 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:74:7: error: 'x' undeclared (first use in this function)
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:74:7: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [Exp_Homework.o] 오류 1
+make: *** [build] 오류 2
+14:22:06 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:24:27 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:77:5: error: expected expression before 'void'
+make[1]: *** [Exp_Homework.o] 오류 1
+make: *** [build] 오류 2
+14:26:29 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:27:16 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0892043/ball-wall/ball-wall.nds'는 이미 갱신되었습니다.
+14:27:22 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:29:22 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:78:3: error: 'for' loop initial declarations are only allowed in C99 mode
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:78:3: note: use option -std=c99 or -std=gnu99 to compile your code
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:84:12: error: redefinition of 'i'
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:78:12: note: previous definition of 'i' was here
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:84:3: error: 'for' loop initial declarations are only allowed in C99 mode
+make[1]: *** [Exp_Homework.o] 오류 1
+make: *** [build] 오류 2
+14:29:53 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:36:06 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+14:38:18 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+14:39:27 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+14:45:56 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+14:47:32 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+14:48:18 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+14:48:56 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+14:49:53 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_B':
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+/home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+15:00:36 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:01:22 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:03:01 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:06:16 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:06:54 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:07:47 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:09:13 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:14:00 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:16:30 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:18:26 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:18:59 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:19:27 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:27:06 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:27:53 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:28:58 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:37:17 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:39:35 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:43:39 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:52:44 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+15:53:33 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892043/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892043/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892043/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
