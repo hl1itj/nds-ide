@@ -11,6 +11,10 @@
 #include "gdbStub.h"
 #include "gdbStubAsm.h"
 
+#define BG_GFX			((u16*)0x6000000)
+#define SCREEN_WIDTH	256
+#define SCREEN_HEIGHT 192
+
 #define COLOR_RED       RGB(31,  0,  0)
 #define COLOR_GREEN     RGB(0,  31,  0)
 #define COLOR_BLACK     RGB(0,   0,  0)
@@ -46,12 +50,14 @@ struct parameters Param[NUM_TASK] = {
 	{ "6", DIRECTION_DOWN,  12, COLOR_GREEN, 330 }
 };
 
+xSemaphoreHandle xSemaphore[9];
+
 static portTASK_FUNCTION(Ball_Task, pvParameters);
 void InitDebug(void);
 void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
-// ¿©±â¿¡ ÇÊ¿äÇÑ ¼ö ¸¸Å­ÀÇ Semaphore ÇÚµé ¼±¾ð  <--------
+// ï¿½ï¿½ï¿½â¿¡ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å­ï¿½ï¿½ Semaphore ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½  <--------
 
 int
 main(void)
@@ -105,29 +111,100 @@ vStartExpTasks(void)
 	for (i = 0, p = Param; i < NUM_TASK; i++, p++)
 		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024, (void *)p, tskIDLE_PRIORITY + 5, NULL);
 
-	// ¿©±â¿¡ ÇÊ¿äÇÑ ¼ö ¸¸Å­ Semaphore ÃÊ±âÈ­ (vSemaphoreCreateBinary) <--------
+	// ï¿½ï¿½ï¿½â¿¡ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å­ Semaphore ï¿½Ê±ï¿½È­ (vSemaphoreCreateBinary) <--------
+	for(i = 0 ; i< 9 ; i++){
+		vSemaphoreCreateBinary(xSemaphore[i]);
+	}
 
 }
+
+
 
 static portTASK_FUNCTION(Ball_Task, pvParameters)
 {
 	struct parameters *p = (struct parameters *)pvParameters;
 	int x, y, prevX, prevY;
+	int i, j;
+	u8 state = TRUE;
+	int crossingPoint[9][2]= {
+			{4,3},{4,6},{4,9},
+			{8,3},{8,6},{8,9},
+			{12,3},{12,6},{12,9}
+		};
 
-	// ¿©±â¿¡ °¢  BallÀÇ ÃÊ±â À§Ä¡ (x,y) ¼³Á¤ <-------- Áö³­ ½ÇÇè ³»¿ë
+
+	if(p->direction == DIRECTION_RIGHT){
+		x = 0;
+		y = p->basePoint;
+	}
+	else if(p->direction == DIRECTION_DOWN){
+		x = p->basePoint;
+		y = 0;
+	}
 
 	while(1) {
 
-		// ¿©±â¿¡ °¢ BallÀÌ ±³Â÷Á¡¿¡ ÀÖ°í, R Key°¡ ´­·È´Ù¸é  Semaphore take <--------
+		// ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ Ballï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½, R Keyï¿½ï¿½ ï¿½ï¿½ï¿½È´Ù¸ï¿½  Semaphore take <--------
 
-		draw_my_box(prevX, prevY, COLOR_BLACK);	// ¿¹Àü À§Ä¡ »èÁ¦
-		draw_my_box(x, y, p->color);			// »õ À§Ä¡¿¡ ±×¸²
+		if(NDS_SWITCH() & KEY_R){
+			for(i = 0; i<9 ; i++){
+				if((x == crossingPoint[i][0]) && (y== crossingPoint[i][1])){
+					xSemaphoreTake(xSemaphore[i], (portTickType)1000);
+					break;
+				}
+			}
+		}
+		draw_my_box(prevX, prevY, COLOR_BLACK);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
+		draw_my_box(x, y, p->color);			// ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½×¸ï¿½
 		vTaskDelay(MSEC2TICK(p->delay));		// Delay
 
-		// ¿©±â¿¡ °¢ BallÀÌ ±³Â÷Á¡¿¡ ÀÖÀ¸¸é, Semaphore Give <--------
+		// ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ Ballï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Semaphore Give <--------
+
+		for(i = 0; i<9 ; i++){
+			if((prevX == crossingPoint[i][0]) && (prevY== crossingPoint[i][1])){
+				xSemaphoreGive(xSemaphore[i]);
+				break;
+			}
+		}
 
 		prevX = x; prevY = y;
 
-		// ´ÙÀ½ À§Ä¡ °è»ê  <----- Áö³­ ½ÇÇè ³»¿ë
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½  <----- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(p->direction == DIRECTION_RIGHT){
+			if(state){
+				if(x == (MAX_X-1)){
+					state = FALSE;
+					x--;
+				}
+				else
+					x++;
+			}
+			else{
+				if(x == 0){
+					state =TRUE;
+					x++;
+				}
+				else
+					x--;
+			}
+		}
+		else if(p->direction == DIRECTION_DOWN){
+			if(state){
+				if(y >= (MAX_Y-1)){
+					state = FALSE;
+					y--;
+				}
+				else
+					y++;
+			}
+			else{
+				if(y == 0){
+					state =TRUE;
+					y++;
+				}
+				else
+					y--;
+			}
+		}
 	}
 }
