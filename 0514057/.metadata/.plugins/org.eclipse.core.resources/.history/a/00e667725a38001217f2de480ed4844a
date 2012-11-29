@@ -1,0 +1,65 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <limits.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+#define OP_MAX 100
+
+extern char **environ;
+
+int main(void)
+{
+   
+   int  i;
+   int bgRun;
+   pid_t pid;
+   char cmd[LINE_MAX];
+   char* temp;
+   char* fileName;
+   char* option[OP_MAX];
+
+   while(1)
+   {
+      temp = NULL;
+      printf("[shell]");
+      fgets(cmd, LINE_MAX, stdin);
+  
+      temp = strtok(cmd,"\n ");
+      if(temp == NULL)
+         continue;
+      else if(strcmp(temp,"exit") == 0)
+         break;
+      fileName = temp;
+      *(option+0) = temp;
+      for(i=1; temp != NULL; i++)
+      {
+         temp = strtok(NULL,"\n ");
+         *(option+i) = temp;
+      }
+      if(strcmp(*(option+(i-2)),"&") == 0)
+      {
+         *(option+(i-2)) = (char *)0;
+         bgRun = 1;
+      }
+      else
+         bgRun = 0;
+
+      pid = fork();
+      if(pid > 0)
+      {
+         if(!bgRun)
+            wait();
+      }
+      else if(pid == 0)
+      {
+         if(execvp(fileName,option)==-1)
+            printf("exec fail\n");       
+      }
+      else
+      {
+         printf("fork fail\n");
+      }      
+   } 
+}

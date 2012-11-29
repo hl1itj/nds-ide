@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <string.h>
+#include <unistd.h>
+#include <string.h>
+
+int tab;     // 디렉터리 명을 출력하기전 공백
+int linec;   // 줄바꿈 상태를 나타냄
+int mytr(char* ichar)
+{
+   int i,count=0; //count: 최하위 디렉터리 판별용
+   DIR *dir;
+   struct dirent *dentry;
+   struct stat buf;
+   char path[25600];
+
+   if(access(ichar,R_OK) == -1)
+   {
+      return -4;
+   }
+   if(stat(ichar, &buf) == -1)
+   {
+      fprintf(stderr, "stat error");
+      return -2;
+   }
+   //디렉터리 일때
+   if(S_ISDIR(buf.st_mode))
+   {
+	   //현제 디렉터리를 저장
+      getcwd(path,25600);
+      //인자로 전달된 디렉터리로 이동
+      if(chdir(ichar) == -1)
+      {
+         fprintf(stderr, "chdir error");
+      }
+      //명령행 인자로 전달된 디렉터리 출력
+      if(tab==0)
+      {
+         printf("%10s",ichar);
+      }
+      else
+      {
+    	  //줄바꾼 후 공백 출력
+         if(linec==1)
+         {
+            printf("\n");
+            printf("          ");
+            for(i=1;i<tab;i++)
+            {
+               printf("              ");
+            }
+            linec=0;
+         }
+         //디렉터리명 출력
+         printf("----%-10s",ichar);
+      }
+      if((dir=opendir(".")) == NULL)
+      {
+         fprintf(stderr, "open dir error");
+      }
+      while(dentry = readdir(dir))
+      {
+    	 // .과 .. 디렉터리를 제외하고 하위 디렉터리가 있을때 재귀함수 호출
+        if(0!=(strcmp(dentry->d_name,".")&&strcmp(dentry->d_name,"..")))
+        {
+           tab++;
+           mytr(dentry->d_name);
+           count++;
+           tab--;
+        }
+      }
+      //하위 디렉터리가 하나도 없는 디렉터리 출력후 줄바꿈
+      if(count==0)
+      {
+         linec=1;
+      }
+      //탐색이 끝난 후 상위 디렉터리로 이동
+      if(chdir(path) == -1)
+      {
+         return -3;
+      }
+   }
+   else
+   {
+      return -1;
+   }
+}
+

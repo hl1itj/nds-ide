@@ -1,0 +1,65 @@
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+void main(void)
+{
+   pid_t c1;
+   pid_t c2;
+
+   c1 = fork();
+   if(c1>0)
+   {
+      c2 = fork();
+      if(c2>0)
+      {
+         wait();
+         wait();
+         printf("i'm parent(%d),i have two children(%d,%d)\n",getpid(),c1,c2);
+      }
+      else if(c2==0)
+      {
+         c1 = fork();
+         if(c1>0)
+         {
+            c2 = fork();
+	    if(c2 > 0)
+            {
+               wait();
+               wait();
+               printf("i'm child(%d),i have two grandchildren(%d,%d)\n",getpid(),c1,c2);
+            }
+            else if(c2 == 0)
+            {
+               printf("i'm grandchildren(%d),i have not created any descendent!\n",getpid());
+            }
+         }
+         else if(c2==0)
+         {
+            printf("i'm grandchildren(%d),i have not created any descendent!\n",getpid());
+         }
+      }
+   }
+   else if(c1==0)
+   {
+      c1 = fork();
+      if(c1>0)
+      {
+         c2 = fork();
+         if(c2>0)
+         { 
+            wait();
+            wait();  
+            printf("i'm child(%d),i have two grandchildren(%d,%d)\n",getpid(),c1,c2);
+         }
+         else if(c2==0)
+         {
+            printf("i'm grandchildren(%d), i have not created any descendent!\n",getpid());
+         }
+      }
+      else if(c1==0)
+      {
+         printf("i'm grandchildren(%d), i have not created any descendent!\n",getpid());
+      }
+   }		
+}

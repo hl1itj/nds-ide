@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[])
+{
+   int i;
+   int in;
+   int result;
+   int cResult;
+   pid_t pid;
+
+   if(argc!=2)
+   {
+      printf("command error");
+      return 0;
+   }
+   in = atoi(argv[1]);
+   
+   pid = fork();
+
+   if(pid>0)
+   {
+      wait(&cResult);
+      result = 0;
+      for(i=1; i<=in; i++)
+      {
+         result = result + i;
+      }
+      printf("parent result: %d \n",result);
+      printf("child result: %d \n",WEXITSTATUS(cResult));
+   }
+   else if(pid==0)
+   {  
+      if(in==0)
+      {
+         exit(0);
+      }
+      result = 1;
+      for(i=1; i<=in; i++)
+      {
+         result = result * i;
+      }
+      if(result > 255)
+      {
+         printf("child result is overflow\n");
+      }
+      exit(result);
+   }
+   else
+   {
+      printf("folk error");
+      return 0;
+   }
+}

@@ -128,10 +128,6 @@ vStartExpTasks(void)
 	vramSetBankA(VRAM_A_MAIN_BG);
 	bgInit(3,BgType_Bmp16, BgSize_B16_256x256, 0, 0);
 
-	for (i = 0, p = Param; i < NUM_TASK; i++, p++)
-		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024, (void *)p, tskIDLE_PRIORITY + 5, NULL);
-
-	// ���⿡ �ʿ��� �� ��ŭ Semaphore �ʱ�ȭ (vSemaphoreCreateBinary) <--------
 	initCsArray();
 	csAdd(4,3);
 	csAdd(4,6);
@@ -142,6 +138,12 @@ vStartExpTasks(void)
 	csAdd(12,3);
 	csAdd(12,6);
 	csAdd(12,9);
+
+	for (i = 0, p = Param; i < NUM_TASK; i++, p++)
+		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024, (void *)p, tskIDLE_PRIORITY + 5, NULL);
+
+	// ���⿡ �ʿ��� �� ��ŭ Semaphore �ʱ�ȭ (vSemaphoreCreateBinary) <--------
+
 }
 
 
