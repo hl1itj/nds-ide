@@ -156,7 +156,7 @@ portTASK_FUNCTION(Ball_Task, pvParameters)
 			xSemaphoreGive(sem);
 		}
 		draw_my_box(ballPos,BOX_Y_POS,COLOR_RED);
-		vTaskDelayUntil(&XLastWakeTime, MSEC2TICK(1000)/(BOX_X_MAX-1-ballLeftLimit));
+		vTaskDelayUntil(1000/(&XLastWakeTime, BOX_X_MAX-1-ballLeftLimit));
 	}
 }
 

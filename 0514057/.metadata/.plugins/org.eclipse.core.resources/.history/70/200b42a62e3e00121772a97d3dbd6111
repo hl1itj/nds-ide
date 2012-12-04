@@ -134,7 +134,6 @@ portTASK_FUNCTION(Ball_Task, pvParameters)
 	// �ʿ��� ����, �ʱ�ȭ
 	enum {LEFT_DIRECTION, RIGHT_DIRECTION};
 	u8 direction = RIGHT_DIRECTION;
-	portTickType XLastWakeTime = xTaskGetTickCount();
 	while (1) {
 		if(ballPos==ballLeftLimit)
 			direction = RIGHT_DIRECTION;
@@ -156,7 +155,7 @@ portTASK_FUNCTION(Ball_Task, pvParameters)
 			xSemaphoreGive(sem);
 		}
 		draw_my_box(ballPos,BOX_Y_POS,COLOR_RED);
-		vTaskDelayUntil(&XLastWakeTime, MSEC2TICK(1000)/(BOX_X_MAX-1-ballLeftLimit));
+		vTaskDelay(1000/(BOX_X_MAX-1-ballLeftLimit));
 	}
 }
 

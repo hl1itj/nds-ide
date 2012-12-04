@@ -1850,3 +1850,39 @@ linking ball-wall.elf
 Nintendo DS rom tool 1.50.1 - Jun 19 2012
 by Rafael Vuijk, Dave Murphy, Alexei Karpenko
 built ... ball-wall.nds
+01:21:27 **** Incremental Build of configuration Default for project ball-mutex ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/ball-mutex/ball-mutex.nds'는 이미 갱신되었습니다.
+01:21:27 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c: In function 'Ball_Task':
+/home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c:159:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+/home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c:159:3: warning: passing argument 1 of 'vTaskDelayUntil' makes pointer from integer without a cast [enabled by default]
+In file included from /home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c:5:0:
+/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/include/task.h:544:6: note: expected 'portTickType * const' but argument is of type 'int'
+/home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c:159:3: error: too few arguments to function 'vTaskDelayUntil'
+In file included from /home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c:5:0:
+/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/include/task.h:544:6: note: declared here
+make[1]: *** [Exp_Homework.o] 오류 1
+make: *** [build] 오류 2
+01:21:50 **** Incremental Build of configuration Default for project ball-mutex ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0514057/ball-mutex/ball-mutex.nds'는 이미 갱신되었습니다.
+01:21:50 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+01:38:02 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0514057/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0514057/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0514057/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds

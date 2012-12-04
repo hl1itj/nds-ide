@@ -1,6 +1,6 @@
-21:33:38 **** Incremental Build of configuration Default for project ball-mutex ****
+01:21:50 **** Incremental Build of configuration Default for project ball-mutex ****
 make 
 make[1]: `/home/hansung/ndsdev/nds-ide/0514057/ball-mutex/ball-mutex.nds'는 이미 갱신되었습니다.
 
-21:33:38 Build Finished (took 71ms)
+01:21:50 Build Finished (took 66ms)
 
