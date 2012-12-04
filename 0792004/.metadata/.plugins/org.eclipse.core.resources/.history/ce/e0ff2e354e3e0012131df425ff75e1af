@@ -138,6 +138,8 @@ Exp_8_Homework_B(void)
 				pos_x = key;
 			}
 		}
+		else if (key == 15)
+			break;
 	}
 }
 

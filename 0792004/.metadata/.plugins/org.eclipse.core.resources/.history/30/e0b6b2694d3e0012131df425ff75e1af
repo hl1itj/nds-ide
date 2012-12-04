@@ -115,29 +115,31 @@ Exp_8_Homework_B(void)
 		key = getkey();
 
 		if (key < 8) {
-			if (key > pos_x) {
-				i = pos_x;
-				while (i < key) {
-					if (xSemaphoreTake( xSemaphore[i], 0 ) == pdTRUE) {
-						limit_x += BIG_RATE;
-						draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
-						i++;
-					}
+		if (key > pos_x) {
+			i = pos_x;
+			while (i < key) {
+				if (xSemaphoreTake( xSemaphore[i], 0 ) == pdTRUE) {
+					limit_x += BIG_RATE;
+					draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
+					i++;
 				}
-				pos_x = key;
 			}
-			else if (key < pos_x) {
-				i = pos_x - 1;
-				while (i >= key) {
-					if (xSemaphoreGive( xSemaphore[i]) == pdTRUE) {
-						limit_x -= BIG_RATE;
-						draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
-						i--;
-					}
-				}
-				pos_x = key;
-			}
+			pos_x = key;
 		}
+		else if (key < pos_x) {
+			i = pos_x - 1;
+			while (i >= key) {
+				if (xSemaphoreGive( xSemaphore[i]) == pdTRUE) {
+					limit_x -= BIG_RATE;
+					draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
+					i--;
+				}
+			}
+			pos_x = key;
+		}
+		}
+		else if (key == 15)
+			break;
 	}
 }
 

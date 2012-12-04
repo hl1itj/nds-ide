@@ -11,5 +11,9 @@
 		<item value="162" key="size.height"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+		<item value="442" key="size.width"/>
+		<item value="331" key="size.height"/>
+		<item value="584" key="location.x"/>
+		<item value="260" key="location.y"/>
 	</section>
 </section>
