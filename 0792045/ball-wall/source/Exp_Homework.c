@@ -106,13 +106,14 @@ void Exp_8_Homework_B(void) {
 			for (i = 0; i < prevX; i++)
 				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
 			for (i = 0; i < x;) {
-				xSemaphoreTake(semaphore, (portTickType)0);
-				if ((i+1) * 4 < ball_x) {
-					draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
-					i++;
+				if (xSemaphoreTake(semaphore,(portTickType)0) == pdTRUE) {
+					if ((i+1) * 4 <= ball_x) {
+						draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
+						i++;
+					}
+					r_point = (i * 4);
+					xSemaphoreGive(semaphore);
 				}
-				r_point = (i * 4);
-				xSemaphoreGive(semaphore);
 			}
 			r_point = (x * 4);
 			prevX = x;
@@ -130,36 +131,36 @@ void Exp_8_Homework_B(void) {
 
 portTASK_FUNCTION(Ball_Task, pvParameters) {
 	u8 direction = RIGHT_DIRECTION;
-	int until_time = 0;
+	portTickType xLastWakeTime = xTaskGetTickCount();
+	int tick_time, until_time;
 
 	while (1) {
-		if (ball_x == r_point){
-			direction = RIGHT_DIRECTION;
-			until_time = 0;
-		}
-		else if (ball_x == (BOX_X_MAX - 1)){
-			direction = LEFT_DIRECTION;
-			until_time = 0;
-		}
-		draw_my_box(ball_x, BOX_Y_POS, COLOR_BLACK);
 		if (xSemaphoreTake(semaphore,(portTickType)0) == pdTRUE) {
-			if (direction == LEFT_DIRECTION)
+			if (ball_x == r_point) {
+				direction = RIGHT_DIRECTION;
+				until_time = 0;
+			} else if (ball_x == (BOX_X_MAX - 1)) {
+				direction = LEFT_DIRECTION;
+				until_time = 0;
+			}
+			draw_my_box(ball_x, BOX_Y_POS, COLOR_BLACK);
+			if (direction == LEFT_DIRECTION){
 				ball_x--;
-			else if (direction == RIGHT_DIRECTION)
+				tick_time = (1000-until_time) / (ball_x - r_point + 1);
+			}
+			else if (direction == RIGHT_DIRECTION){
 				ball_x++;
+				tick_time = (1000-until_time) / ((BOX_X_MAX - ball_x));
+			}
 			xSemaphoreGive(semaphore);
 		}
 		draw_my_box(ball_x, BOX_Y_POS, COLOR_RED);
-		if (direction == LEFT_DIRECTION){
-			vTaskDelay((1000-until_time) / (ball_x - r_point + 1));
-			until_time += (1000-until_time) / (ball_x - r_point + 1);
-		}
-		else if (direction == RIGHT_DIRECTION){
-			vTaskDelay((1000-until_time) / (BOX_X_MAX - ball_x));
-			until_time += (1000-until_time) / (BOX_X_MAX - ball_x);
-		}
+
+		until_time += tick_time;
 		if(until_time >= 1000)
 			until_time = 1000;
+
+		vTaskDelayUntil(&xLastWakeTime, MSEC2TICK(tick_time));
 	}
 }
 
