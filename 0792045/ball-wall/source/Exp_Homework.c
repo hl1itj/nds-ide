@@ -107,12 +107,13 @@ void Exp_8_Homework_B(void) {
 				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
 			for (i = 0; i < x;) {
 				if (xSemaphoreTake(semaphore,(portTickType)0) == pdTRUE) {
-					if ((i+1) * 4 <= ball_x) {
+					if ((i+1) * 4 <= ball_x - 1) { // 정확한 1초를 위해 리턴 포인트에 닿지 않기 위해서
 						draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
 						i++;
 					}
-					r_point = (i * 4);
 					xSemaphoreGive(semaphore);
+					r_point = (i * 4);
+					vTaskDelay((portTickType)20);
 				}
 			}
 			r_point = (x * 4);
@@ -135,25 +136,23 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 	int tick_time, until_time;
 
 	while (1) {
-		if (xSemaphoreTake(semaphore,(portTickType)0) == pdTRUE) {
-			if (ball_x == r_point) {
-				direction = RIGHT_DIRECTION;
-				until_time = 0;
-			} else if (ball_x == (BOX_X_MAX - 1)) {
-				direction = LEFT_DIRECTION;
-				until_time = 0;
-			}
-			draw_my_box(ball_x, BOX_Y_POS, COLOR_BLACK);
-			if (direction == LEFT_DIRECTION){
-				ball_x--;
-				tick_time = (1000-until_time) / (ball_x - r_point + 1);
-			}
-			else if (direction == RIGHT_DIRECTION){
-				ball_x++;
-				tick_time = (1000-until_time) / ((BOX_X_MAX - ball_x));
-			}
-			xSemaphoreGive(semaphore);
+		if (ball_x == r_point) {
+			direction = RIGHT_DIRECTION;
+			tick_time = 1000 / (BOX_X_MAX - ball_x);
+		} else if (ball_x == (BOX_X_MAX - 1)) {
+			direction = LEFT_DIRECTION;
+			until_time = 0;
 		}
+		draw_my_box(ball_x, BOX_Y_POS, COLOR_BLACK);
+		xSemaphoreTake(semaphore, (portTickType)0);
+		if (direction == LEFT_DIRECTION) { //벽이 줄어 들면 빨리 가야하기 때문에
+			ball_x--;
+			tick_time = (1000 - until_time) / (ball_x - r_point + 1);
+		} else if (direction == RIGHT_DIRECTION) {
+			ball_x++;
+			//오른쪽 방향으로 갈때는 처음 리턴 위치에서 속도를 정해줌
+		}
+		xSemaphoreGive(semaphore);
 		draw_my_box(ball_x, BOX_Y_POS, COLOR_RED);
 
 		until_time += tick_time;
