@@ -26,7 +26,7 @@
 #define WALL_WIDTH 32
 #define WALL_HEIGHT 32
 #define WALL_Y_POS 3
-#define WALL_X_MAX (SCREEN_WIDTH / BOX_WIDTH)
+#define WALL_X_MAX (SCREEN_WIDTH / WALL_WIDTH)
 
 #define LEFT_DIRECTION 0
 #define RIGHT_DIRECTION 1
@@ -59,7 +59,7 @@ draw_my_wall(int pos_x, int pos_y, u16 color)
 	  pixel = (color << 16) + color;
 	    for (i = 0; i < WALL_HEIGHT; i++) {
 	 	    basePoint = (u32 *)BG_GFX +
-	 	      ((((pos_y * WALL_HEIGHT) + i) * SCREEN_WIDTH) + pos_x * BOX_WIDTH) / 2;
+	 	      ((((pos_y * WALL_HEIGHT) + i) * SCREEN_WIDTH) + pos_x * WALL_WIDTH) / 2;
 	    	for (j = 0; j < (WALL_WIDTH / 2); j++)
 	    		*basePoint++ = pixel;
 		}
