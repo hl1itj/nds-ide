@@ -118,7 +118,7 @@ Exp_8_Homework_B(void)
 					}
 					xSemaphoreGive(semaphore);
 					r_point=(i*4);
-					vTaskDelay((portTickType)20);
+					vTaskDelay((portTickType)5);
 				}
 			}
 			r_point=(x*4);
