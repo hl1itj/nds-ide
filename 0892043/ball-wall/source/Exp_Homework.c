@@ -22,11 +22,14 @@
 #define BOX_HEIGHT	8
 #define BOX_Y_POS	   13
 #define BOX_X_MAX	(SCREEN_WIDTH / BOX_WIDTH)
+#define WHITE_BOX_WIDTH 	32
+#define WHITE_BOX_HEIGHT	32
 
 #define DIRECTION_RIGHT 1
 #define DIRECTION_LEFT 2
 
-int wall = -1;
+xSemaphoreHandle xSemaphore[8];
+int wall = -4;
 int x = 0, y, prevX, prevY;
 
 void draw_my_box(int pos_x, int pos_y, u16 color) {
@@ -45,34 +48,51 @@ void draw_my_box(int pos_x, int pos_y, u16 color) {
 
 void draw_my_wall(int pos_x, int pos_y, u16 color) {
 	// draw big white box
-	int i;
+	int i, j;
+	u32 *basePoint, pixel;
 
-	for (i = 0; i <= pos_x; i++) {
-		draw_my_box(i, pos_y, color);
-		draw_my_box(i, pos_y + 1, color);
-		draw_my_box(i, pos_y + 2, color);
-		draw_my_box(i, pos_y - 1, color);
-		draw_my_box(i, pos_y - 2, color);
+	pixel = (color << 16) + color;
+	for (i = 0; i < WHITE_BOX_HEIGHT; i++) {
+		basePoint = (u32 *) BG_GFX
+				+ ((((pos_y * WHITE_BOX_HEIGHT) + i) * SCREEN_WIDTH)
+						+ pos_x * BOX_WIDTH) / 2;
+		for (j = 0; j < (WHITE_BOX_WIDTH / 2); j++)
+			*basePoint++ = pixel;
 	}
 }
 
 extern xTaskHandle BallTask;
 
 void Exp_8_Homework_A(void) {
-	while (1) {
+	u8 key = 0;;
+	int i;
 
+	while (1) {
+		key = getkey();
+
+		if (key > 7)
+			continue;
+
+		for (i = key; i < 8; i++)
+			draw_my_wall(i * 4, 3, COLOR_BLACK);
+
+		for (i = 0; i < key; i++) {
+			draw_my_wall(i * 4, 3, COLOR_WHITE);
+			wall = i * 4;
+		}
+		if (NDS_SWITCH() & KEY_START)
+			break;
 	}
 	while (NDS_SWITCH() & KEY_START)
 		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
 void Exp_8_Homework_B(void) {
+	u8 key = 0;
+	int i;
 
-	u8 key;
-	int preWall;
-	xSemaphoreHandle xSemaphore;
-
-	vSemaphoreCreateBinary(xSemaphore);
+	for (i = 0; i < 8; i++)
+		vSemaphoreCreateBinary(xSemaphore[i]);
 
 	vTaskResume(BallTask);
 
@@ -82,31 +102,34 @@ void Exp_8_Homework_B(void) {
 
 		key = getkey();
 
-		if (key == 15) {
+		if (key == 0)
+			wall = -4;
+		else if (key == 15) {
+			for (i = 0; i < 8; i++)
+				draw_my_wall(i * 4, 3, COLOR_BLACK);
 			break;
-		}
-		else if (key > 7)
+		} else if (key > 7)
 			continue;
 
-		wall = key * 4;
+		for (i = key; i < 8; i++)
+			draw_my_wall(i * 4, 3, COLOR_BLACK);
 
-		if (x <= wall) {
-			while (!xSemaphoreTake(xSemaphore, (portTickType)0));
+		for (i = 0; i < key; i++) {
+			while (!xSemaphoreTake(xSemaphore[i], (portTickType)0))
+				;
+			draw_my_wall(i * 4, 3, COLOR_WHITE);
+			wall = i * 4;
 		}
 
-		draw_my_wall(preWall, BOX_Y_POS, COLOR_BLACK);
-		draw_my_wall(wall, BOX_Y_POS, COLOR_WHITE);
-
-		if (x <= wall)
-			xSemaphoreGive(xSemaphore);
-
-		preWall = wall;
+		for (i = 0; i < 8; i++)
+			xSemaphoreGive(xSemaphore[i]);
 	}
 }
 
 portTASK_FUNCTION(Ball_Task, pvParameters) {
 
 	int direction = DIRECTION_LEFT;
+	int ts, gs;
 
 	x = BOX_X_MAX - 1;
 	y = BOX_Y_POS;
@@ -115,13 +138,18 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 	prevY = 0;
 
 	while (1) {
+		ts = x / 4;
+		xSemaphoreTake(xSemaphore[ts], (portTickType)0);
 
 		draw_my_box(prevX, prevY, COLOR_BLACK);
 		draw_my_box(x, y, COLOR_RED);
-		vTaskDelay(MSEC2TICK((1000 / (BOX_X_MAX - wall + 3))) );
+		vTaskDelay(MSEC2TICK((1000 / (BOX_X_MAX - wall - 4))) );
 
 		prevX = x;
 		prevY = y;
+
+		if (ts != gs)
+			xSemaphoreGive(xSemaphore[gs]);
 
 		if (direction == DIRECTION_RIGHT) {
 			x++;
@@ -130,9 +158,11 @@ portTASK_FUNCTION(Ball_Task, pvParameters) {
 
 		} else if (direction == DIRECTION_LEFT) {
 			x--;
-			if (x <= wall + 1)
+			if (x == wall + 4)
 				direction = DIRECTION_RIGHT;
 		}
+
+		gs = ts;
 	}
 }
 // Key Matrix Scanning Task
