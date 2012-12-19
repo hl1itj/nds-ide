@@ -1,0 +1,9 @@
+18:04:36 **** Incremental Build of configuration Default for project MD ****
+make 
+libnds9.a
+arm-none-eabi-ar -rc /libnds9.a 
+arm-none-eabi-ar: /libnds9.a: Permission denied
+make: *** [/libnds9.a] 오류 1
+
+18:04:36 Build Finished (took 93ms)
+

@@ -2,22 +2,34 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="313" key="DIALOG_WIDTH"/>
-		<item value="42" key="DIALOG_Y_ORIGIN"/>
+		<item value="20" key="DIALOG_Y_ORIGIN"/>
+		<item value="386" key="DIALOG_X_ORIGIN"/>
 		<item value="440" key="DIALOG_HEIGHT"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Ubuntu|11.229167|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="short_timer" key="selection"/>
+		<item value="limit" key="selection"/>
 		<list key="findhistory">
-			<item value="short_timer"/>
+			<item value="limit_x"/>
+			<item value="BOX_X_MAX"/>
+			<item value="BOX_Y_POS"/>
+			<item value="BOX_HEIGHT"/>
+			<item value="BOX_WIDTH"/>
+			<item value="down"/>
+			<item value="down.png"/>
+			<item value="Stylus"/>
 		</list>
 		<list key="replacehistory">
+			<item value="limit"/>
+			<item value="BALL_X_MAX"/>
+			<item value="BALL_Y_POS"/>
+			<item value="BALL_HEIGHT"/>
+			<item value="BALL_WIDTH"/>
 		</list>
 	</section>
 </section>

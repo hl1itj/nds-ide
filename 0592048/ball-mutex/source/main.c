@@ -51,7 +51,7 @@ void InitDebug(void);
 void vStartExpTasks(void);
 void draw_my_box(int pos_x, int pos_y, u16 color);
 
-// ø©±‚ø° « ø‰«— ºˆ ∏∏≈≠¿« Semaphore «⁄µÈ º±æ  <--------
+xSemaphoreHandle xSemaphore[9];
 
 int
 main(void)
@@ -105,29 +105,122 @@ vStartExpTasks(void)
 	for (i = 0, p = Param; i < NUM_TASK; i++, p++)
 		xTaskCreate(Ball_Task, (const signed char *)(p->taskname), 1024, (void *)p, tskIDLE_PRIORITY + 5, NULL);
 
-	// ø©±‚ø° « ø‰«— ºˆ ∏∏≈≠ Semaphore √ ±‚»≠ (vSemaphoreCreateBinary) <--------
-
+	for(i=0;i<9;i++){
+		vSemaphoreCreateBinary(xSemaphore[i]);
+	}
 }
 
 static portTASK_FUNCTION(Ball_Task, pvParameters)
 {
 	struct parameters *p = (struct parameters *)pvParameters;
-	int x, y, prevX, prevY;
+	int x, y;
+	int prevX, prevY;
 
-	// ø©±‚ø° ∞¢  Ball¿« √ ±‚ ¿ßƒ° (x,y) º≥¡§ <-------- ¡ˆ≥≠ Ω««Ë ≥ªøÎ
+	switch(p->direction){
+	case DIRECTION_RIGHT:
+		x = prevX = 0;
+		y = prevY = p->basePoint;
+		break;
+	case DIRECTION_DOWN:
+		x = prevX = p->basePoint;
+		y = prevY = 0;
+		break;
+	}
 
 	while(1) {
+		//Í∞Å ballÏù¥ ÍµêÏ∞®Ï†êÏóê ÏûàÍ≥†, RÌÇ§Í∞Ä ÎàåÎ†∏Îã§Î©¥ Semaphore take
+		if(NDS_SWITCH() & KEY_R){
+			printf("a");
+			if(x == 4){
+				if(y == 3){
+					xSemaphoreTake(xSemaphore[0], (portTickType)1000);
+				}else if(y == 6){
+					xSemaphoreTake(xSemaphore[1], (portTickType)1000);
+				}else if(y == 9){
+					xSemaphoreTake(xSemaphore[2], (portTickType)1000);
+				}
+			}else if(x == 8){
+				if(y == 3){
+					xSemaphoreTake(xSemaphore[3], (portTickType)1000);
+				}else if(y == 6){
+					xSemaphoreTake(xSemaphore[4], (portTickType)1000);
+				}else if(y == 9){
+					xSemaphoreTake(xSemaphore[5], (portTickType)1000);
+				}
+			}else if(x == 12){
+				if(y == 3){
+					xSemaphoreTake(xSemaphore[6], (portTickType)1000);
+				}else if(y == 6){
+					xSemaphoreTake(xSemaphore[7], (portTickType)1000);
+				}else if(y == 9){
+					xSemaphoreTake(xSemaphore[8], (portTickType)1000);
+				}
+			}
+		}
 
-		// ø©±‚ø° ∞¢ Ball¿Ã ±≥¬˜¡°ø° ¿÷∞Ì, R Key∞° ¥≠∑»¥Ÿ∏È  Semaphore take <--------
+		draw_my_box(prevX, prevY, COLOR_BLACK);	// Erase the Previous Box
+		draw_my_box(x, y, p->color);	// Erase the Previous Box
+		vTaskDelay(MSEC2TICK(p->delay));
 
-		draw_my_box(prevX, prevY, COLOR_BLACK);	// øπ¿¸ ¿ßƒ° ªË¡¶
-		draw_my_box(x, y, p->color);			// ªı ¿ßƒ°ø° ±◊∏≤
-		vTaskDelay(MSEC2TICK(p->delay));		// Delay
+		//Í∞Å ballÏù¥ ÍµêÏ∞®Ï†êÏóê ÏûàÏúºÎ©¥, Semaphore Give
+		if(prevX == 4){
+			if(prevY == 3){
+				xSemaphoreGive(xSemaphore[0]);
+			}else if(prevY == 6){
+				xSemaphoreGive(xSemaphore[1]);
+			}else if(prevY == 9){
+				xSemaphoreGive(xSemaphore[2]);
+			}
+		}else if(prevX == 8){
+			if(prevY == 3){
+				xSemaphoreGive(xSemaphore[3]);
+			}else if(prevY == 6){
+				xSemaphoreGive(xSemaphore[4]);
+			}else if(prevY == 9){
+				xSemaphoreGive(xSemaphore[5]);
+			}
+		}else if(prevX == 12){
+			if(prevY == 3){
+				xSemaphoreGive(xSemaphore[6]);
+			}else if(prevY == 6){
+				xSemaphoreGive(xSemaphore[7]);
+			}else if(prevY == 9){
+				xSemaphoreGive(xSemaphore[8]);
+			}
+		}
 
-		// ø©±‚ø° ∞¢ Ball¿Ã ±≥¬˜¡°ø° ¿÷¿∏∏È, Semaphore Give <--------
+		prevX = x;
+		prevY = y;
 
-		prevX = x; prevY = y;
-
-		// ¥Ÿ¿Ω ¿ßƒ° ∞ËªÍ  <----- ¡ˆ≥≠ Ω««Ë ≥ªøÎ
+    	switch(p->direction){
+    	case DIRECTION_RIGHT:
+    		if(x < BOX_WIDTH-1){
+				x++;
+    		}else{
+    			p->direction = DIRECTION_LEFT;
+    		}
+			break;
+    	case DIRECTION_LEFT:
+    		if(x > 0){
+    			x--;
+    		}else{
+    			p->direction = DIRECTION_RIGHT;
+    		}
+    		break;
+    	case DIRECTION_UP:
+    		if(y > 0){
+    			y--;
+    		}else{
+    			p->direction = DIRECTION_DOWN;
+    		}
+    		break;
+    	case DIRECTION_DOWN:
+    		if(y < BOX_HEIGHT-5){
+    			y++;
+    		}else{
+    			p->direction = DIRECTION_UP;
+    		}
+    		break;
+    	}
 	}
 }

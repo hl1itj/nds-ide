@@ -1,0 +1,33 @@
+PAGfx Converter, by Mollusk     www.palib.com
+If you have suggestions, problems, or anything, please mail me at mollusk@palib.info
+
+Converting PAGfx.ini
+Transparent Color : Magenta
+
+2 sprites :
+  number : 256colors, 32x544, Pal : number_Pal, -> number_Sprite
+  item : 256colors, 32x416, Pal : item_Pal, -> item_Sprite
+
+7 backgrounds :
+  Gameover : EasyBg, 256x192, Pal : Gameover_Pal, 764 tiles -> Gameover_Tiles and Gameover_Map
+  Pause_Down : EasyBg, 256x192, Pal : Pause_Down_Pal, 760 tiles -> Pause_Down_Tiles and Pause_Down_Map
+  Play_Down : EasyBg, 256x192, Pal : Play_Down_Pal, 755 tiles -> Play_Down_Tiles and Play_Down_Map
+  Season : EasyBg, 256x192, Pal : Season_Pal, 753 tiles -> Season_Tiles and Season_Map
+  Shop : EasyBg, 256x192, Pal : Shop_Pal, 756 tiles -> Shop_Tiles and Shop_Map
+  Title : EasyBg, 256x192, Pal : Title_Pal, 457 tiles -> Title_Tiles and Title_Map
+  Title_Down : EasyBg, 256x192, Pal : Title_Down_Pal, 560 tiles -> Title_Down_Tiles and Title_Down_Map
+
+9 palettes :
+  number_Pal, 125 colors
+  item_Pal, 93 colors
+  Gameover_Pal, 128 colors
+  Pause_Down_Pal, 129 colors
+  Play_Down_Pal, 128 colors
+  Season_Pal, 120 colors
+  Shop_Pal, 125 colors
+  Title_Pal, 82 colors
+  Title_Down_Pal, 129 colors
+
+Converted in 0 minutes 0 seconds
+
+Finished !

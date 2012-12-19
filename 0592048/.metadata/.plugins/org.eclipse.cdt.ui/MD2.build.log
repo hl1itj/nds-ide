@@ -1,0 +1,6 @@
+19:36:24 **** Incremental Build of configuration Build (GNU) for project MD2 ****
+make all 
+make: *** 타겟 `all'를 만들 규칙이 없음.  멈춤.
+
+19:36:24 Build Finished (took 64ms)
+
