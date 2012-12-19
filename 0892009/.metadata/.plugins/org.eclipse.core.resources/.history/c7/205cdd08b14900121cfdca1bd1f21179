@@ -75,10 +75,9 @@ void Exp_8_Homework_A(void) {
 			draw_my_wall(key, WALL_Y_POS, COLOR_WHITE);
 		}
 
-		if (NDS_SWITCH() & KEY_START){
+		if (NDS_SWITCH() & KEY_START)
 			draw_my_wall(key, WALL_Y_POS, COLOR_BLACK);
 			break;
-		}
 	}
 	while (NDS_SWITCH() & KEY_START)
 		vTaskDelay(10);		// Wait while START KEY is being pressed
