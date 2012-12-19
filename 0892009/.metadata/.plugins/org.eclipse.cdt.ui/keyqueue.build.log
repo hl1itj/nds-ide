@@ -1,0 +1,6 @@
+16:03:02 **** Incremental Build of configuration Default for project keyqueue ****
+make 
+make[1]: `/home/hansung/ndsdev/nds-ide/0892009/keyqueue/keyqueue.nds'는 이미 갱신되었습니다.
+
+16:03:02 Build Finished (took 491ms)
+

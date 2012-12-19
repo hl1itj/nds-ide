@@ -1,0 +1,13 @@
+16:02:59 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+Exp_Homework.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892009/ball-wall/build/Exp_Homework.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892009/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892009/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892009/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892009/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892009/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892009/ball-wall/source/Exp_Homework.c -o Exp_Homework.o 
+/home/hansung/ndsdev/nds-ide/0892009/ball-wall/source/Exp_Homework.c: In function 'Exp_8_Homework_A':
+/home/hansung/ndsdev/nds-ide/0892009/ball-wall/source/Exp_Homework.c:68:6: warning: unused variable 'i' [-Wunused-variable]
+linking ball-wall.elf
+Nintendo DS rom tool 1.50.1 - Jun 19 2012
+by Rafael Vuijk, Dave Murphy, Alexei Karpenko
+built ... ball-wall.nds
+
+16:03:01 Build Finished (took 2s.173ms)
+

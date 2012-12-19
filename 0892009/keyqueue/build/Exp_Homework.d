@@ -1,16 +1,16 @@
 Exp_Homework.o: \
- /home/hansung/ndsdev/workspace/keyqueue/source/Exp_Homework.c \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/FreeRTOS.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/projdefs.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/NDS/FreeRTOSConfig.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/portable.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/NDS/portmacro.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/mpu_wrappers.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/task.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/list.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/queue.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/semphr.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/queue.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/source/Exp_Homework.c \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/FreeRTOS.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/projdefs.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/NDS/FreeRTOSConfig.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/portable.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/NDS/portmacro.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/mpu_wrappers.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/task.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/list.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/queue.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/semphr.h \
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/queue.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/libversion.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/ndstypes.h \
@@ -66,29 +66,29 @@ Exp_Homework.o: \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/trig_lut.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/video.h \
  /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h \
- /home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/NDS/sevencore_io.h
+ /home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/NDS/sevencore_io.h
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/FreeRTOS.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/FreeRTOS.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/projdefs.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/projdefs.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/NDS/FreeRTOSConfig.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/NDS/FreeRTOSConfig.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/portable.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/portable.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/NDS/portmacro.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/NDS/portmacro.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/mpu_wrappers.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/mpu_wrappers.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/task.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/task.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/list.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/list.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/queue.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/queue.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/semphr.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/semphr.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/include/queue.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/include/queue.h:
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds.h:
 
@@ -200,4 +200,4 @@ Exp_Homework.o: \
 
 /home/hansung/ndsdev/devkitPro/libnds/include/nds/arm9/videoGL.h:
 
-/home/hansung/ndsdev/workspace/keyqueue/FreeRTOS/NDS/sevencore_io.h:
+/home/hansung/ndsdev/nds-ide/0892009/keyqueue/FreeRTOS/NDS/sevencore_io.h:
