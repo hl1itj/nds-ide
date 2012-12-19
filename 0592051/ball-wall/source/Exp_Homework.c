@@ -20,7 +20,7 @@
 
 #define BOX_WIDTH 8
 #define BOX_HEIGHT 8
-#define BOX_Y_POS 13
+#define BOX_Y_POS 9
 #define BOX_X_MAX	(SCREEN_WIDTH / BOX_WIDTH)
 
 #define BG_GFX			((u16*)0x6000000)
@@ -32,110 +32,63 @@
 #define WALL_X_MAX (SCREEN_WIDTH / WALL_WIDTH)
 
 #define ARRAY_SIZE 7
+#define BASIC_TIME 1000
 
 // �ʿ��� global ����
 
-u8 wall;
+int movetime = BASIC_TIME / 32;
+u8 wall = 0;
 xSemaphoreHandle xSemaphore[ARRAY_SIZE];
 
-void
-draw_my_box(int pos_x, int pos_y, u16 color)
-{
+void draw_my_box(int pos_x, int pos_y, u16 color) {
 	int i, j;
-    u32 *basePoint, pixel;
+	u32 *basePoint, pixel;
 
-    pixel = (color << 16) + color;
-    for (i = 0; i < BOX_HEIGHT; i++) {
- 	    basePoint = (u32 *)BG_GFX +
- 	      ((((pos_y * BOX_HEIGHT) + i) * SCREEN_WIDTH) + pos_x * BOX_WIDTH) / 2;
-    	for (j = 0; j < (BOX_WIDTH / 2); j++)
-    		*basePoint++ = pixel;
+	pixel = (color << 16) + color;
+	for (i = 0; i < BOX_HEIGHT; i++) {
+		basePoint = (u32 *) BG_GFX
+				+ ((((pos_y * BOX_HEIGHT) + i) * SCREEN_WIDTH)
+						+ pos_x * BOX_WIDTH) / 2;
+		for (j = 0; j < (BOX_WIDTH / 2); j++)
+			*basePoint++ = pixel;
 	}
 }
 
-void
-draw_my_wall(int pos_x, int pos_y, u16 color)
-{
+void draw_my_wall(int pos_x, int pos_y, u16 color) {
 	int i, j;
-	    u32 *basePoint, pixel;
+	u32 *basePoint, pixel;
 
-	    pixel = (color << 16) + color;
-	    for (i = 0; i < WALL_HEIGHT; i++) {
-	 	    basePoint = (u32 *)BG_GFX +
-	 	      ((((pos_y * WALL_HEIGHT) + i) * SCREEN_WIDTH) + pos_x * WALL_WIDTH) / 2;
-	    	for (j = 0; j < (WALL_WIDTH / 2); j++)
-	    		*basePoint++ = pixel;
-		}
+	pixel = (color << 16) + color;
+	for (i = 0; i < WALL_HEIGHT; i++) {
+		basePoint = (u32 *) BG_GFX
+				+ ((((pos_y * WALL_HEIGHT) + i) * SCREEN_WIDTH)
+						+ pos_x * WALL_WIDTH) / 2;
+		for (j = 0; j < (WALL_WIDTH / 2); j++)
+			*basePoint++ = pixel;
+	}
 }
 
 extern xTaskHandle BallTask;
 
-void
-Exp_8_Homework_A(void)
-{
+void Exp_8_Homework_A(void) {
 	u8 key, x, prevX;
 	int i;
 
-    while (1) {
+	while (1) {
 		if (kbhit() == 1) {
 			key = getkey();
 
-			if(key < WALL_X_MAX){
+			if (key < WALL_X_MAX) {
 				prevX = x;
 				x = key;
 				draw_my_wall(prevX, WALL_Y_POS, COLOR_BLACK);
 				draw_my_wall(x, WALL_Y_POS, COLOR_WHITE);
 			}
 
-			if(key == 15){
-				for(i = 0; i < WALL_X_MAX; i++){
+			if (key == 15) {
+				for (i = 0; i < WALL_X_MAX; i++) {
 					draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
 				}
-			}
-		}
-
-		if (NDS_SWITCH() & KEY_START){
-			draw_my_wall(x, WALL_Y_POS, COLOR_BLACK);
-			break;
-		}
-		vTaskDelay(20);
-    }
-	while (NDS_SWITCH() & KEY_START)
-		vTaskDelay(10);		// Wait while START KEY is being pressed
-}
-
-void
-Exp_8_Homework_B(void)
-{
-	u8 key, x, prevX;
-	int i;
-
-	for(i=0; i<ARRAY_SIZE; i++){
-		vSemaphoreCreateBinary(xSemaphore[i]);
-	}
-
-	vTaskResume(BallTask);
-
-	while (1) {
-
-		key = getkey();
-
-		if (key < WALL_X_MAX) {
-			prevX = x;
-			x = key;
-
-			for(i=0; i<prevX; i++){
-				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
-			}
-
-			for(i=0; i<x; i++){
-				draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
-			}
-		}
-
-		if (key == 15) {
-			for (i = 0; i < WALL_X_MAX; i++) {
-				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
 			}
 		}
 
@@ -143,50 +96,96 @@ Exp_8_Homework_B(void)
 			draw_my_wall(x, WALL_Y_POS, COLOR_BLACK);
 			break;
 		}
-		vTaskDelay(20);
 	}
 	while (NDS_SWITCH() & KEY_START)
-		vTaskDelay(10);
+		vTaskDelay(MSEC2TICK(10) );		// Wait while START KEY is being pressed
 }
 
-portTASK_FUNCTION(Ball_Task, pvParameters)
-{
-	u8 prevX, x;
-	int i=28;
-	u8 LEFT = TRUE;
+void Exp_8_Homework_B(void) {
+	u8  x=0, prevX=0;
+	int i;
 
-	draw_my_box(31, 10, COLOR_WHITE);
+	for (i = 0; i < ARRAY_SIZE; i++) {
+		vSemaphoreCreateBinary(xSemaphore[i]);
+	}
+
+	vTaskResume(BallTask);
+
+	while (1) {
+		if (kbhit() == 1) {
+			wall = getkey();
+
+			if (wall < WALL_X_MAX) {
+				prevX = x;
+				x = wall;
+			}
+
+			for (i = 0; i < prevX; i++) {
+				xSemaphoreGive(xSemaphore[i]);
+				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
+			}
+
+			if (wall == 15) {
+				for (i = 0; i < WALL_X_MAX; i++) {
+					draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
+				}
+			}
+
+		}else{
+			if (wall == 0) {
+				movetime = BASIC_TIME / 32;
+			} else {
+				for (i = 0; i < x; i++) {
+					if (xSemaphoreTake(xSemaphore[i],0) == pdTRUE) {
+						draw_my_wall(i, WALL_Y_POS, COLOR_WHITE);
+						movetime = BASIC_TIME / (32 - (4 * i));
+					}
+				}
+			}
+		}
+	}
+}
+
+portTASK_FUNCTION(Ball_Task, pvParameters) {
+	u8 prevX, x;
+	int i = 31;
+	u8 LEFT = TRUE;
 
 	while (1) {
 		prevX = x;
 		x = i;
 
-		draw_my_box(prevX, BOX_Y_POS, COLOR_BLACK);
-		draw_my_box(x, BOX_Y_POS, COLOR_RED);
-
-		if(LEFT){
-			if(i==0){
+		if (LEFT) {
+			if (i == (wall * 4)) {
 				LEFT = FALSE;
+				i++;
 			}else{
+				if ((i / 4 != 0) && (i % 4 == 0)) {
+					if (xSemaphoreTake(xSemaphore[(i/4)-1],0) == pdFALSE) {
+						LEFT = FALSE;
+						i++;
+					}
+				}
 				i--;
 			}
-		}else{
-			if(i==31){
+		} else {
+			if (i == 31) {
 				LEFT = TRUE;
-			}else{
+				i--;
+			} else {
+				if (i % 4 == 0) {
+					xSemaphoreGive(xSemaphore[(i/4)-1]);
+				}
 				i++;
 			}
 		}
-
-		vTaskDelay(20);
+		draw_my_box(prevX, BOX_Y_POS, COLOR_BLACK);
+		draw_my_box(x, BOX_Y_POS, COLOR_RED);
+		vTaskDelay(MSEC2TICK(movetime) );
 	}
 }
 
-// Key Matrix Scanning Task
-
-void
-key_init(void)
-{
+void key_init(void) {
 	int i;
 	u8 key;
 
@@ -194,66 +193,61 @@ key_init(void)
 		xQueueReceive(KeyQueue, &key, 0);
 }
 
-int
-kbhit(void)
-{
+int kbhit(void) {
 	u8 key;
 	int ret = xQueuePeek(KeyQueue, &key, 0);
 	return (ret == pdPASS);
 }
-u8
-getkey(void)
-{
+u8 getkey(void) {
 	u8 key;
 	xQueueReceive(KeyQueue, &key, portMAX_DELAY);
 	return key;
 }
 
-portTASK_FUNCTION(Key_Task, pvParameters)
-{
+portTASK_FUNCTION(Key_Task, pvParameters) {
 	u8 key, select, scan = 0;
-		u8 key_On = TRUE;
+	u8 key_On = TRUE;
 
-		while (1) {
-			if (key_On) {
-				writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
-				key = scan * 4;
-				select = readb_virtual_io(KEY_MATRIX);
-				switch (select) {
-				case 8:
-					key += 1;
-					break;
-				case 4:
-					key += 2;
-					break;
-				case 2:
-					key += 3;
-					break;
-				case 1:
-					key += 4;
-					if (key == 16)
-						key = 0;
-					break;
-				default:
-					key = 255;
-					break;
-				}
-
-				scan++;
-
-				if (scan == 4) {
-					scan = 0;
-				}
-
-				if (key < 16) {
-					xQueueSend(KeyQueue, &key, 0);
-					key_On = FALSE;
-				}
-			} else {
-				if ((key_On == FALSE) && (readb_virtual_io(KEY_MATRIX) != select)) {
-					key_On = TRUE;
-				}
+	while (1) {
+		if (key_On) {
+			writeb_virtual_io(KEY_MATRIX, 0x80 >> scan);
+			key = scan * 4;
+			select = readb_virtual_io(KEY_MATRIX);
+			switch (select) {
+			case 8:
+				key += 1;
+				break;
+			case 4:
+				key += 2;
+				break;
+			case 2:
+				key += 3;
+				break;
+			case 1:
+				key += 4;
+				if (key == 16)
+					key = 0;
+				break;
+			default:
+				key = 255;
+				break;
 			}
-			vTaskDelay(MSEC2TICK(20) );
+
+			scan++;
+
+			if (scan == 4) {
+				scan = 0;
+			}
+
+			if (key < 16) {
+				xQueueSend(KeyQueue, &key, 0);
+				key_On = FALSE;
+			}
+		} else {
+			if ((key_On == FALSE) && (readb_virtual_io(KEY_MATRIX) != select)) {
+				key_On = TRUE;
+			}
 		}
+		vTaskDelay(MSEC2TICK(20) );
+	}
 }
