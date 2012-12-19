@@ -81,7 +81,6 @@ void Exp_8_Homework_A(void) {
 		if (NDS_SWITCH() & KEY_START) {
 			for (i = 0; i < 8; i++)
 				draw_my_wall(i, 3, COLOR_BLACK);
-			wall = -4;
 			break;
 		}
 	}

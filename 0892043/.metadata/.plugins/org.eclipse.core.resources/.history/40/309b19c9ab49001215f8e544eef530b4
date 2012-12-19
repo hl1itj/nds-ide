@@ -55,7 +55,7 @@ void draw_my_wall(int pos_x, int pos_y, u16 color) {
 	for (i = 0; i < WHITE_BOX_HEIGHT; i++) {
 		basePoint = (u32 *) BG_GFX
 				+ ((((pos_y * WHITE_BOX_HEIGHT) + i) * SCREEN_WIDTH)
-						+ pos_x * WHITE_BOX_WIDTH) / 2;
+						+ pos_x * BOX_WIDTH) / 2;
 		for (j = 0; j < (WHITE_BOX_WIDTH / 2); j++)
 			*basePoint++ = pixel;
 	}
@@ -64,7 +64,7 @@ void draw_my_wall(int pos_x, int pos_y, u16 color) {
 extern xTaskHandle BallTask;
 
 void Exp_8_Homework_A(void) {
-	u8 key = 0;
+	u8 key = 0;;
 	int i;
 
 	while (1) {
@@ -73,18 +73,16 @@ void Exp_8_Homework_A(void) {
 		if (key > 7)
 			continue;
 
-		for (i = 0; i < 8; i++)
-			draw_my_wall(i, 3, COLOR_BLACK);
+		for (i = key; i < 8; i++)
+			draw_my_wall(i * 4, 3, COLOR_BLACK);
 
 		draw_my_wall(key, 3, COLOR_WHITE);
 
-		if (NDS_SWITCH() & KEY_START) {
-			for (i = 0; i < 8; i++)
-				draw_my_wall(i, 3, COLOR_BLACK);
-			wall = -4;
+		if (NDS_SWITCH() & KEY_START)
 			break;
-		}
 	}
+	while (NDS_SWITCH() & KEY_START)
+		vTaskDelay(10);		// Wait while START KEY is being pressed
 }
 
 void Exp_8_Homework_B(void) {
@@ -106,18 +104,18 @@ void Exp_8_Homework_B(void) {
 			wall = -4;
 		else if (key == 15) {
 			for (i = 0; i < 8; i++)
-				draw_my_wall(i, 3, COLOR_BLACK);
+				draw_my_wall(i * 4, 3, COLOR_BLACK);
 			break;
 		} else if (key > 7)
 			continue;
 
 		for (i = key; i < 8; i++)
-			draw_my_wall(i, 3, COLOR_BLACK);
+			draw_my_wall(i * 4, 3, COLOR_BLACK);
 
 		for (i = 0; i < key; i++) {
 			while (!xSemaphoreTake(xSemaphore[i], (portTickType)0))
 				;
-			draw_my_wall(i, 3, COLOR_WHITE);
+			draw_my_wall(i * 4, 3, COLOR_WHITE);
 			wall = i * 4;
 		}
 

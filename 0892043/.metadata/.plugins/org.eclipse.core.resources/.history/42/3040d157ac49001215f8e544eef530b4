@@ -65,6 +65,7 @@ extern xTaskHandle BallTask;
 
 void Exp_8_Homework_A(void) {
 	u8 key = 0;
+	;
 	int i;
 
 	while (1) {
@@ -81,7 +82,6 @@ void Exp_8_Homework_A(void) {
 		if (NDS_SWITCH() & KEY_START) {
 			for (i = 0; i < 8; i++)
 				draw_my_wall(i, 3, COLOR_BLACK);
-			wall = -4;
 			break;
 		}
 	}
