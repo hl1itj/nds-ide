@@ -62,7 +62,8 @@ static int b = 0, c = 0;
 
 TASK(task1)
 {
-	while (1);
+	Exp_3_Homework();
+	TerminateTask();
 }
 
 #define APP_Task_task1_STOP_SEC_CODE
