@@ -67,28 +67,24 @@ draw_my_wall(int pos_x, int pos_y, u16 color)
 
 extern xTaskHandle BallTask;
 
-void Exp_8_Homework_A(void) {
-	u8 key = 0;
-	int i;
-
-	while (1) {
-		key = getkey();
-
-		if (key > 7)
-			continue;
-
-		for (i = 0; i < 8; i++)
-			draw_my_wall(i, 3, COLOR_BLACK);
-
-		draw_my_wall(key, 3, COLOR_WHITE);
-
-		if (NDS_SWITCH() & KEY_START) {
-			for (i = 0; i < 8; i++)
-				draw_my_wall(i, 3, COLOR_BLACK);
-			wall = -4;
-			break;
-		}
-	}
+void
+Exp_8_Homework_A(void)
+{
+	u8 key,prevkey;
+    while (1) {
+    	if(kbhit()){
+    		key=getkey();
+    		if(key<8){
+    			draw_my_wall(prevkey,3,COLOR_BLACK);
+    			draw_my_wall(key,3,COLOR_WHITE);
+    			prevkey=key;
+    		}
+    	}
+    	if(NDS_SWITCH() & KEY_START){
+    		draw_my_wall(prevkey,3,COLOR_BLACK);
+    	    break;
+    	}
+    }
 }
 
 void

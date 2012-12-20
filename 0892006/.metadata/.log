@@ -20,3 +20,8 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY org.eclipse.cdt.core 1 0 2012-12-20 21:31:27.003
 !MESSAGE Indexed 'ball-wall' (81 sources, 43 headers) in 1.22 sec: 4,242 declarations; 16,532 references; 278 unresolved inclusions; 0 syntax errors; 4,960 unresolved names (19.27%)
+
+!ENTRY org.eclipse.core.resources 2 2 2012-12-20 22:08:08.587
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2012-12-20 22:08:08.587
+!MESSAGE The project description file (.project) for 'FreeRTOS-Sample' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
