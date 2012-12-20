@@ -1,0 +1,22 @@
+!SESSION 2012-12-20 21:30:26.180 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.ui 4 4 2012-12-20 21:30:44.462
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.manageConfigsAction2
+
+!ENTRY org.eclipse.ui 4 4 2012-12-20 21:30:44.465
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.buildConfigMenuAction
+
+!ENTRY org.eclipse.ui 4 4 2012-12-20 21:30:44.465
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.wsselection
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-12-20 21:31:07.857
+!MESSAGE Indexed 'FreeRTOS-Sample' (67 sources, 87 headers) in 2.39 sec: 6,408 declarations; 18,341 references; 79 unresolved inclusions; 9 syntax errors; 2,355 unresolved names (8.69%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-12-20 21:31:27.003
+!MESSAGE Indexed 'ball-wall' (81 sources, 43 headers) in 1.22 sec: 4,242 declarations; 16,532 references; 278 unresolved inclusions; 0 syntax errors; 4,960 unresolved names (19.27%)

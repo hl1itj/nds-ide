@@ -1,0 +1,7 @@
+22:04:19 **** Incremental Build of configuration Default for project ball-wall ****
+make 
+make[1]: *** `croutine.o'에서 필요로 하는  타겟 `/home/hansung/ndsdev/workspace/ball-wall/FreeRTOS/croutine.c'를 만들 규칙이 없습니다.  멈춤.
+make: *** [build] 오류 2
+
+22:04:19 Build Finished (took 132ms)
+

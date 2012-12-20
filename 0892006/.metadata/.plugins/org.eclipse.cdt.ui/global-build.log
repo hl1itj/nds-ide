@@ -1,0 +1,77 @@
+22:04:24 **** Build of configuration Default for project FreeRTOS-Sample ****
+make 
+grit /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/image/down.png -fts -odown
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/image/down.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'down'.
+STATUS: Started run at: 2012-12-20, 22:04:24
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: down into down.s .
+STATUS: Run completed :).
+STATUS: Done!
+down.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/down.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c down.s -o down.o 
+grit /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/image/up.png -fts -oup
+STATUS: ---grit v0.8.10 ---
+STATUS: Individual runs.
+STATUS: Input file /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/image/up.png
+WARNING: No main mode specified (-gt/-gb).
+STATUS: Output file: 'up'.
+STATUS: Started run at: 2012-12-20, 22:04:24
+STATUS: Validating gr.
+WARNING:   No explicit symbol name. In overwrite mode, so using dst title.
+STATUS: Validation succeeded.
+STATUS: Preparing data.
+STATUS: Work-DIB creation.
+WARNING:   converting from 32 bpp to 16 bpp.
+STATUS: converting to: 16bpp BGR, alpha=1.
+STATUS: Work-DIB creation complete: 256x192@16.
+STATUS: Graphics preparation.
+STATUS: Compressing: 01
+STATUS: Graphics preparation complete.
+STATUS: Data preparation complete.
+STATUS: Export to GNU asm: up into up.s .
+STATUS: Run completed :).
+STATUS: Done!
+up.s
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/up.d -x assembler-with-cpp -g -mthumb -march=armv5te -mtune=arm946e-s -c up.s -o up.o 
+croutine.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/croutine.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/croutine.c -o croutine.o 
+list.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/list.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/list.c -o list.o 
+In file included from /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/card_spi.c:37:0:
+queue.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/queue.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/queue.c -o queue.o 
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:20:1: error: unknown type name 'uint32_t'
+tasks.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/tasks.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/tasks.c -o tasks.o 
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:26:1: error: unknown type name 'uint32_t'
+card_spi.c
+arm-none-eabi-gcc -MMD -MP -MF /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build/card_spi.d -g -Wall -fomit-frame-pointer -ffast-math -mthumb -march=armv5te -mtune=arm946e-s -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS -I/home/hansung/ndsdev/devkitPro/libnds/include -I/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/build -DARM9 -c /home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/card_spi.c -o card_spi.o 
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:26:24: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:26:38: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:28:1: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:28:18: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:30:1: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:32:1: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:34:1: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:34:14: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:34:26: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:36:1: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:36:14: error: unknown type name 'uint32_t'
+/home/hansung/ndsdev/nds-ide/0892006/test/ball-wall/FreeRTOS/NDS/gdbStubAsm.h:36:26: error: unknown type name 'uint32_t'
+make[1]: *** [card_spi.o] 오류 1
+make: *** [build] 오류 2
