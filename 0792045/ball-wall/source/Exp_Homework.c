@@ -101,7 +101,7 @@ void Exp_8_Homework_B(void) {
 	while (1) {
 		if (kbhit()) {
 			x = getkey();
-			if (x >= WALL_X_MAX)
+			if (x >= WALL_X_MAX ||x == prevX)
 				continue;
 			for (i = 0; i < prevX; i++)
 				draw_my_wall(i, WALL_Y_POS, COLOR_BLACK);
@@ -113,7 +113,7 @@ void Exp_8_Homework_B(void) {
 					}
 					xSemaphoreGive(semaphore);
 					r_point = (i * 4);
-					vTaskDelay((portTickType)20);
+					vTaskDelay((portTickType)1);
 				}
 			}
 			r_point = (x * 4);
